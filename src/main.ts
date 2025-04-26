@@ -2,10 +2,12 @@ import { createApp } from 'vue'
 import './style.css'
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-import HomeView from './views/HomeView.vue'
+import App from './views/App.vue'
+import ActivityConfig from './views/games/activity/ActivityConfig.vue';
+
 
 const routes = [
-    {path: '/', component: HomeView},
+    {path: '/activity/game-config', component: ActivityConfig},
 ]
 
 const router = createRouter({
@@ -13,4 +15,4 @@ const router = createRouter({
     routes,
 })
 
-createApp(HomeView).use(router).mount('#app')
+createApp(App).use(router).mount('#app')
