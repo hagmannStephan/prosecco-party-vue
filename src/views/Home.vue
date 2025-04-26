@@ -1,17 +1,11 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+import { usePushRouter } from '../helpers/routerHelper'
 
-const router = useRouter();
-
-function pushRouter(route: string) {
-  console.log('Navigating to:', route);
-  router.push({ path: route });
-}
+const pushRouter = usePushRouter();
 </script>
 
-
 <template>
-    <button @click="pushRouter('/activity/game-config')">
-        Go to Activity Config
-    </button>
+  <button @click="pushRouter('/activity/game-config')">
+    Go to Activity Config
+  </button>
 </template>

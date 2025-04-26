@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Games/Activity/Planung.md",
+                "file": "Setup Project.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Planung"
+              "title": "Setup Project"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Games/Activity/Planung.md",
+                "file": "Setup Project.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Planung"
+              "title": "Backlinks for Setup Project"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Games/Activity/Planung.md",
+                "file": "Setup Project.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Planung"
+              "title": "Outgoing links from Setup Project"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Games/Activity/Planung.md",
+                "file": "Setup Project.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Planung"
+              "title": "Outline of Setup Project"
             }
           }
         ]
@@ -170,8 +170,8 @@
   },
   "active": "db1a58b07b1b8eb1",
   "lastOpenFiles": [
-    "Games/Activity/Untitled.md",
     "Games/Activity/Planung.md",
+    "Games/Activity/Untitled.md",
     "Setup Project.md",
     "Games/Activity",
     "Games"
