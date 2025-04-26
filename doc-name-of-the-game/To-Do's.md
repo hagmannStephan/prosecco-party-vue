@@ -1,0 +1,3 @@
+- [ ] 🗺️ Add Translations with `vue-i18n`
+- [ ] 📙 Add word query with `Datamuse API`
+- [ ] 🗺️ Add Translations to Data from `Datamuse API` with `Deepl API`
