@@ -10,10 +10,15 @@ const gameStore = useGameStore();
 
 // TODO: Replace with actual game settings defined by user with a form
 const gameSettings = ref({
-  players: ['John', 'Alice'],
+  players: [
+    { id: 1, name: 'Steff de Chef', score: 0},
+    { id: 2, name: 'Liam de Lappe', score: 0}
+  ],
   rounds: 5,
   timePerRound: 60,
   gameModes: ['normal', 'hard'],
+  currentRound: 0,
+  currentPlayer: 0,
 });
 
 onMounted(() => {
@@ -25,7 +30,7 @@ onMounted(() => {
 <template>
   <h1>Game Config</h1>
   <h2>Game Settings</h2>
-  <p>Players: {{ gameStore.getPlayers?.join(', ') || 'None' }}</p>
+  <p>Players: {{ gameStore.getPlayers?.map(player => player.name).join(', ') || 'None' }}</p>
   <p>Rounds: {{ gameStore.getRounds || 0 }}</p>
   <p>Time per Round: {{ gameStore.getTimePerRound || 0 }} seconds</p>
   <p>Game Modes: {{ gameStore.getGameModes?.join(', ') || 'None' }}</p>
