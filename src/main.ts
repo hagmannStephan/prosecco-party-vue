@@ -1,11 +1,15 @@
 import { createApp } from 'vue'
 import './style.css'
 import { createWebHistory, createRouter } from 'vue-router'
+import {createPinia } from 'pinia'
 
 // Add Eruda for console debugging on mobile
 // TODO: Remove this in production
 import eruda from 'eruda'
 eruda.init()
+
+// Create a Pinia store
+const pinia = createPinia()
 
 import App from './views/App.vue'
 import Home from './views/Home.vue'
@@ -23,4 +27,8 @@ const router = createRouter({
   routes,
 })
 
-createApp(App).use(router).mount('#app')
+
+createApp(App)
+  .use(router)
+  .use(pinia)
+  .mount('#app')

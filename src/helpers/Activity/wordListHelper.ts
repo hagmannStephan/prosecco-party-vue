@@ -49,7 +49,7 @@ async function loadWordListFromIndexedDB(): Promise<string[]> {
 
 export async function loadWordList(): Promise<string[] | undefined> {
   // Execute if the app is in PWA mode
-  if (window.matchMedia('(display-mode: standalone)').matches || (navigator as any).standalone) {
+  if (window.matchMedia('(display-mode: standalone)').matches || ((navigator as any).standalone === true)) {
     return await loadWordListFromIndexedDB();
   }
 

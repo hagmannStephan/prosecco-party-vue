@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePushRouter } from '../helpers/routerHelper'
+import { usePushRouter } from '@/helpers/routerHelper'
 
 const pushRouter = usePushRouter();
 </script>

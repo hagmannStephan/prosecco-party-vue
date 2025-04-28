@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { loadWordList } from '../../../helpers/Activity/wordListHelper';
-import { usePushRouter } from '../../../helpers/routerHelper'
+import { loadWordList } from '@/helpers/Activity/wordListHelper';
+import { usePushRouter } from '@/helpers/routerHelper'
 
 const pushRouter = usePushRouter();
 
 // Create a reactive variable to hold the word list
 const wordList = ref<string[]>([]);
-const isPWA =ref<boolean>(false);
+const isPWA =ref(false);
 
 onMounted(() => {
   loadWordList().then((result) => {
@@ -15,7 +15,7 @@ onMounted(() => {
       wordList.value = result;
     }
   });
-  isPWA.value = window.matchMedia('(display-mode: standalone)').matches || (navigator as any).standalone;
+  isPWA.value = window.matchMedia('(display-mode: standalone)').matches || ((navigator as any).standalone == true);
 });
 </script>
 
