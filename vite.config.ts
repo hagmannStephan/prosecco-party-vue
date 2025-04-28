@@ -6,7 +6,12 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [
     vue(),
-    VitePWA({ registerType: 'autoUpdate' })
+    VitePWA({ 
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true
+      } 
+    })
   ],
   server: {
     host: '0.0.0.0',
