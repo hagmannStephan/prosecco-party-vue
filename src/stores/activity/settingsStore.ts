@@ -6,6 +6,17 @@ interface Player {
   score: number;
 }
 
+interface GameMode {
+  id: number;
+  name: string;
+}
+
+const gameModes: GameMode[] = [
+  { id: 1, name: 'pantomime' },
+  { id: 2, name: 'describe' },
+  { id: 3, name: 'draw' },
+];
+
 interface GameSettings {
   players: Player[];
   rounds: number;
@@ -13,6 +24,7 @@ interface GameSettings {
   gameModes: string[];
   currentRound: number;
   currentPlayer: number;
+  currentGameMode?: GameMode;
 }
 
 export const useGameStore = defineStore('game', {
@@ -24,6 +36,7 @@ export const useGameStore = defineStore('game', {
       gameModes: [],
       currentRound: 0,
       currentPlayer: 0,
+      currentGameMode: gameModes[Math.floor(Math.random() * gameModes.length)],
     } as GameSettings,
   }),
   persist: true,
@@ -44,6 +57,7 @@ export const useGameStore = defineStore('game', {
       const totalPlayers = this.gameSettings.players.length;
       // Wrap around to the first player if we reach the end of the list
       this.gameSettings.currentPlayer = (this.gameSettings.currentPlayer + 1) % totalPlayers;
+      this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
 
       if (this.gameSettings.currentPlayer === 0) {
         this.gameSettings.currentRound += 1;
@@ -86,6 +100,9 @@ export const useGameStore = defineStore('game', {
     },
     getCurrentPlayer(state) {
       return state.gameSettings.players[state.gameSettings.currentPlayer];
-    }
+    },
+    getCurrentGameMode(state) {
+      return state.gameSettings.currentGameMode;
+    },
   }
 });

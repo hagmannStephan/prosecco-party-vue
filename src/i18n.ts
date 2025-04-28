@@ -2,13 +2,25 @@ import { createI18n } from "vue-i18n";
 
 import homeEn from "./locales/en/Home.ts";
 import homeDe from "./locales/de/Home.ts";
+import ActivityConfigEn from "./locales/en/games/activity/ActivityConfig.ts";
+import ActivityConfigDe from "./locales/de/games/activity/ActivityConfig.ts";
+import ActivityBreakEn from "./locales/en/games/activity/ActivityBreak.ts";
+import ActivityBreakDe from "./locales/de/games/activity/ActivityBreak.ts";
 
 const messages = {
     en: {
         home: homeEn,
+        activity: {
+            config: ActivityConfigEn,
+            break: ActivityBreakEn,
+        }
     },
     de: {
         home: homeDe,
+        activity: {
+            config: ActivityConfigDe,
+            break: ActivityBreakDe,
+        }
     },
 };
 
