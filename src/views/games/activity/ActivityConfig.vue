@@ -14,7 +14,7 @@ const gameSettings = ref({
     { id: 1, name: 'Steff de Chef', score: 0},
     { id: 2, name: 'Liam de Lappe', score: 0}
   ],
-  rounds: 5,
+  rounds: 3,
   timePerRound: 60,
   gameModes: ['normal', 'hard'],
   currentRound: 0,
@@ -35,5 +35,5 @@ onMounted(() => {
   <p>Time per Round: {{ gameStore.getTimePerRound || 0 }} seconds</p>
   <p>Game Modes: {{ gameStore.getGameModes?.join(', ') || 'None' }}</p>
   <!-- TODO: Add option to modify wordlist -->
-  <button @click="pushRouter('/activity')">Go to Game View</button>
+  <button @click="pushRouter('/activity/break')">Go to Activity Break</button>
 </template>

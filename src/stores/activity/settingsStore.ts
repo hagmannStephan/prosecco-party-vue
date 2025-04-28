@@ -54,7 +54,19 @@ export const useGameStore = defineStore('game', {
       }
 
       return false; // Game continues
-  }
+  },
+  getScore(playerId: number) {
+      const player = this.gameSettings.players.find(player => player.id === playerId);
+      return player ? player.score : 0;
+  },
+  getLeaderboard() {
+      return this.gameSettings.players.sort((a, b) => b.score - a.score).map(player => {
+        return {
+          name: player.name,
+          score: player.score,
+        };
+      });
+    }
   },
   getters: {
     getPlayers(state) {

@@ -17,12 +17,18 @@ pinia.use(piniaPluginPersistedstate);
 import App from './views/App.vue'
 import Home from './views/Home.vue'
 import ActivityConfig from './views/games/activity/ActivityConfig.vue'
+import ActivityBreak from './views/games/activity/ActivityBreak.vue'
 import ActivityGame from './views/games/activity/ActivityGame.vue'
+import ActivityDone from './views/games/activity/ActivityDone.vue'
+import ActivityRanked from './views/games/activity/ActivityRanked.vue'
 
 const routes = [
   { path: '/', component: Home },
   { path: '/activity/game-config', component: ActivityConfig },
+  { path: '/activity/break', component: ActivityBreak },
   { path: '/activity', component: ActivityGame },
+  { path: '/activity/done', component: ActivityDone },
+  { path: '/activity/ranked', component: ActivityRanked },
 ]
 
 const router = createRouter({
