@@ -39,7 +39,7 @@ onMounted(() => {
       <li v-for="(word, index) in wordList" :key="index">{{ word }}</li>
     </ul>
     <h2>User Settings</h2>
-    <p>Players: {{ gameStore.getPlayers?.map(player => player.name).join(', ') || 'None' }}</p>
+    <p>Players: {{ players?.map(player => player.name).join(', ') || 'None' }}</p>
     <p>Rounds: {{ rounds }}</p>
     <p>Time per Round: {{ timePerRound }} seconds</p>
     <p>Game Modes: {{ gameModes.join(', ') }}</p>

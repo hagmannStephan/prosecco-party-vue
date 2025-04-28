@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import './style.css'
 import { createWebHistory, createRouter } from 'vue-router'
 import {createPinia } from 'pinia'
+import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 
 // Add Eruda for console debugging on mobile
 // TODO: Remove this in production
@@ -10,6 +11,8 @@ eruda.init()
 
 // Create a Pinia store
 const pinia = createPinia()
+// Make Pinia persist its state
+pinia.use(piniaPluginPersistedstate);
 
 import App from './views/App.vue'
 import Home from './views/Home.vue'

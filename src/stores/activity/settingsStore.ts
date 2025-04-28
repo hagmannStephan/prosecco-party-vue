@@ -26,6 +26,7 @@ export const useGameStore = defineStore('game', {
       currentPlayer: 0,
     } as GameSettings,
   }),
+  persist: true,
   actions: {
     setGameSettings(settings: GameSettings) {
       this.gameSettings = settings;
