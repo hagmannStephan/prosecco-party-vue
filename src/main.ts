@@ -3,6 +3,7 @@ import './style.css'
 import { createWebHistory, createRouter } from 'vue-router'
 import {createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
+import i18n from './i18n'
 
 // Add Eruda for console debugging on mobile
 // TODO: Remove this in production
@@ -42,4 +43,5 @@ const router = createRouter({
 createApp(App)
   .use(router)
   .use(pinia)
+  .use(i18n)
   .mount('#app')
