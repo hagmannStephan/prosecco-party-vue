@@ -1,0 +1,1553 @@
+[
+    {
+        "word": "twerking",
+        "difficulty": "easy",
+        "forbidden": [
+            "tanzen",
+            "Hintern",
+            "bewegen",
+            "schütteln",
+            "hüfte"
+        ]
+    },
+    {
+        "word": "Tandem",
+        "difficulty": "medium",
+        "forbidden": [
+            "Fahrrad",
+            "zusammen",
+            "zwei",
+            "Fahrt",
+            "Pedal"
+        ]
+    },
+    {
+        "word": "Brüllaffe",
+        "difficulty": "hard",
+        "forbidden": [
+            "laut",
+            "Tier",
+            "Banane",
+            "Baum",
+            "wild"
+        ]
+    },
+    {
+        "word": "Roboter",
+        "difficulty": "easy",
+        "forbidden": [
+            "Maschine",
+            "Metall",
+            "AI",
+            "Programm",
+            "Zukunft"
+        ]
+    },
+    {
+        "word": "Flamingo",
+        "difficulty": "easy",
+        "forbidden": [
+            "rosa",
+            "Vogel",
+            "Bein",
+            "Florida",
+            "Balance"
+        ]
+    },
+    {
+        "word": "Selfie",
+        "difficulty": "easy",
+        "forbidden": [
+            "Foto",
+            "Kamera",
+            "selbst",
+            "Bild",
+            "Telefon"
+        ]
+    },
+    {
+        "word": "Einhorn",
+        "difficulty": "medium",
+        "forbidden": [
+            "Horn",
+            "Pferd",
+            "mythisch",
+            "Regenbogen",
+            "Magie"
+        ]
+    },
+    {
+        "word": "Karaoke",
+        "difficulty": "medium",
+        "forbidden": [
+            "singen",
+            "Mikrofon",
+            "Liedtext",
+            "Musik",
+            "Party"
+        ]
+    },
+    {
+        "word": "Escape Room",
+        "difficulty": "hard",
+        "forbidden": [
+            "Rätsel",
+            "Team",
+            "Zeitdruck",
+            "gesperrt",
+            "Hinweise"
+        ]
+    },
+    {
+        "word": "Zombie",
+        "difficulty": "easy",
+        "forbidden": [
+            "tot",
+            "Gehirn",
+            "Wandern",
+            "Untote",
+            "Horror"
+        ]
+    },
+    {
+        "word": "Hoverboard",
+        "difficulty": "medium",
+        "forbidden": [
+            "Balance",
+            "Räder",
+            "Fahrt",
+            "elektrisch",
+            "gleiten"
+        ]
+    },
+    {
+        "word": "Schleim",
+        "difficulty": "easy",
+        "forbidden": [
+            "Goo",
+            "klebrig",
+            "grün",
+            "Spielzeug",
+            "matschig"
+        ]
+    },
+    {
+        "word": "Kaktus",
+        "difficulty": "easy",
+        "forbidden": [
+            "Wüste",
+            "Stachel",
+            "Pflanze",
+            "Wasser",
+            "stachelig"
+        ]
+    },
+    {
+        "word": "Pogo Stick",
+        "difficulty": "medium",
+        "forbidden": [
+            "springen",
+            "Aufprallen",
+            "Feder",
+            "Spielzeug",
+            "auf und ab"
+        ]
+    },
+    {
+        "word": "Vampir",
+        "difficulty": "easy",
+        "forbidden": [
+            "Blut",
+            "Reisszähne",
+            "beissen",
+            "Nacht",
+            "Fledermaus"
+        ]
+    },
+    {
+        "word": "Bananenschale",
+        "difficulty": "easy",
+        "forbidden": [
+            "Ausrutschen",
+            "gelb",
+            "Obst",
+            "Umfallen",
+            "lustig"
+        ]
+    },
+    {
+        "word": "Gummihuhn",
+        "difficulty": "medium",
+        "forbidden": [
+            "Spielzeug",
+            "Quietschend",
+            "Scherzartikel",
+            "Gummi",
+            "Hundespielzeug"
+        ]
+    },
+    {
+        "word": "Spukhaus",
+        "difficulty": "hard",
+        "forbidden": [
+            "Geist",
+            "beängstigend",
+            "dunkel",
+            "schreien",
+            "Angst"
+        ]
+    },
+    {
+        "word": "Discokugel",
+        "difficulty": "easy",
+        "forbidden": [
+            "Spiegel",
+            "tanzen",
+            "Licht",
+            "Party",
+            "Drehen"
+        ]
+    },
+    {
+        "word": "Skateboard",
+        "difficulty": "easy",
+        "forbidden": [
+            "Trick",
+            "Half-Pipe",
+            "Räder",
+            "Fahrt",
+            "Skaten"
+        ]
+    },
+    {
+        "word": "Blubbertee",
+        "difficulty": "easy",
+        "forbidden": [
+            "trinken",
+            "Tapioka",
+            "süss",
+            "Boba",
+            "Strohhalm"
+        ]
+    },
+    {
+        "word": "Oktopus",
+        "difficulty": "medium",
+        "forbidden": [
+            "Tentakel",
+            "Meer",
+            "Tintenfisch",
+            "Ozean",
+            "Tinte"
+        ]
+    },
+    {
+        "word": "Faultier",
+        "difficulty": "easy",
+        "forbidden": [
+            "langsam",
+            "Tier",
+            "faul",
+            "Jungel",
+            "schlafen"
+        ]
+    },
+    {
+        "word": "Alien-Invasion",
+        "difficulty": "hard",
+        "forbidden": [
+            "Raumschiff",
+            "Planet",
+            "Erde",
+            "angreifen",
+            "UFO"
+        ]
+    },
+    {
+        "word": "Ice Cream Truck",
+        "difficulty": "easy",
+        "forbidden": [
+            "Musik",
+            "kalt",
+            "Sommer",
+            "süss",
+            "Eis"
+        ]
+    },
+    {
+        "word": "DJ",
+        "difficulty": "easy",
+        "forbidden": [
+            "Musik",
+            "Party",
+            "Plattenspieler",
+            "Playlist",
+            "tanzen"
+        ]
+    },
+    {
+        "word": "Pantomime",
+        "difficulty": "medium",
+        "forbidden": [
+            "still",
+            "Aufführung",
+            "Gesichtsbemalung",
+            "Geste",
+            "Frankreich"
+        ]
+    },
+    {
+        "word": "Pirat",
+        "difficulty": "easy",
+        "forbidden": [
+            "Schiff",
+            "Schatz",
+            "Meer",
+            "Haken",
+            "Augenklappe"
+        ]
+    },
+    {
+        "word": "Superhelden",
+        "difficulty": "easy",
+        "forbidden": [
+            "Umhang",
+            "Kräfte",
+            "Fliege",
+            "Retten",
+            "Bösewicht"
+        ]
+    },
+    {
+        "word": "Kissenschlacht",
+        "difficulty": "easy",
+        "forbidden": [
+            "schlafen",
+            "weich",
+            "schlagen",
+            "Bett",
+            "spass"
+        ]
+    },
+    {
+        "word": "Meerjungfrau",
+        "difficulty": "easy",
+        "forbidden": [
+            "Schwanz",
+            "Meer",
+            "Fisch",
+            "singen",
+            "Unterwasser"
+        ]
+    },
+    {
+        "word": "Schneeballschlacht",
+        "difficulty": "easy",
+        "forbidden": [
+            "Winter",
+            "werfen",
+            "kalt",
+            "Schnee",
+            "Schlacht"
+        ]
+    },
+    {
+        "word": "Schlittschuhlaufen",
+        "difficulty": "medium",
+        "forbidden": [
+            "Klingen",
+            "Eis",
+            "gleiten",
+            "Eisbahn",
+            "Winter"
+        ]
+    },
+    {
+        "word": "Hairstylist",
+        "difficulty": "medium",
+        "forbidden": [
+            "Schere",
+            "schneiden",
+            "Haare",
+            "Salon",
+            "Stil"
+        ]
+    },
+    {
+        "word": "Zeitmaschine",
+        "difficulty": "hard",
+        "forbidden": [
+            "Vergangenheit",
+            "Zukunft",
+            "Reisen",
+            "Gerät",
+            "Geschichte"
+        ]
+    },
+    {
+        "word": "ninja",
+        "difficulty": "easy",
+        "forbidden": [
+            "still",
+            "schwarz",
+            "Schwert",
+            "heimlich",
+            "Japan"
+        ]
+    },
+    {
+        "word": "Tornado",
+        "difficulty": "medium",
+        "forbidden": [
+            "Wind",
+            "Sturm",
+            "drehen",
+            "Zerstörung",
+            "natürlich"
+        ]
+    },
+    {
+        "word": "Karneval",
+        "difficulty": "easy",
+        "forbidden": [
+            "Fahrten",
+            "Spiele",
+            "Zuckerwatte",
+            "Spass",
+            "Eintrittskarten"
+        ]
+    },
+    {
+        "word": "Verrückter Wissenschaftler",
+        "difficulty": "medium",
+        "forbidden": [
+            "Irre",
+            "Labor",
+            "Experiment",
+            "Erfindung",
+            "Brille"
+        ]
+    },
+    {
+        "word": "Wasserballon",
+        "difficulty": "easy",
+        "forbidden": [
+            "Sommer",
+            "werfen",
+            "nass",
+            "Kampf",
+            "spritzen"
+        ]
+    },
+    {
+        "word": "Hula-Hoop-Reifen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Kreis",
+            "Taille",
+            "drehen",
+            "Spielzeug",
+            "Hüfte"
+        ]
+    },
+    {
+        "word": "Spaghetti-Monster",
+        "difficulty": "hard",
+        "forbidden": [
+            "Nudeln",
+            "Tentakel",
+            "Sauce",
+            "mythisch",
+            "seltsam"
+        ]
+    },
+    {
+        "word": "Niesen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Nase",
+            "blasen",
+            "Krankheit",
+            "Achoo",
+            "Allergie"
+        ]
+    },
+    {
+        "word": "moonwalk",
+        "difficulty": "medium",
+        "forbidden": [
+            "tanzen",
+            "rückwärts",
+            "Michael Jackson",
+            "bewegen",
+            "Schritt"
+        ]
+    },
+    {
+        "word": "yeti",
+        "difficulty": "medium",
+        "forbidden": [
+            "Schnee",
+            "monster",
+            "Bigfoot",
+            "Berg",
+            "weiss"
+        ]
+    },
+    {
+        "word": "Strumpfpuppe",
+        "difficulty": "easy",
+        "forbidden": [
+            "Hand",
+            "sprechen",
+            "Puppe",
+            "Socke",
+            "Mund"
+        ]
+    },
+    {
+        "word": "Lasertag",
+        "difficulty": "easy",
+        "forbidden": [
+            "schiessen",
+            "Team",
+            "dunkel",
+            "Waffe",
+            "Anzug"
+        ]
+    },
+    {
+        "word": "Bienenstock",
+        "difficulty": "medium",
+        "forbidden": [
+            "Honig",
+            "Bzzz",
+            "Biene",
+            "Insekt",
+            "Stachel"
+        ]
+    },
+    {
+        "word": "Monstertruck",
+        "difficulty": "easy",
+        "forbidden": [
+            "Auto",
+            "riesig",
+            "Rad",
+            "Wettrennen",
+            "Show"
+        ]
+    },
+    {
+        "word": "Seiltänzerin",
+        "difficulty": "hard",
+        "forbidden": [
+            "Balance",
+            "Seil",
+            "Zirkus",
+            "gehen",
+            "Fallen"
+        ]
+    },
+    {
+        "word": "Schneemann",
+        "difficulty": "easy",
+        "forbidden": [
+            "Winter",
+            "Schnee",
+            "kalt",
+            "Karotte",
+            "Kohle"
+        ]
+    },
+    {
+        "word": "Drache",
+        "difficulty": "easy",
+        "forbidden": [
+            "Feuer",
+            "Flügel",
+            "Schuppen",
+            "mythisch",
+            "fliegen"
+        ]
+    },
+    {
+        "word": "Cannonball",
+        "difficulty": "easy",
+        "forbidden": [
+            "Schwimmen",
+            "spritzen",
+            "springen",
+            "Pool",
+            "gross"
+        ]
+    },
+    {
+        "word": "Wahrsagerin",
+        "difficulty": "medium",
+        "forbidden": [
+            "Zukunft",
+            "Kristallkugel",
+            "vorhersagen",
+            "Karten",
+            "lesen"
+        ]
+    },
+    {
+        "word": "Paintball",
+        "difficulty": "easy",
+        "forbidden": [
+            "schiessen",
+            "Farbe",
+            "Waffe",
+            "Team",
+            "Schlacht"
+        ]
+    },
+    {
+        "word": "Jongleur",
+        "difficulty": "medium",
+        "forbidden": [
+            "Bälle",
+            "Zirkus",
+            "werfen",
+            "fangen",
+            "aufführen"
+        ]
+    },
+    {
+        "word": "Pfau",
+        "difficulty": "easy",
+        "forbidden": [
+            "Vogel",
+            "Federn",
+            "bunt",
+            "Schwanz",
+            "farbig"
+        ]
+    },
+    {
+        "word": "Bungee-Jumping",
+        "difficulty": "medium",
+        "forbidden": [
+            "springen",
+            "Brücke",
+            "Seil",
+            "fallen",
+            "Adrenalin"
+        ]
+    },
+    {
+        "word": "Surfen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Welle",
+            "Meer",
+            "Brett",
+            "Balance",
+            "Strand"
+        ]
+    },
+    {
+        "word": "Heissluftballon",
+        "difficulty": "easy",
+        "forbidden": [
+            "Himmel",
+            "Fliegen",
+            "Flamme",
+            "bunt",
+            "Korb"
+        ]
+    },
+    {
+        "word": "Pinguin",
+        "difficulty": "easy",
+        "forbidden": [
+            "kalt",
+            "Vogel",
+            "watscheln",
+            "Antarktis",
+            "schwarz und weiss"
+        ]
+    },
+    {
+        "word": "Marathon",
+        "difficulty": "medium",
+        "forbidden": [
+            "joggen",
+            "Wettlauf",
+            "lang",
+            "42 km",
+            "müde"
+        ]
+    },
+    {
+        "word": "Papagei",
+        "difficulty": "easy",
+        "forbidden": [
+            "Vogel",
+            "sprechen",
+            "bunt",
+            "wiederholen",
+            "Piraten"
+        ]
+    },
+    {
+        "word": "Geist",
+        "difficulty": "easy",
+        "forbidden": [
+            "unsichtbar",
+            "beängstigend",
+            "boo",
+            "Genie",
+            "spuken"
+        ]
+    },
+    {
+        "word": "Cowboy",
+        "difficulty": "easy",
+        "forbidden": [
+            "Pferd",
+            "Hut",
+            "wilder Westen",
+            "Lasso",
+            "Stiefel"
+        ]
+    },
+    {
+        "word": "Akkordeon",
+        "difficulty": "medium",
+        "forbidden": [
+            "Musik",
+            "Zusammendrücken",
+            "Instrument",
+            "Tasten",
+            "polka"
+        ]
+    },
+    {
+        "word": "Gargoyle (Wasserspeier)",
+        "difficulty": "medium",
+        "forbidden": [
+            "Stein",
+            "Brunnen",
+            "monster",
+            "Gebäude",
+            "Skulptur"
+        ]
+    },
+    {
+        "word": "Schatzsuche",
+        "difficulty": "easy",
+        "forbidden": [
+            "Karte",
+            "Kreuz",
+            "Gold",
+            "Hinweise",
+            "Pirat"
+        ]
+    },
+    {
+        "word": "Genie",
+        "difficulty": "easy",
+        "forbidden": [
+            "Wunsch",
+            "Lampe",
+            "Magie",
+            "gewähren",
+            "reiben"
+        ]
+    },
+    {
+        "word": "Salsa tanzen",
+        "difficulty": "medium",
+        "forbidden": [
+            "Musik",
+            "Partner",
+            "Latein-Amerikanisch",
+            "Drehen",
+            "Bewegen"
+        ]
+    },
+    {
+        "word": "Kletterpark",
+        "difficulty": "hard",
+        "forbidden": [
+            "Bäume",
+            "klettern",
+            "Seilbahn",
+            "Hindernisse",
+            "Höhe"
+        ]
+    },
+    {
+        "word": "Zauberer",
+        "difficulty": "easy",
+        "forbidden": [
+            "Magie",
+            "Zauberstab",
+            "Zauberspruch",
+            "Gewand",
+            "Bart"
+        ]
+    },
+    {
+        "word": "Riesenhamsterball",
+        "difficulty": "hard",
+        "forbidden": [
+            "Kugel",
+            "Kunststoff",
+            "drehend",
+            "gross",
+            "Spass"
+        ]
+    },
+    {
+        "word": "Pogotanz",
+        "difficulty": "medium",
+        "forbidden": [
+            "springen",
+            "Punk",
+            "bewegen",
+            "Musik",
+            "1970er"
+        ]
+    },
+    {
+        "word": "Schnabeltier",
+        "difficulty": "medium",
+        "forbidden": [
+            "Ente",
+            "Biber",
+            "Ei",
+            "Australien",
+            "Dobedobedoba Perry"
+        ]
+    },
+    {
+        "word": "Tornadorutsche",
+        "difficulty": "medium",
+        "forbidden": [
+            "Wasser",
+            "Park",
+            "Drehung",
+            "Trichter",
+            "Rohr"
+        ]
+    },
+    {
+        "word": "Schlafwandeln",
+        "difficulty": "medium",
+        "forbidden": [
+            "Traum",
+            "Spazieren",
+            "Nacht",
+            "unbewusst",
+            "Bett"
+        ]
+    },
+    {
+        "word": "Kamel",
+        "difficulty": "easy",
+        "forbidden": [
+            "Wüste",
+            "Buckel",
+            "Sand",
+            "Reiten",
+            "Tier"
+        ]
+    },
+    {
+        "word": "frisbee",
+        "difficulty": "easy",
+        "forbidden": [
+            "werfen",
+            "fangen",
+            "Scheibe",
+            "Luft",
+            "Spiel"
+        ]
+    },
+    {
+        "word": "Tiki-Party",
+        "difficulty": "easy",
+        "forbidden": [
+            "Hawaii",
+            "trinken",
+            "tropisch",
+            "Fackel",
+            "Sommer"
+        ]
+    },
+    {
+        "word": "Riesenkrake",
+        "difficulty": "hard",
+        "forbidden": [
+            "Meer",
+            "Tentakel",
+            "monster",
+            "tief",
+            "Tinte"
+        ]
+    },
+    {
+        "word": "Regenbogen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Farben",
+            "Himmel",
+            "Regen",
+            "Lichtbogen",
+            "Sonne"
+        ]
+    },
+    {
+        "word": "Vulkan",
+        "difficulty": "easy",
+        "forbidden": [
+            "Lava",
+            "Eruption",
+            "Berg",
+            "Asche",
+            "heiss"
+        ]
+    },
+    {
+        "word": "Kokosnuss",
+        "difficulty": "easy",
+        "forbidden": [
+            "Baum",
+            "Obst",
+            "hart",
+            "Wasser",
+            "braun"
+        ]
+    },
+    {
+        "word": "Clown",
+        "difficulty": "easy",
+        "forbidden": [
+            "Zirkus",
+            "lustig",
+            "Make-up",
+            "jonglieren",
+            "rote Nase"
+        ]
+    },
+    {
+        "word": "Koala",
+        "difficulty": "easy",
+        "forbidden": [
+            "Australien",
+            "Baum",
+            "Eukalyptus",
+            "niedlich",
+            "Bär"
+        ]
+    },
+    {
+        "word": "Libelle",
+        "difficulty": "medium",
+        "forbidden": [
+            "Insekt",
+            "Flügel",
+            "Fliege",
+            "Wasser",
+            "schnell"
+        ]
+    },
+    {
+        "word": "Hexe",
+        "difficulty": "easy",
+        "forbidden": [
+            "Besen",
+            "Magie",
+            "Zauberspruch",
+            "Halloween",
+            "Hut"
+        ]
+    },
+    {
+        "word": "Schneckenrennen",
+        "difficulty": "hard",
+        "forbidden": [
+            "langsam",
+            "Schneckenhaus",
+            "schleichen",
+            "Spur",
+            "Schleim"
+        ]
+    },
+    {
+        "word": "Yoga-Kurs",
+        "difficulty": "medium",
+        "forbidden": [
+            "dehnen",
+            "Pose",
+            "ruhig",
+            "atmen",
+            "matte"
+        ]
+    },
+    {
+        "word": "Ungeheuer unter dem Bett",
+        "difficulty": "medium",
+        "forbidden": [
+            "beängstigend",
+            "Nacht",
+            "schlafen",
+            "ausblenden",
+            "Kind"
+        ]
+    },
+    {
+        "word": "Comicbuch",
+        "difficulty": "easy",
+        "forbidden": [
+            "Geschichte",
+            "Bilder",
+            "Superhelden",
+            "Sprechblase",
+            "zeichnen"
+        ]
+    },
+    {
+        "word": "Bumerang",
+        "difficulty": "medium",
+        "forbidden": [
+            "werfen",
+            "zurückkehren",
+            "Australien",
+            "Luft",
+            "fangen"
+        ]
+    },
+    {
+        "word": "Schaumbad",
+        "difficulty": "easy",
+        "forbidden": [
+            "Seife",
+            "Wasser",
+            "Wanne",
+            "Schaum",
+            "entspannen"
+        ]
+    },
+    {
+        "word": "Rennboot",
+        "difficulty": "medium",
+        "forbidden": [
+            "schnell",
+            "Wasser",
+            "Boot",
+            "Motor",
+            "Wettrennen"
+        ]
+    },
+    {
+        "word": "Gartenzwerg",
+        "difficulty": "medium",
+        "forbidden": [
+            "Statue",
+            "Hut",
+            "klein",
+            "Deko",
+            "Hof"
+        ]
+    },
+    {
+        "word": "Quallen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Meer",
+            "Stachel",
+            "Tentakel",
+            "transparent",
+            "Gehirn"
+        ]
+    },
+    {
+        "word": "Mystery Box",
+        "difficulty": "medium",
+        "forbidden": [
+            "unbekannt",
+            "Überraschung",
+            "Geschenk",
+            "online",
+            "erraten"
+        ]
+    },
+    {
+        "word": "Rockkonzert",
+        "difficulty": "easy",
+        "forbidden": [
+            "laut",
+            "Musik",
+            "Band",
+            "Bühne",
+            "Gitarre"
+        ]
+    },
+    {
+        "word": "Seilbahn im Kletterpark",
+        "difficulty": "medium",
+        "forbidden": [
+            "gleiten",
+            "Bäume",
+            "Abenteuer",
+            "Kabel",
+            "Geschwindigkeit"
+        ]
+    },
+    {
+        "word": "Wasserfall",
+        "difficulty": "easy",
+        "forbidden": [
+            "Wasser",
+            "Fallen",
+            "Fluss",
+            "Natur",
+            "hoch"
+        ]
+    },
+    {
+        "word": "Wandern",
+        "difficulty": "easy",
+        "forbidden": [
+            "Pfad",
+            "Berg",
+            "Spaziergang",
+            "Natur",
+            "Stiefel"
+        ]
+    },
+    {
+        "word": "Mondlandung",
+        "difficulty": "medium",
+        "forbidden": [
+            "Weltraum",
+            "Astronaut",
+            "NASA",
+            "Rakete",
+            "Oberfläche"
+        ]
+    },
+    {
+        "word": "Raupe",
+        "difficulty": "easy",
+        "forbidden": [
+            "krabbeln",
+            "Schmetterling",
+            "Larve",
+            "Insekt",
+            "grün"
+        ]
+    },
+    {
+        "word": "Riesenrad",
+        "difficulty": "easy",
+        "forbidden": [
+            "Fahrt",
+            "Kreis",
+            "Gondel",
+            "hoch",
+            "langsam"
+        ]
+    },
+    {
+        "word": "Boombox",
+        "difficulty": "medium",
+        "forbidden": [
+            "Musik",
+            "tragen",
+            "laut",
+            "Radio",
+            "80er"
+        ]
+    },
+    {
+        "word": "Zauberteppich",
+        "difficulty": "medium",
+        "forbidden": [
+            "Fliegen",
+            "Aladin",
+            "Magie",
+            "Fahrt",
+            "Genie"
+        ]
+    },
+    {
+        "word": "Seeräuberschiff",
+        "difficulty": "easy",
+        "forbidden": [
+            "Segel",
+            "Meer",
+            "Schatz",
+            "Kanone",
+            "Mannschaft"
+        ]
+    },
+    {
+        "word": "Popcorn",
+        "difficulty": "easy",
+        "forbidden": [
+            "Film",
+            "Snack",
+            "Salzig",
+            "Kerne",
+            "Süss"
+        ]
+    },
+    {
+        "word": "Sandburg",
+        "difficulty": "easy",
+        "forbidden": [
+            "Strand",
+            "bauen",
+            "Sand",
+            "Schaufel",
+            "Wasser"
+        ]
+    },
+    {
+        "word": "U-Boot Spielzeug",
+        "difficulty": "hard",
+        "forbidden": [
+            "Unterwasser",
+            "Badewanne",
+            "Wasser",
+            "spielen",
+            "Waschbecken"
+        ]
+    },
+    {
+        "word": "Fliegendes Schwein",
+        "difficulty": "hard",
+        "forbidden": [
+            "unmöglich",
+            "flügel",
+            "rosa",
+            "Luft",
+            "oink"
+        ]
+    },
+    {
+        "word": "Marshmallow",
+        "difficulty": "easy",
+        "forbidden": [
+            "Kindheit",
+            "süss",
+            "Lagerfeuer",
+            "Braten",
+            "weich"
+        ]
+    },
+    {
+        "word": "Schatzkarte",
+        "difficulty": "medium",
+        "forbidden": [
+            "X",
+            "Pirat",
+            "Insel",
+            "Kiste",
+            "Jagd"
+        ]
+    },
+    {
+        "word": "Glitzer",
+        "difficulty": "easy",
+        "forbidden": [
+            "funkeln",
+            "Handwerk",
+            "Glänzend",
+            "chaotisch",
+            "bunt"
+        ]
+    },
+    {
+        "word": "Achterbahn",
+        "difficulty": "medium",
+        "forbidden": [
+            "Fahrt",
+            "Freizeitpark",
+            "Spur",
+            "Schleife",
+            "schnell"
+        ]
+    },
+    {
+        "word": "Tauziehen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Seil",
+            "ziehen",
+            "Team",
+            "Wettbewerb",
+            "Stärke"
+        ]
+    },
+    {
+        "word": "Hotdog",
+        "difficulty": "easy",
+        "forbidden": [
+            "Brötchen",
+            "Wurst",
+            "Ketchup",
+            "Senf",
+            "Grillen"
+        ]
+    },
+    {
+        "word": "Hüpfburg",
+        "difficulty": "easy",
+        "forbidden": [
+            "springen",
+            "aufblasen",
+            "Geburtstag",
+            "Kinder",
+            "Luft"
+        ]
+    },
+    {
+        "word": "Magnet",
+        "difficulty": "easy",
+        "forbidden": [
+            "anziehen.",
+            "Metall",
+            "Kühlschrank",
+            "Zusammenhalten",
+            "ziehen"
+        ]
+    },
+    {
+        "word": "Werwolf",
+        "difficulty": "medium",
+        "forbidden": [
+            "Vollmond",
+            "heulen",
+            "wolf",
+            "Pelz",
+            "Nacht"
+        ]
+    },
+    {
+        "word": "Zahnfee",
+        "difficulty": "medium",
+        "forbidden": [
+            "Zähne",
+            "Kind",
+            "Fee",
+            "Geschenk",
+            "Milchzähne"
+        ]
+    },
+    {
+        "word": "Pfannkuchen",
+        "difficulty": "easy",
+        "forbidden": [
+            "Frühstück",
+            "Sirup",
+            "weich",
+            "gross",
+            "Amerika"
+        ]
+    },
+    {
+        "word": "Lavalampe",
+        "difficulty": "easy",
+        "forbidden": [
+            "Licht",
+            "Blase",
+            "Blubbern",
+            "retro",
+            "Antrag"
+        ]
+    },
+    {
+        "word": "Froschkönig",
+        "difficulty": "medium",
+        "forbidden": [
+            "Kuss",
+            "märchenhaft",
+            "grün",
+            "Magie",
+            "Prinz"
+        ]
+    },
+    {
+        "word": "Zuckerstange",
+        "difficulty": "easy",
+        "forbidden": [
+            "Weihnachten",
+            "rot",
+            "weiß",
+            "Minze",
+            "süß"
+        ]
+    },
+    {
+        "word": "Berliner",
+        "difficulty": "easy",
+        "forbidden": [
+            "süß",
+            "Kreis",
+            "Puderzucker",
+            "backen",
+            "Konfitüre"
+        ]
+    },
+    {
+        "word": "Känguru",
+        "difficulty": "easy",
+        "forbidden": [
+            "Australien",
+            "springen",
+            "gross",
+            "Beutel",
+            "stark"
+        ]
+    },
+    {
+        "word": "Grizzlybär",
+        "difficulty": "easy",
+        "forbidden": [
+            "braun",
+            "Krallen",
+            "brüllen",
+            "wild",
+            "Wald"
+        ]
+    },
+    {
+        "word": "Gänsehaut",
+        "difficulty": "medium",
+        "forbidden": [
+            "kalt",
+            "Angst",
+            "Haut",
+            "kühl",
+            "winzige Beulen"
+        ]
+    },
+    {
+        "word": "Zaubererduell",
+        "difficulty": "hard",
+        "forbidden": [
+            "Magie",
+            "Zauberspruch",
+            "Schlacht",
+            "Zauberstab",
+            "kämpfen"
+        ]
+    },
+    {
+        "word": "Kaktus-Kostüm",
+        "difficulty": "medium",
+        "forbidden": [
+            "stachelig",
+            "grün",
+            "Anlage",
+            "Halloween",
+            "lustig"
+        ]
+    },
+    {
+        "word": "Lichtschwert",
+        "difficulty": "easy",
+        "forbidden": [
+            "Star Wars",
+            "Waffe",
+            "Jedi",
+            "glühen",
+            "Duell"
+        ]
+    },
+    {
+        "word": "Galcé",
+        "difficulty": "easy",
+        "forbidden": [
+            "Eis",
+            "Sommer",
+            "Stick",
+            "gefroren",
+            "süss"
+        ]
+    },
+    {
+        "word": "Basketball",
+        "difficulty": "easy",
+        "forbidden": [
+            "Ball",
+            "Amerika",
+            "NBA",
+            "Netz",
+            "Korb"
+        ]
+    },
+    {
+        "word": "Detektiv",
+        "difficulty": "easy",
+        "forbidden": [
+            "lösen",
+            "Fall",
+            "Hinweise",
+            "Geheimnis",
+            "Untersuchung"
+        ]
+    },
+    {
+        "word": "Hängematte",
+        "difficulty": "easy",
+        "forbidden": [
+            "Schaukel",
+            "entspannen",
+            "Bäume",
+            "Seil",
+            "Nickerchen"
+        ]
+    },
+    {
+        "word": "Zauberschule",
+        "difficulty": "hard",
+        "forbidden": [
+            "Magie",
+            "Unterricht",
+            "Stäbe",
+            "Studenten",
+            "Harry Potter"
+        ]
+    },
+    {
+        "word": "Rubik's Cube",
+        "difficulty": "medium",
+        "forbidden": [
+            "Farben",
+            "Rätsel",
+            "Drehung",
+            "lösen",
+            "Würfel"
+        ]
+    },
+    {
+        "word": "Karussell",
+        "difficulty": "easy",
+        "forbidden": [
+            "Pferd",
+            "Fahrt",
+            "Musik",
+            "rund",
+            "Messe"
+        ]
+    },
+    {
+        "word": "Piñata",
+        "difficulty": "easy",
+        "forbidden": [
+            "Süßigkeiten",
+            "Schläger",
+            "Geburtstag",
+            "treffen",
+            "Überraschung"
+        ]
+    }
+]
