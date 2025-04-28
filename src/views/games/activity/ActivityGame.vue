@@ -29,7 +29,7 @@ function continueGame () {
   if (state) {
     pushRouter('/activity/done')
   } else {
-    pushRouter('/activity/break')
+    pushRouter('/activity/time-up')
   }
 }
 

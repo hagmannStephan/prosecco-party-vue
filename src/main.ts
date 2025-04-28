@@ -21,6 +21,7 @@ import ActivityBreak from './views/games/activity/ActivityBreak.vue'
 import ActivityGame from './views/games/activity/ActivityGame.vue'
 import ActivityDone from './views/games/activity/ActivityDone.vue'
 import ActivityRanked from './views/games/activity/ActivityRanked.vue'
+import ActivityTimeUp from './views/games/activity/ActivityTimeUp.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/activity', component: ActivityGame },
   { path: '/activity/done', component: ActivityDone },
   { path: '/activity/ranked', component: ActivityRanked },
+  { path: '/activity/time-up', component: ActivityTimeUp },
 ]
 
 const router = createRouter({
