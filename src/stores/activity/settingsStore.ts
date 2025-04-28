@@ -9,7 +9,12 @@ interface GameSettings {
 
 export const useGameStore = defineStore('game', {
   state: () => ({
-    gameSettings: {} as GameSettings,
+    gameSettings: {
+      players: [],
+      rounds: 0,
+      timePerRound: 0,
+      gameModes: []
+    } as GameSettings,
   }),
   actions: {
     setGameSettings(settings: GameSettings) {
