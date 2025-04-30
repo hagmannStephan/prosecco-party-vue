@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/activity/settingsStore';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const pushRouter = usePushRouter();
 
@@ -14,8 +17,8 @@ onMounted(() => {
 });
 </script>
 <template>
-    <h1>Time is Up!</h1>
+    <h1>{{ t('activity.timeUp.title') }}</h1>
     <p>⌛</p>
-    <p>Next up is: {{ currentPlayerName }}</p>
-    <button @click="pushRouter('/activity/break')">Continue</button>
+    <p>{{ t('activity.timeUp.message.part1') }} <b>{{ currentPlayerName }}</b> {{ t('activity.timeUp.message.part2') }}</p>
+    <button @click="pushRouter('/activity/break')">{{ t('activity.timeUp.button') }}</button>
 </template>

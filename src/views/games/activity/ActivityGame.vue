@@ -99,9 +99,9 @@ onUnmounted(() => {
     <p>⌛ {{ timeRemaining  + t('activity.game.seconds')}}</p>
   </div>
   <div>
-    <p>Current Word: {{ currentWord }}</p>
+    <h2>{{ currentWord }}</h2>
     <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
-      <p><strong>Forbidden Words:</strong></p>
+      <h3>{{ t('activity.game.forbidden') }}</h3>
       <ul>
         <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
       </ul>
@@ -110,10 +110,10 @@ onUnmounted(() => {
   <div>
     <p>+ {{ currentPlayerScore + t('activity.game.points')}}</p>
     <button @click="incrementScore()">
-      <img src="/icons/plus-1.svg" alt="Increment points" />
+      <img src="/icons/plus-1.svg" :alt="t('activity.game.image-alt.plus-one')" />
     </button>
     <button @click="getNewWord">
-      <img src="/icons/refresh.svg" alt="Get new word" />
+      <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
     </button>
   </div>
 </template>

@@ -10,5 +10,6 @@ export default {
     "image-alt": {
         "plus-one": "Geschafft",
         "reload": "Neues Wort",
-    }
+    },
+    "forbidden": "Verbotene Wörter",
 }

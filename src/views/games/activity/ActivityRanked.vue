@@ -2,7 +2,9 @@
 import { usePushRouter } from '@/helpers/routerHelper'
 import { onMounted, ref } from 'vue';
 import { useGameStore } from '@/stores/activity/settingsStore';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 const pushRouter = usePushRouter();
 
 const gameStore = useGameStore();
@@ -13,7 +15,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <h1>Activity Ranked</h1>
+    <h1>{{ t('activity.ranked.title') }}</h1>
 
     <ul>
         <li v-for="(player, index) in leaderboard" :key="index">
@@ -21,5 +23,6 @@ onMounted(() => {
         </li>
     </ul>
 
-    <button @click="pushRouter('/')">Go Home!</button>
+    <button @click="pushRouter('/')">{{ t('activity.ranked.button.home') }}</button>
+    <button @click="pushRouter('/activity/game-config')">{{ t('activity.ranked.button.playAgain') }}</button>
 </template>
