@@ -41,7 +41,11 @@ npm install eslint-plugin-react@latest --save-dev
 ```
 
 Now, with ==**`npm run lint`**== I can see the errors. With ==**`npm run format`**== I can fix them.
+
 # Enable PWA Support
+
 I followed this tutorial from [Vite PWA](https://vite-pwa-org.netlify.app/guide/) and just added the minimal Config.
+
 # Enable Router
+
 I followed this official tutorial from [vuejs](https://router.vuejs.org/installation.html)

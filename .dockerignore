@@ -1,0 +1,15 @@
+# Ignore editor and development environment folders
+.vscode/
+.devcontainer/
+
+# Ignore documentation folder
+doc-name-of-the-game/
+
+# Ignore dependencies
+node_modules/
+
+# Ignore other unnecessary files and folders
+dist/
+*.log
+.DS_Store
+.env
