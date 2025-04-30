@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePushRouter } from '@/helpers/routerHelper'
 import { onMounted, ref } from 'vue';
-import { useGameStore } from '@/stores/activity/activitySettingsStore';
+import { useGameStore } from '@/stores/activity/settingsStore';
 
 const pushRouter = usePushRouter();
 

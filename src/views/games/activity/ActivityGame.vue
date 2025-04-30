@@ -2,7 +2,7 @@
 import { ref, onMounted, watch } from 'vue';
 import { loadWordList } from '@/helpers/Activity/wordListHelper';
 import { usePushRouter } from '@/helpers/routerHelper'
-import { useGameStore } from '@/stores/activity/activitySettingsStore';
+import { useGameStore } from '@/stores/activity/settingsStore';
 
 const pushRouter = usePushRouter();
 
