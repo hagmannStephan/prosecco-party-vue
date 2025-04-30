@@ -1,4 +1,4 @@
-Made it possible with this skript:
+Made it possible with this script:
 ```python
 import json
 import requests
