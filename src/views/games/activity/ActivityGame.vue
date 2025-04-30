@@ -4,6 +4,9 @@ import { usePushRouter } from '@/helpers/routerHelper'
 import { useGameStore } from '@/stores/activity/settingsStore';
 import { getRandomWord } from '@/helpers/Activity/wordListHelper';
 import { useWordListStore } from '@/stores/activity/wordListStore';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const pushRouter = usePushRouter();
 
@@ -90,13 +93,12 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <h1>Yay! In Game view 🥳</h1>
   <div>
-    <h2>Current Stats</h2>
-    <p>Time Remaining: {{ timeRemaining }} seconds</p>
-    <p>Game Mode: {{ gameMode }}</p>
-    <p>Current Player: {{ currentPlayerName }}</p>
-    <p>Current Points: {{ currentPlayerScore }}</p>
+    <h1>{{ currentPlayerName + t('activity.game.title') }}</h1>
+    <p>{{ t(`activity.game.mode.${gameMode}`) }}</p>
+    <p>⌛ {{ timeRemaining  + t('activity.game.seconds')}}</p>
+  </div>
+  <div>
     <p>Current Word: {{ currentWord }}</p>
     <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
       <p><strong>Forbidden Words:</strong></p>
@@ -104,6 +106,9 @@ onUnmounted(() => {
         <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
       </ul>
     </div>
+  </div>
+  <div>
+    <p>+ {{ currentPlayerScore + t('activity.game.points')}}</p>
     <button @click="incrementScore()">
       <img src="/icons/plus-1.svg" alt="Increment points" />
     </button>
