@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
-import { useGameStore } from '@/stores/activity/settingsStore';
+import { useGameStore } from '@/stores/activity/activitySettingsStore';
 import { useI18n } from 'vue-i18n';
 import { isPiniaComplete } from '@/helpers/Activity/configHelper';
 

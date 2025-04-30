@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Games/Activity/5 - Translate Word List with DeepLAPI.md",
+                "file": "Games/Activity/5 - Translate Word List with DeepL API.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5 - Translate Word List with DeepLAPI"
+              "title": "5 - Translate Word List with DeepL API"
             }
           }
         ],
@@ -214,7 +214,7 @@
   "active": "617a3c18114a73c9",
   "lastOpenFiles": [
     "Games/Activity/4 - i18n.md",
-    "Games/Activity/5 - Translate Word List with DeepLAPI.md",
+    "Games/Activity/5 - Translate Word List with DeepL API.md",
     "Games/Activity/3 - Pinia State Management.md",
     "Games/Activity/2 - Offline Data Store.md",
     "Setup Project.md",

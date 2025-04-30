@@ -7,6 +7,8 @@ import ActivityConfigDe from "./locales/de/games/activity/ActivityConfig.ts";
 import ActivityBreakEn from "./locales/en/games/activity/ActivityBreak.ts";
 import ActivityBreakDe from "./locales/de/games/activity/ActivityBreak.ts";
 
+const savedLocale = localStorage.getItem('language') || 'en';
+
 const messages = {
     en: {
         home: homeEn,
@@ -26,7 +28,7 @@ const messages = {
 
 const i18n = createI18n({
     legacy: false,
-    locale: navigator.language,
+    locale: savedLocale,
     fallbackLocale: "en",
     messages,
 });
