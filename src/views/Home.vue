@@ -1,11 +1,16 @@
 <script setup lang="ts">
-import { usePushRouter } from '../helpers/routerHelper'
+import { usePushRouter } from '@/helpers/routerHelper'
+import { useI18n } from 'vue-i18n';
+import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
+
+const { t } = useI18n();
 
 const pushRouter = usePushRouter();
 </script>
 
 <template>
   <button @click="pushRouter('/activity/game-config')">
-    Go to Activity Config
+    {{  t('home.activities-redirect') }}
   </button>
+  <LanguageSwitcher />
 </template>
