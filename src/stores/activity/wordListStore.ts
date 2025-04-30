@@ -4,7 +4,7 @@ import { openDB } from 'idb'
 const DB_NAME = 'name-of-the-game-db'
 const STORE_NAME = 'activity-word-list-store'
 
-type WordEntry = {
+export type WordEntry = {
     word: string
     difficulty: string
     forbidden: string[]
@@ -71,6 +71,7 @@ export const useWordListStore = defineStore('wordList', {
           
             const randomIndex = Math.floor(Math.random() * list.length)
             return list[randomIndex]
-        }          
+        },
+        }       
     }
-})
+)

@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from 'vue';
-import { loadWordList } from '@/helpers/Activity/wordListHelper';
+import { ref, watch, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper'
 import { useGameStore } from '@/stores/activity/settingsStore';
+import { getRandomWord } from '@/helpers/Activity/wordListHelper';
+import { useWordListStore } from '@/stores/activity/wordListStore';
 
 const pushRouter = usePushRouter();
 
@@ -11,6 +12,7 @@ const gameStore = useGameStore();
 
 const currentPlayerName = ref('');
 const currentPlayerScore = ref(0);
+const currentWord = ref('');
 
 currentPlayerName.value = gameStore.getCurrentPlayer?.name || 'Unknown Player';
 currentPlayerScore.value = gameStore.getScore(gameStore.getCurrentPlayer?.id) || 0;
@@ -24,7 +26,7 @@ watch(
   { deep: true }
 );
 
-function continueGame () {
+function continueGame() {
   const state = gameStore.nextPlayer();
   if (state) {
     pushRouter('/activity/done')
@@ -33,31 +35,29 @@ function continueGame () {
   }
 }
 
-// Create a reactive variable to hold the word list
-// const wordList = ref<string[]>([]);
-// const isPWA =ref(false);
+onMounted(async () => {
+  const wordListStore = useWordListStore();
+  await wordListStore.init();
 
-// onMounted(() => {
-//   loadWordList().then((result) => {
-//     if (result) {
-//       wordList.value = result;
-//     }
-//   });
-//   isPWA.value = window.matchMedia('(display-mode: standalone)').matches || ((navigator as any).standalone == true);
-// });
+  const wordEntry = getRandomWord();
+
+  if (wordEntry && typeof wordEntry !== 'string') {
+    currentWord.value = wordEntry.word;
+  } else {
+    currentWord.value = wordEntry;
+  }
+});
+
+
 </script>
 
 <template>
   <h1>Yay! In Game view 🥳</h1>
   <div>
-    <!-- <h2>Word List</h2>
-    <p>Is PWA: {{ isPWA.toString() }}</p>
-    <ul>
-      <li v-for="(word, index) in wordList" :key="index">{{ word }}</li>
-    </ul> -->
     <h2>Current Stats</h2>
     <p>Current Player: {{ currentPlayerName }}</p>
     <p>Current Points: {{ currentPlayerScore }}</p>
+    <p>Current Word: {{ currentWord }}</p>
     <button @click="gameStore.incrementScore(gameStore.getCurrentPlayer?.id)">Increment points</button>
     <button @click="continueGame">Continue</button>
   </div>
