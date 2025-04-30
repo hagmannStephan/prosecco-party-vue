@@ -9,12 +9,13 @@ const pushRouter = usePushRouter();
 
 // Initialize the store
 const gameStore = useGameStore();
-
 const currentPlayerName = ref('');
 const currentPlayerScore = ref(0);
 const currentWord = ref('');
 const timeRemaining = ref(0);
 const timerInterval = ref<number | null>(null);
+const forbiddenWords = ref<string[]>([]);
+const gameMode = ref('');
 
 currentPlayerName.value = gameStore.getCurrentPlayer?.name || 'Unknown Player';
 currentPlayerScore.value = gameStore.getScore(gameStore.getCurrentPlayer?.id) || 0;
@@ -27,18 +28,22 @@ watch(
   },
   { deep: true }
 );
-
 function getNewWord() {
   const wordEntry = getRandomWord();
-
   if (wordEntry && typeof wordEntry !== 'string') {
     currentWord.value = wordEntry.word;
+   
+    // Handle forbidden words for describe mode
+    if (gameMode.value === 'describe' && wordEntry.forbidden) {
+      forbiddenWords.value = wordEntry.forbidden;
+    } else {
+      forbiddenWords.value = [];
+    }
   } else {
     currentWord.value = wordEntry;
+    forbiddenWords.value = [];
   }
-  // TODO: Display similar words if mode is describe
 }
-
 function continueGame() {
   const state = gameStore.nextPlayer();
   if (state) {
@@ -47,21 +52,19 @@ function continueGame() {
     pushRouter('/activity/time-up')
   }
 }
-
 function incrementScore() {
   gameStore.incrementScore(gameStore.getCurrentPlayer?.id);
   getNewWord();
 }
-
 function startTimer() {
   // Get the configured time from the store
   const timePerRound = gameStore.getTimePerRound;
   timeRemaining.value = timePerRound;
-  
+ 
   // Update timer every second
     timerInterval.value = setInterval(() => {
     timeRemaining.value--;
-    
+   
     // When time is up, proceed to next player
     if (timeRemaining.value <= 0) {
       if (timerInterval.value !== null) {
@@ -71,30 +74,36 @@ function startTimer() {
     }
   }, 1000);
 }
-
 onMounted(async () => {
   const wordListStore = useWordListStore();
   await wordListStore.init();
 
+  gameMode.value = gameStore.getCurrentGameMode?.name || 'Something went wrong 😐';
+  
   getNewWord();
-  startTimer(); 
+  startTimer();
 });
-
 onUnmounted(() => {
-  if (timerInterval.value) {
+  if (timerInterval.value !== null) {
     clearInterval(timerInterval.value);
   }
 });
 </script>
-
 <template>
   <h1>Yay! In Game view 🥳</h1>
   <div>
     <h2>Current Stats</h2>
     <p>Time Remaining: {{ timeRemaining }} seconds</p>
+    <p>Game Mode: {{ gameMode }}</p>
     <p>Current Player: {{ currentPlayerName }}</p>
     <p>Current Points: {{ currentPlayerScore }}</p>
     <p>Current Word: {{ currentWord }}</p>
+    <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
+      <p><strong>Forbidden Words:</strong></p>
+      <ul>
+        <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
+      </ul>
+    </div>
     <button @click="incrementScore()">
       <img src="/icons/plus-1.svg" alt="Increment points" />
     </button>

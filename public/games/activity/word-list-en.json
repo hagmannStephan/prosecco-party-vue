@@ -1,5 +1,6 @@
 [
     {"word": "twerking", "difficulty": "easy", "forbidden": ["dance", "butt", "move", "shake", "hip"]},
+    {"word": "cocaine","difficulty": "easy", "forbidden": ["drugs", "white", "powder", "addict", "snow"] },
     {"word": "tandem", "difficulty": "medium", "forbidden": ["bike", "together", "two", "ride", "pedal"]},
     {"word": "screaming monkey", "difficulty": "hard", "forbidden": ["loud", "animal", "banana", "tree", "wild"]},
     {"word": "robot", "difficulty": "easy", "forbidden": ["machine", "metal", "AI", "program", "future"]},

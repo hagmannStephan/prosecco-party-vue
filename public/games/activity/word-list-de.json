@@ -11,6 +11,17 @@
         ]
     },
     {
+        "word": "Kokain",
+        "difficulty": "easy",
+        "forbidden": [
+            "Drogen",
+            "weiss",
+            "Pulver",
+            "süchtig",
+            "Schnee"
+        ]
+    },
+    {
         "word": "Tandem",
         "difficulty": "medium",
         "forbidden": [

@@ -61,6 +61,8 @@ const startGame = () => {
     currentPlayer: 0,
   });
 
+  gameStore.init();
+
   // Navigate to the game
   pushRouter('/activity/break');
 };
@@ -139,4 +141,6 @@ function getPlaceholder(id: number) {
     </button>
   </div>
   <!-- TODO: Add option to modify word list if PWA -->
+  <!-- TODO: Add option to add own game modes -->
+  <!-- TODO: Add posibility to select / unselect certain game modes -->
 </template>

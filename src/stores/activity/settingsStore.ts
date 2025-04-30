@@ -53,11 +53,16 @@ export const useGameStore = defineStore('game', {
         player.score += 1;
       }
     },
+    init() {
+      const gameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
+      this.gameSettings.currentGameMode = gameMode;
+    },
     nextPlayer() {
       const totalPlayers = this.gameSettings.players.length;
       // Wrap around to the first player if we reach the end of the list
       this.gameSettings.currentPlayer = (this.gameSettings.currentPlayer + 1) % totalPlayers;
-      this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
+      const gameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
+      this.gameSettings.currentGameMode = gameMode;
 
       if (this.gameSettings.currentPlayer === 0) {
         this.gameSettings.currentRound += 1;
