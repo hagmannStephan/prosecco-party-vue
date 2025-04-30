@@ -9,7 +9,6 @@ const pushRouter = usePushRouter();
 </script>
 
 <template>
-  <!-- TODO: Add option to switch between English and German -->
   <button @click="pushRouter('/activity/game-config')">
     {{  t('home.activities-redirect') }}
   </button>

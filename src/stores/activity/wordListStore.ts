@@ -60,10 +60,17 @@ export const useWordListStore = defineStore('wordList', {
             this.isInitialized = true
         },
 
-        getRandomWord(language: 'de' | 'en'): WordEntry | null {
-            const list = this.wordLists[language]
+        getRandomWord(language: 'de' | 'en', difficulties?: string[]): WordEntry | null {
+            let list = this.wordLists[language]
+          
+            if (difficulties && difficulties.length > 0) {
+              list = list.filter(entry => difficulties.includes(entry.difficulty))
+            }
+          
             if (list.length === 0) return null
-            return list[Math.floor(Math.random() * list.length)]
-        }
+          
+            const randomIndex = Math.floor(Math.random() * list.length)
+            return list[randomIndex]
+        }          
     }
 })
