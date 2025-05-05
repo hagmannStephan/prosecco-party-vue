@@ -1,5 +1,15 @@
-# Vue 3 + TypeScript + Vite
+# Name of the Game - Party Games App
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## About the App
+**Our goal is:** provide a website to users that allows them to play party games for free with our offline compatible and internationalized PWA!
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+**However:** Because this is a spare-time project of ours, there isn't a guarantee for its availability, quality, or accessibility, even though we try to pay attention to it.
+
+## About us
+This is a project created for educational purposes by:
+- Joan (known as [JDL](https://open.spotify.com/artist/5NUcHZ9WWGFL1slBTeWWpx?si=aX2LGYXTRryYuzFu87Gu0Q), responsible for sound design)
+- Liam (responsible for design)
+- Stephan (responsible for hosting and functionality)
+
+## Sustainability
+Our App is hosted on a CO₂-negative server from the Swiss hosting provider [Informaniak](https://www.infomaniak.com/de).
