@@ -15,3 +15,15 @@ This is a project created for educational purposes by:
 
 ## Sustainability 🌱
 Our App is hosted on a CO₂-negative server by Swiss hosting provider [Informaniak](https://www.infomaniak.com/de).
+
+
+## Data Security 🔏
+
+We respect your privacy:
+
+- We do **not** share any user data with third parties.
+- We do **not** use any trackers on our website.
+- The only data we collect is **server logs**, which may include information such as IP address, time of access, and user actions.
+- All user data is **stored locally** on your device and is **never uploaded** to any cloud service.
+
+These logs are securely stored on Swiss servers provided by [Infomaniak](https://www.infomaniak.com/de) and are **never shared**.
