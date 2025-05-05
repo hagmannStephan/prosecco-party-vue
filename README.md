@@ -27,3 +27,8 @@ We respect your privacy:
 - All user data is **stored locally** on your device and is **never uploaded** to any cloud service.
 
 These logs are securely stored on Swiss servers provided by [Infomaniak](https://www.infomaniak.com/de) and are **never shared**.
+
+## Open Source 💻
+This software is licensed under the **GNU Affero General Public License v3.0 with the Commons Clause**.
+
+We believe in open source software 🌍
