@@ -3,6 +3,12 @@ import { defineStore } from 'pinia';
 interface Player {
   id: number;
   name: string;
+}
+
+interface Group {
+  id: number;
+  name: string;
+  players: Player[];
   score: number;
 }
 
@@ -18,24 +24,24 @@ const gameModes: GameMode[] = [
 ];
 
 interface GameSettings {
-  players: Player[];
+  groups: Group[];
   rounds: number;
   timePerRound: number;
   gameModes: string[];
   currentRound: number;
-  currentPlayer: number;
+  currentPlayerIndex: number; // Index for rotating through players
   currentGameMode?: GameMode;
 }
 
 export const useGameStore = defineStore('game', {
   state: () => ({
     gameSettings: {
-      players: [],
+      groups: [],
       rounds: 0,
       timePerRound: 0,
       gameModes: [],
       currentRound: 0,
-      currentPlayer: 0,
+      currentPlayerIndex: 0,
       currentGameMode: gameModes[Math.floor(Math.random() * gameModes.length)],
     } as GameSettings,
   }),
@@ -47,10 +53,10 @@ export const useGameStore = defineStore('game', {
     clearGameSettings() {
       this.gameSettings = {} as GameSettings;
     },
-    incrementScore(playerId: number) {
-      const player = this.gameSettings.players.find(player => player.id === playerId);
-      if (player) {
-        player.score += 1;
+    incrementScore(groupId: number) {
+      const group = this.gameSettings.groups.find(group => group.id === groupId);
+      if (group) {
+        group.score += 1;
       }
     },
     init() {
@@ -58,38 +64,44 @@ export const useGameStore = defineStore('game', {
       this.gameSettings.currentGameMode = gameMode;
     },
     nextPlayer() {
-      const totalPlayers = this.gameSettings.players.length;
-      // Wrap around to the first player if we reach the end of the list
-      this.gameSettings.currentPlayer = (this.gameSettings.currentPlayer + 1) % totalPlayers;
-      const gameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
-      this.gameSettings.currentGameMode = gameMode;
+      const groups = this.gameSettings.groups;
+      const maxPlayersInAnyGroup = Math.max(...groups.map(g => g.players.length));
+      let index = this.gameSettings.currentPlayerIndex + 1;
 
-      if (this.gameSettings.currentPlayer === 0) {
+      // Increment round
+      if (index >= maxPlayersInAnyGroup) {
+        index = 0;
         this.gameSettings.currentRound += 1;
       }
 
+      this.gameSettings.currentPlayerIndex = index;
+
+      // Change the game mode
+      this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
+
       if (this.gameSettings.currentRound >= this.gameSettings.rounds) {
-        return true; // Game is over
+        return true; // Game over
       }
 
       return false; // Game continues
-  },
-  getScore(playerId: number) {
-      const player = this.gameSettings.players.find(player => player.id === playerId);
-      return player ? player.score : 0;
-  },
-  getLeaderboard() {
-      return this.gameSettings.players.sort((a, b) => b.score - a.score).map(player => {
-        return {
-          name: player.name,
-          score: player.score,
-        };
-      });
+    },
+    getScore(groupId: number) {
+      const group = this.gameSettings.groups.find(group => group.id === groupId);
+      return group ? group.score : 0;
+    },
+    getLeaderboard() {
+      return this.gameSettings.groups
+        .slice()
+        .sort((a, b) => b.score - a.score)
+        .map(group => ({
+          name: group.name,
+          score: group.score,
+        }));
     }
   },
   getters: {
-    getPlayers(state) {
-      return state.gameSettings.players;
+    getGroups(state) {
+      return state.gameSettings.groups;
     },
     getRounds(state) {
       return state.gameSettings.rounds;
@@ -104,7 +116,16 @@ export const useGameStore = defineStore('game', {
       return state.gameSettings.currentRound;
     },
     getCurrentPlayer(state) {
-      return state.gameSettings.players[state.gameSettings.currentPlayer];
+      const index = state.gameSettings.currentPlayerIndex;
+      for (const group of state.gameSettings.groups) {
+        if (index < group.players.length) {
+          return {
+            player: group.players[index],
+            groupId: group.id,
+          };
+        }
+      }
+      return null;
     },
     getCurrentGameMode(state) {
       return state.gameSettings.currentGameMode;
