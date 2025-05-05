@@ -22,26 +22,6 @@ export default defineConfig({
         'orientation': 'portrait',
         'start_url': '/',
         // TODO: Add icons
-      },
-      workbox: {
-        // Use the default Workbox options for caching and offline support
-        globPatterns: [
-          // Your app's main assets
-          'index.html',
-          'favicon.ico',
-          'manifest.webmanifest',
-          
-          // Your specific static files
-          'icons/plus-1.svg',
-          'icons/refresh.svg',
-          'font/Noto_Sans/NotoSans-SemiBold.ttf',
-          
-          // JavaScript and CSS (including your style.css which gets processed)
-          '**/*.js',
-          '**/*.css'
-        ],
-        // Ensure navigations work offline
-        navigateFallback: 'index.html'
       }
     })
   ],
