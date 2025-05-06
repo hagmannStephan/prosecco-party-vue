@@ -2,9 +2,6 @@
 .vscode/
 .devcontainer/
 
-# Ignore documentation folder
-doc-name-of-the-game/
-
 # Ignore dependencies
 node_modules/
 

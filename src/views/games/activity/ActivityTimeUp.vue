@@ -5,20 +5,34 @@ import { useGameStore } from '@/stores/activity/settingsStore';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-
 const pushRouter = usePushRouter();
 
 // Initialize the store
 const gameStore = useGameStore();
+const currentPlayer = ref<{ player: { id: number, name: string }, groupId: number } | null>(null);
 const currentPlayerName = ref('');
+const currentGroupName = ref('');
 
 onMounted(() => {
-    currentPlayerName.value = gameStore.getCurrentPlayer?.name || 'Unknown Player';
+    // Initialize player and group data
+    currentPlayer.value = gameStore.getCurrentPlayer;
+    if (currentPlayer.value) {
+        currentPlayerName.value = currentPlayer.value.player.name;
+        
+        // Get the current group name
+        const group = gameStore.getGroups.find(g => g.id === currentPlayer.value?.groupId);
+        currentGroupName.value = group ? group.name : 'Unknown Team';
+    } else {
+        currentPlayerName.value = 'Unknown Player';
+        currentGroupName.value = 'Unknown Team';
+    }
 });
 </script>
+
 <template>
     <h1>{{ t('activity.timeUp.title') }}</h1>
     <p>⌛</p>
-    <p>{{ t('activity.timeUp.message.part1') }} <b>{{ currentPlayerName }}</b> {{ t('activity.timeUp.message.part2') }}</p>
+    <p>{{ t('activity.timeUp.message') }} <b>{{ currentPlayerName }}</b></p>
+    <p>{{ t('activity.timeUp.team') }}: <b>{{ currentGroupName }}</b></p>
     <button @click="pushRouter('/activity/break')">{{ t('activity.timeUp.button') }}</button>
 </template>

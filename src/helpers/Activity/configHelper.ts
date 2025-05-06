@@ -2,12 +2,15 @@ import { useGameStore } from '@/stores/activity/settingsStore';
 
 export function isPiniaComplete(gS: ReturnType<typeof useGameStore>) {
    if (
-        !gS.getPlayers.length ||
+        !gS.getGroups ||
+        !gS.getGroups.length ||
+        gS.getGroups.some(group => !group.players || !group.players.length) || // Check each group has players
         gS.getRounds === undefined ||
         !gS.getTimePerRound ||
         !gS.getGameModes.length ||
         gS.getCurrentRound === undefined ||
-        gS.getCurrentPlayer === undefined
+        gS.getCurrentPlayer === undefined ||
+        gS.getCurrentGameMode === undefined
     ) {
         return false; // Pinia is not complete
     } else {

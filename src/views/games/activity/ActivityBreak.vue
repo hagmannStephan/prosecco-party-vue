@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/activity/settingsStore';
 import { useI18n } from 'vue-i18n';
@@ -9,15 +9,35 @@ const { t } = useI18n();
 const pushRouter = usePushRouter();
 const gS = useGameStore();
 
+const currentPlayer = ref<{ player: { id: number, name: string }, groupId: number } | null>(null);
+const currentPlayerName = ref('');
+const currentGroupName = ref('');
+
 // Redirect to the game configuration page if the game settings are not complete
 onMounted(() => {
     if (!isPiniaComplete(gS)) {
         pushRouter('/activity/config');
+        return;
+    }
+    
+    // Initialize player and group data
+    currentPlayer.value = gS.getCurrentPlayer;
+    if (currentPlayer.value) {
+        currentPlayerName.value = currentPlayer.value.player.name;
+        
+        // Get the current group name
+        const group = gS.getGroups.find(g => g.id === currentPlayer.value?.groupId);
+        currentGroupName.value = group ? group.name : 'Unknown Team';
+    } else {
+        currentPlayerName.value = 'Unknown Player';
+        currentGroupName.value = 'Unknown Team';
     }
 });
 </script>
+
 <template>
-    <h1>{{ gS.getCurrentPlayer.name + t('activity.break.title') }}</h1>
+    <h1>{{ currentPlayerName + t('activity.break.title') }}</h1>
+    <h2>{{ t('activity.break.team') + ': ' + currentGroupName }}</h2>
     <h2>{{ t('activity.break.mode.title') }}</h2>
     <p>{{ t(`activity.break.mode.${gS.getCurrentGameMode?.name || 'pantomime'}`) }}</p>
     <button @click="pushRouter('/activity')">{{ t('activity.break.button.start') }}</button>

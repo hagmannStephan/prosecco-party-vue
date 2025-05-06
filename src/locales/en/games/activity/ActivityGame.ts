@@ -12,4 +12,5 @@ export default {
         "reload": "New word",
     },
     "forbidden": "Forbidden words",
+    "team": "Team"
 }

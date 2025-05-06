@@ -6,6 +6,7 @@ export default {
         "describe": "🗣️ Beschreiben",
         "draw": "🖌️ Zeichnen",
     },
+    "team": "Team",
     "button": {
         "start": "Runde starten!",
     }
