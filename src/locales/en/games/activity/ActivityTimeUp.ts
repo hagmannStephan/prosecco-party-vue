@@ -4,5 +4,6 @@ export default {
         "part1": "Pass the phone to ",
         "part2": " the next person"
     },
-    "button": "Next!"
+    "button": "Next!",
+    "team": "Team"
 }

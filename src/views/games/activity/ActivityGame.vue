@@ -128,7 +128,7 @@ onUnmounted(() => {
   <div>
     <h1>{{ currentPlayerName + t('activity.game.title') }}</h1>
     <h2>{{ t('activity.game.team') + ': ' + currentGroupName }}</h2>
-    <p>{{ t(`activity.game.mode.${gameMode}`) }}</p>
+    <p>{{ t(`activity.game.mode.${gameMode}`), 'Unknown Mode' }}</p>
     <p>⌛ {{ timeRemaining  + t('activity.game.seconds')}}</p>
   </div>
   <div>
@@ -150,22 +150,3 @@ onUnmounted(() => {
     </button>
   </div>
 </template>
-
-<style scoped>
-.forbidden-words {
-  margin-top: 1rem;
-  padding: 0.5rem;
-  background-color: rgba(255, 0, 0, 0.1);
-  border-radius: 8px;
-}
-
-.forbidden-words h3 {
-  color: #c00;
-  margin: 0 0 0.5rem 0;
-}
-
-.forbidden-words ul {
-  margin: 0;
-  padding-left: 1.5rem;
-}
-</style>

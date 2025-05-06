@@ -4,5 +4,6 @@ export default {
         "part1": "Handy an ",
         "part2": " weitergeben"
     },
-    "button": "Weiter!"
+    "button": "Weiter!",
+    "team": "Team"
 }
