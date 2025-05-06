@@ -96,6 +96,7 @@ const startGame = () => {
     gameModes: selectedGameModes.value,
     currentRound: 0,
     currentPlayerIndex: 0,
+    currentGroupIndex: 0
   });
 
   gameStore.init();

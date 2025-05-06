@@ -30,6 +30,7 @@ interface GameSettings {
   gameModes: string[];
   currentRound: number;
   currentPlayerIndex: number; // Index for rotating through players
+  currentGroupIndex: number; // New property to track which group we're on
   currentGameMode?: GameMode;
 }
 
@@ -42,13 +43,17 @@ export const useGameStore = defineStore('game', {
       gameModes: [],
       currentRound: 0,
       currentPlayerIndex: 0,
+      currentGroupIndex: 0, // Initialize group index
       currentGameMode: gameModes[Math.floor(Math.random() * gameModes.length)],
     } as GameSettings,
   }),
   persist: true,
   actions: {
     setGameSettings(settings: GameSettings) {
-      this.gameSettings = settings;
+      this.gameSettings = {
+        ...settings,
+        currentGroupIndex: 0, // Make sure to initialize this
+      };
     },
     clearGameSettings() {
       this.gameSettings = {} as GameSettings;
@@ -62,27 +67,37 @@ export const useGameStore = defineStore('game', {
     init() {
       const gameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
       this.gameSettings.currentGameMode = gameMode;
+      this.gameSettings.currentPlayerIndex = 0;
+      this.gameSettings.currentGroupIndex = 0; // Initialize group index
     },
     nextPlayer() {
-      const groups = this.gameSettings.groups;
-      const maxPlayersInAnyGroup = Math.max(...groups.map(g => g.players.length));
-      let index = this.gameSettings.currentPlayerIndex + 1;
-
-      // Increment round
-      if (index >= maxPlayersInAnyGroup) {
-        index = 0;
-        this.gameSettings.currentRound += 1;
+      // Move to next group
+      this.gameSettings.currentGroupIndex++;
+      
+      // If we've gone through all groups
+      if (this.gameSettings.currentGroupIndex >= this.gameSettings.groups.length) {
+        // Reset to first group
+        this.gameSettings.currentGroupIndex = 0;
+        
+        // Move to next player index
+        this.gameSettings.currentPlayerIndex++;
+        
+        // If we've gone through all players in the groups
+        const maxPlayersInAnyGroup = Math.max(...this.gameSettings.groups.map(g => g.players.length));
+        if (this.gameSettings.currentPlayerIndex >= maxPlayersInAnyGroup) {
+          // Reset player index and increment round
+          this.gameSettings.currentPlayerIndex = 0;
+          this.gameSettings.currentRound++;
+        }
       }
-
-      this.gameSettings.currentPlayerIndex = index;
-
+      
       // Change the game mode
       this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
-
+      
+      // Check if game is over
       if (this.gameSettings.currentRound >= this.gameSettings.rounds) {
         return true; // Game over
       }
-
       return false; // Game continues
     },
     getScore(groupId: number) {
@@ -116,16 +131,30 @@ export const useGameStore = defineStore('game', {
       return state.gameSettings.currentRound;
     },
     getCurrentPlayer(state) {
-      const index = state.gameSettings.currentPlayerIndex;
-      for (const group of state.gameSettings.groups) {
-        if (index < group.players.length) {
-          return {
-            player: group.players[index],
-            groupId: group.id,
-          };
-        }
+      const playerIndex = state.gameSettings.currentPlayerIndex;
+      const groupIndex = state.gameSettings.currentGroupIndex;
+      
+      // Make sure we have groups
+      if (!state.gameSettings.groups || state.gameSettings.groups.length === 0) {
+        return null;
       }
-      return null;
+      
+      // Make sure the group index is valid
+      if (groupIndex < 0 || groupIndex >= state.gameSettings.groups.length) {
+        return null;
+      }
+      
+      const currentGroup = state.gameSettings.groups[groupIndex];
+      
+      // Make sure the player index is valid for this group
+      if (playerIndex < 0 || playerIndex >= currentGroup.players.length) {
+        return null;
+      }
+      
+      return {
+        player: currentGroup.players[playerIndex],
+        groupId: currentGroup.id
+      };
     },
     getCurrentGameMode(state) {
       return state.gameSettings.currentGameMode;
