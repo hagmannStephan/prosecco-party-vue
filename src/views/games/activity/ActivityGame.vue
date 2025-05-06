@@ -143,9 +143,11 @@ onUnmounted(() => {
   <div>
     <p>+ {{ currentGroupScore + t('activity.game.points')}}</p>
     <button @click="incrementScore()">
+      <!-- Memeber of current team guessed it (+1 for Team) -->
       <img src="/icons/plus-1.svg" :alt="t('activity.game.image-alt.plus-one')" />
     </button>
     <button @click="getNewWord">
+      <!-- Member of opposing team guessed it or player wants to skip it (Zero points) -->
       <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
     </button>
   </div>
