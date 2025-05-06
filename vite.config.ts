@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
@@ -38,5 +38,9 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4173,
     allowedHosts: ['name-of-the-game.stephanhagmann.ch']
+  },
+  test: {
+    environment: 'jsdom', // needed for DOM-like environment
+    globals: true,        // optional, allows `describe/test/expect` without imports
   },
 })
