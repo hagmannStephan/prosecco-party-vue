@@ -1,9 +1,6 @@
 export default {
     "title": "Zeit ist um!",
-    "message": {
-        "part1": "Handy an ",
-        "part2": " weitergeben"
-    },
+    "message": "Handy weitergeben an ",
     "button": "Weiter!",
     "team": "Team"
 }

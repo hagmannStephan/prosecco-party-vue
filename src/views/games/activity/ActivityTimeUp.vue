@@ -32,7 +32,7 @@ onMounted(() => {
 <template>
     <h1>{{ t('activity.timeUp.title') }}</h1>
     <p>⌛</p>
-    <p>{{ t('activity.timeUp.message.part1') }} <b>{{ currentPlayerName }}</b> {{ t('activity.timeUp.message.part2') }}</p>
+    <p>{{ t('activity.timeUp.message') }} <b>{{ currentPlayerName }}</b></p>
     <p>{{ t('activity.timeUp.team') }}: <b>{{ currentGroupName }}</b></p>
     <button @click="pushRouter('/activity/break')">{{ t('activity.timeUp.button') }}</button>
 </template>
