@@ -106,50 +106,48 @@ export const useGameStore = defineStore('game', {
     },
     nextPlayer() {
       const oldGroup = this.getGroupById(this.gameSettings.currentGroupIndex || 0);
-
-      if (oldGroup){
+    
+      if (oldGroup) {
         // Switch to the next player in the group
         oldGroup.currentPlayerIndex = (oldGroup.currentPlayerIndex || 0) + 1;
-
+    
         // Check if the currentPlayerIndex is out of bounds
         if (oldGroup.players.length <= (oldGroup.currentPlayerIndex || 0)) {
+          // Reset the current player index for this group
+          oldGroup.currentPlayerIndex = 0;
+          
           // Check if this is the maxPlayerGroup
           if (oldGroup.id === this.gameSettings.maxPlayersGroupId) {
             // Increment round
             this.gameSettings.currentRound = (this.gameSettings.currentRound || 0) + 1;
-            console.log('Round incremented to:', this.gameSettings.currentRound);
-            console.log('Rounds:', this.gameSettings.rounds);
-            if (this.gameSettings.currentRound > this.gameSettings.rounds) {
-              console.log('Game over!');
+            
+            // Check if we've completed all rounds
+            if (this.gameSettings.currentRound >= this.gameSettings.rounds) {
               return true; // Game over
-
             }
-          } else {
-            oldGroup.currentPlayerIndex = 0; // Reset to first player
           }
         }
       }
-
+    
       // Switch to the next group
       this.gameSettings.currentGroupIndex = (this.gameSettings.currentGroupIndex || 0) + 1;
-
+    
       // Check if the currentGroupIndex is out of bounds
       if (this.gameSettings.groups.length <= (this.gameSettings.currentGroupIndex || 0)) {
         this.gameSettings.currentGroupIndex = 0;
-        this.gameSettings.currentRound = (this.gameSettings.currentRound || 0) + 1;
       }
-
+    
       const group = this.getGroupById(this.gameSettings.currentGroupIndex || 0);
-
+    
       if (group) {
-        if (group?.currentPlayerIndex == null ){
+        if (group?.currentPlayerIndex == null) {
           group.currentPlayerIndex = 0;
         }
-
+    
         // Change the game mode
         this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
       }
-
+    
       return false; // Continue game
     },
     getLeaderboard() {

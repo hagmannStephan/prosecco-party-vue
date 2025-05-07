@@ -83,7 +83,7 @@ describe('Activity Settings Store', () => {
             store.nextPlayer()
             store.nextPlayer()
             expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
-            expect(store.getCurrentRound).toBe(1)
+            expect(store.getCurrentRound).toBe(0)
             expect(store.getGroupById(0)?.score).toBe(1)
         })
 
@@ -133,12 +133,14 @@ describe('Activity Settings Store', () => {
 
         it('finish game', () => {
             let gameOver = false
-            // Need 12 nextPlayer per round
-            console.log('Rounds on start: ', store.getCurrentRound)
-            for (let i = 0; i < (2 + (4 * 12)); i++) {
+
+            for (let i = 0; i < (1 + (3 * 12)); i++) {
                 gameOver = store.nextPlayer()
             }
             expect(gameOver).toBe(false);
+
+            gameOver = store.nextPlayer()
+            expect(gameOver).toBe(true);
         })
     })
 })
