@@ -117,7 +117,10 @@ export const useGameStore = defineStore('game', {
           if (oldGroup.id === this.gameSettings.maxPlayersGroupId) {
             // Increment round
             this.gameSettings.currentRound = (this.gameSettings.currentRound || 0) + 1;
-            if (this.gameSettings.currentRound >= this.gameSettings.rounds) {
+            console.log('Round incremented to:', this.gameSettings.currentRound);
+            console.log('Rounds:', this.gameSettings.rounds);
+            if (this.gameSettings.currentRound > this.gameSettings.rounds) {
+              console.log('Game over!');
               return true; // Game over
 
             }
@@ -180,7 +183,6 @@ export const useGameStore = defineStore('game', {
     },
     getCurrentPlayer(state) {
       const group = state.gameSettings.groups[state.gameSettings.currentGroupIndex || 0];
-      console.log('Current group:', group);
       if (group) {
         return group.players[group.currentPlayerIndex || 0];
       }
