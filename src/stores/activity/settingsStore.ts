@@ -106,6 +106,7 @@ export const useGameStore = defineStore('game', {
     },
     nextPlayer() {
       const oldGroup = this.getGroupById(this.gameSettings.currentGroupIndex || 0);
+
       if (oldGroup){
         // Switch to the next player in the group
         oldGroup.currentPlayerIndex = (oldGroup.currentPlayerIndex || 0) + 1;
@@ -120,6 +121,8 @@ export const useGameStore = defineStore('game', {
               return true; // Game over
 
             }
+          } else {
+            oldGroup.currentPlayerIndex = 0; // Reset to first player
           }
         }
       }
@@ -128,8 +131,9 @@ export const useGameStore = defineStore('game', {
       this.gameSettings.currentGroupIndex = (this.gameSettings.currentGroupIndex || 0) + 1;
 
       // Check if the currentGroupIndex is out of bounds
-      if (this.gameSettings.groups.length < (this.gameSettings.currentGroupIndex || 0)) {
+      if (this.gameSettings.groups.length <= (this.gameSettings.currentGroupIndex || 0)) {
         this.gameSettings.currentGroupIndex = 0;
+        this.gameSettings.currentRound = (this.gameSettings.currentRound || 0) + 1;
       }
 
       const group = this.getGroupById(this.gameSettings.currentGroupIndex || 0);
@@ -176,6 +180,7 @@ export const useGameStore = defineStore('game', {
     },
     getCurrentPlayer(state) {
       const group = state.gameSettings.groups[state.gameSettings.currentGroupIndex || 0];
+      console.log('Current group:', group);
       if (group) {
         return group.players[group.currentPlayerIndex || 0];
       }

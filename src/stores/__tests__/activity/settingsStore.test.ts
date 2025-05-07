@@ -61,10 +61,8 @@ describe('Activity Settings Store', () => {
     describe(('simulate game'), () => {
         let store: ReturnType<typeof useGameStore>
 
-        beforeEach(() => {
-            setActivePinia(createPinia())
-            store = createTestStore()
-          })
+        setActivePinia(createPinia())
+        store = createTestStore()
 
         it('first player turn', () => {
             expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
@@ -80,16 +78,14 @@ describe('Activity Settings Store', () => {
             expect(store.getCurrentPlayer?.name).toEqual('Steffé de Chefé')
         })
 
-        // it('increment score for next player', () => {
-        //     store.incrementScore()
-        //     store.incrementScore()
-        //     expect(store.getGroups[1].score).toBe(2)
-        // })
-
-        // it('continue to third player', () => {
-        //     store.nextPlayer()
-        //     expect(store.getCurrentPlayer).toEqual({player: { id: 0, name: 'Liäm s \'' }, groupId: 0})
-        // })
+        it('switch to next round', () => {
+            store.nextPlayer()
+            store.nextPlayer()
+            store.nextPlayer()
+            expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
+            expect(store.getCurrentRound).toBe(1)
+            expect(store.getGroupById(0)?.score).toBe(1)
+        })
 
     })
 })
