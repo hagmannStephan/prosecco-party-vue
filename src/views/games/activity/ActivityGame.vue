@@ -17,7 +17,7 @@ const currentGroupName = ref('');
 const currentGroupScore = ref(0);
 const currentWord = ref('');
 const timeRemaining = ref(0);
-const timerInterval = ref<number | null>(null);
+const timerInterval = ref<ReturnType<typeof setInterval> | null>(null);
 const forbiddenWords = ref<string[]>([]);
 const gameMode = ref('');
 

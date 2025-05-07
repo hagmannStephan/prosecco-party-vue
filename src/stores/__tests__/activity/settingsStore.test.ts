@@ -6,26 +6,47 @@ function createTestStore() {
     const store = useGameStore()
     store.setGameSettings({
         groups: [
-            { id: 1, name: 'Team A', players: [{ id: 1, name: 'Alice' }], score: 0 },
-            { id: 2, name: 'Team B', players: [{ id: 2, name: 'Bob' }], score: 0 }
+            { name: 'De Ä$$', 
+                players: [
+                    { name: 'Liäm s \'' }
+                    ]
+            },
+            { name: 'ÖpisÉ', 
+                players: [
+                    { name: 'Steffé de Chefé' },
+                    { name: 'Joäü de §' },
+                    { name: 'Chef de Steff' }
+                ],
+            },
+            { name: 'SonderzeicheGang *"+&%ç()=?`', 
+                players: [
+                    { name: 'Steffla Chef' }
+                ],
+            },
+            { name: 'NPCs', 
+                players: [
+                    { name: 'Jeff' },
+                    { name: 'Deff' },
+                    { name: 'Jeff' }
+                ]
+            },
         ],
         rounds: 3,
         timePerRound: 60,
         gameModes: ['pantomime', 'draw', 'describe'],
-        currentRound: 0,
-        currentPlayerIndex: 0,
-        currentGroupIndex: 0,
-        currentGameMode: undefined
     })
     return store
 }
 
-describe('Game Store', () => {
+// Group that relates tests together (to Game Store)
+describe('Activity Settings Store', () => {
+    // Runs before each test inside the desribe block
     beforeEach(() => {
         setActivePinia(createPinia())
     })
 
-    describe('initialization', () => {
+    describe('getters', () => {
+        // Define single test case
         it('should return the correct number of rounds', () => {
             const store = createTestStore()
             expect(store.getRounds).toBe(3)
@@ -37,11 +58,39 @@ describe('Game Store', () => {
         })
     })
 
-    describe('score handling', () => {
-        it('should increment the group score', () => {
-            const store = createTestStore()
-            store.incrementScore(1)
-            expect(store.getScore(1)).toBe(1)
+    describe(('simulate game'), () => {
+        let store: ReturnType<typeof useGameStore>
+
+        beforeEach(() => {
+            setActivePinia(createPinia())
+            store = createTestStore()
+          })
+
+        it('first player turn', () => {
+            expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
         })
+
+        it('increment score', () => {
+            store.incrementScore()
+            expect(store.getGroups[0].score).toBe(1)
+        })
+
+        it('continue to second player', () => {
+            store.nextPlayer()
+            expect(store.getCurrentPlayer?.name).toEqual('Steffé de Chefé')
+        })
+
+        // it('increment score for next player', () => {
+        //     store.incrementScore()
+        //     store.incrementScore()
+        //     expect(store.getGroups[1].score).toBe(2)
+        // })
+
+        // it('continue to third player', () => {
+        //     store.nextPlayer()
+        //     expect(store.getCurrentPlayer).toEqual({player: { id: 0, name: 'Liäm s \'' }, groupId: 0})
+        // })
+
     })
 })
+
