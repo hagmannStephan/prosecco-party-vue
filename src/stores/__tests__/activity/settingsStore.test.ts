@@ -114,6 +114,7 @@ describe('Activity Settings Store', () => {
             store.nextPlayer()
             store.nextPlayer()
             expect(store.getCurrentPlayer?.name).toEqual('Chef de Steff')
+            expect(store.getCurrentGroup?.name).toEqual('ÖpisÉ')
         })
 
         it('increment score for second group', () => {
@@ -142,6 +143,16 @@ describe('Activity Settings Store', () => {
             gameOver = store.nextPlayer()
             expect(gameOver).toBe(true);
         })
+
+        it('get leaderboard', () => {
+            const leaderboard = store.getLeaderboard();
+            expect(leaderboard).toEqual([
+                { name: 'NPCs', score: 21 },
+                { name: 'SonderzeicheGang *"+&%ç()=?`', score: 8 },
+                { name: 'De Ä$$', score: 7 },
+                { name: 'ÖpisÉ', score: 3 },
+            ]);
+        });
     })
 })
 

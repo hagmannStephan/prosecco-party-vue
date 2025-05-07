@@ -195,6 +195,7 @@ function getPlayerPlaceholder(index: number) {
             :value="mode" 
             v-model="selectedGameModes"
           />
+          <!-- TODO: Adjust gamemode (not difficulty anymore) -->
           {{ t(`activity.config.difficulty.${mode}`) }}
         </label>
       </div>

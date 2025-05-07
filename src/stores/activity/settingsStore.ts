@@ -164,6 +164,9 @@ export const useGameStore = defineStore('game', {
     getGroups(state) {
       return state.gameSettings.groups;
     },
+    getCurrentGroup(state) {
+      return state.gameSettings.groups[state.gameSettings.currentGroupIndex || 0];
+    },
     getGroupById: (state) => (id: number) => {
       return state.gameSettings.groups.find(group => group.id === id) || null;
     },
