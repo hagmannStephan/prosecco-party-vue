@@ -11,7 +11,7 @@ const pushRouter = usePushRouter();
 
 // Initialize the store
 const gameStore = useGameStore();
-const currentPlayer = ref<{ player: { id: number, name: string }, groupId: number } | null>(null);
+const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentPlayerName = ref('');
 const currentGroupName = ref('');
 const currentGroupScore = ref(0);
@@ -24,13 +24,13 @@ const gameMode = ref('');
 // Initialize current player and group data
 function updatePlayerData() {
   currentPlayer.value = gameStore.getCurrentPlayer;
+  let group = gameStore.getCurrentGroup;
   
   if (currentPlayer.value) {
-    currentPlayerName.value = currentPlayer.value.player.name;
-    currentGroupScore.value = gameStore.getScore(currentPlayer.value.groupId);
+    currentPlayerName.value = currentPlayer.value.name;
+    currentGroupScore.value = group?.score || 0;
     
     // Get the current group name
-    const group = gameStore.getGroups.find(g => g.id === currentPlayer.value?.groupId);
     currentGroupName.value = group ? group.name : 'Unknown Team';
   } else {
     currentPlayerName.value = 'Unknown Player';
@@ -46,8 +46,9 @@ updatePlayerData();
 watch(
   () => {
     // Return a computed value that will trigger the watcher when either the current player or score changes
+    const group = gameStore.getCurrentGroup;
     const player = gameStore.getCurrentPlayer;
-    const score = player ? gameStore.getScore(player.groupId) : 0;
+    const score = group ? group : 0;
     return { player, score };
   },
   () => {
@@ -84,7 +85,7 @@ function continueGame() {
 
 function incrementScore() {
   if (currentPlayer.value) {
-    gameStore.incrementScore(currentPlayer.value.groupId);
+    gameStore.incrementScore();
     getNewWord();
   }
 }
