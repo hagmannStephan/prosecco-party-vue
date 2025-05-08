@@ -3,7 +3,7 @@ export default {
     "mode": {
         "pantomime": "🎭 Pantomime",
         "describe": "🗣️ Describe",
-        "draw": "🖌️ Draw",
+        "draw": "🎨 Draw",
     },
     "seconds": " sec.",
     "points": " points!",

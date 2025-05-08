@@ -1,25 +1,31 @@
 import { useWordListStore, type WordEntry } from '@/stores/activity/wordListStore'
 import { useLanguageSettingsStore } from '@/stores/languageSettingsStore'
-import { useGameStore } from '@/stores/activity/settingsStore'
 
 export function getRandomWord(): WordEntry | string {
     const wordListStore = useWordListStore()
     const languageSettingsStore = useLanguageSettingsStore()
-    const gameStore = useGameStore()
-  
+ 
+    // Make sure store is initialized first
+    if (!wordListStore.isInitialized) {
+        console.warn('[getRandomWord] Word list store not initialized')
+        return 'Loading...'
+    }
+ 
     const language = languageSettingsStore.getLanguage()
-    const difficulties = gameStore.getGameModes
-  
+    
+    // If some case the entires should get filtered by difficulty
+    const difficulties = ["easy", "medium", "hard"]
+ 
     const wordEntry = wordListStore.getRandomWord(language, difficulties)
-  
+ 
     if (!wordEntry) {
       console.warn('[getRandomWord] No word found:', {
         language,
         difficulties,
         wordList: wordListStore.wordLists[language],
       })
-      return 'Something went wrong 🤒'
+      return 'No matching words found 🤒'
     }
-  
+ 
     return wordEntry
 }

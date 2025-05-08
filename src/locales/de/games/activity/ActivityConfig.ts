@@ -22,11 +22,11 @@ export default {
         "time": "Zeit pro Runde (Sekunden)",
         "sec": "Sekunden"
     },
-    "difficulty": {
-        "title": "Schwierigkeit",
-        "easy": "Einfach",
-        "normal": "Normal",
-        "hard": "Schwer",
+    "gameMode": {
+        "title": "Spielmodi",
+        "pantomime": "🎭 Pantomime",
+        "draw": "🎨 Zeichnen",
+        "describe": "🗣️ Beschreiben",
     },
     "error": {
         "min-players": "Es müssen mindestens 2 Spielende teilnehmen.",

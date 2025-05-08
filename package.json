@@ -8,7 +8,9 @@
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test": "vitest",
+    "test:ui": "vitest --ui"
   },
   "dependencies": {
     "pinia": "^3.0.2",
@@ -20,16 +22,20 @@
   "devDependencies": {
     "@types/node": "^22.15.2",
     "@vitejs/plugin-vue": "^5.2.3",
+    "@vitest/ui": "^3.1.3",
+    "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.7.0",
     "eruda": "^3.4.1",
     "eslint": "^9.25.1",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.5",
+    "jsdom": "^26.1.0",
     "prettier": "^3.5.3",
     "typescript": "~5.7.2",
     "vite": "^6.3.4",
     "vite-plugin-pwa": "^1.0.0",
+    "vitest": "^3.1.3",
     "vue-tsc": "^2.2.8"
   }
 }

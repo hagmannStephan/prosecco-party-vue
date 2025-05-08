@@ -10,22 +10,21 @@ const gameStore = useGameStore();
 
 // Form data
 const groups = ref([
-  { id: 1, name: t('activity.config.groups.default', { num: 1 }), players: [{ id: 1, name: '' }], score: 0 },
-  { id: 2, name: t('activity.config.groups.default', { num: 2 }), players: [{ id: 2, name: '' }], score: 0 }
+  { id: 0, name: t('activity.config.groups.default', { num: 1 }), players: [{ id: 0, name: '' }] },
+  { id: 1, name: t('activity.config.groups.default', { num: 2 }), players: [{ id: 0, name: '' }] }
 ]);
 const rounds = ref(3);
 const timePerRound = ref(60);
-const selectedGameModes = ref(['easy', 'normal', 'hard']);
-const gameModes = ['easy', 'normal', 'hard'];
+const selectedGameModes = ref(['pantomime', 'draw', 'describe']);
+const gameModes = ['pantomime', 'draw', 'describe'];
 
 // Add a new group
 const addGroup = () => {
-  const newId = groups.value.length > 0 ? Math.max(...groups.value.map(g => g.id)) + 1 : 1;
+  const newId = groups.value.length;
   groups.value.push({ 
     id: newId, 
-    name: t('activity.config.groups.default', { num: newId }), 
-    players: [], 
-    score: 0 
+    name: t('activity.config.groups.default', { num: newId + 1 }), 
+    players: [{ id: 0, name: '' }]
   });
 };
 
@@ -33,6 +32,9 @@ const addGroup = () => {
 const removeGroup = (id: number) => {
   if (groups.value.length > 2) {
     groups.value = groups.value.filter(group => group.id !== id);
+    groups.value.forEach((group, index) => {
+      group.id = index;
+    });
   }
 };
 
@@ -40,8 +42,7 @@ const removeGroup = (id: number) => {
 const addPlayer = (groupId: number) => {
   const group = groups.value.find(g => g.id === groupId);
   if (group) {
-    const playersInGroup = group.players;
-    const newId = playersInGroup.length > 0 ? Math.max(...playersInGroup.map(p => p.id)) + 1 : 1;
+    const newId = group.players.length;
     group.players.push({ id: newId, name: '' });
   }
 };
@@ -51,6 +52,10 @@ const removePlayer = (groupId: number, playerId: number) => {
   const group = groups.value.find(g => g.id === groupId);
   if (group && group.players.length > 1) {
     group.players = group.players.filter(player => player.id !== playerId);
+    // Reassign IDs to ensure sequential ordering
+    group.players.forEach((player, index) => {
+      player.id = index;
+    });
   }
 };
 
@@ -88,18 +93,19 @@ const startGame = () => {
     return;
   }
 
-  // Save settings to the store
+  // Save settings to the store - match the structure used in tests
   gameStore.setGameSettings({
-    groups: groups.value,
+    groups: groups.value.map(group => ({
+      ...group,
+      score: 0,
+      currentPlayerIndex: 0
+    })),
     rounds: rounds.value,
     timePerRound: timePerRound.value,
     gameModes: selectedGameModes.value,
     currentRound: 0,
-    currentPlayerIndex: 0,
     currentGroupIndex: 0
   });
-
-  gameStore.init();
 
   // Navigate to the game
   pushRouter('/activity/break');
@@ -187,7 +193,7 @@ function getPlayerPlaceholder(index: number) {
     </div>
 
     <div class="form-section">
-      <h2>{{ t('activity.config.difficulty.title') }}</h2>
+      <h2>{{ t('activity.config.gameMode.title') }}</h2>
       <div class="game-modes">
         <label v-for="mode in gameModes" :key="mode" class="game-mode-option">
           <input 
@@ -195,7 +201,7 @@ function getPlayerPlaceholder(index: number) {
             :value="mode" 
             v-model="selectedGameModes"
           />
-          {{ t(`activity.config.difficulty.${mode}`) }}
+          {{ t(`activity.config.gameMode.${mode}`) }}
         </label>
       </div>
     </div>

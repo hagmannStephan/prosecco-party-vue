@@ -9,28 +9,32 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 const pushRouter = usePushRouter();
 
-// Initialize the store
+// Initialize the stores
 const gameStore = useGameStore();
-const currentPlayer = ref<{ player: { id: number, name: string }, groupId: number } | null>(null);
+const wordListStore = useWordListStore();
+
+// Reactive data
+const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentPlayerName = ref('');
 const currentGroupName = ref('');
 const currentGroupScore = ref(0);
-const currentWord = ref('');
+const currentWord = ref('Loading...');
 const timeRemaining = ref(0);
-const timerInterval = ref<number | null>(null);
+const timerInterval = ref<ReturnType<typeof setInterval> | null>(null);
 const forbiddenWords = ref<string[]>([]);
 const gameMode = ref('');
+const isLoading = ref(true);
 
 // Initialize current player and group data
 function updatePlayerData() {
   currentPlayer.value = gameStore.getCurrentPlayer;
+  let group = gameStore.getCurrentGroup;
   
   if (currentPlayer.value) {
-    currentPlayerName.value = currentPlayer.value.player.name;
-    currentGroupScore.value = gameStore.getScore(currentPlayer.value.groupId);
+    currentPlayerName.value = currentPlayer.value.name;
+    currentGroupScore.value = group?.score || 0;
     
     // Get the current group name
-    const group = gameStore.getGroups.find(g => g.id === currentPlayer.value?.groupId);
     currentGroupName.value = group ? group.name : 'Unknown Team';
   } else {
     currentPlayerName.value = 'Unknown Player';
@@ -46,8 +50,9 @@ updatePlayerData();
 watch(
   () => {
     // Return a computed value that will trigger the watcher when either the current player or score changes
+    const group = gameStore.getCurrentGroup;
     const player = gameStore.getCurrentPlayer;
-    const score = player ? gameStore.getScore(player.groupId) : 0;
+    const score = group ? group.score : 0;
     return { player, score };
   },
   () => {
@@ -57,6 +62,14 @@ watch(
 );
 
 function getNewWord() {
+  // Check if wordListStore is initialized
+  if (!wordListStore.isInitialized) {
+    console.warn('Word list store not yet initialized');
+    currentWord.value = 'Loading word list...';
+    forbiddenWords.value = [];
+    return;
+  }
+
   const wordEntry = getRandomWord();
   if (wordEntry && typeof wordEntry !== 'string') {
     currentWord.value = wordEntry.word;
@@ -84,7 +97,7 @@ function continueGame() {
 
 function incrementScore() {
   if (currentPlayer.value) {
-    gameStore.incrementScore(currentPlayer.value.groupId);
+    gameStore.incrementScore();
     getNewWord();
   }
 }
@@ -108,13 +121,27 @@ function startTimer() {
   }, 1000);
 }
 
-onMounted(async () => {
-  const wordListStore = useWordListStore();
-  await wordListStore.init();
-  gameMode.value = gameStore.getCurrentGameMode?.name || 'Something went wrong 😐';
- 
-  getNewWord();
-  startTimer();
+async function initGame() {
+  isLoading.value = true;
+  
+  try {
+    // Make sure the word list is initialized first
+    await wordListStore.init();
+    
+    gameMode.value = gameStore.getCurrentGameMode?.name || 'Something went wrong 😐';
+    
+    getNewWord();
+    startTimer();
+  } catch (error) {
+    console.error('Error initializing game:', error);
+    currentWord.value = 'Error loading game data';
+  } finally {
+    isLoading.value = false;
+  }
+}
+
+onMounted(() => {
+  initGame();
 });
 
 onUnmounted(() => {
@@ -125,30 +152,35 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div>
-    <h1>{{ currentPlayerName + t('activity.game.title') }}</h1>
-    <h2>{{ t('activity.game.team') + ': ' + currentGroupName }}</h2>
-    <p>{{ t(`activity.game.mode.${gameMode}`), 'Unknown Mode' }}</p>
-    <p>⌛ {{ timeRemaining  + t('activity.game.seconds')}}</p>
+  <div v-if="isLoading" class="loading">
+    <p>Loading game data...</p>
   </div>
-  <div>
-    <h2>{{ currentWord }}</h2>
-    <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
-      <h3>{{ t('activity.game.forbidden') }}</h3>
-      <ul>
-        <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
-      </ul>
+  <div v-else>
+    <div>
+      <h1>{{ currentPlayerName + t('activity.game.title') }}</h1>
+      <h2>{{ t('activity.game.team') + ': ' + currentGroupName }}</h2>
+      <p>{{ t(`activity.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
+      <p>⌛ {{ timeRemaining + t('activity.game.seconds') }}</p>
     </div>
-  </div>
-  <div>
-    <p>+ {{ currentGroupScore + t('activity.game.points')}}</p>
-    <button @click="incrementScore()">
-      <!-- Memeber of current team guessed it (+1 for Team) -->
-      <img src="/icons/plus-1.svg" :alt="t('activity.game.image-alt.plus-one')" />
-    </button>
-    <button @click="getNewWord">
-      <!-- Member of opposing team guessed it or player wants to skip it (Zero points) -->
-      <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
-    </button>
+    <div>
+      <h2>{{ currentWord }}</h2>
+      <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
+        <h3>{{ t('activity.game.forbidden') }}</h3>
+        <ul>
+          <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p>+ {{ currentGroupScore + t('activity.game.points') }}</p>
+      <button @click="incrementScore()">
+        <!-- Member of current team guessed it (+1 for Team) -->
+        <img src="/icons/plus-1.svg" :alt="t('activity.game.image-alt.plus-one')" />
+      </button>
+      <button @click="getNewWord">
+        <!-- Member of opposing team guessed it or player wants to skip it (Zero points) -->
+        <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
+      </button>
+    </div>
   </div>
 </template>

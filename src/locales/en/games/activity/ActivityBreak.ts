@@ -4,7 +4,7 @@ export default {
         "title": "Game Mode",
         "pantomime": "🎭 Pantomime",
         "describe": "🗣️ Describe",
-        "draw": "🖌️ Draw",
+        "draw": "🎨 Draw",
     },
     "team": "Team",
     "button": {

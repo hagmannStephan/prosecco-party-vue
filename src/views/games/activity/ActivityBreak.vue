@@ -9,7 +9,7 @@ const { t } = useI18n();
 const pushRouter = usePushRouter();
 const gS = useGameStore();
 
-const currentPlayer = ref<{ player: { id: number, name: string }, groupId: number } | null>(null);
+const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentPlayerName = ref('');
 const currentGroupName = ref('');
 
@@ -23,10 +23,10 @@ onMounted(() => {
     // Initialize player and group data
     currentPlayer.value = gS.getCurrentPlayer;
     if (currentPlayer.value) {
-        currentPlayerName.value = currentPlayer.value.player.name;
+        currentPlayerName.value = currentPlayer.value.name;
         
         // Get the current group name
-        const group = gS.getGroups.find(g => g.id === currentPlayer.value?.groupId);
+        const group = gS.getCurrentGroup;
         currentGroupName.value = group ? group.name : 'Unknown Team';
     } else {
         currentPlayerName.value = 'Unknown Player';
