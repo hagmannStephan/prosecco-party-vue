@@ -7,7 +7,7 @@ vi.mock('idb', () => ({
   openDB: vi.fn().mockImplementation(() => ({
     transaction: () => ({
       objectStore: () => ({
-        get: vi.fn().mockImplementation((key) => {
+        get: vi.fn().mockImplementation(() => {
             // Simulate empty DB
             return Promise.resolve(null)
         }),
