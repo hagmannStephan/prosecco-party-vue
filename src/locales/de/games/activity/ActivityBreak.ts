@@ -4,7 +4,7 @@ export default {
         "title": "Spielmodus",
         "pantomime": "🎭 Pantomime ",
         "describe": "🗣️ Beschreiben",
-        "draw": "🖌️ Zeichnen",
+        "draw": "🎨 Zeichnen",
     },
     "team": "Team",
     "button": {

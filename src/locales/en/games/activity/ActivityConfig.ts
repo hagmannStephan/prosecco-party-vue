@@ -22,11 +22,11 @@ export default {
         "time": "Time per Round (Seconds)",
         "sec": "Seconds"
     },
-    "difficulty": {
-        "title": "Difficulty",
-        "easy": "Easy",
-        "normal": "Normal",
-        "hard": "Hard",
+    "gameMode": {
+        "title": "Game Modes",
+        "pantomime": "🎭 Pantomime",
+        "draw": "🎨 Draw",
+        "describe": "🗣️ Describe",
     },
     "error": {
         "min-players": "At least 2 players must participate.",
