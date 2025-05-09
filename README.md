@@ -7,12 +7,6 @@
 
 **However:** Because this is a spare-time project of ours, there isn't a guarantee for its availability, quality, or accessibility, even though we try to pay attention to it.
 
-## About us 🚴‍♂️
-This is a project created for educational purposes by:
-- **Joan 🎸** – sound design ([JDL on Spotify](https://open.spotify.com/artist/5NUcHZ9WWGFL1slBTeWWpx))
-- **Liam 🖌️** – website design
-- **Stephan ⚙️** – website functionality and hosting
-
 ## Sustainability 🌱
 Our App is hosted on a CO₂-negative server by Swiss hosting provider [Informaniak](https://www.infomaniak.com).
 
@@ -31,3 +25,17 @@ These logs are securely stored on Swiss servers provided by [Infomaniak](https:/
 This software is licensed under the **GNU Affero General Public License v3.0 with the Commons Clause**.
 
 We believe in open source software 🌍
+
+## About us 🚴‍♂️
+This is a project created for educational purposes by:
+- **Joan 🎸** – sound design ([JDL on Spotify](https://open.spotify.com/artist/5NUcHZ9WWGFL1slBTeWWpx))
+- **Liam 🖌️** – website design
+- **Stephan ⚙️** – website functionality and hosting
+
+### Contact us
+
+You can reach out to us via email if there is an issue, you want to give us feedback, or you have something else to tell us:
+
+**contact [at] stephanhagmann [dot] ch**
+
+Feel free to write in English or German. Please keep in mind that this is a spare-time project, so responses might take a little while.
