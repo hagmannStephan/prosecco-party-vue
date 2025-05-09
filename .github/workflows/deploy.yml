@@ -2,6 +2,11 @@ name: Deploy Name of the Game Frontend
 on:
   push:
     branches: [ main ]
+
+# Adding top-level permissions for the workflow
+permissions:
+  contents: read
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -24,6 +29,9 @@ jobs:
   deploy:
     needs: test # This ensures deploy only runs if test job succeeds
     runs-on: ubuntu-latest
+    permissions:
+      # Set permissions for the deploy job
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
