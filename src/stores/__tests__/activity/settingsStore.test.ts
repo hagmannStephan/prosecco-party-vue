@@ -33,7 +33,7 @@ function createTestStore() {
         ],
         rounds: 4,
         timePerRound: 60,
-        gameModes: ['pantomime', 'draw', 'describe'],
+        gameModes: ['pantomime', 'describe'],
     })
     return store
 }
@@ -66,6 +66,7 @@ describe('Activity Settings Store', () => {
 
         it('first player turn', () => {
             expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
         })
 
         it('increment score', () => {
@@ -75,13 +76,17 @@ describe('Activity Settings Store', () => {
 
         it('continue to second player', () => {
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Steffé de Chefé')
         })
 
         it('switch to next round', () => {
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
             expect(store.getCurrentRound).toBe(0)
             expect(store.getGroupById(0)?.score).toBe(1)
@@ -96,10 +101,13 @@ describe('Activity Settings Store', () => {
 
         it('check if new players are up', () => {
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Joäü de §')
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Steffla Chef')
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Deff')
         })
 
@@ -112,7 +120,9 @@ describe('Activity Settings Store', () => {
 
         it('check if new player is up', () => {
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(store.getCurrentPlayer?.name).toEqual('Chef de Steff')
             expect(store.getCurrentGroup?.name).toEqual('ÖpisÉ')
         })
@@ -126,6 +136,7 @@ describe('Activity Settings Store', () => {
 
         it('increment score for third group', () => {
             store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             for (let i = 0; i < 8; i++) {
                 store.incrementScore()
             }
@@ -137,10 +148,12 @@ describe('Activity Settings Store', () => {
 
             for (let i = 0; i < (1 + (3 * 12)); i++) {
                 gameOver = store.nextPlayer()
+                expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             }
             expect(gameOver).toBe(false);
 
             gameOver = store.nextPlayer()
+            expect(store.getCurrentGameMode?.name).not.toEqual('draw')
             expect(gameOver).toBe(true);
         })
 
