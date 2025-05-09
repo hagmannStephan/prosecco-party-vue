@@ -18,11 +18,16 @@ interface GameMode {
   name: string;
 }
 
-const gameModes: GameMode[] = [
-  { id: 1, name: 'pantomime' },
-  { id: 2, name: 'describe' },
-  { id: 3, name: 'draw' },
-];
+// Updated game modes list to match the gameModes provided in settings
+const getAvailableGameModes = (modes: string[]): GameMode[] => {
+  const allGameModes: Record<string, GameMode> = {
+    'pantomime': { id: 1, name: 'pantomime' },
+    'describe': { id: 2, name: 'describe' },
+    'draw': { id: 3, name: 'draw' }
+  };
+
+  return modes.map(mode => allGameModes[mode]).filter(mode => mode !== undefined);
+};
 
 interface GameSettings {
   groups: Group[];
@@ -59,8 +64,15 @@ export const useGameStore = defineStore('game', {
   actions: {
     // Private method - dont use except for in `setGameSettings`
     initGameStore() {
-      const gameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
-      this.gameSettings.currentGameMode = gameMode;
+      const availableGameModes = getAvailableGameModes(this.gameSettings.gameModes);
+      
+      if (availableGameModes.length > 0) {
+        this.gameSettings.currentGameMode = availableGameModes[Math.floor(Math.random() * availableGameModes.length)];
+      } else {
+        // Fallback to pantomime if no valid game modes are provided
+        this.gameSettings.currentGameMode = { id: 1, name: 'pantomime' };
+      }
+      
       this.gameSettings.currentGroupIndex = 0;
       this.gameSettings.currentRound = 0;
 
@@ -144,8 +156,11 @@ export const useGameStore = defineStore('game', {
           group.currentPlayerIndex = 0;
         }
     
-        // Change the game mode
-        this.gameSettings.currentGameMode = gameModes[Math.floor(Math.random() * gameModes.length)];
+        // Change the game mode - use only the available game modes from settings
+        const availableGameModes = getAvailableGameModes(this.gameSettings.gameModes);
+        if (availableGameModes.length > 0) {
+          this.gameSettings.currentGameMode = availableGameModes[Math.floor(Math.random() * availableGameModes.length)];
+        }
       }
     
       return false; // Continue game
