@@ -1,350 +1,524 @@
 [
   {
     "word": "Shaving foam",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Beard", "Blade", "Face", "Airy"]
   },
   {
     "word": "Rocking horse",
+    "category": "standard",
+    "difficulty": "normal",
     "forbidden": ["Child", "Toy", "Wood", "Riding"]
   },
   {
     "word": "Marriage proposal",
+    "category": "standard",
+    "difficulty": "normal",
     "forbidden": ["Ring", "Love", "Knee", "Engagement"]
   },
   {
     "word": "Rubber boots",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Rain", "Shoes", "Puddle", "Water"]
   },
   {
     "word": "Baby",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Toddler", "Diaper", "Crying", "Infant"]
   },
   {
     "word": "Zombie",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Undead", "Brain", "Apocalypse", "Creepy"]
   },
   {
     "word": "Caveman",
+    "category": "standard",
+    "difficulty": "normal",
     "forbidden": ["Stone Age", "Fire", "Hunter", "Prehistoric"]
   },
   {
     "word": "Black ice",
+    "category": "standard",
+    "difficulty": "normal",
     "forbidden": ["Winter", "Slippery", "Street", "Danger"]
   },
   {
-    "word": "Rubber dinghy",
+    "word": "Inflatable boat",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Water", "Tube", "Paddle", "Lake"]
   },
   {
     "word": "Howler monkey",
+    "category": "standard",
+    "difficulty": "hard",
     "forbidden": ["Animal", "Jungle", "Loud", "Tree"]
   },
   {
     "word": "Hammock",
-    "forbidden": ["Sleeping", "Tree", "Vacation", "Relax"]
+    "category": "standard",
+    "difficulty": "easy",
+    "forbidden": ["Sleep", "Tree", "Vacation", "Relax"]
   },
   {
     "word": "Piggy bank",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Money", "Coin", "Save", "Pig"]
   },
   {
     "word": "Justin Bieber",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Singer", "Canada", "Pop", "Music"]
   },
   {
     "word": "James Bond",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Agent", "Movie", "Spy", "007"]
   },
   {
     "word": "Jesus",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["God", "Cross", "Bible", "Christ"]
   },
   {
     "word": "Pirate",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Ship", "Sea", "Captain", "Treasure"]
   },
   {
     "word": "Popcorn",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Corn", "Cinema", "Snack", "Salt"]
   },
   {
     "word": "Spider-Man",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Superhero", "Web", "Marvel", "Comic"]
   },
   {
     "word": "Statue of Liberty",
+    "category": "standard",
+    "difficulty": "normal",
     "forbidden": ["New York", "USA", "Torch", "Monument"]
   },
   {
     "word": "Rubik's Cube",
-    "forbidden": ["Cube", "Colors", "Puzzle", "Turn"]
+    "category": "standard",
+    "difficulty": "normal",
+    "forbidden": ["Cube", "Colors", "Puzzle", "Twist"]
   },
   {
     "word": "Lion",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Predator", "Mane", "Africa", "King"]
   },
   {
     "word": "Robot",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Machine", "Technology", "Automatic", "Metal"]
   },
   {
-    "word": "Titanic (Movie)",
+    "word": "Titanic (film)",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Ship", "Iceberg", "Movie", "Sinking"]
   },
   {
     "word": "Kangaroo",
-    "forbidden": ["Australia", "Pouch", "Jumping", "Animal"]
+    "category": "standard",
+    "difficulty": "easy",
+    "forbidden": ["Australia", "Pouch", "Jump", "Animal"]
   },
   {
     "word": "Penguin",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Antarctica", "Bird", "Black", "Ice"]
   },
   {
     "word": "Jellyfish",
-    "forbidden": ["Sea", "Poisonous", "Water", "Tentacle"]
+    "category": "standard",
+    "difficulty": "normal",
+    "forbidden": ["Sea", "Poisonous", "Water", "Tentacles"]
   },
   {
-    "word": "Club / Disco",
-    "forbidden": ["Dancing", "Music", "Night", "Party"]
+    "word": "Disco / Club",
+    "category": "standard",
+    "difficulty": "easy",
+    "forbidden": ["Dance", "Music", "Night", "Party"]
   },
   {
     "word": "Cactus",
+    "category": "standard",
+    "difficulty": "easy",
     "forbidden": ["Spines", "Desert", "Plant", "Green"]
   },
   {
     "word": "Milking a cow",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Milk", "Farmer", "Udder", "Animal"]
   },
   {
     "word": "Shaving",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Beard", "Blade", "Face", "Hair"]
   },
   {
     "word": "Moonwalk",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Dance", "Michael", "Jackson", "Step"]
   },
   {
-    "word": "Jobs",
+    "word": "Professions",
+    "category": "activity",
+    "difficulty": "hard",
     "forbidden": ["Work", "Job", "Occupation", "Career"]
   },
   {
     "word": "Dentist",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Teeth", "Drill", "Practice", "Mouth"]
   },
   {
     "word": "Talking to oneself",
-    "forbidden": ["Alone", "Talk", "Voice", "Thoughts"]
+    "category": "activity",
+    "difficulty": "hard",
+    "forbidden": ["Alone", "Talking", "Voice", "Thoughts"]
   },
   {
     "word": "Mowing the lawn",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Garden", "Grass", "Cutting", "Summer"]
   },
   {
     "word": "Traffic police officer",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Street", "Car", "Traffic light", "Uniform"]
   },
   {
     "word": "Fire department",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Extinguish", "Fire", "Water", "Uniform"]
   },
   {
     "word": "Clown",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Circus", "Funny", "Makeup", "Nose"]
   },
   {
     "word": "Cowboy",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Horse", "Hat", "Western", "Revolver"]
   },
   {
     "word": "Blow-drying hair",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Dry", "Head", "Wind", "Styling"]
   },
   {
-    "word": "Makeup",
+    "word": "Applying makeup",
+    "category": "activity",
+    "difficulty": "easy",
     "forbidden": ["Make-up", "Face", "Color", "Cosmetics"]
   },
   {
     "word": "Robbery",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Bank", "Thief", "Weapon", "Money"]
   },
   {
     "word": "Sneezing",
-    "forbidden": ["Cold", "Sniffles", "Tissue", "Loud"]
+    "category": "activity",
+    "difficulty": "easy",
+    "forbidden": ["Cold", "Runny nose", "Tissue", "Loud"]
   },
   {
     "word": "Riding a motorcycle",
-    "forbidden": ["Helmet", "Road", "Two-wheeler", "Vehicle"]
+    "category": "activity",
+    "difficulty": "easy",
+    "forbidden": ["Helmet", "Street", "Two-wheeler", "Vehicle"]
   },
   {
     "word": "Dizzy",
-    "forbidden": ["Head", "Spinning", "Balance", "Stagger"]
+    "category": "activity",
+    "difficulty": "normal",
+    "forbidden": ["Head", "Spinning", "Balance", "Sway"]
   },
   {
-    "word": "Karaoke singing",
+    "word": "Singing karaoke",
+    "category": "activity",
+    "difficulty": "normal",
     "forbidden": ["Microphone", "Song", "Lyrics", "Music"]
   },
   {
     "word": "Tandem",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Bicycle", "Two", "Ride", "Seat"]
   },
   {
     "word": "Cristiano Ronaldo",
-    "forbidden": ["Soccer", "Portugal", "Player", "Goal"]
+    "category": "sport",
+    "difficulty": "easy",
+    "forbidden": ["Football", "Portugal", "Player", "Goal"]
   },
   {
     "word": "Ski jumper",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Winter", "Snow", "Ramp", "Far"]
   },
   {
     "word": "Sumo wrestler",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Japan", "Ring", "Fight", "Weight"]
   },
   {
     "word": "Ice skating",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Ice", "Blades", "Winter", "Sport"]
   },
   {
     "word": "Fencing match",
+    "category": "sport",
+    "difficulty": "hard",
     "forbidden": ["Épée", "Mask", "Duel", "Sport"]
   },
   {
     "word": "Boxing ring",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Fight", "Gloves", "Sport", "Rope"]
   },
   {
     "word": "Mini golf",
+    "category": "sport",
+    "difficulty": "easy",
     "forbidden": ["Ball", "Club", "Hole", "Course"]
   },
   {
     "word": "Fishing",
+    "category": "sport",
+    "difficulty": "easy",
     "forbidden": ["Fish", "Water", "Rod", "Bait"]
   },
   {
     "word": "Diving",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Water", "Oxygen", "Goggles", "Sea"]
   },
   {
     "word": "Surfing",
+    "category": "sport",
+    "difficulty": "normal",
     "forbidden": ["Wave", "Board", "Sea", "Beach"]
   },
   {
     "word": "Juggling",
-    "forbidden": ["Balls", "Circus", "Throwing", "Hands"]
+    "category": "sport",
+    "difficulty": "normal",
+    "forbidden": ["Balls", "Circus", "Throw", "Hands"]
   },
   {
     "word": "Roger Federer",
+    "category": "sport",
+    "difficulty": "easy",
     "forbidden": ["Tennis", "Switzerland", "Player", "Grand Slam"]
   },
   {
     "word": "Usain Bolt",
-    "forbidden": ["Running", "Sprint", "Jamaica", "World record"]
+    "category": "sport",
+    "difficulty": "easy",
+    "forbidden": ["Running", "Sprint", "Jamaica", "World Record"]
   },
   {
     "word": "Neymar",
+    "category": "sport",
+    "difficulty": "easy",
     "forbidden": ["Soccer", "Brazil", "Player", "Goal"]
   },
   {
-    "word": "Dive in football",
-    "forbidden": ["Fall", "Referee", "Faking", "Penalty"]
+    "word": "Dive in soccer",
+    "category": "sport",
+    "difficulty": "normal",
+    "forbidden": ["Fall", "Referee", "Fake", "Penalty"]
   },
   {
     "word": "Lap dance",
-    "forbidden": ["Dance", "Lap", "Erotic", "Ass"]
+    "category": "spicy",
+    "difficulty": "normal",
+    "forbidden": ["Dance", "Lap", "Erotic", "Butt"]
   },
   {
     "word": "BDSM",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Bondage", "Dominance", "Pain", "Sex"]
   },
   {
     "word": "Pole dancer",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Pole", "Dance", "Erotic", "Strip club"]
   },
   {
     "word": "French kiss",
+    "category": "spicy",
+    "difficulty": "easy",
     "forbidden": ["Kiss", "Mouth", "Love", "Lips"]
   },
   {
     "word": "Threesome",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Sex", "Three", "Group", "Bed"]
   },
   {
     "word": "Dildo",
+    "category": "spicy",
+    "difficulty": "easy",
     "forbidden": ["Sex toy", "Vibrator", "Plastic", "Penis"]
   },
   {
     "word": "Butt plug",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Anal", "Sex toy", "Insert", "Shape"]
   },
   {
     "word": "Masturbation",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Self-pleasure", "Hand", "Sexual", "Alone"]
   },
   {
     "word": "One-night stand",
+    "category": "spicy",
+    "difficulty": "easy",
     "forbidden": ["Night", "Sex", "One-time", "Stranger"]
   },
   {
     "word": "Orgy",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Group", "Sex", "Party", "Multiple"]
   },
   {
     "word": "Porn director",
+    "category": "spicy",
+    "difficulty": "hard",
     "forbidden": ["Film", "Sex", "Camera", "Shoot"]
   },
   {
     "word": "Erection",
+    "category": "spicy",
+    "difficulty": "easy",
     "forbidden": ["Hard", "Penis", "Sexual", "Man"]
   },
   {
     "word": "Strap-on",
-    "forbidden": ["Strap", "Sex toy", "Wear", "Role play"]
+    "category": "spicy",
+    "difficulty": "normal",
+    "forbidden": ["Harness", "Sex toy", "Wear", "Role reversal"]
   },
   {
     "word": "Handcuffs",
+    "category": "spicy",
+    "difficulty": "easy",
     "forbidden": ["Dominance", "Restraint", "Metal", "Wrist"]
   },
   {
     "word": "Skinny dipping",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Naked", "Swimming", "Water", "Lake"]
   },
   {
     "word": "Wet dream",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Sleep", "Sexual", "Night", "Bed"]
   },
   {
     "word": "Sending nudes",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Photo", "Naked", "Phone", "Snapchat"]
   },
   {
-    "word": "Sex on airplane toilet",
+    "word": "Sex in airplane toilet",
+    "category": "spicy",
+    "difficulty": "hard",
     "forbidden": ["Flying", "Onboard", "Toilet", "Mile High Club"]
   },
   {
     "word": "Whip",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Hit", "Leather", "BDSM", "Dominance"]
   },
   {
     "word": "Penile fracture",
+    "category": "spicy",
+    "difficulty": "hard",
     "forbidden": ["Man", "Sex", "Accident", "Pain"]
   },
   {
     "word": "Broken condom",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Sex", "Protection", "Latex", "Accident"]
   },
   {
     "word": "Sex in the car",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Vehicle", "Parking lot", "Sex", "Night"]
   },
   {
     "word": "Public sex",
+    "category": "spicy",
+    "difficulty": "normal",
     "forbidden": ["Outside", "People", "Forbidden", "Seen"]
   },
   {
     "word": "Condom",
-    "forbidden": ["Protection", "Latex", "Contraception", "Sex"]
+    "category": "spicy",
+    "difficulty": "easy",
+    "forbidden": ["Protection", "Latex", "Birth control", "Sex"]
   },
   {
     "word": "Quickie",
-    "forbidden": ["Sex", "Quick", "Short", "Act"]
+    "category": "spicy",
+    "difficulty": "easy",
+    "forbidden": ["Sex", "Fast", "Short", "Act"]
   }
 ]
