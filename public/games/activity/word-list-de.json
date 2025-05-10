@@ -2,517 +2,523 @@
     {
         "word": "Rasierschaum",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Bart", "Klinge", "Gesicht", "Luftig"]
     },
     {
         "word": "Schaukelpferd",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Kind", "Spielzeug", "Holz", "Reiten"]
     },
     {
         "word": "Heiratsantrag",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Ring", "Liebe", "Knie", "Verlobung"]
     },
     {
         "word": "Gummistiefel",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Regen", "Schuhe", "Pfütze", "Wasser"]
     },
     {
         "word": "Baby",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Kleinkind", "Windel", "Weinen", "Säugling"]
     },
     {
         "word": "Zombie",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Untot", "Hirn", "Apokalypse", "Gruselig"]
     },
     {
         "word": "Höhlenmensch",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Steinzeit", "Feuer", "Jäger", "Urzeit"]
     },
     {
         "word": "Glatteis",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Winter", "Rutschig", "Strasse", "Gefahr"]
     },
     {
         "word": "Gummiboot",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Wasser", "Schlauch", "Paddel", "See"]
     },
     {
         "word": "Schreiaffe",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Tier", "Dschungel", "Laut", "Baum"]
     },
     {
         "word": "Hängematte",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Schlafen", "Baum", "Urlaub", "Entspannen"]
     },
     {
         "word": "Sparschwein",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Geld", "Münze", "Sparen", "Schwein"]
     },
     {
         "word": "Justin Bieber",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Sänger", "Kanada", "Pop", "Musik"]
     },
     {
         "word": "James Bond",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Agent", "Film", "Spion", "007"]
     },
     {
         "word": "Jesus",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Gott", "Kreuz", "Bibel", "Christus"]
     },
     {
         "word": "Pirat*in",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Schiff", "Meer", "Kapitän", "Schatz"]
     },
     {
         "word": "Popcorn",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Mais", "Kino", "Snack", "Salz"]
     },
     {
         "word": "Spider-Man",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Superheld", "Netz", "Marvel", "Comic"]
     },
     {
         "word": "Freiheitsstatue",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["New York", "USA", "Fackel", "Monument"]
     },
     {
         "word": "Rubiks Cube",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Würfel", "Farben", "Puzzle", "Drehen"]
     },
     {
         "word": "Löwe",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Raubtier", "Mähne", "Afrika", "König"]
     },
     {
         "word": "Roboter",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Maschine", "Technik", "Automatisch", "Metall"]
     },
     {
         "word": "Titanic (Film)",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Schiff", "Eisberg", "Film", "Untergang"]
     },
     {
         "word": "Känguru",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Australien", "Beutel", "Springen", "Tier"]
     },
     {
         "word": "Pinguin",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Antarktis", "Vogel", "Schwarz", "Eis"]
     },
     {
         "word": "Qualle",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Meer", "Giftig", "Wasser", "Tentakel"]
     },
     {
         "word": "Disko / Club",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Tanzen", "Musik", "Nacht", "Party"]
     },
     {
         "word": "Kaktus",
         "catecory": "standard",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Stacheln", "Wüste", "Pflanze", "Grün"]
     },
     {
         "word": "Kuh melken",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Milch", "Bauer", "Euter", "Tier"]
     },
     {
         "word": "Sich rasieren",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Bart", "Klinge", "Gesicht", "Haare"]
     },
     {
         "word": "Moon Walk",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Tanz", "Michael", "Jackson", "Schritt"]
     },
     {
         "word": "Berufe",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Arbeit", "Job", "Tätigkeit", "Karriere"]
     },
     {
         "word": "Zahnärzt*in",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Zähne", "Bohrer", "Praxis", "Mund"]
     },
     {
         "word": "Selbstgespräch",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Allein", "Reden", "Stimme", "Gedanken"]
     },
     {
         "word": "Rasen mähen",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Garten", "Gras", "Schneiden", "Sommer"]
     },
     {
         "word": "Verkehrspolizist*in",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Strasse", "Auto", "Ampel", "Uniform"]
     },
     {
         "word": "Feuerwehr",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Löschen", "Brand", "Wasser", "Uniform"]
     },
     {
         "word": "Clown",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Zirkus", "Lustig", "Schminke", "Nase"]
     },
     {
         "word": "Cowboy",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Pferd", "Hut", "Western", "Revolver"]
     },
     {
         "word": "Haare föhnen",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Trocken", "Kopf", "Wind", "Styling"]
     },
     {
         "word": "Schminken",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Make-up", "Gesicht", "Farbe", "Kosmetik"]
     },
     {
         "word": "Raubüberfall",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Bank", "Dieb", "Waffe", "Geld"]
     },
     {
         "word": "Niesen",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Erkältung", "Schnupfen", "Taschentuch", "Laut"]
     },
     {
         "word": "Motorrad fahren",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Helm", "Strasse", "Zweirad", "Fahrzeug"]
     },
     {
         "word": "Schwindelig",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Kopf", "Drehen", "Gleichgewicht", "Schwanken"]
     },
     {
         "word": "Karaoke singen",
         "catecory": "activity",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Mikrofon", "Lied", "Text", "Musik"]
     },
     {
         "word": "Tandem",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Fahrrad", "Zwei", "Fahren", "Sitz"]
     },
     {
         "word": "Cristiano Ronaldo",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Fussball", "Portugal", "Spieler", "Tor"]
     },
     {
         "word": "Ski-Springer*in",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Winter", "Schnee", "Schanze", "Weit"]
     },
     {
         "word": "Sumoringer",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Japan", "Ring", "Kampf", "Gewicht"]
     },
     {
         "word": "Schlittschuh fahren",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Eis", "Kufen", "Winter", "Sport"]
     },
     {
         "word": "Fechtkampf",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Degen", "Maske", "Duell", "Sport"]
     },
     {
         "word": "Box-Ring",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Kampf", "Handschuhe", "Sport", "Seil"]
     },
     {
         "word": "Minigolf",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Ball", "Schläger", "Loch", "Bahn"]
     },
     {
         "word": "Angeln",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Fisch", "Wasser", "Rute", "Köder"]
     },
     {
         "word": "Tauchen",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Wasser", "Sauerstoff", "Brille", "Meer"]
     },
     {
         "word": "Surfen",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Welle", "Brett", "Meer", "Strand"]
     },
     {
         "word": "Jonglieren",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Bälle", "Zirkus", "Werfen", "Hände"]
     },
     {
         "word": "Roger Federer",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Tennis", "Schweiz", "Spieler", "Grand Slam"]
     },
     {
         "word": "Usain Bolt",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Laufen", "Sprint", "Jamaika", "Weltrekord"]
     },
     {
         "word": "Neymar",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Fussball", "Brasilien", "Spieler", "Tor"]
     },
     {
         "word": "Schwalbe im Fussball",
         "catecory": "sport",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Fallen", "Schiedsrichter", "Täuschen", "Elfmeter"]
     },
     {
         "word": "Lap Dance",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Tanzen", "Schoss", "Erotisch", "Arsch"]
     },
     {
         "word": "BDSM",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Fessel", "Dominanz", "Schmerz", "Sex"]
     },
     {
         "word": "Poledancer",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Stange", "Tanzen", "Erotisch", "Strip-Club"]
     },
     {
         "word": "Zungenkuss",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Küssen", "Mund", "Liebe", "Lippen"]
     },
     {
         "word": "Dreier",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Sex", "Drei", "Gruppe", "Bett"]
     },
     {
         "word": "Dildo",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Sexspielzeug", "Vibrator", "Kunststoff", "Penis"]
     },
     {
         "word": "Buttplug",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Anal", "Sexspielzeug", "Einführen", "Form"]
     },
     {
         "word": "Masturbation",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Selbstbefriedigung", "Hand", "Sexuell", "Allein"]
     },
     {
         "word": "One-Night-Stand",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Nacht", "Sex", "Einmalig", "Fremd"]
     },
     {
         "word": "Orgie",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Gruppe", "Sex", "Party", "Mehrere"]
     },
     {
         "word": "Porno-Direktor*in",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Film", "Sex", "Kamera", "Dreh"]
     },
     {
         "word": "Erektion",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Steif", "Penis", "Sexuell", "Mann"]
     },
     {
         "word": "Strap-on",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Gurt", "Sexspielzeug", "Tragen", "Rollentausch"]
     },
     {
         "word": "Handschellen",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Dominanz", "Fessel", "Metall", "Handgelenk"]
     },
     {
         "word": "Skinny Dipping",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Nackt", "Schwimmen", "Wasser", "See"]
     },
     {
         "word": "Feuchter Traum",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Schlafen", "Sexuell", "Nacht", "Bett"]
     },
     {
         "word": "Nudes versenden",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Foto", "Nackt", "Handy", "Snapchat"]
     },
     {
         "word": "Sex auf der Flugzeugtoilette",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Fliegen", "Bord", "Klo", "Mile High Club"]
     },
     {
         "word": "Peitsche",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Schlagen", "Leder", "BDSM", "Dominanz"]
     },
     {
         "word": "Penisbruch",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "hard",
+        "forbidden": ["Mann", "Sex", "Unfall", "Schmerz"]
     },
     {
         "word": "Geplatztes Kondom",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Sex", "Schutz", "Latex", "Unfall"]
     },
     {
         "word": "Sex im Auto",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Fahrzeug", "Parkplatz", "Sex", "Nacht"]
     },
     {
         "word": "Sex in der Öffentlichkeit",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "normal",
+        "forbidden": ["Draussen", "Leute", "Verboten", "Gesehen"]
     },
     {
         "word": "Kondom",
         "catecory": "spicy",
-        "difficulty": "",
-        "forbidden": []
+        "difficulty": "easy",
+        "forbidden": ["Schutz", "Latex", "Verhütung", "Sex"]
+    },
+    {
+        "word": "Quickie",
+        "catecory": "spicy",
+        "difficulty": "easy",
+        "forbidden": ["Sex", "Schnell", "Kurze", "Aktion"]
     }
 ]
