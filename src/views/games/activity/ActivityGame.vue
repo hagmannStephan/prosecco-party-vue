@@ -179,6 +179,7 @@ onUnmounted(() => {
       </button>
       <button @click="getNewWord">
         <!-- Member of opposing team guessed it or player wants to skip it (Zero points) -->
+        <!-- TODO: Maybe a short freez period as penalty -->
         <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
       </button>
     </div>
