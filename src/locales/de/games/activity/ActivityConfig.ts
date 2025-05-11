@@ -28,6 +28,13 @@ export default {
         "draw": "🎨 Zeichnen",
         "describe": "🗣️ Beschreiben",
     },
+    "category": {
+        "title": "Wörterkategorien",
+        "standard": "Standard 🌍",
+        "activity": "Aktivität 🚴‍♂️",
+        "sport": "Sport ⚽",
+        "spicy": "Spicy (+18) 🌶️",
+    },
     "error": {
         "min-players": "Es müssen mindestens 2 Spielende teilnehmen.",
         "name-required": "Bitte geben Sie einen Namen für alle Spielenden ein.",
@@ -35,6 +42,7 @@ export default {
         "min-groups": "Es müssen mindestens 2 Gruppen gebildet werden.",
         "min-players-per-group": "Es muss mindestens 1 Spieler pro Gruppe geben.",
         "group-name-required": "Bitte geben Sie einen Namen für alle Gruppen ein.",
+        "category-required": "Bitte wählen Sie mindestens eine Kategorie.",
     },
     "start-game": "Spiel starten!",
 }

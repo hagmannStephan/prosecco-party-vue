@@ -34,6 +34,7 @@ interface GameSettings {
   rounds: number;
   timePerRound: number;
   gameModes: string[];
+  wordCategories: string[];
   currentRound?: number;
   currentGroupIndex?: number;
   currentGameMode?: GameMode;
@@ -51,6 +52,7 @@ export const useGameStore = defineStore('game', {
       rounds: 0,
       timePerRound: 0,
       gameModes: [],  // pantomime, draw, describe
+      wordCategories: [], // standard, activity, sport, spicy, etc.
       // Game state
       currentRound: 0,
       currentGroupIndex: 0,
@@ -207,5 +209,8 @@ export const useGameStore = defineStore('game', {
     getCurrentGameMode(state) {
       return state.gameSettings.currentGameMode;
     },
+    getWordCategories(state) {
+      return state.gameSettings.wordCategories;
+    }
   }
 });
