@@ -10,38 +10,38 @@ export default defineConfig({
       registerType: 'prompt', // Changed from 'autoUpdate' to 'prompt'
       devOptions: {
         enabled: true,
-        type: 'module' // Ensure modern module type
-      },
-      includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
-      manifest: {
-        name: 'Name of the Game',
-        short_name: 'Party Games',
-        description: 'A collection of party games for you and your friends.',
-        theme_color: '#811e73',
-        background_color: '#300056',
-        display: 'standalone',
-        orientation: 'portrait',
-        start_url: '/',
-        icons: [
-          {
-            src: 'icons/icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
+         // Ensure modern module type
           },
-          {
-            src: 'icons/icon-512x512.png',
+          includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
+          manifest: {
+            name: 'Name of the Game',
+            short_name: 'Party Games',
+            description: 'A collection of party games for you and your friends.',
+            theme_color: '#1d0f2e',
+            background_color: '#1d0f2e',
+            display: 'standalone',
+            orientation: 'portrait',
+            start_url: '/',
+            icons: [
+              {
+            src: 'icons/icon-192x192.webp',
+            sizes: '192x192',
+            type: 'image/webp'
+              },
+              {
+            src: 'icons/icon-512x512.webp',
             sizes: '512x512',
-            type: 'image/png'
-          }
-        ],
-      },
-      strategies: 'generateSW',
-      workbox: {
-        globPatterns: [
-          '**/*.{js,css,html,ico,png,svg,woff,woff2,ttf,eot,json}'
-        ],
-        navigateFallback: 'index.html',
-        navigateFallbackDenylist: [/^\/api/], // Skip API routes if you have any
+            type: 'image/webp'
+              }
+            ],
+          },
+          strategies: 'generateSW',
+          workbox: {
+            globPatterns: [
+              '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'
+            ],
+            navigateFallback: 'index.html',
+            navigateFallbackDenylist: [/^\/api/], // Skip API routes if you have any
         runtimeCaching: [
           {
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)$/,
