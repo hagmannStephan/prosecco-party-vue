@@ -8,6 +8,7 @@ export type WordEntry = {
     word: string
     difficulty: string
     forbidden: string[]
+    category: string
 }
 
 export const useWordListStore = defineStore('wordList', {
@@ -71,6 +72,18 @@ export const useWordListStore = defineStore('wordList', {
           
             const randomIndex = Math.floor(Math.random() * list.length)
             return list[randomIndex]
+        },
+        getAvailableCategories(language: 'de' | 'en'): string[] {
+            const list = this.wordLists[language]
+            const categories: string[] = []
+
+            list.forEach(entry => {
+                if (!categories.includes(entry.category)) {
+                    categories.push(entry.category)
+                }
+            })
+
+            return Array.from(categories)
         },
         }       
     }
