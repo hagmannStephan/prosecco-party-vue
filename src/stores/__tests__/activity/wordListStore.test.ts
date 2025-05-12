@@ -38,7 +38,22 @@ global.fetch = vi.fn().mockImplementation((url) => {
         { word: 'Fisch', difficulty: 'easy', category: "else", forbidden: ['Wasser', 'schwimmen'] },
         { word: 'Blume', difficulty: 'easy', category: "else", forbidden: ['Pflanze', 'duften'] },
         { word: 'Lampe', difficulty: 'easy', category: "else", forbidden: ['Licht', 'leuchten'] },
-        { word: 'Fenster', difficulty: 'easy', category: "such", forbidden: ['Glas', 'sehen'] }
+        { word: 'Fenster', difficulty: 'easy', category: "such", forbidden: ['Glas', 'sehen'] },
+        { word: 'Fußball', difficulty: 'easy', category: "sport", forbidden: ['Ball', 'Tor'] },
+        { word: 'Basketball', difficulty: 'easy', category: "sport", forbidden: ['Korb', 'werfen'] },
+        { word: 'Tennis', difficulty: 'easy', category: "sport", forbidden: ['Schläger', 'Ball'] },
+        { word: 'Schwimmen', difficulty: 'easy', category: "sport", forbidden: ['Wasser', 'Baden'] },
+        { word: 'Laufen', difficulty: 'easy', category: "sport", forbidden: ['Rennen', 'Joggen'] },
+        { word: 'Radfahren', difficulty: 'easy', category: "sport", forbidden: ['Fahrrad', 'Pedale'] },
+        { word: 'Volleyball', difficulty: 'easy', category: "sport", forbidden: ['Netz', 'Ball'] },
+        { word: 'Handball', difficulty: 'easy', category: "sport", forbidden: ['Tor', 'werfen'] },
+        { word: 'Boxen', difficulty: 'easy', category: "sport", forbidden: ['Kampf', 'Handschuhe'] },
+        { word: 'Golf', difficulty: 'easy', category: "sport", forbidden: ['Schläger', 'Loch'] },
+        { word: 'Eishockey', difficulty: 'easy', category: "sport", forbidden: ['Puck', 'Schläger'] },
+        { word: 'Skifahren', difficulty: 'easy', category: "sport", forbidden: ['Schnee', 'Berg'] },
+        { word: 'Reiten', difficulty: 'easy', category: "sport", forbidden: ['Pferd', 'Sattel'] },
+        { word: 'Turnen', difficulty: 'easy', category: "sport", forbidden: ['Gerät', 'Übung'] },
+        { word: 'Tischtennis', difficulty: 'easy', category: "sport", forbidden: ['Schläger', 'Platte'] }
       ])
     })
   } else if (url.includes('word-list-en.json')) {
@@ -58,7 +73,22 @@ global.fetch = vi.fn().mockImplementation((url) => {
         { word: 'fish', difficulty: 'easy', category: "else", forbidden: ['water', 'swim'] },
         { word: 'flower', difficulty: 'easy', category: "else", forbidden: ['plant', 'smell'] },
         { word: 'lamp', difficulty: 'easy', category: "else", forbidden: ['light', 'shine'] },
-        { word: 'window', difficulty: 'easy', category: "such", forbidden: ['glass', 'see'] }
+        { word: 'window', difficulty: 'easy', category: "such", forbidden: ['glass', 'see'] },
+        { word: 'soccer', difficulty: 'easy', category: "sport", forbidden: ['ball', 'goal'] },
+        { word: 'basketball', difficulty: 'easy', category: "sport", forbidden: ['hoop', 'shoot'] },
+        { word: 'tennis', difficulty: 'easy', category: "sport", forbidden: ['racket', 'ball'] },
+        { word: 'swimming', difficulty: 'easy', category: "sport", forbidden: ['water', 'pool'] },
+        { word: 'running', difficulty: 'easy', category: "sport", forbidden: ['race', 'jog'] },
+        { word: 'cycling', difficulty: 'easy', category: "sport", forbidden: ['bike', 'pedal'] },
+        { word: 'volleyball', difficulty: 'easy', category: "sport", forbidden: ['net', 'ball'] },
+        { word: 'handball', difficulty: 'easy', category: "sport", forbidden: ['goal', 'throw'] },
+        { word: 'boxing', difficulty: 'easy', category: "sport", forbidden: ['fight', 'gloves'] },
+        { word: 'golf', difficulty: 'easy', category: "sport", forbidden: ['club', 'hole'] },
+        { word: 'ice hockey', difficulty: 'easy', category: "sport", forbidden: ['puck', 'stick'] },
+        { word: 'skiing', difficulty: 'easy', category: "sport", forbidden: ['snow', 'mountain'] },
+        { word: 'horse riding', difficulty: 'easy', category: "sport", forbidden: ['horse', 'saddle'] },
+        { word: 'gymnastics', difficulty: 'easy', category: "sport", forbidden: ['apparatus', 'exercise'] },
+        { word: 'table tennis', difficulty: 'easy', category: "sport", forbidden: ['racket', 'table'] }
       ])
     })
   }
@@ -76,8 +106,8 @@ describe('Word List Store', () => {
     await store.init()
 
     expect(store.isInitialized).toBe(true)
-    expect(store.wordLists.de.length).toBe(15)
-    expect(store.wordLists.en.length).toBe(15)
+    expect(store.wordLists.de.length).toBe(30)
+    expect(store.wordLists.en.length).toBe(30)
   })
 
   it('should return a random word with specified difficulty', async () => {
@@ -102,7 +132,7 @@ describe('Word List Store', () => {
     await store.init()
 
     const categories = store.getAvailableCategories('en')
-    expect(categories.sort()).toEqual(['standard', 'other', 'else', 'such'].sort())
+    expect(categories.sort()).toEqual(['standard', 'other', 'sport', 'else', 'such'].sort())
   })
   
   it('adhere to word categories', async () => {
@@ -134,25 +164,42 @@ describe('Word List Store', () => {
     }
   })
 
-  // it('same word doesn\'t appear twice in the last 10 words', async () => {	
-  //   const store = useWordListStore()
-  //   await store.init()
+  it('same word doesn\'t appear twice in the last 10 words', async () => {	
+    const store = useWordListStore()
+    await store.init()
 
-  //   let lastTenWords: string[] = []
+    const gameStore = useGameStore()
+    gameStore.setGameSettings({
+      groups: [
+        {
+          id: 1,
+          name: 'Test Group',
+          players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+          currentPlayerIndex: 0,
+          score: 0,
+        },
+      ],
+      rounds: 4,
+      timePerRound: 60,
+      gameModes: ['pantomime', 'describe'],
+      wordCategories: ['sport'],
+    })
+    gameStore.initGameStore()
 
-  //   // Simulate getting 10 words
-  //   for (let i = 0; i < 10; i++) {
-  //     const currentWord = store.getRandomWord('en', ['easy']) || {word: ''}
-  //     lastTenWords.push(currentWord?.word)
+    let lastTenWords: string[] = []
 
-  //     if (lastTenWords.length > 10) {
-  //       lastTenWords.shift() // Keep only the last 10 words
-  //     }
+    for (let i = 0; i < 100; i++) {
+      const currentWord = store.getRandomWord('en') || {word: ''}
+      if(lastTenWords.includes(currentWord?.word)) {
+        // If the word is already in the last 10 words, fail the test
+        expect.fail(`Word ${currentWord?.word} appeared twice in the last 10 words`)
+      }
 
-  //     if(lastTenWords.includes(currentWord?.word)) {
-  //       // If the word is already in the last 10 words, fail the test
-  //       expect.fail(`Word ${currentWord?.word} appeared twice in the last 10 words`)
-  //     }
-  //   }
-  // })
+      lastTenWords.push(currentWord?.word)
+
+      if (lastTenWords.length > 10) {
+        lastTenWords.shift() // Keep only the last 10 words
+      }
+    }
+  })
 })

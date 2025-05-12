@@ -18,6 +18,10 @@ export const useWordListStore = defineStore('wordList', {
             de: [] as WordEntry[],
             en: [] as WordEntry[],
         },
+        recentWords: {
+            de: [] as string[],
+            en: [] as string[],
+        },
         isInitialized: false,
     }),
     persist: true,
@@ -61,7 +65,6 @@ export const useWordListStore = defineStore('wordList', {
 
             this.isInitialized = true
         },
-
         getRandomWord(language: 'de' | 'en', difficulties?: string[]): WordEntry | null {
             let list = this.wordLists[language]
 
@@ -78,8 +81,31 @@ export const useWordListStore = defineStore('wordList', {
           
             if (list.length === 0) return null
           
-            const randomIndex = Math.floor(Math.random() * list.length)
-            return list[randomIndex]
+            // Get words that aren't in the recent list
+            const availableWords = list.filter(entry => !this.recentWords[language].includes(entry.word))
+            
+            // If we have available words not in the recent list, pick one randomly
+            if (availableWords.length > 5) {
+                const randomIndex = Math.floor(Math.random() * availableWords.length)
+                const selectedWord = availableWords[randomIndex]
+                this.addToRecentWords(language, selectedWord.word)
+                return selectedWord
+            } 
+            // If all remaining words are in the recent list (can happen if total words <= 10)
+            else {
+                // Fallback - just pick any random word
+                const randomIndex = Math.floor(Math.random() * list.length)
+                const selectedWord = list[randomIndex]
+                this.addToRecentWords(language, selectedWord.word)
+                return selectedWord
+            }
+        },
+        // Helper method to manage the recent words list
+        addToRecentWords(language: 'de' | 'en', word: string) {
+            this.recentWords[language].push(word)
+            if (this.recentWords[language].length > 10) {
+                this.recentWords[language].shift()
+            }
         },
         getAvailableCategories(language: 'de' | 'en'): string[] {
             const list = this.wordLists[language]
