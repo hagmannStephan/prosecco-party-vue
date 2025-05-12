@@ -85,7 +85,7 @@ export const useWordListStore = defineStore('wordList', {
             const availableWords = list.filter(entry => !this.recentWords[language].includes(entry.word))
             
             // If we have available words not in the recent list, pick one randomly
-            if (availableWords.length > 5) {
+            if (availableWords.length > 4) {
                 const randomIndex = Math.floor(Math.random() * availableWords.length)
                 const selectedWord = availableWords[randomIndex]
                 this.addToRecentWords(language, selectedWord.word)
