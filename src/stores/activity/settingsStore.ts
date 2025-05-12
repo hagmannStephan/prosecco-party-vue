@@ -41,6 +41,7 @@ interface GameSettings {
   // After every player of this group has played, increment the round
   // Get the last group with this amount of players, because it could be that there is a group with the same amout of players later that gets skipped
   maxPlayersGroupId?: number;
+  availableWords?: string[];
 }
 
 export const useGameStore = defineStore('game', {

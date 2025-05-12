@@ -1,6 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useWordListStore } from '@/stores/activity/wordListStore'
+import { useGameStore } from '@/stores/activity/settingsStore'
 
 // Mock the indexed db module
 vi.mock('idb', () => ({
@@ -95,12 +96,42 @@ describe('Word List Store', () => {
     const word = store.getRandomWord('en', ['impossible'])
     expect(word).toBeNull()
   })
+
   it('should return the available categoriers', async () => {
     const store = useWordListStore()
     await store.init()
 
     const categories = store.getAvailableCategories('en')
     expect(categories.sort()).toEqual(['standard', 'other', 'else', 'such'].sort())
+  })
+  
+  it('adhere to word categories', async () => {
+    const store = useWordListStore()
+    await store.init()
+
+    const gameStore = useGameStore()
+    gameStore.setGameSettings({
+      groups: [
+        {
+          id: 1,
+          name: 'Test Group',
+          players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+          currentPlayerIndex: 0,
+          score: 0,
+        },
+      ],
+      rounds: 4,
+      timePerRound: 60,
+      gameModes: ['pantomime', 'describe'],
+      wordCategories: ['standard', 'activity'],
+    })
+    gameStore.initGameStore()
+
+    for (let i = 0; i < 50; i++) {
+      const word = store.getRandomWord('en')
+      expect(word).not.toBeNull()
+      expect(['standard', 'activity']).toContain(word?.category)
+    }
   })
 
   // it('same word doesn\'t appear twice in the last 10 words', async () => {	
