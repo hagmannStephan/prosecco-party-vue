@@ -34,12 +34,14 @@ interface GameSettings {
   rounds: number;
   timePerRound: number;
   gameModes: string[];
+  wordCategories: string[];
   currentRound?: number;
   currentGroupIndex?: number;
   currentGameMode?: GameMode;
   // After every player of this group has played, increment the round
   // Get the last group with this amount of players, because it could be that there is a group with the same amout of players later that gets skipped
   maxPlayersGroupId?: number;
+  availableWords?: string[];
 }
 
 export const useGameStore = defineStore('game', {
@@ -51,6 +53,7 @@ export const useGameStore = defineStore('game', {
       rounds: 0,
       timePerRound: 0,
       gameModes: [],  // pantomime, draw, describe
+      wordCategories: [], // standard, activity, sport, spicy, etc.
       // Game state
       currentRound: 0,
       currentGroupIndex: 0,
@@ -207,5 +210,8 @@ export const useGameStore = defineStore('game', {
     getCurrentGameMode(state) {
       return state.gameSettings.currentGameMode;
     },
+    getWordCategories(state) {
+      return state.gameSettings.wordCategories;
+    }
   }
 });

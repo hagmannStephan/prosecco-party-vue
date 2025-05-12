@@ -34,6 +34,7 @@ function createTestStore() {
         rounds: 4,
         timePerRound: 60,
         gameModes: ['pantomime', 'describe'],
+        wordCategories: ['standard', 'activity']
     })
     return store
 }
