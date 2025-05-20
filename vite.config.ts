@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [
     vue(),
     VitePWA({
-      registerType: 'prompt', // Changed from 'autoUpdate' to 'prompt'
+      registerType: 'autoUpdate',
       devOptions: {
         enabled: true,
          // Ensure modern module type
