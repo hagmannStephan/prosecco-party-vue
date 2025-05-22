@@ -20,7 +20,8 @@ function createTestStore() {
                 players: [
                     { name: "Stöff"},
                     { name: "Töff"},
-                    { name: "Röff"}
+                    { name: "Röff"},
+                    { name: "Schmöff"}
                 ]
             }
         ],
@@ -66,115 +67,41 @@ describe('Macherlies Settings Store', () => {
         })
     })
 
-    // describe(('simulate game'), () => {
-    //     let store: ReturnType<typeof useGameStore>
+    describe('init game', () => {
+        it('should set the game state correctly', () => {
+            const store = createTestStore()
+            expect(store.gameSettings.maxPlayersGroup).toBe(1)
+            expect(store.gameSettings.currentRound).toBe(0)
+            expect(store.gameSettings.currentGroupIndex).toBe(0)
+            expect(store.gameSettings.currentGameMode).toContain(['pantomime', 'describe'])
+            expect(store.gameSettings.currentSkipsLeft).toBe(3)
+        })
 
-    //     setActivePinia(createPinia())
-    //     store = createTestStore()
+        it('should set the group metadata correctly', () => {
+            const store = createTestStore()
+            const group = store.getGroups
+            expect(group[0].id).toBe(0)
+            expect(group[0].score).toBe(0)
+            expect(group[1].id).toBe(1)
+            expect(group[1].score).toBe(0)
+        })
 
-    //     it('first player turn', () => {
-    //         expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //     })
+        it('should set the player metadata correctly', () => {
+            const store = createTestStore()
+            const group = store.getGroups
+            group.forEach((group) => {
+                group.players.forEach((player, playerIndex) => {
+                    expect(player.id).toBe(playerIndex)
+                })
+            })
+        })
+    })
 
-    //     it('increment score', () => {
-    //         store.incrementScore()
-    //         expect(store.getGroups[0].score).toBe(1)
-    //     })
+    describe('simulate game flow', () => {
+    const store = createTestStore()
+    })
 
-    //     it('continue to second player', () => {
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Steffé de Chefé')
-    //     })
-
-    //     it('switch to next round', () => {
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Liäm s \'')
-    //         expect(store.getCurrentRound).toBe(0)
-    //         expect(store.getGroupById(0)?.score).toBe(1)
-    //     })
-
-    //     it('increment score for first group again', () => {
-    //         for (let i = 0; i < 6; i++) {
-    //             store.incrementScore()
-    //         }
-    //         expect(store.getGroups[0].score).toBe(7)
-    //     })
-
-    //     it('check if new players are up', () => {
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Joäü de §')
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Steffla Chef')
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Deff')
-    //     })
-
-    //     it('increment score for fourth group', () => {
-    //         for (let i = 0; i < 21; i++) {
-    //             store.incrementScore()
-    //         }
-    //         expect(store.getGroups[3].score).toBe(21)
-    //     })
-
-    //     it('check if new player is up', () => {
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(store.getCurrentPlayer?.name).toEqual('Chef de Steff')
-    //         expect(store.getCurrentGroup?.name).toEqual('ÖpisÉ')
-    //     })
-
-    //     it('increment score for second group', () => {
-    //         for (let i = 0; i < 3; i++) {
-    //             store.incrementScore()
-    //         }
-    //         expect(store.getGroups[1].score).toBe(3)
-    //     })
-
-    //     it('increment score for third group', () => {
-    //         store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         for (let i = 0; i < 8; i++) {
-    //             store.incrementScore()
-    //         }
-    //         expect(store.getGroups[2].score).toBe(8)
-    //     })
-
-    //     it('finish game', () => {
-    //         let gameOver = false
-
-    //         for (let i = 0; i < (1 + (3 * 12)); i++) {
-    //             gameOver = store.nextPlayer()
-    //             expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         }
-    //         expect(gameOver).toBe(false);
-
-    //         gameOver = store.nextPlayer()
-    //         expect(store.getCurrentGameMode?.name).not.toEqual('draw')
-    //         expect(gameOver).toBe(true);
-    //     })
-
-    //     it('get leaderboard', () => {
-    //         const leaderboard = store.getLeaderboard();
-    //         expect(leaderboard).toEqual([
-    //             { name: 'NPCs', score: 21 },
-    //             { name: 'SonderzeicheGang *"+&%ç()=?`', score: 8 },
-    //             { name: 'De Ä$$', score: 7 },
-    //             { name: 'ÖpisÉ', score: 3 },
-    //         ]);
-    //     });
-    // })
+   
 })
 
 // TODO: Remove comment from wordListStore.test.ts

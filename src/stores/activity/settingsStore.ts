@@ -37,7 +37,7 @@ interface GameSettings {
     maxPlayersGroup?: number,
     currentRound?: number,
     currentGroupIndex?: number,
-    currentGameMode?: number,
+    currentGameMode?: string,
     // Each player gets per round three free skips
     // If they are used up, each skip costs the group a point
     currentSkipsLeft?: number,
@@ -56,7 +56,7 @@ export const useGameStore = defineStore('macherlies', {
             maxPlayersGroup: 0,
             currentRound: 0,
             currentGroupIndex: 0,
-            currentGameMode: 0,
+            currentGameMode: '',
             currentSkipsLeft: 0,
         }
     }),
