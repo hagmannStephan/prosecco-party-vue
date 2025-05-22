@@ -10,7 +10,6 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true,
-         // Ensure modern module type
           },
           includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
           manifest: {
@@ -41,7 +40,7 @@ export default defineConfig({
               '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'
             ],
             navigateFallback: 'index.html',
-            navigateFallbackDenylist: [/^\/api/], // Skip API routes if you have any
+            navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)$/,
