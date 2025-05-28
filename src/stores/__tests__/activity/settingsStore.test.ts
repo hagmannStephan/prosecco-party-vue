@@ -279,7 +279,25 @@ describe('Macherlies Settings Store - Game Flow', () => {
     
 describe('Macherlies Settings Store - Game Exit', () => {
     it('should reset the game settings when exiting', () => {
+        const store = createTestStore()
+        store.changeScore(5)
+        store.initializeNextTurn()
+        
+        store.gameExit()
 
+        expect(store.gameSettings).toEqual({
+            groups: [],
+            rounds: 0,
+            timePerRound: 0,
+            gameModes: [],
+            allowedWordLists: [],
+            maxPlayersGroup: 0,
+            currentRound: 0,
+            currentGroupIndex: 0,
+            currentGameMode: '',
+            currentWordList: '',
+            currentSkipsLeft: 0
+        })
     })
 })
 
