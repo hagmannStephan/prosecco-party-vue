@@ -74,11 +74,15 @@ export const useGameStore = defineStore('macherlies', {
         getCurrentSkipsLeft: (state) => state.gameSettings.currentSkipsLeft,
     },
     actions: {
-        // Private Function
-        // Only use in internal method `setGameSettings`
+        // Private Functions
+        // Only use internally
+        validate_settings() {
+            // TODO: Validate the settings
+        },
         init() {
             // TODO: Init the store
         },
+        // Public Functions
         setGameSettings(settings: GameSettings) {
             // TODO: Validate settings
             this.gameSettings = {
@@ -90,6 +94,12 @@ export const useGameStore = defineStore('macherlies', {
         },
         changeScore(score: number) {
             // TODO: Change the score of the current group by param
+        },
+        skipWord() {
+            // TODO: Skip the current word
+        },
+        initializeNextTurn() {
+            // TODO: Initialize the next turn
         }
     }
 })

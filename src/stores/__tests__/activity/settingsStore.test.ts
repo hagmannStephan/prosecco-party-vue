@@ -33,7 +33,7 @@ function createTestStore() {
     return store
 }
 
-describe('Macherlies Settings Store', () => {
+describe('Macherlies Settings Store - Game Flow', () => {
     beforeEach(() => {
         setActivePinia(createPinia())
     })
@@ -68,7 +68,7 @@ describe('Macherlies Settings Store', () => {
     describe('init game', () => {
         it('should set the game state correctly', () => {
             const store = createTestStore()
-            
+
             expect(store.gameSettings.maxPlayersGroup).toBe(1)
             expect(store.gameSettings.currentRound).toBe(0)
             expect(store.gameSettings.currentGroupIndex).toBe(0)
@@ -175,6 +175,14 @@ describe('Macherlies Settings Store', () => {
             expect(store.getCurrentRound).toBe(1)
             expect(store.getCurrentGroupIndex).toBe(0)
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
+        })
+    })
+
+    describe('simulate game finished', () => {
+        it('should finish the game correctly (for the first group)', () => {
+        })
+
+        it('should finish the game correctly (for the second group)', () => {
         })
     })
 })
