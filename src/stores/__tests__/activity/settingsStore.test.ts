@@ -276,25 +276,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
     })
 })
-
-describe('Macherlies Settings Store - Game Settings Validation', () => {
-    it('should throw an error if no groups are set', () => {
     
-    })
-
-    it('should throw an error if more than two group are set', () => {
-
-    })
-
-    it('should throw an error if there are less than two players in a group', () => {
-
-    })
-
-    it('should thrown an error if settings aren\' complete', () => {
-
-    })
-})
-
 describe('Macherlies Settings Store - Game Exit', () => {
     it('should reset the game settings when exiting', () => {
 
@@ -302,3 +284,4 @@ describe('Macherlies Settings Store - Game Exit', () => {
 })
 
 // TODO: Remove comment from wordListStore.test.ts
+// TODO: Change name to something like `GameStore.test.ts` (if not too difficult)

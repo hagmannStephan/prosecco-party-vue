@@ -78,9 +78,6 @@ export const useGameStore = defineStore('macherlies', {
     actions: {
         // Private Functions
         // Only use internally
-        validate_settings() {
-            // TODO: Validate the settings
-        },
         init() {
             // TODO: Init the store
         },
