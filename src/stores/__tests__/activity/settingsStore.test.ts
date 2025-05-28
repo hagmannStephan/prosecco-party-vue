@@ -33,8 +33,6 @@ function createTestStore() {
     return store
 }
 
-// TODO: Also try to initialize non-valid groups
-
 describe('Macherlies Settings Store', () => {
     beforeEach(() => {
         setActivePinia(createPinia())
@@ -97,11 +95,44 @@ describe('Macherlies Settings Store', () => {
         })
     })
 
-    describe('simulate game flow', () => {
+    describe('simulate game flow for first round', () => {
     const store = createTestStore()
-    })
+    store.init()
 
-   
+        it('check if first turn is initialized correctly', () => {
+            expect(store.gameSettings.currentRound).toBe(0)
+            expect(store.gameSettings.currentGroupIndex).toBe(0)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
+        })
+
+        it('check if points get added correctly', () => {
+            for (let i = 0; i < 3; i++) {
+                store.changeScore(1)
+            }
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(3)
+        })
+
+        it('check if points get subtracted correctly', () => {
+            for (let i = 0; i < 4; i++) {
+                store.changeScore(-1)
+            }
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(-1)
+        })
+
+        it('check if skips work as expected', () => {
+            expect(store.getCurrentSkipsLeft).toBe(3)
+            store.skipWord()
+            expect(store.getCurrentSkipsLeft).toBe(2)
+        })
+
+        it('check if score subtraction works when skips are used up', () => {
+            for (let i = 0; i < 3; i++) {
+                store.skipWord()
+            }
+            expect(store.getCurrentSkipsLeft).toBe(0)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(-2)
+    })
 })
 
+// TODO: Add input-validation tests (what if non valid group, etc.)
 // TODO: Remove comment from wordListStore.test.ts

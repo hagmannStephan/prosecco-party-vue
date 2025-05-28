@@ -87,6 +87,9 @@ export const useGameStore = defineStore('macherlies', {
             };
             
             this.init()
+        },
+        changeScore(score: number) {
+            // TODO: Change the score of the current group by param
         }
     }
 })
