@@ -68,6 +68,7 @@ describe('Macherlies Settings Store', () => {
     describe('init game', () => {
         it('should set the game state correctly', () => {
             const store = createTestStore()
+            
             expect(store.gameSettings.maxPlayersGroup).toBe(1)
             expect(store.gameSettings.currentRound).toBe(0)
             expect(store.gameSettings.currentGroupIndex).toBe(0)
@@ -78,6 +79,7 @@ describe('Macherlies Settings Store', () => {
         it('should set the group metadata correctly', () => {
             const store = createTestStore()
             const group = store.getGroups
+
             expect(group[0].id).toBe(0)
             expect(group[0].score).toBe(0)
             expect(group[1].id).toBe(1)
@@ -87,6 +89,7 @@ describe('Macherlies Settings Store', () => {
         it('should set the player metadata correctly', () => {
             const store = createTestStore()
             const group = store.getGroups
+
             group.forEach((group) => {
                 group.players.forEach((player, playerIndex) => {
                     expect(player.id).toBe(playerIndex)
@@ -109,6 +112,7 @@ describe('Macherlies Settings Store', () => {
             for (let i = 0; i < 3; i++) {
                 store.changeScore(1)
             }
+
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(3)
         })
 
@@ -116,12 +120,15 @@ describe('Macherlies Settings Store', () => {
             for (let i = 0; i < 4; i++) {
                 store.changeScore(-1)
             }
+
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(-1)
         })
 
         it('check if skips work as expected', () => {
             expect(store.getCurrentSkipsLeft).toBe(3)
+            
             store.skipWord()
+
             expect(store.getCurrentSkipsLeft).toBe(2)
         })
 
@@ -129,8 +136,46 @@ describe('Macherlies Settings Store', () => {
             for (let i = 0; i < 3; i++) {
                 store.skipWord()
             }
+
             expect(store.getCurrentSkipsLeft).toBe(0)
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(-2)
+        })
+
+        it('check if second turn initializes correctly', () => {
+            store.initializeNextTurn()
+
+            expect(store.getCurrentRound).toBe(0)
+            expect(store.getCurrentGroupIndex).toBe(1)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(0)
+            expect(store.getCurrentSkipsLeft).toBe(3)
+        })
+    })
+
+    describe('simulate flow for second round', () => {
+    const store = createTestStore()
+    store.init()
+
+        it('should initialize the second round correctly', () => {
+            store.changeScore(5)
+
+            for(let i = 0; i < 8; i++) {
+                store.initializeNextTurn()
+            }
+
+            expect(store.getCurrentRound).toBe(1)
+            expect(store.getCurrentGroupIndex).toBe(0)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(1)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].score).toBe(5)
+        })
+
+        it('should initialize the second turn of the second round correctly', () => {
+            store.initializeNextTurn()
+
+            expect(store.getCurrentRound).toBe(1)
+            expect(store.getCurrentGroupIndex).toBe(0)
+            expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
+        })
     })
 })
 
