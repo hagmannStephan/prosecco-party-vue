@@ -177,21 +177,102 @@ describe('Macherlies Settings Store - Game Flow', () => {
     })
 
     describe('simulate game flow until finished', () => {
+        // A game with three rounds takes 8 * 3 turns to finish in this config
 
-        it('should adhere to the game rules during the entire game', () => {
-            const store = createTestStore()
-
-            for (let i = 0; i < (8 * 3); i++) {
-                expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
-                expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
-                store.initializeNextTurn()
-            }
-        })
+    function validateGameState(store: ReturnType<typeof useGameStore>) {
+        expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
+        expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
+        store.initializeNextTurn()
+    }
 
         it('should finish the game correctly (for the first group win)', () => {
+            const store = createTestStore()
+
+            store.changeScore(5)
+
+            for (let i = 0; i < (23); i++) {
+                validateGameState(store)
+            }
+
+            store.changeScore(2)
+            const leaderboard = store.initializeNextTurn()
+
+            expect(leaderboard).toBe(
+                [
+                    {
+                        "name": "Gang gang 🤙",
+                        "members": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
+                        "score": 5,
+                        "rank": 1
+                    },
+                    {
+                        "name": "Gong Gang 🎵",
+                        "members": [ "Stöff", "Töff", "Röff", "Schmöff" ],
+                        "score": 2,
+                        "rank": 2
+                    }
+                ]
+            )
         })
 
         it('should finish the game correctly (for the second group)', () => {
+            const store = createTestStore()
+
+            store.changeScore(3)
+
+            for (let i = 0; i < (23); i++) {
+                validateGameState(store)
+            }
+
+            store.changeScore(4)
+            const leaderboard = store.initializeNextTurn()
+
+            expect(leaderboard).toBe(
+                [
+                    {
+                        "name": "Gang gang 🤙",
+                        "members": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
+                        "score": 2,
+                        "rank": 2
+                    },
+                    {
+                        "name": "Gong Gang 🎵",
+                        "members": [ "Stöff", "Töff", "Röff", "Schmöff" ],
+                        "score": 4,
+                        "rank": 1
+                    }
+                ]
+            )
+        })
+
+        it('should finish the game correctly (if a draw)', () => {
+            const store = createTestStore()
+
+            store.changeScore(6)
+
+            for (let i = 0; i < (23); i++) {
+                validateGameState(store)
+            }
+
+            store.changeScore(6)
+            const leaderboard = store.initializeNextTurn()
+
+                        expect(leaderboard).toBe(
+                [
+                    {
+                        "name": "Gang gang 🤙",
+                        "members": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
+                        "score": 6,
+                        "rank": 1
+                    },
+                    {
+                        "name": "Gong Gang 🎵",
+                        "members": [ "Stöff", "Töff", "Röff", "Schmöff" ],
+                        "score": 6,
+                        "rank": 1
+                    }
+                ]
+            )
         })
     })
 })
@@ -216,7 +297,7 @@ describe('Macherlies Settings Store - Game Settings Validation', () => {
 
 describe('Macherlies Settings Store - Game Exit', () => {
     it('should reset the game settings when exiting', () => {
-        
+
     })
 })
 
