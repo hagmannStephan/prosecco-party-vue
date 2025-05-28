@@ -1,4 +1,3 @@
-import type { get } from 'http';
 import { defineStore } from 'pinia';
 
 interface Player {
@@ -38,6 +37,7 @@ interface GameSettings {
     currentRound?: number,
     currentGroupIndex?: number,
     currentGameMode?: string,
+    currentWordList?: string,
     // Each player gets per round three free skips
     // If they are used up, each skip costs the group a point
     currentSkipsLeft?: number,
@@ -57,6 +57,7 @@ export const useGameStore = defineStore('macherlies', {
             currentRound: 0,
             currentGroupIndex: 0,
             currentGameMode: '',
+            currentWordList: '',
             currentSkipsLeft: 0,
         }
     }),
@@ -71,6 +72,7 @@ export const useGameStore = defineStore('macherlies', {
         getCurrentRound: (state) => state.gameSettings.currentRound,
         getCurrentGroupIndex: (state) => state.gameSettings.currentGroupIndex,
         getCurrentGameMode: (state) => state.gameSettings.currentGameMode,
+        getCurrentWordList: (state) => state.gameSettings.currentWordList,
         getCurrentSkipsLeft: (state) => state.gameSettings.currentSkipsLeft,
     },
     actions: {
@@ -81,6 +83,10 @@ export const useGameStore = defineStore('macherlies', {
         },
         init() {
             // TODO: Init the store
+        },
+        gameComplete() {
+            // TODO: What to do if game is finished
+            // Return leaderboard and give it with props to next element
         },
         // Public Functions
         setGameSettings(settings: GameSettings) {
@@ -100,6 +106,9 @@ export const useGameStore = defineStore('macherlies', {
         },
         initializeNextTurn() {
             // TODO: Initialize the next turn
+        },
+        gameExit() {
+
         }
     }
 })

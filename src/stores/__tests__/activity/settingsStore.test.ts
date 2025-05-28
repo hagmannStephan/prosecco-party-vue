@@ -100,8 +100,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
 
     describe('simulate game flow for first round', () => {
     const store = createTestStore()
-    store.init()
-
+    
         it('check if first turn is initialized correctly', () => {
             expect(store.gameSettings.currentRound).toBe(0)
             expect(store.gameSettings.currentGroupIndex).toBe(0)
@@ -154,7 +153,6 @@ describe('Macherlies Settings Store - Game Flow', () => {
 
     describe('simulate flow for second round', () => {
     const store = createTestStore()
-    store.init()
 
         it('should initialize the second round correctly', () => {
             store.changeScore(5)
@@ -178,8 +176,19 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
     })
 
-    describe('simulate game finished', () => {
-        it('should finish the game correctly (for the first group)', () => {
+    describe('simulate game flow until finished', () => {
+
+        it('should adhere to the game rules during the entire game', () => {
+            const store = createTestStore()
+
+            for (let i = 0; i < (8 * 3); i++) {
+                expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
+                expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
+                store.initializeNextTurn()
+            }
+        })
+
+        it('should finish the game correctly (for the first group win)', () => {
         })
 
         it('should finish the game correctly (for the second group)', () => {
@@ -187,5 +196,28 @@ describe('Macherlies Settings Store - Game Flow', () => {
     })
 })
 
-// TODO: Add input-validation tests (what if non valid group, etc.)
+describe('Macherlies Settings Store - Game Settings Validation', () => {
+    it('should throw an error if no groups are set', () => {
+    
+    })
+
+    it('should throw an error if more than two group are set', () => {
+
+    })
+
+    it('should throw an error if there are less than two players in a group', () => {
+
+    })
+
+    it('should thrown an error if settings aren\' complete', () => {
+
+    })
+})
+
+describe('Macherlies Settings Store - Game Exit', () => {
+    it('should reset the game settings when exiting', () => {
+        
+    })
+})
+
 // TODO: Remove comment from wordListStore.test.ts
