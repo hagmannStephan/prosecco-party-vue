@@ -31,17 +31,11 @@ export function getRandomWord(): WordEntry | string {
 }
 
 export function getWordListCategories(): string[] {
-    const wordListStore = useWordListStore()
-    const languageSettingsStore = useLanguageSettingsStore()
- 
-    // Make sure store is initialized first
-    if (!wordListStore.isInitialized) {
-        console.warn('[getWordListCategories] Word list store not initialized')
-        return []
-    }
- 
-    const language = languageSettingsStore.getLanguage()
- 
-    // Get all categories from the word list
-    return wordListStore.getAvailableCategories(language)
+    // TODO: Don't hardcode this, but check the store for available categories
+    return [
+        'standard',
+        'activity',
+        'sport',
+        'spicy',
+    ]
  }

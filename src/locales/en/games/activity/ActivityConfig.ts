@@ -28,8 +28,8 @@ export default {
         "draw": "🎨 Draw",
         "describe": "🗣️ Describe",
     },
-    "category": {
-        "title": "Word Categories",
+    "wordlist": {
+        "title": "Word Lists",
         "standard": "Standard 🌍",
         "activity": "Activity 🚴‍♂️",
         "sport": "Sports ⚽",
@@ -42,7 +42,8 @@ export default {
         "min-groups": "At least 2 groups must be formed.",
         "min-players-per-group": "There must be at least 1 player per group.",
         "group-name-required": "Please enter a name for all groups.",
-        "category-required": "Please select at least one category.",
+        "wordlist-required": "Please select at least one word lists.",
+        "rounds-range": "You need to play at least 1 round"
     },
     "start-game": "Start Game!",
 }
