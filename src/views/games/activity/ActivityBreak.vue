@@ -39,6 +39,6 @@ onMounted(() => {
     <h1>{{ currentPlayerName + t('activity.break.title') }}</h1>
     <h2>{{ t('activity.break.team') + ': ' + currentGroupName }}</h2>
     <h2>{{ t('activity.break.mode.title') }}</h2>
-    <p>{{ t(`activity.break.mode.${gS.getCurrentWordList || 'pantomime'}`) }}</p>
+    <p>{{ t(`activity.break.mode.${gS.getCurrentGameMode || 'pantomime'}`) }}</p>
     <button @click="pushRouter('/activity')">{{ t('activity.break.button.start') }}</button>
 </template>
