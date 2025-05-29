@@ -69,6 +69,8 @@ export const useGameStore = defineStore('macherlies-game-store', {
         getCurrentGameMode: (state) => state.gameStore.currentGameMode,
         getCurrentWordList: (state) => state.gameStore.currentWordList,
         getCurrentSkipsLeft: (state) => state.gameStore.currentSkipsLeft,
+        getCurrentPlayer: (state) => state.gameStore.groups[state.gameStore.currentGroupIndex || 0]?.players[state.gameStore.groups[state.gameStore.currentGroupIndex || 0]?.currentPlayerIndex || 0] || null,
+        getCurrentGroup: (state) => state.gameStore.groups[state.gameStore.currentGroupIndex || 0] || null,
     },
     actions: {
         // Private Functions
@@ -143,6 +145,9 @@ export const useGameStore = defineStore('macherlies-game-store', {
                     players: group.players.map(player => player.name),
                     score: group.score || 0,
                 }));
+                // Rest game Store
+                this.gameExit();
+
                 return leaderboard;
         },
         // Public Functions

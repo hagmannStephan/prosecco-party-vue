@@ -67,6 +67,29 @@ describe('Macherlies Settings Store - Game Flow', () => {
             const store = createTestStore()
             expect(store.getAllowedWordLists.length).toBe(3)
         })
+
+        it('should return the correct current player', () => {
+            const store = createTestStore()
+            expect(store.getCurrentPlayer).toEqual({
+                id: 0,
+                name: "Steffla Chef"
+            })
+        })
+
+        it('should return the correct current group', () => {
+            const store = createTestStore()
+            expect(store.getCurrentGroup).toEqual({
+                id: 0,
+                name: "Gang gang 🤙",
+                score: 0,
+                players: [
+                    { id: 0, name: "Steffla Chef" },
+                    { id: 1, name: "Liam de Lappe" },
+                    { id: 2, name: "Joan de Chefé" }
+                ],
+                currentPlayerIndex: 0
+            })
+        })
     })
 
     describe('init game', () => {

@@ -159,7 +159,6 @@ describe('Word List Store', () => {
     for (let i = 0; i < 50; i++) {
       const word = store.getRandomWord('en')
       expect(word).not.toBeNull()
-      console.log(`Word: ${word?.word}, Category: ${word?.category}`)
       expect(['standard', 'activity']).toContain(word?.category)
     }
   })
