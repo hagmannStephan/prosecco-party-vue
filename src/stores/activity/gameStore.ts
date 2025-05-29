@@ -94,11 +94,14 @@ export const useGameStore = defineStore('macherlies-game-store', {
                     ...group,
                     id: index,
                     score: 0,
-                    currentPlayerIndex: 0,
+                    // Because they get automatically incremented at next player turn
+                    currentPlayerIndex: -1,
                     players: playersWithIds,
                 };
             });
 
+            this.gameStore.currentRound = 0;
+            this.gameStore.groups[0].currentPlayerIndex = 0;
             this.initTurn();
         },
         initTurn() {
@@ -107,13 +110,42 @@ export const useGameStore = defineStore('macherlies-game-store', {
                 this.gameStore.gameModes[
                     Math.floor(Math.random() * this.gameStore.gameModes.length)
                 ];
+
+            // Set a random word list
+            this.gameStore.currentWordList =
+                this.gameStore.allowedWordLists[
+                    Math.floor(Math.random() * this.gameStore.allowedWordLists.length)
+                ];
             
             // Set available skips
             this.gameStore.currentSkipsLeft = 3;
         },
         gameComplete() {
-            // TODO: What to do if game is finished
-            // Return leaderboard and give it with props to next element
+            console.log("Groups in this game before leaderboard:", this.gameStore.groups);
+            // Return leaderboard if the game is complete
+            const leaderboard = this.gameStore.groups
+                .slice()
+                .sort((a, b) => {
+                    // 1. Sort by score descending
+                    const scoreA = a.score || 0;
+                    const scoreB = b.score || 0;
+                    if (scoreB !== scoreA) {
+                        return scoreB - scoreA;
+                    }
+                    // 2. Sort by player count ascending
+                    if (a.players.length !== b.players.length) {
+                        return a.players.length - b.players.length;
+                    }
+                    // 3. Otherwise, keep original order
+                    return 0;
+                })
+                .map(group => ({
+                    name: group.name,
+                    players: group.players.map(player => player.name),
+                    score: group.score || 0,
+                }));
+                console.log('Game complete. Leaderboard:', leaderboard);
+                return leaderboard;
         },
         // Public Functions
         setgameStore(settings: GameStore) {
@@ -146,9 +178,7 @@ export const useGameStore = defineStore('macherlies-game-store', {
             // Increment current player index
             const currentGroup = this.gameStore.groups[this.gameStore.currentGroupIndex || 0];
             if (currentGroup) {
-                currentGroup.currentPlayerIndex = (currentGroup.currentPlayerIndex || 0) + 1;
-
-                console.log(`Current player index: ${currentGroup.currentPlayerIndex} in group ${currentGroup.id}`);
+                currentGroup.currentPlayerIndex = (currentGroup.currentPlayerIndex ?? 0) + 1;
 
                 // If current player index is bigger than group players, reset to 0
                 if (currentGroup.currentPlayerIndex >= currentGroup.players.length) {
@@ -156,8 +186,8 @@ export const useGameStore = defineStore('macherlies-game-store', {
 
                     // If last player of biggest group finished, increment round
                     if (currentGroup.id === this.gameStore.maxPlayersGroup) {
-                        console.log('Last player of biggest group finished, incrementing round');
                         this.gameStore.currentRound = (this.gameStore.currentRound ?? 0) + 1;
+                        console.log
 
                         // If last round, finish game
                         if (this.gameStore.currentRound >= this.gameStore.rounds) {
@@ -177,7 +207,19 @@ export const useGameStore = defineStore('macherlies-game-store', {
             }
         },
         gameExit() {
-
+            this.gameStore = {
+            groups: [],
+            rounds: 0,
+            timePerRound: 0,
+            gameModes: [],
+            allowedWordLists: [],
+            maxPlayersGroup: 0,
+            currentRound: 0,
+            currentGroupIndex: 0,
+            currentGameMode: '',
+            currentWordList: '',
+            currentSkipsLeft: 0
+            };
         }
     }
 })
