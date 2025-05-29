@@ -132,9 +132,13 @@ export const useGameStore = defineStore('macherlies-game-store', {
             }
         },
         skipWord() {
-            // TODO: Add functionality to skip word
             // If skips left, decrement skips left
-            // If no skips left, decrement group score
+            if (this.gameStore.currentSkipsLeft && this.gameStore.currentSkipsLeft > 0) {
+                this.gameStore.currentSkipsLeft -= 1;
+            } else {
+                // If no skips left, decrement group score
+                this.changeScore(-1);
+            }
         },
         continueToNextPlayer() {
             this.initTurn();
