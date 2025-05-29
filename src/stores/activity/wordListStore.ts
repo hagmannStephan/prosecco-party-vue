@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { openDB } from 'idb'
-import { useGameStore } from '@/stores/activity/settingsStore'
+import { useGameStore } from '@/stores/activity/gameStore'
 
 const DB_NAME = 'name-of-the-game-db'
 const STORE_NAME = 'activity-word-list-store'

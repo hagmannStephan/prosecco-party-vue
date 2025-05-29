@@ -1,7 +1,7 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { describe, it, expect, beforeEach, vi } from 'vitest'
 import { useWordListStore } from '@/stores/activity/wordListStore'
-import { useGameStore } from '@/stores/activity/settingsStore'
+import { useGameStore } from '@/stores/activity/gameStore'
 
 // Mock the indexed db module
 vi.mock('idb', () => ({

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
-import { useGameStore } from '@/stores/activity/settingsStore';
+import { useGameStore } from '@/stores/activity/gameStore';
 import { useI18n } from 'vue-i18n';
 import { getWordListCategories } from '@/helpers/Activity/wordListHelper';
 import { useWordListStore } from '@/stores/activity/wordListStore';

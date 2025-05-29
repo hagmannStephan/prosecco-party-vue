@@ -1,11 +1,11 @@
 import { setActivePinia, createPinia } from 'pinia'
-import { describe, it, expect, beforeEach } from 'vitest'
-import { useGameStore } from '@/stores/activity/settingsStore'
+import { describe, it, expect, beforeEach, beforeAll } from 'vitest'
+import { useGameStore } from '@/stores/activity/gameStore'
 
 // Mock valid game store
 function createTestStore() {
     const store = useGameStore()
-    store.setGameSettings({
+    store.setgameStore({
         groups: [
             {
                 name: 'Gang gang 🤙',
@@ -34,11 +34,15 @@ function createTestStore() {
 }
 
 describe('Macherlies Settings Store - Game Flow', () => {
-    beforeEach(() => {
-        setActivePinia(createPinia())
-    })
 
     describe('getters', () => {
+        let store: ReturnType<typeof useGameStore>
+
+        beforeEach(() => {
+            setActivePinia(createPinia())
+            store = createTestStore()
+        })
+
         it('should return the corrent groups from the getter', () => {
             const store = createTestStore()
             expect(store.getGroups.length).toBe(2)
@@ -69,11 +73,11 @@ describe('Macherlies Settings Store - Game Flow', () => {
         it('should set the game state correctly', () => {
             const store = createTestStore()
 
-            expect(store.gameSettings.maxPlayersGroup).toBe(1)
-            expect(store.gameSettings.currentRound).toBe(0)
-            expect(store.gameSettings.currentGroupIndex).toBe(0)
-            expect(store.gameSettings.currentGameMode).toContain(['pantomime', 'describe'])
-            expect(store.gameSettings.currentSkipsLeft).toBe(3)
+            expect(store.gameStore.maxPlayersGroup).toBe(1)
+            expect(store.gameStore.currentRound).toBe(0)
+            expect(store.gameStore.currentGroupIndex).toBe(0)
+            expect(['pantomime', 'describe']).toContain(store.gameStore.currentGameMode)
+            expect(store.gameStore.currentSkipsLeft).toBe(3)
         })
 
         it('should set the group metadata correctly', () => {
@@ -99,11 +103,16 @@ describe('Macherlies Settings Store - Game Flow', () => {
     })
 
     describe('simulate game flow for first round', () => {
-    const store = createTestStore()
-    
+        let store: ReturnType<typeof useGameStore>
+
+        beforeAll(() => {
+            setActivePinia(createPinia())
+            store = createTestStore()
+        })
+            
         it('check if first turn is initialized correctly', () => {
-            expect(store.gameSettings.currentRound).toBe(0)
-            expect(store.gameSettings.currentGroupIndex).toBe(0)
+            expect(store.gameStore.currentRound).toBe(0)
+            expect(store.gameStore.currentGroupIndex).toBe(0)
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
         })
 
@@ -152,7 +161,12 @@ describe('Macherlies Settings Store - Game Flow', () => {
     })
 
     describe('simulate flow for second round', () => {
-    const store = createTestStore()
+        let store: ReturnType<typeof useGameStore>
+
+        beforeAll(() => {
+            setActivePinia(createPinia())
+            store = createTestStore()
+        })
 
         it('should initialize the second round correctly', () => {
             store.changeScore(5)
@@ -179,11 +193,11 @@ describe('Macherlies Settings Store - Game Flow', () => {
     describe('simulate game flow until finished', () => {
         // A game with three rounds takes 8 * 3 turns to finish in this config
 
-    function validateGameState(store: ReturnType<typeof useGameStore>) {
-        expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
-        expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
-        store.initializeNextTurn()
-    }
+        function validateGameState(store: ReturnType<typeof useGameStore>) {
+            expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
+            expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
+            store.initializeNextTurn()
+        }
 
         it('should finish the game correctly (for the first group win)', () => {
             const store = createTestStore()
@@ -285,7 +299,7 @@ describe('Macherlies Settings Store - Game Exit', () => {
         
         store.gameExit()
 
-        expect(store.gameSettings).toEqual({
+        expect(store.gameStore).toEqual({
             groups: [],
             rounds: 0,
             timePerRound: 0,

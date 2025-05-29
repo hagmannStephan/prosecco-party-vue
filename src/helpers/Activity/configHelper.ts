@@ -1,4 +1,4 @@
-import { useGameStore } from '@/stores/activity/settingsStore';
+import { useGameStore } from '@/stores/activity/gameStore';
 
 export function isPiniaComplete(gS: ReturnType<typeof useGameStore>) {
    if (
