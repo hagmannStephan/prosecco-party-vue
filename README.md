@@ -1,5 +1,17 @@
 # Name of the Game - Party Games App 🪩🕺🤠
 
+![Status](https://img.shields.io/badge/status-in_development-yellow)
+![GitHub last commit](https://img.shields.io/github/last-commit/hagmannStephan/name-of-the-game-vue)
+![License](https://img.shields.io/badge/license-AGPL--3.0+Commons_Clause-lightgrey)
+
+
+![Built with Vite](https://img.shields.io/badge/Built%20with-Vite-646CFF?logo=vite&logoColor=white)
+![Vue](https://img.shields.io/badge/Vue.js-35495E?logo=vue.js&logoColor=4FC08D)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![PWA](https://img.shields.io/badge/PWA-ready-5A0FC8?logo=pwa&logoColor=white)
+
+
+
 ## About the App
 **Our goal is to:** provide a website to users that allows them to play party games for free with our offline compatible and internationalized PWA 🏁
 
