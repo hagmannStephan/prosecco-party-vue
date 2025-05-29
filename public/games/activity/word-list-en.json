@@ -11,7 +11,7 @@
   },
   {
     "word": "Kettle",
-    "difficulty": "medium",
+    "category": "standard",
     "forbidden": [
       "Boil",
       "Water",
@@ -20,7 +20,7 @@
   },
   {
     "word": "Rocking chair",
-    "difficulty": "hard",
+    "category": "standard",
     "forbidden": [
       "Chair",
       "Rock",
@@ -29,7 +29,7 @@
   },
   {
     "word": "Nose hair trimmer",
-    "difficulty": "hard",
+    "category": "standard",
     "forbidden": [
       "Nose",
       "Hair",
@@ -38,7 +38,7 @@
   },
   {
     "word": "Sandbox",
-    "difficulty": "medium",
+    "category": "standard",
     "forbidden": [
       "Sand",
       "Play",
@@ -47,7 +47,7 @@
   },
   {
     "word": "Trampoline",
-    "difficulty": "easy",
+    "category": "standard",
     "forbidden": [
       "Jump",
       "Bounce",
@@ -56,7 +56,7 @@
   },
   {
     "word": "Boomerang",
-    "difficulty": "medium",
+    "category": "standard",
     "forbidden": [
       "Throw",
       "Return",
@@ -345,7 +345,7 @@
   },
   {
     "word": "Vacuuming",
-    "difficulty": "easy",
+    "category": "activity",
     "forbidden": [
       "Clean",
       "Machine",
@@ -354,7 +354,7 @@
   },
   {
     "word": "Brushing teeth",
-    "difficulty": "easy",
+    "category": "activity",
     "forbidden": [
       "Toothbrush",
       "Mouth",
@@ -363,7 +363,7 @@
   },
   {
     "word": "Doing yoga",
-    "difficulty": "medium",
+    "category": "activity",
     "forbidden": [
       "Stretch",
       "Exercise",
@@ -372,7 +372,7 @@
   },
   {
     "word": "Playing trumpet",
-    "difficulty": "hard",
+    "category": "activity",
     "forbidden": [
       "Music",
       "Brass",
@@ -381,7 +381,7 @@
   },
   {
     "word": "Having hiccups",
-    "difficulty": "medium",
+    "category": "activity",
     "forbidden": [
       "Hic",
       "Drink",
@@ -390,7 +390,7 @@
   },
   {
     "word": "Jump rope",
-    "difficulty": "easy",
+    "category": "activity",
     "forbidden": [
       "Jump",
       "Rope",
@@ -579,7 +579,7 @@
   },
   {
     "word": "Curling",
-    "difficulty": "hard",
+    "category": "sport",
     "forbidden": [
       "Ice",
       "Stone",
@@ -588,7 +588,7 @@
   },
   {
     "word": "Slacklining",
-    "difficulty": "medium",
+    "category": "sport",
     "forbidden": [
       "Balance",
       "Rope",
@@ -597,7 +597,7 @@
   },
   {
     "word": "Parkour",
-    "difficulty": "medium",
+    "category": "sport",
     "forbidden": [
       "Jump",
       "Obstacle",
@@ -606,7 +606,7 @@
   },
   {
     "word": "Wrestling",
-    "difficulty": "medium",
+    "category": "sport",
     "forbidden": [
       "Fight",
       "Mat",
@@ -615,7 +615,7 @@
   },
   {
     "word": "Skateboarding",
-    "difficulty": "easy",
+    "category": "sport",
     "forbidden": [
       "Board",
       "Wheels",
@@ -624,7 +624,7 @@
   },
   {
     "word": "Chess",
-    "difficulty": "medium",
+    "category": "sport",
     "forbidden": [
       "Game",
       "Pieces",
@@ -633,7 +633,7 @@
   },
   {
     "word": "Long jump",
-    "difficulty": "medium",
+    "category": "sport",
     "forbidden": [
       "Jump",
       "Far",
@@ -852,7 +852,7 @@
   },
   {
     "word": "Striptease",
-    "difficulty": "hard",
+    "category": "spicy",
     "forbidden": [
       "Undress",
       "Dance",
@@ -861,7 +861,7 @@
   },
   {
     "word": "Massage oil",
-    "difficulty": "medium",
+    "category": "spicy",
     "forbidden": [
       "Massage",
       "Skin",
@@ -870,7 +870,7 @@
   },
   {
     "word": "Foot fetish",
-    "difficulty": "hard",
+    "category": "spicy",
     "forbidden": [
       "Feet",
       "Kink",

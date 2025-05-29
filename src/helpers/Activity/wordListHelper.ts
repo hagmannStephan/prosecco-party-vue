@@ -14,14 +14,12 @@ export function getRandomWord(): WordEntry | string {
     const language = languageSettingsStore.getLanguage()
     
     // If some case the entires should get filtered by difficulty
-    const difficulties = ["easy", "medium", "hard"]
- 
-    const wordEntry = wordListStore.getRandomWord(language, difficulties)
+
+    const wordEntry = wordListStore.getRandomWord(language)
  
     if (!wordEntry) {
       console.warn('[getRandomWord] No word found:', {
         language,
-        difficulties,
         wordList: wordListStore.wordLists[language],
       })
       return 'No matching words found 🤒'

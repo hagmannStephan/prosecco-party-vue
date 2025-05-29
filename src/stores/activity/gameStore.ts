@@ -71,6 +71,11 @@ export const useGameStore = defineStore('macherlies-game-store', {
         getCurrentSkipsLeft: (state) => state.gameStore.currentSkipsLeft,
         getCurrentPlayer: (state) => state.gameStore.groups[state.gameStore.currentGroupIndex || 0]?.players[state.gameStore.groups[state.gameStore.currentGroupIndex || 0]?.currentPlayerIndex || 0] || null,
         getCurrentGroup: (state) => state.gameStore.groups[state.gameStore.currentGroupIndex || 0] || null,
+        getOpposingGroup: (state) => {
+            const currentGroupIndex = state.gameStore.currentGroupIndex || 0;
+            const opposingGroupIndex = (currentGroupIndex + 1) % state.gameStore.groups.length;
+            return state.gameStore.groups[opposingGroupIndex] || null;
+        }
     },
     actions: {
         // Private Functions

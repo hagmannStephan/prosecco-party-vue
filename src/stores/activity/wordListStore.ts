@@ -65,19 +65,20 @@ export const useWordListStore = defineStore('wordList', {
 
             this.isInitialized = true
         },
-        getRandomWord(language: 'de' | 'en', difficulties?: string[]): WordEntry | null {
+        getRandomWord(language: 'de' | 'en'): WordEntry | null {
             let list = this.wordLists[language]
+
+            console.log("list", list)
 
             const gameStore = useGameStore()
             const wordCategories = gameStore.getAllowedWordLists
-          
-            if (difficulties && difficulties.length > 0) {
-              list = list.filter(entry => difficulties.includes(entry.difficulty))
-            }
+
 
             if (wordCategories && wordCategories.length > 0) {
                 list = list.filter(entry => wordCategories.includes(entry.category))
             }
+
+            console.log("filtered list", list)
           
             if (list.length === 0) return null
           

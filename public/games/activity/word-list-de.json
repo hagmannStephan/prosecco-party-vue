@@ -10,7 +10,7 @@
     },
     {
         "word": "Wasserkocher",
-        "difficulty": "medium",
+        "category": "standard",
         "forbidden": [
             "Erhitzen",
             "Küche",
@@ -19,7 +19,7 @@
     },
     {
         "word": "Schaukelstuhl",
-        "difficulty": "hard",
+        "category": "standard",
         "forbidden": [
             "Stuhl",
             "Schaukeln",
@@ -28,7 +28,7 @@
     },
     {
         "word": "Nasenhaarschneider",
-        "difficulty": "hard",
+        "category": "standard",
         "forbidden": [
             "Nase",
             "Haare",
@@ -37,7 +37,7 @@
     },
     {
         "word": "Sandkasten",
-        "difficulty": "medium",
+        "category": "standard",
         "forbidden": [
             "Sand",
             "Spielen",
@@ -46,7 +46,7 @@
     },
     {
         "word": "Trampolin",
-        "difficulty": "easy",
+        "category": "standard",
         "forbidden": [
             "Springen",
             "Hüpfen",
@@ -55,7 +55,7 @@
     },
     {
         "word": "Bumerang",
-        "difficulty": "medium",
+        "category": "standard",
         "forbidden": [
             "Werfen",
             "Zurückkommen",
@@ -315,7 +315,7 @@
     },
     {
         "word": "Staubsaugen",
-        "difficulty": "easy",
+        "category": "activity",
         "forbidden": [
             "Staub",
             "Gerät",
@@ -324,7 +324,7 @@
     },
     {
         "word": "Zähne putzen",
-        "difficulty": "easy",
+        "category": "activity",
         "forbidden": [
             "Zahnbürste",
             "Mund",
@@ -333,7 +333,7 @@
     },
     {
         "word": "Yoga machen",
-        "difficulty": "medium",
+        "category": "activity",
         "forbidden": [
             "Dehnen",
             "Sport",
@@ -342,7 +342,7 @@
     },
     {
         "word": "Trompete spielen",
-        "difficulty": "hard",
+        "category": "activity",
         "forbidden": [
             "Musik",
             "Blasinstrument",
@@ -351,7 +351,7 @@
     },
     {
         "word": "Schluckauf haben",
-        "difficulty": "medium",
+        "category": "activity",
         "forbidden": [
             "Hicks",
             "Trinken",
@@ -360,7 +360,7 @@
     },
     {
         "word": "Seilspringen",
-        "difficulty": "easy",
+        "category": "activity",
         "forbidden": [
             "Kinder",
             "Hüpfen",
@@ -523,7 +523,7 @@
     },
     {
         "word": "Curling",
-        "difficulty": "hard",
+        "category": "sport",
         "forbidden": [
             "Eis",
             "Stein",
@@ -532,7 +532,7 @@
     },
     {
         "word": "Slackline",
-        "difficulty": "medium",
+        "category": "sport",
         "forbidden": [
             "Balancieren",
             "Seil",
@@ -541,7 +541,7 @@
     },
     {
         "word": "Parkour",
-        "difficulty": "medium",
+        "category": "sport",
         "forbidden": [
             "Springen",
             "Hindernis",
@@ -550,7 +550,7 @@
     },
     {
         "word": "Ringen",
-        "difficulty": "medium",
+        "category": "sport",
         "forbidden": [
             "Kampf",
             "Matte",
@@ -559,7 +559,7 @@
     },
     {
         "word": "Skateboarden",
-        "difficulty": "easy",
+        "category": "sport",
         "forbidden": [
             "Brett",
             "Rollen",
@@ -568,7 +568,7 @@
     },
     {
         "word": "Schach",
-        "difficulty": "medium",
+        "category": "sport",
         "forbidden": [
             "Strategie",
             "Figuren",
@@ -577,7 +577,7 @@
     },
     {
         "word": "Weitsprung",
-        "difficulty": "medium",
+        "category": "sport",
         "forbidden": [
             "Anlauf nehmen",
             "Leichtathletik",
@@ -739,7 +739,7 @@
     },
     {
         "word": "Striptease",
-        "difficulty": "hard",
+        "category": "spicy",
         "forbidden": [
             "Ausziehen",
             "Tanzen",
@@ -748,7 +748,7 @@
     },
     {
         "word": "Massageöl",
-        "difficulty": "medium",
+        "category": "spicy",
         "forbidden": [
             "Massieren",
             "Haut",
@@ -757,7 +757,7 @@
     },
     {
         "word": "Fuss-Fetisch",
-        "difficulty": "hard",
+        "category": "spicy",
         "forbidden": [
             "Füsse",
             "Vorliebe",

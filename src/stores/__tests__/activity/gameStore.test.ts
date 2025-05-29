@@ -92,6 +92,22 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
     })
 
+    it('should return the correct opposing group', () => {
+        const store = createTestStore()
+        expect(store.getOpposingGroup).toEqual({
+            id: 1,
+            name: "Gong Gang 🎵",
+            score: 0,
+            players: [
+                { id: 0, name: "Stöff" },
+                { id: 1, name: "Töff" },
+                { id: 2, name: "Röff" },
+                { id: 3, name: "Schmöff" }
+            ],
+            currentPlayerIndex: 0
+        })
+    })
+
     describe('init game', () => {
         it('should set the game state correctly', () => {
             const store = createTestStore()
