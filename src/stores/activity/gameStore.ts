@@ -148,24 +148,33 @@ export const useGameStore = defineStore('macherlies-game-store', {
             if (currentGroup) {
                 currentGroup.currentPlayerIndex = (currentGroup.currentPlayerIndex || 0) + 1;
 
+                console.log(`Current player index: ${currentGroup.currentPlayerIndex} in group ${currentGroup.id}`);
+
                 // If current player index is bigger than group players, reset to 0
                 if (currentGroup.currentPlayerIndex >= currentGroup.players.length) {
                     currentGroup.currentPlayerIndex = 0;
 
                     // If last player of biggest group finished, increment round
                     if (currentGroup.id === this.gameStore.maxPlayersGroup) {
-                        this.gameStore.rounds += 1;
+                        console.log('Last player of biggest group finished, incrementing round');
+                        this.gameStore.currentRound = (this.gameStore.currentRound ?? 0) + 1;
 
                         // If last round, finish game
-                        if (this.gameStore.rounds >= this.gameStore.rounds) {
+                        if (this.gameStore.currentRound >= this.gameStore.rounds) {
                             this.gameComplete();
                         }
                     }
                 }
+            } else {
+                console.error('Current group not found');
             }
 
             // If not last round, continue to next group
             this.gameStore.currentGroupIndex = (this.gameStore.currentGroupIndex || 0) + 1;
+
+            if (this.gameStore.currentGroupIndex >= this.gameStore.groups.length) {
+                this.gameStore.currentGroupIndex = 0;
+            }
         },
         gameExit() {
 

@@ -185,7 +185,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             store.continueToNextPlayer()
 
             expect(store.getCurrentRound).toBe(1)
-            expect(store.getCurrentGroupIndex).toBe(0)
+            expect(store.getCurrentGroupIndex).toBe(1)
             expect(store.getGroups[store.getCurrentGroupIndex ?? 0].currentPlayerIndex).toBe(0)
         })
     })
@@ -194,8 +194,8 @@ describe('Macherlies Settings Store - Game Flow', () => {
         // A game with three rounds takes 8 * 3 turns to finish in this config
 
         function validateGameState(store: ReturnType<typeof useGameStore>) {
-            expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
-            expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
+            expect(['pantomime', 'describe']).toContain(store.gameStore.currentGameMode)
+            expect(['standard', 'activity', 'spicy']).toContain(store.gameStore.currentWordList)
             store.continueToNextPlayer()
         }
 
