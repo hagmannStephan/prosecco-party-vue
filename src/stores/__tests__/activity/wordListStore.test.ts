@@ -135,71 +135,70 @@ describe('Word List Store', () => {
     expect(categories.sort()).toEqual(['standard', 'other', 'sport', 'else', 'such'].sort())
   })
   
-  // it('adhere to word categories', async () => {
-  //   const store = useWordListStore()
-  //   await store.init()
+  it('adhere to word categories', async () => {
+    const store = useWordListStore()
+    await store.init()
 
-  //   const gameStore = useGameStore()
-  //   gameStore.setGameSettings({
-  //     groups: [
-  //       {
-  //         id: 1,
-  //         name: 'Test Group',
-  //         players: [{ name: 'Player 1' }, { name: 'Player 2' }],
-  //         currentPlayerIndex: 0,
-  //         score: 0,
-  //       },
-  //     ],
-  //     rounds: 4,
-  //     timePerRound: 60,
-  //     gameModes: ['pantomime', 'describe'],
-  //     wordCategories: ['standard', 'activity'],
-  //   })
-  //   gameStore.initGameStore()
+    const gameStore = useGameStore()
+    gameStore.setGameStore({
+      groups: [
+        {
+          id: 1,
+          name: 'Test Group',
+          players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+          currentPlayerIndex: 0,
+          score: 0,
+        },
+      ],
+      rounds: 4,
+      timePerRound: 60,
+      gameModes: ['pantomime', 'describe'],
+      allowedWordLists: ['standard', 'activity'],
+    })
 
-  //   for (let i = 0; i < 50; i++) {
-  //     const word = store.getRandomWord('en')
-  //     expect(word).not.toBeNull()
-  //     expect(['standard', 'activity']).toContain(word?.category)
-  //   }
-  // })
+    for (let i = 0; i < 50; i++) {
+      const word = store.getRandomWord('en')
+      expect(word).not.toBeNull()
+      console.log(`Word: ${word?.word}, Category: ${word?.category}`)
+      expect(['standard', 'activity']).toContain(word?.category)
+    }
+  })
 
-  // it('same word doesn\'t appear twice in the last 10 words', async () => {	
-  //   const store = useWordListStore()
-  //   await store.init()
+  it('same word doesn\'t appear twice in the last 10 words', async () => {	
+    const store = useWordListStore()
+    await store.init()
 
-  //   const gameStore = useGameStore()
-  //   gameStore.setGameSettings({
-  //     groups: [
-  //       {
-  //         id: 1,
-  //         name: 'Test Group',
-  //         players: [{ name: 'Player 1' }, { name: 'Player 2' }],
-  //         currentPlayerIndex: 0,
-  //         score: 0,
-  //       },
-  //     ],
-  //     rounds: 4,
-  //     timePerRound: 60,
-  //     gameModes: ['pantomime', 'describe'],
-  //     wordCategories: ['sport'],
-  //   })
-  //   gameStore.initGameStore()
+    const gameStore = useGameStore()
+    gameStore.setGameStore({
+      groups: [
+        {
+          id: 1,
+          name: 'Test Group',
+          players: [{ name: 'Player 1' }, { name: 'Player 2' }],
+          currentPlayerIndex: 0,
+          score: 0,
+        },
+      ],
+      rounds: 4,
+      timePerRound: 60,
+      gameModes: ['pantomime', 'describe'],
+      allowedWordLists: ['sport'],
+    })
 
-  //   let lastTenWords: string[] = []
+    let lastTenWords: string[] = []
 
-  //   for (let i = 0; i < 100; i++) {
-  //     const currentWord = store.getRandomWord('en') || {word: ''}
-  //     if(lastTenWords.includes(currentWord?.word)) {
-  //       // If the word is already in the last 10 words, fail the test
-  //       expect.fail(`Word ${currentWord?.word} appeared twice in the last 10 words`)
-  //     }
+    for (let i = 0; i < 100; i++) {
+      const currentWord = store.getRandomWord('en') || {word: ''}
+      if(lastTenWords.includes(currentWord?.word)) {
+        // If the word is already in the last 10 words, fail the test
+        expect.fail(`Word ${currentWord?.word} appeared twice in the last 10 words`)
+      }
 
-  //     lastTenWords.push(currentWord?.word)
+      lastTenWords.push(currentWord?.word)
 
-  //     if (lastTenWords.length > 10) {
-  //       lastTenWords.shift() // Keep only the last 10 words
-  //     }
-  //   }
-  // })
+      if (lastTenWords.length > 10) {
+        lastTenWords.shift() // Keep only the last 10 words
+      }
+    }
+  })
 })

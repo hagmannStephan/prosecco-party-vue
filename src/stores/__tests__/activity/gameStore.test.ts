@@ -308,6 +308,3 @@ describe('Macherlies Settings Store - Game Exit', () => {
         })
     })
 })
-
-// TODO: Remove comment from wordListStore.test.ts
-// TODO: Change name to something like `GameStore.test.ts` (if not too difficult)

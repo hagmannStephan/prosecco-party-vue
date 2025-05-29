@@ -69,7 +69,7 @@ export const useWordListStore = defineStore('wordList', {
             let list = this.wordLists[language]
 
             const gameStore = useGameStore()
-            const wordCategories = gameStore.getWordCategories
+            const wordCategories = gameStore.getAllowedWordLists
           
             if (difficulties && difficulties.length > 0) {
               list = list.filter(entry => difficulties.includes(entry.difficulty))
