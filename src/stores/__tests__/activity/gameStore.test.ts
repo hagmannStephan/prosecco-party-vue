@@ -5,7 +5,7 @@ import { useGameStore } from '@/stores/activity/gameStore'
 // Mock valid game store
 function createTestStore() {
     const store = useGameStore()
-    store.setgameStore({
+    store.setGameStore({
         groups: [
             {
                 name: 'Gang gang 🤙',
@@ -196,29 +196,44 @@ describe('Macherlies Settings Store - Game Flow', () => {
         function validateGameState(store: ReturnType<typeof useGameStore>) {
             expect(['pantomime', 'describe']).toContain(store.gameStore.currentGameMode)
             expect(['standard', 'activity', 'spicy']).toContain(store.gameStore.currentWordList)
-            store.continueToNextPlayer()
+            // store.continueToNextPlayer()
             const groupIndex = store.getCurrentGroupIndex ?? 0
             const group = store.getGroups[groupIndex]
             const playerIndex = group?.currentPlayerIndex ?? 0
             const playerName = group?.players?.[playerIndex]?.name
-            console.log("Current player:", playerName)
+            console.log("Current player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, ' with score:', group?.score)
         }
 
         it('should finish the game correctly (for the first group win)', () => {
             const store = createTestStore()
+            console.log("Store before game start:", store.gameStore)
 
             // Change score for the first group
             store.changeScore(5)
 
+            const groupIndex = store.getCurrentGroupIndex ?? 0
+                const group = store.getGroups[groupIndex]
+                const playerIndex = group?.currentPlayerIndex ?? 0
+                const playerName = group?.players?.[playerIndex]?.name
+                console.log("Start player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, 'with id', group.id, ' with score:', group?.score)
+
             for (let i = 0; i < (23); i++) {
-                validateGameState(store)
+                // validateGameState(store)
+                const leaderboard = store.continueToNextPlayer()
+                console.log('Did maybe a leaderboard occur before: ', leaderboard)
+                const groupIndex = store.getCurrentGroupIndex ?? 0
+                const group = store.getGroups[groupIndex]
+                const playerIndex = group?.currentPlayerIndex ?? 0
+                const playerName = group?.players?.[playerIndex]?.name
+                console.log("Current player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, 'with id', group.id, ' with score:', group?.score)
             }
 
             console.log('Before second score - Current group:', store.getCurrentGroupIndex, store.getGroups[store.getCurrentGroupIndex ?? 0].name)
             store.changeScore(2)
             const leaderboard = store.continueToNextPlayer()
 
-            expect(leaderboard).toBe(
+            console.log('Leaderboard before check: ', leaderboard)
+            expect(leaderboard).toEqual(
                 [
                     {
                         "name": "Gang gang 🤙",

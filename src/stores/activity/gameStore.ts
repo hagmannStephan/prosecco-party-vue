@@ -95,13 +95,13 @@ export const useGameStore = defineStore('macherlies-game-store', {
                     id: index,
                     score: 0,
                     // Because they get automatically incremented at next player turn
-                    currentPlayerIndex: -1,
+                    currentPlayerIndex: 0,
                     players: playersWithIds,
                 };
             });
 
             this.gameStore.currentRound = 0;
-            this.gameStore.groups[0].currentPlayerIndex = 0;
+            this.gameStore.currentGroupIndex = 0;
             this.initTurn();
         },
         initTurn() {
@@ -148,7 +148,7 @@ export const useGameStore = defineStore('macherlies-game-store', {
                 return leaderboard;
         },
         // Public Functions
-        setgameStore(settings: GameStore) {
+        setGameStore(settings: GameStore) {
             this.gameStore = {
                 ...this.gameStore,
                 ...settings
@@ -187,11 +187,10 @@ export const useGameStore = defineStore('macherlies-game-store', {
                     // If last player of biggest group finished, increment round
                     if (currentGroup.id === this.gameStore.maxPlayersGroup) {
                         this.gameStore.currentRound = (this.gameStore.currentRound ?? 0) + 1;
-                        console.log
 
                         // If last round, finish game
                         if (this.gameStore.currentRound >= this.gameStore.rounds) {
-                            this.gameComplete();
+                            return this.gameComplete();
                         }
                     }
                 }
