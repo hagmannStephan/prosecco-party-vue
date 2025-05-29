@@ -150,7 +150,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
 
         it('check if second turn initializes correctly', () => {
-            store.initializeNextTurn()
+            store.continueToNextPlayer()
 
             expect(store.getCurrentRound).toBe(0)
             expect(store.getCurrentGroupIndex).toBe(1)
@@ -172,7 +172,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             store.changeScore(5)
 
             for(let i = 0; i < 8; i++) {
-                store.initializeNextTurn()
+                store.continueToNextPlayer()
             }
 
             expect(store.getCurrentRound).toBe(1)
@@ -182,7 +182,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
 
         it('should initialize the second turn of the second round correctly', () => {
-            store.initializeNextTurn()
+            store.continueToNextPlayer()
 
             expect(store.getCurrentRound).toBe(1)
             expect(store.getCurrentGroupIndex).toBe(0)
@@ -196,7 +196,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
         function validateGameState(store: ReturnType<typeof useGameStore>) {
             expect(store.getCurrentGameMode).toContain(['pantomime', 'describe'])
             expect(store.getCurrentWordList).toContain(['standard', 'activity', 'spicy'])
-            store.initializeNextTurn()
+            store.continueToNextPlayer()
         }
 
         it('should finish the game correctly (for the first group win)', () => {
@@ -209,7 +209,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(2)
-            const leaderboard = store.initializeNextTurn()
+            const leaderboard = store.continueToNextPlayer()
 
             expect(leaderboard).toBe(
                 [
@@ -239,7 +239,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(4)
-            const leaderboard = store.initializeNextTurn()
+            const leaderboard = store.continueToNextPlayer()
 
             expect(leaderboard).toBe(
                 [
@@ -269,7 +269,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(6)
-            const leaderboard = store.initializeNextTurn()
+            const leaderboard = store.continueToNextPlayer()
 
                         expect(leaderboard).toBe(
                 [
@@ -295,7 +295,7 @@ describe('Macherlies Settings Store - Game Exit', () => {
     it('should reset the game settings when exiting', () => {
         const store = createTestStore()
         store.changeScore(5)
-        store.initializeNextTurn()
+        store.continueToNextPlayer()
         
         store.gameExit()
 

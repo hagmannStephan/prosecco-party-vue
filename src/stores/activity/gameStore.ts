@@ -38,7 +38,7 @@ interface GameStore {
     currentSkipsLeft?: number,
 }
 
-export const useGameStore = defineStore('macherlies', {
+export const useGameStore = defineStore('macherlies-game-store', {
     state: (): { gameStore: GameStore } => ({
         gameStore: {
             // Game Config
@@ -94,6 +94,7 @@ export const useGameStore = defineStore('macherlies', {
                     ...group,
                     id: index,
                     score: 0,
+                    currentPlayerIndex: 0,
                     players: playersWithIds,
                 };
             });
@@ -124,13 +125,43 @@ export const useGameStore = defineStore('macherlies', {
             this.initGame()
         },
         changeScore(score: number) {
-            // TODO: Change the score of the current group by param
+            // Change score of current group
+            const currentGroup = this.gameStore.groups[this.gameStore.currentGroupIndex || 0];
+            if (currentGroup) {
+                currentGroup.score = (currentGroup.score || 0) + score;
+            }
         },
         skipWord() {
-            // TODO: Skip the current word
+            // TODO: Add functionality to skip word
+            // If skips left, decrement skips left
+            // If no skips left, decrement group score
         },
-        initializeNextTurn() {
-            // TODO: Initialize the next turn
+        continueToNextPlayer() {
+            this.initTurn();
+
+            // Increment current player index
+            const currentGroup = this.gameStore.groups[this.gameStore.currentGroupIndex || 0];
+            if (currentGroup) {
+                currentGroup.currentPlayerIndex = (currentGroup.currentPlayerIndex || 0) + 1;
+
+                // If current player index is bigger than group players, reset to 0
+                if (currentGroup.currentPlayerIndex >= currentGroup.players.length) {
+                    currentGroup.currentPlayerIndex = 0;
+
+                    // If last player of biggest group finished, increment round
+                    if (currentGroup.id === this.gameStore.maxPlayersGroup) {
+                        this.gameStore.rounds += 1;
+
+                        // If last round, finish game
+                        if (this.gameStore.rounds >= this.gameStore.rounds) {
+                            this.gameComplete();
+                        }
+                    }
+                }
+            }
+
+            // If not last round, continue to next group
+            this.gameStore.currentGroupIndex = (this.gameStore.currentGroupIndex || 0) + 1;
         },
         gameExit() {
 
