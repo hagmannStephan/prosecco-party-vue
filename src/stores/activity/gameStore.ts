@@ -121,7 +121,6 @@ export const useGameStore = defineStore('macherlies-game-store', {
             this.gameStore.currentSkipsLeft = 3;
         },
         gameComplete() {
-            console.log("Groups in this game before leaderboard:", this.gameStore.groups);
             // Return leaderboard if the game is complete
             const leaderboard = this.gameStore.groups
                 .slice()
@@ -144,7 +143,6 @@ export const useGameStore = defineStore('macherlies-game-store', {
                     players: group.players.map(player => player.name),
                     score: group.score || 0,
                 }));
-                console.log('Game complete. Leaderboard:', leaderboard);
                 return leaderboard;
         },
         // Public Functions

@@ -10,18 +10,18 @@ function createTestStore() {
             {
                 name: 'Gang gang 🤙',
                 players: [
-                    { name: "Steffla Chef"},
-                    { name: "Liam de Lappe"},
-                    { name: "Joan de Chefé"}
+                    { name: "Steffla Chef" },
+                    { name: "Liam de Lappe" },
+                    { name: "Joan de Chefé" }
                 ]
             },
             {
                 name: "Gong Gang 🎵",
                 players: [
-                    { name: "Stöff"},
-                    { name: "Töff"},
-                    { name: "Röff"},
-                    { name: "Schmöff"}
+                    { name: "Stöff" },
+                    { name: "Töff" },
+                    { name: "Röff" },
+                    { name: "Schmöff" }
                 ]
             }
         ],
@@ -109,7 +109,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
             setActivePinia(createPinia())
             store = createTestStore()
         })
-            
+
         it('check if first turn is initialized correctly', () => {
             expect(store.gameStore.currentRound).toBe(0)
             expect(store.gameStore.currentGroupIndex).toBe(0)
@@ -134,7 +134,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
 
         it('check if skips work as expected', () => {
             expect(store.getCurrentSkipsLeft).toBe(3)
-            
+
             store.skipWord()
 
             expect(store.getCurrentSkipsLeft).toBe(2)
@@ -171,7 +171,7 @@ describe('Macherlies Settings Store - Game Flow', () => {
         it('should initialize the second round correctly', () => {
             store.changeScore(5)
 
-            for(let i = 0; i < 8; i++) {
+            for (let i = 0; i < 8; i++) {
                 store.continueToNextPlayer()
             }
 
@@ -196,123 +196,101 @@ describe('Macherlies Settings Store - Game Flow', () => {
         function validateGameState(store: ReturnType<typeof useGameStore>) {
             expect(['pantomime', 'describe']).toContain(store.gameStore.currentGameMode)
             expect(['standard', 'activity', 'spicy']).toContain(store.gameStore.currentWordList)
-            // store.continueToNextPlayer()
-            const groupIndex = store.getCurrentGroupIndex ?? 0
-            const group = store.getGroups[groupIndex]
-            const playerIndex = group?.currentPlayerIndex ?? 0
-            const playerName = group?.players?.[playerIndex]?.name
-            console.log("Current player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, ' with score:', group?.score)
+            store.continueToNextPlayer()
         }
 
         it('should finish the game correctly (for the first group win)', () => {
             const store = createTestStore()
-            console.log("Store before game start:", store.gameStore)
 
-            // Change score for the first group
             store.changeScore(5)
 
-            const groupIndex = store.getCurrentGroupIndex ?? 0
-                const group = store.getGroups[groupIndex]
-                const playerIndex = group?.currentPlayerIndex ?? 0
-                const playerName = group?.players?.[playerIndex]?.name
-                console.log("Start player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, 'with id', group.id, ' with score:', group?.score)
-
             for (let i = 0; i < (23); i++) {
-                // validateGameState(store)
-                const leaderboard = store.continueToNextPlayer()
-                console.log('Did maybe a leaderboard occur before: ', leaderboard)
-                const groupIndex = store.getCurrentGroupIndex ?? 0
-                const group = store.getGroups[groupIndex]
-                const playerIndex = group?.currentPlayerIndex ?? 0
-                const playerName = group?.players?.[playerIndex]?.name
-                console.log("Current player:", playerName, ' with  currentPlayerIndex:', playerIndex, ' in group:', group?.name, 'with id', group.id, ' with score:', group?.score)
+                validateGameState(store)
             }
 
-            console.log('Before second score - Current group:', store.getCurrentGroupIndex, store.getGroups[store.getCurrentGroupIndex ?? 0].name)
             store.changeScore(2)
             const leaderboard = store.continueToNextPlayer()
 
-            console.log('Leaderboard before check: ', leaderboard)
             expect(leaderboard).toEqual(
                 [
                     {
                         "name": "Gang gang 🤙",
-                        "players": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
+                        "players": ["Steffla Chef", "Liam de Lappe", "Joan de Chefé"],
                         "score": 5,
                     },
                     {
                         "name": "Gong Gang 🎵",
-                        "players": [ "Stöff", "Töff", "Röff", "Schmöff" ],
+                        "players": ["Stöff", "Töff", "Röff", "Schmöff"],
                         "score": 2,
                     }
                 ]
             )
         })
 
-    //     it('should finish the game correctly (for the second group)', () => {
-    //         const store = createTestStore()
+        it('should finish the game correctly (for the second group)', () => {
+            const store = createTestStore()
 
-    //         store.changeScore(3)
+            store.changeScore(3)
 
-    //         for (let i = 0; i < (23); i++) {
-    //             validateGameState(store)
-    //         }
+            for (let i = 0; i < (23); i++) {
+                validateGameState(store)
+            }
 
-    //         store.changeScore(4)
-    //         const leaderboard = store.continueToNextPlayer()
+            store.changeScore(4)
+            const leaderboard = store.continueToNextPlayer()
 
-    //         expect(leaderboard).toBe(
-    //             [
-    //                 {
-    //                     "name": "Gong Gang 🎵",
-    //                     "players": [ "Stöff", "Töff", "Röff", "Schmöff" ],
-    //                     "score": 4,
-    //                 },
-    //                 {
-    //                     "name": "Gang gang 🤙",
-    //                     "players": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
-    //                     "score": 2,
-    //                 }
-    //             ]
-    //         )
-    //     })
+            expect(leaderboard).toEqual(
+                [
+                    {
+                        "name": "Gong Gang 🎵",
+                        "players": ["Stöff", "Töff", "Röff", "Schmöff"],
+                        "score": 4,
+                    },
+                    {
+                        "name": "Gang gang 🤙",
+                        "players": ["Steffla Chef", "Liam de Lappe", "Joan de Chefé"],
+                        "score": 3,
+                    }
+                ]
+            )
+        })
 
-    //     it('should finish the game correctly (if a draw)', () => {
-    //         const store = createTestStore()
+        it('should finish the game correctly (if a draw)', () => {
+            const store = createTestStore()
 
-    //         store.changeScore(6)
+            store.changeScore(6)
 
-    //         for (let i = 0; i < (23); i++) {
-    //             validateGameState(store)
-    //         }
+            for (let i = 0; i < (23); i++) {
+                validateGameState(store)
+            }
 
-    //         store.changeScore(6)
-    //         const leaderboard = store.continueToNextPlayer()
+            store.changeScore(6)
+            const leaderboard = store.continueToNextPlayer()
 
-    //                     expect(leaderboard).toBe(
-    //             [
-    //                 {
-    //                     "name": "Gang gang 🤙",
-    //                     "players": [ "Steffla Chef", "Liam de Lappe", "Joan de Chefé" ],
-    //                     "score": 6,
-    //                 },
-    //                 {
-    //                     "name": "Gong Gang 🎵",
-    //                     "players": [ "Stöff", "Töff", "Röff", "Schmöff" ],
-    //                     "score": 6,
-    //                 }
-    //             ]
-    //         )
-    //     })
+            expect(leaderboard).toEqual(
+                [
+                    {
+                        "name": "Gang gang 🤙",
+                        "players": ["Steffla Chef", "Liam de Lappe", "Joan de Chefé"],
+                        "score": 6,
+                    },
+                    {
+                        "name": "Gong Gang 🎵",
+                        "players": ["Stöff", "Töff", "Röff", "Schmöff"],
+                        "score": 6,
+                    }
+                ]
+            )
+        })
     })
 })
-    
+
 describe('Macherlies Settings Store - Game Exit', () => {
     it('should reset the game settings when exiting', () => {
         const store = createTestStore()
         store.changeScore(5)
         store.continueToNextPlayer()
-        
+
         store.gameExit()
 
         expect(store.gameStore).toEqual({
