@@ -7,7 +7,6 @@ const STORE_NAME = 'activity-word-list-store'
 
 export type WordEntry = {
     word: string
-    difficulty: string
     forbidden: string[]
     category: string
 }
@@ -68,8 +67,6 @@ export const useWordListStore = defineStore('wordList', {
         getRandomWord(language: 'de' | 'en'): WordEntry | null {
             let list = this.wordLists[language]
 
-            console.log("list", list)
-
             const gameStore = useGameStore()
             const wordCategories = gameStore.getAllowedWordLists
 
@@ -77,8 +74,6 @@ export const useWordListStore = defineStore('wordList', {
             if (wordCategories && wordCategories.length > 0) {
                 list = list.filter(entry => wordCategories.includes(entry.category))
             }
-
-            console.log("filtered list", list)
           
             if (list.length === 0) return null
           

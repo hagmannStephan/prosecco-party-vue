@@ -13,8 +13,6 @@ export function getRandomWord(): WordEntry | string {
  
     const language = languageSettingsStore.getLanguage()
     
-    // If some case the entires should get filtered by difficulty
-
     const wordEntry = wordListStore.getRandomWord(language)
  
     if (!wordEntry) {
