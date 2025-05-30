@@ -1,13 +1,12 @@
 import { defineStore } from 'pinia'
 import { openDB } from 'idb'
-import { useGameStore } from '@/stores/activity/settingsStore'
+import { useGameStore } from '@/stores/activity/gameStore'
 
 const DB_NAME = 'name-of-the-game-db'
 const STORE_NAME = 'activity-word-list-store'
 
 export type WordEntry = {
     word: string
-    difficulty: string
     forbidden: string[]
     category: string
 }
@@ -65,15 +64,12 @@ export const useWordListStore = defineStore('wordList', {
 
             this.isInitialized = true
         },
-        getRandomWord(language: 'de' | 'en', difficulties?: string[]): WordEntry | null {
+        getRandomWord(language: 'de' | 'en'): WordEntry | null {
             let list = this.wordLists[language]
 
             const gameStore = useGameStore()
-            const wordCategories = gameStore.getWordCategories
-          
-            if (difficulties && difficulties.length > 0) {
-              list = list.filter(entry => difficulties.includes(entry.difficulty))
-            }
+            const wordCategories = gameStore.getAllowedWordLists
+
 
             if (wordCategories && wordCategories.length > 0) {
                 list = list.filter(entry => wordCategories.includes(entry.category))

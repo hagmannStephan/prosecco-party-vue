@@ -7,10 +7,10 @@ export default {
     },
     "seconds": " sec.",
     "points": " points!",
-    "image-alt": {
-        "plus-one": "Done",
-        "reload": "New word",
-    },
     "forbidden": "Forbidden words",
-    "team": "Team"
+    "team": "Team",
+    "skip": {
+        "normal": "Skip ⏩",
+        "usedUp": "Skip ⛔",
+    }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
-import { useGameStore } from '@/stores/activity/settingsStore';
+import { useGameStore } from '@/stores/activity/gameStore';
 import { useI18n } from 'vue-i18n';
 import { isPiniaComplete } from '@/helpers/Activity/configHelper';
 
@@ -39,6 +39,6 @@ onMounted(() => {
     <h1>{{ currentPlayerName + t('activity.break.title') }}</h1>
     <h2>{{ t('activity.break.team') + ': ' + currentGroupName }}</h2>
     <h2>{{ t('activity.break.mode.title') }}</h2>
-    <p>{{ t(`activity.break.mode.${gS.getCurrentGameMode?.name || 'pantomime'}`) }}</p>
+    <p>{{ t(`activity.break.mode.${gS.getCurrentGameMode || 'pantomime'}`) }}</p>
     <button @click="pushRouter('/activity')">{{ t('activity.break.button.start') }}</button>
 </template>

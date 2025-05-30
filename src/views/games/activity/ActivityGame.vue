@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, onUnmounted } from 'vue';
+import { ref, watch, onMounted, onUnmounted, computed } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper'
-import { useGameStore } from '@/stores/activity/settingsStore';
+import { useGameStore } from '@/stores/activity/gameStore';
 import { getRandomWord } from '@/helpers/Activity/wordListHelper';
 import { useWordListStore } from '@/stores/activity/wordListStore';
 import { useI18n } from 'vue-i18n';
@@ -71,6 +71,7 @@ function getNewWord() {
   }
 
   const wordEntry = getRandomWord();
+  
   if (wordEntry && typeof wordEntry !== 'string') {
     currentWord.value = wordEntry.word;
    
@@ -87,8 +88,8 @@ function getNewWord() {
 }
 
 function continueGame() {
-  const gameOver = gameStore.nextPlayer();
-  if (gameOver) {
+  const state = gameStore.continueToNextPlayer();
+  if (state.gameOver) {
     pushRouter('/activity/done')
   } else {
     pushRouter('/activity/time-up')
@@ -97,7 +98,21 @@ function continueGame() {
 
 function incrementScore() {
   if (currentPlayer.value) {
-    gameStore.incrementScore();
+    gameStore.changeScore(1);
+    getNewWord();
+  }
+}
+
+function decrementScore() {
+  if (currentPlayer.value) {
+    gameStore.changeScore(-1);
+    getNewWord();
+  }
+}
+
+function skipWord() {
+  if (currentPlayer.value) {
+    gameStore.skipWord();
     getNewWord();
   }
 }
@@ -128,7 +143,7 @@ async function initGame() {
     // Make sure the word list is initialized first
     await wordListStore.init();
     
-    gameMode.value = gameStore.getCurrentGameMode?.name || 'Something went wrong 😐';
+    gameMode.value = gameStore.getCurrentGameMode || 'Something went wrong 😐';
     
     getNewWord();
     startTimer();
@@ -139,6 +154,9 @@ async function initGame() {
     isLoading.value = false;
   }
 }
+
+// Track the available skips
+const skipsUsedUp = computed(() => (gameStore.getCurrentSkipsLeft ?? 0) <= 0)
 
 onMounted(() => {
   initGame();
@@ -173,15 +191,16 @@ onUnmounted(() => {
     </div>
     <div>
       <p>+ {{ currentGroupScore + t('activity.game.points') }}</p>
-      <button @click="incrementScore()">
-        <!-- Member of current team guessed it (+1 for Team) -->
-        <img src="/icons/plus-1.svg" :alt="t('activity.game.image-alt.plus-one')" />
-      </button>
-      <button @click="getNewWord">
-        <!-- Member of opposing team guessed it or player wants to skip it (Zero points) -->
-        <!-- TODO: Maybe a short freez period as penalty -->
-        <img src="/icons/refresh.svg" :alt="t('activity.game.image-alt.reload')" />
-      </button>
+        <!-- Our Team guessed it (+1 point) -->
+        <button @click="incrementScore">{{ gameStore.getCurrentGroup.name }} (+1)</button>
+        <!-- Opposing Team guessed it (-1 point)-->
+        <button @click="decrementScore">{{ gameStore.getOpposingGroup.name }} (-1)</button>
+
+        <br>
+        <!-- Skip Word (For the first three times free, afterwards -1 point) -->
+        <button @click="skipWord">
+          {{ skipsUsedUp ? t('activity.game.skip.usedUp') : t('activity.game.skip.normal') }}
+        </button>
     </div>
   </div>
 </template>

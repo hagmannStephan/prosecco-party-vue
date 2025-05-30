@@ -13,15 +13,11 @@ export function getRandomWord(): WordEntry | string {
  
     const language = languageSettingsStore.getLanguage()
     
-    // If some case the entires should get filtered by difficulty
-    const difficulties = ["easy", "medium", "hard"]
- 
-    const wordEntry = wordListStore.getRandomWord(language, difficulties)
+    const wordEntry = wordListStore.getRandomWord(language)
  
     if (!wordEntry) {
       console.warn('[getRandomWord] No word found:', {
         language,
-        difficulties,
         wordList: wordListStore.wordLists[language],
       })
       return 'No matching words found 🤒'
@@ -31,17 +27,11 @@ export function getRandomWord(): WordEntry | string {
 }
 
 export function getWordListCategories(): string[] {
-    const wordListStore = useWordListStore()
-    const languageSettingsStore = useLanguageSettingsStore()
- 
-    // Make sure store is initialized first
-    if (!wordListStore.isInitialized) {
-        console.warn('[getWordListCategories] Word list store not initialized')
-        return []
-    }
- 
-    const language = languageSettingsStore.getLanguage()
- 
-    // Get all categories from the word list
-    return wordListStore.getAvailableCategories(language)
+    // TODO: Don't hardcode this, but check the store for available categories
+    return [
+        'standard',
+        'activity',
+        'sport',
+        'spicy',
+    ]
  }

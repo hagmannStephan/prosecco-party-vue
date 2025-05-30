@@ -19,7 +19,7 @@ export default {
     },
     "round": {
         "num": "Anzahl Runden",
-        "time": "Zeit pro Runde (Sekunden)",
+        "time": "Zeit pro Zug",
         "sec": "Sekunden"
     },
     "gameMode": {
@@ -28,8 +28,8 @@ export default {
         "draw": "🎨 Zeichnen",
         "describe": "🗣️ Beschreiben",
     },
-    "category": {
-        "title": "Wörterkategorien",
+    "wordlist": {
+        "title": "Wörterlisten",
         "standard": "Standard 🌍",
         "activity": "Aktivität 🚴‍♂️",
         "sport": "Sport ⚽",
@@ -42,7 +42,8 @@ export default {
         "min-groups": "Es müssen mindestens 2 Gruppen gebildet werden.",
         "min-players-per-group": "Es muss mindestens 1 Spieler pro Gruppe geben.",
         "group-name-required": "Bitte geben Sie einen Namen für alle Gruppen ein.",
-        "category-required": "Bitte wählen Sie mindestens eine Kategorie.",
+        "wordlist-required": "Bitte wählen Sie mindestens eine Liste.",
+        "rounds-range": "Es muss mindestens 1 Runde gespielt werden.",
     },
     "start-game": "Spiel starten!",
 }
