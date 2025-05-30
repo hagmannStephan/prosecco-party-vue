@@ -44,32 +44,26 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
 
         it('should return the corrent groups from the getter', () => {
-            const store = createTestStore()
             expect(store.getGroups.length).toBe(2)
         })
 
         it('should return the correct amount of rounds from the getter', () => {
-            const store = createTestStore()
             expect(store.getRounds).toBe(3)
         })
 
         it('should return the correct time per round from the getter', () => {
-            const store = createTestStore()
             expect(store.getTimePerRound).toBe(60)
         })
 
         it('should return the correct game modes from the getter', () => {
-            const store = createTestStore()
             expect(store.getGameModes.length).toBe(2)
         })
 
         it('should return the correct allowed word list categories from the getter', () => {
-            const store = createTestStore()
             expect(store.getAllowedWordLists.length).toBe(3)
         })
 
         it('should return the correct current player', () => {
-            const store = createTestStore()
             expect(store.getCurrentPlayer).toEqual({
                 id: 0,
                 name: "Steffla Chef"
@@ -77,7 +71,6 @@ describe('Macherlies Settings Store - Game Flow', () => {
         })
 
         it('should return the correct current group', () => {
-            const store = createTestStore()
             expect(store.getCurrentGroup).toEqual({
                 id: 0,
                 name: "Gang gang 🤙",
@@ -90,21 +83,20 @@ describe('Macherlies Settings Store - Game Flow', () => {
                 currentPlayerIndex: 0
             })
         })
-    })
 
-    it('should return the correct opposing group', () => {
-        const store = createTestStore()
-        expect(store.getOpposingGroup).toEqual({
-            id: 1,
-            name: "Gong Gang 🎵",
-            score: 0,
-            players: [
-                { id: 0, name: "Stöff" },
-                { id: 1, name: "Töff" },
-                { id: 2, name: "Röff" },
-                { id: 3, name: "Schmöff" }
-            ],
-            currentPlayerIndex: 0
+        it('should return the correct opposing group', () => {
+            expect(store.getOpposingGroup).toEqual({
+                id: 1,
+                name: "Gong Gang 🎵",
+                score: 0,
+                players: [
+                    { id: 0, name: "Stöff" },
+                    { id: 1, name: "Töff" },
+                    { id: 2, name: "Röff" },
+                    { id: 3, name: "Schmöff" }
+                ],
+                currentPlayerIndex: 0
+            })
         })
     })
 
