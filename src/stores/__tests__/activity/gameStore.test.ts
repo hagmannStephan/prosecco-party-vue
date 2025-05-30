@@ -248,7 +248,9 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(2)
-            const leaderboard = store.continueToNextPlayer()
+            store.continueToNextPlayer()
+
+            const leaderboard = store.gameComplete()
 
             expect(leaderboard).toEqual(
                 [
@@ -276,7 +278,9 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(4)
-            const leaderboard = store.continueToNextPlayer()
+            store.continueToNextPlayer()
+
+            const leaderboard = store.gameComplete()
 
             expect(leaderboard).toEqual(
                 [
@@ -304,7 +308,9 @@ describe('Macherlies Settings Store - Game Flow', () => {
             }
 
             store.changeScore(6)
-            const leaderboard = store.continueToNextPlayer()
+            store.continueToNextPlayer()
+
+            const leaderboard = store.gameComplete()
 
             expect(leaderboard).toEqual(
                 [
