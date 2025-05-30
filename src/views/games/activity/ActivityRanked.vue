@@ -11,7 +11,7 @@ const gameStore = useGameStore();
 const leaderboard = ref<{ name: string; score: number }[]>([]);
 
 onMounted(() => {
-    leaderboard.value = gameStore.getLeaderboard();
+    leaderboard.value = gameStore.gameComplete();
 });
 </script>
 <template>

@@ -88,8 +88,8 @@ function getNewWord() {
 }
 
 function continueGame() {
-  const gameOver = gameStore.continueToNextPlayer();
-  if (gameOver) {
+  const state = gameStore.continueToNextPlayer();
+  if (state.gameOver) {
     pushRouter('/activity/done')
   } else {
     pushRouter('/activity/time-up')

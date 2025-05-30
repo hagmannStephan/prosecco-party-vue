@@ -198,7 +198,7 @@ export const useGameStore = defineStore('macherlies-game-store', {
 
                         // If last round, finish game
                         if (this.gameStore.currentRound >= this.gameStore.rounds) {
-                            return this.gameComplete();
+                            return { gameOver: true };
                         }
                     }
                 }
@@ -212,6 +212,8 @@ export const useGameStore = defineStore('macherlies-game-store', {
             if (this.gameStore.currentGroupIndex >= this.gameStore.groups.length) {
                 this.gameStore.currentGroupIndex = 0;
             }
+
+            return {gameOver: false};
         },
         gameExit() {
             this.gameStore = {

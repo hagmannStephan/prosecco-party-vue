@@ -19,7 +19,7 @@ export default {
     },
     "round": {
         "num": "Anzahl Runden",
-        "time": "Zeit pro Runde (Sekunden)",
+        "time": "Zeit pro Zug",
         "sec": "Sekunden"
     },
     "gameMode": {

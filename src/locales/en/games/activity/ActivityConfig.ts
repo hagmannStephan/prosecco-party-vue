@@ -19,7 +19,7 @@ export default {
     },
     "round": {
         "num": "Number of Rounds",
-        "time": "Time per Round (Seconds)",
+        "time": "Time per Turn",
         "sec": "Seconds"
     },
     "gameMode": {
