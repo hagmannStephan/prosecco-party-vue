@@ -32,6 +32,7 @@
     "eslint-plugin-react": "^7.37.5",
     "jsdom": "^26.1.0",
     "prettier": "^3.5.3",
+    "sass-embedded": "^1.89.1",
     "typescript": "~5.7.2",
     "vite": "^6.3.4",
     "vite-plugin-pwa": "^1.0.0",

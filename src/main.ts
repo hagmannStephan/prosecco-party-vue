@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style.scss'
 import { createWebHistory, createRouter } from 'vue-router'
 import {createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
@@ -22,6 +22,7 @@ import ActivityGame from './views/games/activity/ActivityGame.vue'
 import ActivityDone from './views/games/activity/ActivityDone.vue'
 import ActivityRanked from './views/games/activity/ActivityRanked.vue'
 import ActivityTimeUp from './views/games/activity/ActivityTimeUp.vue';
+import Playground from './views/Playground.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -31,6 +32,7 @@ const routes = [
   { path: '/activity/done', component: ActivityDone },
   { path: '/activity/ranked', component: ActivityRanked },
   { path: '/activity/time-up', component: ActivityTimeUp },
+  { path: '/playground', component: Playground },
 ]
 
 const router = createRouter({
