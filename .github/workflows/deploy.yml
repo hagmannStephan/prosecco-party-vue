@@ -60,6 +60,6 @@ jobs:
           ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH && \
           git pull origin main && \
           docker build -t name-of-the-game . && \
-          docker stop game-container || true && \
-          docker rm game-container || true && \
+          docker stop game-container || true
+          docker rm -f game-container || true
           docker run -d --name game-container -p 5173:4173 name-of-the-game"
