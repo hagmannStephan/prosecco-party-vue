@@ -1,3 +1,5 @@
+/* Adding the Rubik-Font */
+/* Normal font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-Medium.ttf') format('truetype');
@@ -5,6 +7,7 @@
   font-style: normal;
 }
 
+/* Normal italic font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-MediumItalic.ttf') format('truetype');
@@ -12,6 +15,7 @@
   font-style: italic;
 }
 
+/* Bold font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-Bold.ttf') format('truetype');
@@ -19,6 +23,7 @@
   font-style: normal;
 }
 
+/* Bold italic font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-BoldItalic.ttf') format('truetype');
@@ -26,6 +31,7 @@
   font-style: italic;
 }
 
+/* Light font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-Light.ttf') format('truetype');
@@ -33,6 +39,7 @@
   font-style: normal;
 }
 
+/* Light italic font */
 @font-face {
   font-family: 'Rubik';
   src: url('/font/Rubik/Rubik-LightItalic.ttf') format('truetype');
@@ -40,23 +47,31 @@
   font-style: italic;
 }
 
-:root {
-  --default-font: 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --default-color: #213547;
-  --default-bg: #ffffff;
-
-  line-height: 1.5;
-  font-weight: 400;
-
-  color: var(--default-color);
-  background-color: var(--default-bg);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Set base font size (1rem = browser default, usually 16px) */
+html {
+  font-size: 1rem;
 }
 
+/* Define SCSS Variables */
+$default-font: 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;  /* Define Rubik as default font with a few fallbacks */
+$default-color: #213547; /* Define default text color*/
+$default-bg: #ffffff; /* Define default background color */
+
+/* Applies base layout and font styling to the whole document body */
+:root {
+  line-height: 1.5; /* Define spacing between lines (good for readability) */
+  font-weight: 400; /* Define regular font weight */
+
+  color: $default-color; /* Apply var as text color */
+  background-color: $default-bg; /* Apply var as background color */
+
+  font-synthesis: none; /* Prevents the browser from faking bold or italic fonts */
+  text-rendering: optimizeLegibility; /* Improves text rendering (ligatures, kerning) */
+  -webkit-font-smoothing: antialiased; /* Smooths fonts on macOS/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* Similar smoothing for Firefox on macOS */
+}
+
+/* Takes effect in the visible part of the document (unless overwritten) */
 body {
   margin: 0;
   display: flex;
@@ -71,6 +86,25 @@ body {
   background-color: var(--default-bg);
 }
 
+/** Accessibility (Reduce Motion Respect) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Define how something should look if it is selected by the user (e.g. via mouse) */
+::selection {
+  background: #965fab;
+  color: #000;
+}
+
+/* Important to prevent margin/padding from blowing up layout sizes */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Div that contains the entire app */
 #app {
   max-width: 1280px;
   margin: 0 auto;
@@ -78,12 +112,13 @@ body {
   text-align: center;
 }
 
+/*--------------------------------------------------------------------------------------------*/
 /* Don't modify styles above unless certain */
+/*--------------------------------------------------------------------------------------------*/
 
+/* Example style of a heading */
 h1 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 600;
-  font-style: normal;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
