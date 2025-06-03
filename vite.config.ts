@@ -2,6 +2,9 @@ import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
+import { createHtmlPlugin } from 'vite-plugin-html'
+import { visualizer } from 'rollup-plugin-visualizer'
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -81,7 +84,16 @@ export default defineConfig({
         skipWaiting: true,
         clientsClaim: true
       }
-    })
+    }),
+    createHtmlPlugin({
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyJS: true,
+        minifyCSS: true,
+      }
+    }),
+    visualizer(),
   ],
   resolve: {
     alias: {
