@@ -89,7 +89,7 @@ jobs:
           
           # Try to reach the application (adjust URL/port as needed)
           for i in {1..5}; do
-            if curl -f http://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
+            if curl -f https://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
               echo "Health check passed!"
               exit 0
             fi
@@ -127,7 +127,7 @@ jobs:
           echo "Verifying rollback..."
           sleep 15
           
-          if curl -f http://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
+          if curl -f https://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
             echo "Rollback verification successful!"
           else
             echo "Rollback verification failed - manual intervention required!"
