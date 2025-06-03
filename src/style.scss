@@ -69,13 +69,19 @@ $default-bg: #ffffff; /* Define default background color */
   text-rendering: optimizeLegibility; /* Improves text rendering (ligatures, kerning) */
   -webkit-font-smoothing: antialiased; /* Smooths fonts on macOS/Chrome */
   -moz-osx-font-smoothing: grayscale; /* Similar smoothing for Firefox on macOS */
+
+  /* Improved font displaying e.g. fi doesn't merge together*/
+  font-feature-settings: "liga" 0;
+  font-variant-ligatures: none;
 }
 
 /* Takes effect in the visible part of the document (unless overwritten) */
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column wrap;
   min-width: 320px;
   min-height: 100vh;
 
@@ -116,9 +122,46 @@ body {
 /* Don't modify styles above unless certain */
 /*--------------------------------------------------------------------------------------------*/
 
-/* Example style of a heading */
+button {
+  /* TODO: Add styles*/
+}
+
 h1 {
+  font-family: 'Rubik', sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
   margin-bottom: 1rem;
+}
+
+h2 {
+    /* TODO: Add styles*/
+}
+
+h3 {
+    /* TODO: Add styles*/
+}
+
+p {
+    /* TODO: Add styles*/
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+    /* TODO: Add styles*/
+}
+
+input[type="checkbox"] {
+  /* TODO: Add styles */
+}
+
+label {
+  /* TODO: Add styles */
+}
+
+input[type="number"] {
+  /* TODO: Add styles */
 }
