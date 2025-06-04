@@ -14,37 +14,37 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: true,
-          },
-          includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
-          manifest: {
-            name: 'Name of the Game',
-            short_name: 'Party Games',
-            description: 'A collection of party games for you and your friends.',
-            theme_color: '#1d0f2e',
-            background_color: '#1d0f2e',
-            display: 'standalone',
-            orientation: 'portrait',
-            start_url: '/',
-            icons: [
-              {
+      },
+      includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
+      manifest: {
+        name: 'Name of the Game',
+        short_name: 'Party Games',
+        description: 'A collection of party games for you and your friends.',
+        theme_color: '#1d0f2e',
+        background_color: '#1d0f2e',
+        display: 'standalone',
+        orientation: 'portrait',
+        start_url: '/',
+        icons: [
+          {
             src: 'icons/icon-192x192.webp',
             sizes: '192x192',
             type: 'image/webp'
-              },
-              {
+          },
+          {
             src: 'icons/icon-512x512.webp',
             sizes: '512x512',
             type: 'image/webp'
-              }
-            ],
-          },
-          strategies: 'generateSW',
-          workbox: {
-            globPatterns: [
-              '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'
-            ],
-            navigateFallback: 'index.html',
-            navigateFallbackDenylist: [/^\/api/],
+          }
+        ],
+      },
+      strategies: 'generateSW',
+      workbox: {
+        globPatterns: [
+          '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'
+        ],
+        navigateFallback: 'index.html',
+        navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
             urlPattern: /\.(?:png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)$/,
@@ -68,7 +68,6 @@ export default defineConfig({
               }
             }
           },
-          // Local font files will be caught by the asset cache pattern above
           {
             urlPattern: ({ url }) => url.pathname.startsWith('/'),
             handler: 'NetworkFirst',
@@ -95,10 +94,14 @@ export default defineConfig({
       }
     }),
     visualizer(),
+    // Gzip compression
     compression({
       algorithm: 'gzip',
       ext: '.gz',
-    })
+      threshold: 1024,
+      deleteOriginFile: false,
+      verbose: true
+    }),
   ],
   resolve: {
     alias: {
@@ -115,7 +118,7 @@ export default defineConfig({
     allowedHosts: ['name-of-the-game.stephanhagmann.ch']
   },
   test: {
-    environment: 'jsdom', // needed for DOM-like environment
-    globals: true,        // optional, allows `describe/test/expect` without imports
+    environment: 'jsdom',
+    globals: true,
   },
 })
