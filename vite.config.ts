@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 import { createHtmlPlugin } from 'vite-plugin-html'
 import { visualizer } from 'rollup-plugin-visualizer'
+import compression from 'vite-plugin-compression'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -94,6 +95,10 @@ export default defineConfig({
       }
     }),
     visualizer(),
+    compression({
+      algorithm: 'gzip',
+      ext: '.gz',
+    })
   ],
   resolve: {
     alias: {
