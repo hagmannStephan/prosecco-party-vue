@@ -1,7 +1,6 @@
 # Prosecco Party 🪩🕺🤠
 
 ![Status](https://img.shields.io/badge/status-in_development-yellow)
-![GitHub last commit](https://img.shields.io/github/last-commit/hagmannStephan/prosecco-party-vue)
 ![License](https://img.shields.io/badge/license-AGPL--3.0+Commons_Clause-lightgrey)
 
 
