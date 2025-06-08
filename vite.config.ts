@@ -18,7 +18,7 @@ export default defineConfig({
       includeAssets: ['favicon.ico', 'font/**/*', 'icons/*', 'games/**/*'],
       manifest: {
         name: 'Prosecco Party',
-        short_name: 'Prosecco Party',
+        short_name: 'ProseccoParty',
         description: 'A collection of party games for you and your friends.',
         theme_color: '#1d0f2e',
         background_color: '#1d0f2e',
