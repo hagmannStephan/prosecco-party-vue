@@ -16,21 +16,21 @@ pinia.use(piniaPluginPersistedstate);
 
 import App from './views/App.vue'
 import Home from './views/Home.vue'
-import ActivityConfig from './views/games/activity/ActivityConfig.vue'
-import ActivityBreak from './views/games/activity/ActivityBreak.vue'
-import ActivityGame from './views/games/activity/ActivityGame.vue'
-import ActivityDone from './views/games/activity/ActivityDone.vue'
-import ActivityRanked from './views/games/activity/ActivityRanked.vue'
-import ActivityTimeUp from './views/games/activity/ActivityTimeUp.vue';
+import SchnapsideeConfig from './views/games/schnapsidee/SchnapsideeConfig.vue'
+import SchnapsideeBreak from './views/games/schnapsidee/SchnapsideeBreak.vue'
+import SchnapsideeGame from './views/games/schnapsidee/SchnapsideeGame.vue'
+import SchnapsideeDone from './views/games/schnapsidee/SchnapsideeDone.vue'
+import SchnapsideeRanked from './views/games/schnapsidee/SchnapsideeRanked.vue'
+import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue';
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/activity/game-config', component: ActivityConfig },
-  { path: '/activity/break', component: ActivityBreak },
-  { path: '/activity', component: ActivityGame },
-  { path: '/activity/done', component: ActivityDone },
-  { path: '/activity/ranked', component: ActivityRanked },
-  { path: '/activity/time-up', component: ActivityTimeUp },
+  { path: '/schnapsidee/game-config', component: SchnapsideeConfig },
+  { path: '/schnapsidee/break', component: SchnapsideeBreak },
+  { path: '/schnapsidee', component: SchnapsideeGame },
+  { path: '/schnapsidee/done', component: SchnapsideeDone },
+  { path: '/schnapsidee/ranked', component: SchnapsideeRanked },
+  { path: '/schnapsidee/time-up', component: SchnapsideeTimeUp },
 ]
 
 const router = createRouter({

@@ -7,8 +7,8 @@ const { t } = useI18n();
 const pushRouter = usePushRouter();
 </script>
 <template>
-    <h1>{{ t('activity.done.title') }}</h1>
+    <h1>{{ t('schnapsidee.done.title') }}</h1>
     <p>🏁</p>
-    <p>{{ t('activity.done.message') }}</p>
-    <button @click="pushRouter('/activity/ranked')">{{ t('activity.done.button') }}</button>
+    <p>{{ t('schnapsidee.done.message') }}</p>
+    <button @click="pushRouter('/schnapsidee/ranked')">{{ t('schnapsidee.done.button') }}</button>
 </template>

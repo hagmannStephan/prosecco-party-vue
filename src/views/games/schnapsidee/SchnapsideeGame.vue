@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted, computed } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper'
-import { useGameStore } from '@/stores/activity/gameStore';
-import { getRandomWord } from '@/helpers/Activity/wordListHelper';
-import { useWordListStore } from '@/stores/activity/wordListStore';
+import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { getRandomWord } from '@/helpers/schnapsidee/wordListHelper';
+import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -90,9 +90,9 @@ function getNewWord() {
 function continueGame() {
   const state = gameStore.continueToNextPlayer();
   if (state.gameOver) {
-    pushRouter('/activity/done')
+    pushRouter('/schnapsidee/done')
   } else {
-    pushRouter('/activity/time-up')
+    pushRouter('/schnapsidee/time-up')
   }
 }
 
@@ -175,22 +175,22 @@ onUnmounted(() => {
   </div>
   <div v-else>
     <div>
-      <h1>{{ currentPlayerName + t('activity.game.title') }}</h1>
-      <h2>{{ t('activity.game.team') + ': ' + currentGroupName }}</h2>
-      <p>{{ t(`activity.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
-      <p>⌛ {{ timeRemaining + t('activity.game.seconds') }}</p>
+      <h1>{{ currentPlayerName + t('schnapsidee.game.title') }}</h1>
+      <h2>{{ t('schnapsidee.game.team') + ': ' + currentGroupName }}</h2>
+      <p>{{ t(`schnapsidee.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
+      <p>⌛ {{ timeRemaining + t('schnapsidee.game.seconds') }}</p>
     </div>
     <div>
       <h2>{{ currentWord }}</h2>
       <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
-        <h3>{{ t('activity.game.forbidden') }}</h3>
+        <h3>{{ t('schnapsidee.game.forbidden') }}</h3>
         <ul>
           <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
         </ul>
       </div>
     </div>
     <div>
-      <p>+ {{ currentGroupScore + t('activity.game.points') }}</p>
+      <p>+ {{ currentGroupScore + t('schnapsidee.game.points') }}</p>
         <!-- Our Team guessed it (+1 point) -->
         <button @click="incrementScore">{{ gameStore.getCurrentGroup.name }} (+1)</button>
         <!-- Opposing Team guessed it (-1 point)-->
@@ -199,7 +199,7 @@ onUnmounted(() => {
         <br>
         <!-- Skip Word (For the first three times free, afterwards -1 point) -->
         <button @click="skipWord">
-          {{ skipsUsedUp ? t('activity.game.skip.usedUp') : t('activity.game.skip.normal') }}
+          {{ skipsUsedUp ? t('schnapsidee.game.skip.usedUp') : t('schnapsidee.game.skip.normal') }}
         </button>
     </div>
   </div>

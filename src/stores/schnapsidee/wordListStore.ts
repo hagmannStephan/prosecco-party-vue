@@ -1,9 +1,9 @@
 import { defineStore } from 'pinia'
 import { openDB } from 'idb'
-import { useGameStore } from '@/stores/activity/gameStore'
+import { useGameStore } from '@/stores/schnapsidee/gameStore'
 
 const DB_NAME = 'prosecco-party-db'
-const STORE_NAME = 'activity-word-list-store'
+const STORE_NAME = 'schnapsidee-word-list-store'
 
 export type WordEntry = {
     word: string
@@ -48,8 +48,8 @@ export const useWordListStore = defineStore('wordList', {
             } else {
                 // Fetch from local files if not in DB
                 const [deJson, enJson] = await Promise.all([
-                    fetch('/games/activity/word-list-de.json').then(res => res.json()),
-                    fetch('/games/activity/word-list-en.json').then(res => res.json())
+                    fetch('/games/schnapsidee/word-list-de.json').then(res => res.json()),
+                    fetch('/games/schnapsidee/word-list-en.json').then(res => res.json())
                 ])
 
                 this.wordLists.de = deJson

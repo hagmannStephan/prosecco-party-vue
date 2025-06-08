@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
-import { useGameStore } from '@/stores/activity/gameStore';
+import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -30,9 +30,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <h1>{{ t('activity.timeUp.title') }}</h1>
+    <h1>{{ t('schnapsidee.timeUp.title') }}</h1>
     <p>⌛</p>
-    <p>{{ t('activity.timeUp.message') }} <b>{{ currentPlayerName }}</b></p>
-    <p>{{ t('activity.timeUp.team') }}: <b>{{ currentGroupName }}</b></p>
-    <button @click="pushRouter('/activity/break')">{{ t('activity.timeUp.button') }}</button>
+    <p>{{ t('schnapsidee.timeUp.message') }} <b>{{ currentPlayerName }}</b></p>
+    <p>{{ t('schnapsidee.timeUp.team') }}: <b>{{ currentGroupName }}</b></p>
+    <button @click="pushRouter('/schnapsidee/break')">{{ t('schnapsidee.timeUp.button') }}</button>
 </template>

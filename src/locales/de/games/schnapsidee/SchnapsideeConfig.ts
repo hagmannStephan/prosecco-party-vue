@@ -31,7 +31,7 @@ export default {
     "wordlist": {
         "title": "Wörterlisten",
         "standard": "Standard 🌍",
-        "activity": "Aktivität 🚴‍♂️",
+        "activity": "Aktivitäten 🚴‍♂️",
         "sport": "Sport ⚽",
         "spicy": "Spicy (+18) 🌶️",
     },
