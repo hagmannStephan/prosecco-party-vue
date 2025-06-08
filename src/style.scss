@@ -1,50 +1,58 @@
-/* Adding the Rubik-Font */
+/* Adding the Nunito-Font */
 /* Normal font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-Medium.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-SemiBold.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 /* Normal italic font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-MediumItalic.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-SemiBoldIstalic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
 
 /* Bold font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-Bold.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-Bold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 /* Bold italic font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-BoldItalic.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-BoldItalic.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
 }
 
 /* Light font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-Light.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-Medium.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 /* Light italic font */
 @font-face {
-  font-family: 'Rubik';
-  src: url('/font/Rubik/Rubik-LightItalic.ttf') format('truetype');
+  font-family: 'Nunito';
+  src: url('/font/Nunito/Nunito-MediumItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
+}
+
+/* Adding the Condiment font */
+@font-face {
+  font-family: 'Condiment';
+  src: url('/font/Condiment/Condiment-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Set base font size (1rem = browser default, usually 16px) */
@@ -53,7 +61,7 @@ html {
 }
 
 /* Define SCSS Variables */
-$default-font: 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif;  /* Define Rubik as default font with a few fallbacks */
+$default-font: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;  /* Define Rubik as default font with a few fallbacks */
 /* TODO: Set text and background color to a value from the color palette */
 $default-color: #213547; /* Define default text color*/
 $default-bg: #ffffff; /* Define default background color */
@@ -128,7 +136,7 @@ button {
 }
 
 h1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Condiment', sans-serif;
   font-weight: 600;
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -143,7 +151,10 @@ h3 {
 }
 
 p {
-    /* TODO: Add styles*/
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 input[type="text"],
