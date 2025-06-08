@@ -1,6 +1,6 @@
 import { setActivePinia, createPinia } from 'pinia'
 import { describe, it, expect, beforeEach, beforeAll } from 'vitest'
-import { useGameStore } from '@/stores/activity/gameStore'
+import { useGameStore } from '@/stores/schnapsidee/gameStore'
 
 // Mock valid game store
 function createTestStore() {

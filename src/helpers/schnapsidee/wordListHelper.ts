@@ -1,4 +1,4 @@
-import { useWordListStore, type WordEntry } from '@/stores/activity/wordListStore'
+import { useWordListStore, type WordEntry } from '@/stores/schnapsidee/wordListStore'
 import { useLanguageSettingsStore } from '@/stores/languageSettingsStore'
 
 export function getRandomWord(): WordEntry | string {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
-import { useGameStore } from '@/stores/activity/gameStore';
+import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
-import { isPiniaComplete } from '@/helpers/Activity/configHelper';
+import { isPiniaComplete } from '@/helpers/schnapsidee/configHelper';
 
 const { t } = useI18n();
 const pushRouter = usePushRouter();
@@ -16,7 +16,7 @@ const currentGroupName = ref('');
 // Redirect to the game configuration page if the game settings are not complete
 onMounted(() => {
     if (!isPiniaComplete(gS)) {
-        pushRouter('/activity/config');
+        pushRouter('/schnapsidee/config');
         return;
     }
     
@@ -36,9 +36,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <h1>{{ currentPlayerName + t('activity.break.title') }}</h1>
-    <h2>{{ t('activity.break.team') + ': ' + currentGroupName }}</h2>
-    <h2>{{ t('activity.break.mode.title') }}</h2>
-    <p>{{ t(`activity.break.mode.${gS.getCurrentGameMode || 'pantomime'}`) }}</p>
-    <button @click="pushRouter('/activity')">{{ t('activity.break.button.start') }}</button>
+    <h1>{{ currentPlayerName + t('schnapsidee.break.title') }}</h1>
+    <h2>{{ t('schnapsidee.break.team') + ': ' + currentGroupName }}</h2>
+    <h2>{{ t('schnapsidee.break.mode.title') }}</h2>
+    <p>{{ t(`schnapsidee.break.mode.${gS.getCurrentGameMode || 'pantomime'}`) }}</p>
+    <button @click="pushRouter('/schnapsidee')">{{ t('schnapsidee.break.button.start') }}</button>
 </template>

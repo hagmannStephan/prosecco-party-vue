@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { usePushRouter } from '@/helpers/routerHelper'
 import { onMounted, ref } from 'vue';
-import { useGameStore } from '@/stores/activity/gameStore';
+import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -15,7 +15,7 @@ onMounted(() => {
 });
 </script>
 <template>
-    <h1>{{ t('activity.ranked.title') }}</h1>
+    <h1>{{ t('schnapsidee.ranked.title') }}</h1>
 
     <ul>
         <li v-for="(player, index) in leaderboard" :key="index">
@@ -23,6 +23,6 @@ onMounted(() => {
         </li>
     </ul>
 
-    <button @click="pushRouter('/')">{{ t('activity.ranked.button.home') }}</button>
-    <button @click="pushRouter('/activity/game-config')">{{ t('activity.ranked.button.playAgain') }}</button>
+    <button @click="pushRouter('/')">{{ t('schnapsidee.ranked.button.home') }}</button>
+    <button @click="pushRouter('/schnapsidee/game-config')">{{ t('schnapsidee.ranked.button.playAgain') }}</button>
 </template>
