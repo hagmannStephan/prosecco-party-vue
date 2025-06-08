@@ -73,11 +73,11 @@ jobs:
           # Deploy the new version
           ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH && \
             git pull origin main && \
-            docker build -t name-of-the-game:latest . && \
-            docker build -t name-of-the-game:$CURRENT_COMMIT . && \
+            docker build -t prosecco-party-vue:latest . && \
+            docker build -t prosecco-party-vue:$CURRENT_COMMIT . && \
             docker stop game-container || true && \
             docker rm -f game-container || true && \
-            docker run -d --name game-container -p 5173:4173 name-of-the-game:latest"
+            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:latest"
       
       - name: Health check
         id: health_check
@@ -89,7 +89,7 @@ jobs:
           
           # Try to reach the application (adjust URL/port as needed)
           for i in {1..5}; do
-            if curl -f https://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
+            if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
               echo "Health check passed!"
               exit 0
             fi
@@ -112,10 +112,10 @@ jobs:
           
           ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH && \
             git checkout $PREVIOUS_COMMIT && \
-            docker build -t name-of-the-game:rollback . && \
+            docker build -t prosecco-party-vue:rollback . && \
             docker stop game-container || true && \
             docker rm -f game-container || true && \
-            docker run -d --name game-container -p 5173:4173 name-of-the-game:rollback"
+            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:rollback"
           
           echo "Rollback completed. Application should be running the previous version."
       
@@ -127,7 +127,7 @@ jobs:
           echo "Verifying rollback..."
           sleep 15
           
-          if curl -f https://name-of-the-game.stephanhagmann.ch/ --connect-timeout 10; then
+          if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
             echo "Rollback verification successful!"
           else
             echo "Rollback verification failed - manual intervention required!"

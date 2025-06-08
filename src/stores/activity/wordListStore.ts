@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { openDB } from 'idb'
 import { useGameStore } from '@/stores/activity/gameStore'
 
-const DB_NAME = 'name-of-the-game-db'
+const DB_NAME = 'prosecco-party-db'
 const STORE_NAME = 'activity-word-list-store'
 
 export type WordEntry = {
