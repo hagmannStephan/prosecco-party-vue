@@ -10,7 +10,7 @@ const pushRouter = usePushRouter();
 
 <template>
   <button @click="pushRouter('/schnapsidee/game-config')">
-    {{  t('home.activities-redirect') }}
+    {{  t('home.schnapsidee-redirect') }}
   </button>
   <LanguageSwitcher />
 </template>
