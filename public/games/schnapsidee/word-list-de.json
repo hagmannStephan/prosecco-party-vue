@@ -979,5 +979,86 @@
             "Schnell",
             "Kurz"
         ]
+    },
+    {
+        "word": "Flirten",
+        "category": "spicy",
+        "forbidden": [
+            "Kontakt",
+            "Anmachen",
+            "Blick"
+        ]
+    },
+    {
+        "word": "Seestern",
+        "category": "standard",
+        "forbidden": [
+            "Meer",
+            "Tier",
+            "Arme"
+        ]
+    },
+    {
+        "word": "Nackt",
+        "category": "spicy",
+        "forbidden": [
+            "Kleidung",
+            "Körper",
+            "Ausziehen"
+        ]
+    },
+    {
+        "word": "Taschendieb*in",
+        "category": "activity",
+        "forbidden": [
+            "Stehlen",
+            "Geld",
+            "Hand"
+        ]
+    },
+    {
+        "word": "Harlem Shake",
+        "category": "activity",
+        "forbidden": [
+            "Tanzen",
+            "Musik",
+            "2010's"
+        ]
+    },
+    {
+        "word": "Bungee Jumping",
+        "category": "sport",
+        "forbidden": [
+            "Springen",
+            "Seil",
+            "Höhe"
+        ]
+    },
+    {
+        "word": "Rentner*in",
+        "category": "standard",
+        "forbidden": [
+            "Alt",
+            "Rente",
+            "Senior"
+        ]
+    },
+    {
+        "word": "Schneeballschlacht",
+        "category": "activity",
+        "forbidden": [
+            "Winter",
+            "Schnee",
+            "Werfen"
+        ]
+    },
+    {
+        "word": "Bieber",
+        "category": "standard",
+        "forbidden": [
+            "Tier",
+            "Nagen",
+            "Damm"
+        ]
     }
 ]

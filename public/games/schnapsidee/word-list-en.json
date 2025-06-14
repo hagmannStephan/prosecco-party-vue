@@ -980,5 +980,86 @@
       "quick",
       "short"
     ]
-  }
+  },
+      {
+        "word": "Flirting",
+        "category": "spicy",
+        "forbidden": [
+            "Contact",
+            "Hit on",
+            "Interest"
+          ]
+    },
+    {
+      "word": "Starfish",
+      "category": "standard",
+      "forbidden": [
+        "sea",
+        "animal",
+        "ocean"
+      ]
+    },
+    {
+      "word": "Naked",
+      "category": "spicy",
+      "forbidden": [
+        "clothes",
+        "body",
+        "undress"
+      ]
+    },
+    {
+      "word": "Pick Pocket",
+      "category": "activity",
+      "forbidden": [
+        "theft",
+        "steal",
+        "money"
+      ]
+    },
+    {
+      "word": "Harlem Shake",
+      "category": "activity",
+      "forbidden": [
+        "dance",
+        "2010's",
+        "viral"
+      ]
+    },
+    {
+      "word": "Bungee Jumping",
+      "category": "sport",
+      "forbidden": [
+        "jump",
+        "rope",
+        "height"
+      ]
+    },
+    {
+      "word": "Retiree",
+      "category": "standard",
+      "forbidden": [
+        "old",
+        "pensioner",
+        "grand-parent"
+      ]
+    },
+    {
+      "word": "Snowball fight",
+      "category": "activity",
+      "forbidden": [
+        "snow",
+        "throw",
+        "winter"
+      ]
+    },
+    {
+      "word": "Beaver",
+      "category": "standard",
+      "forbidden": [
+        "animal",
+        "wood",
+        "dam"
+      ]
+    }
 ]
