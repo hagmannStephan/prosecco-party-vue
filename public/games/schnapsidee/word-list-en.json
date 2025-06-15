@@ -463,7 +463,7 @@
     "word": "Applying makeup",
     "category": "activity",
     "forbidden": [
-      "Make‑up",
+      "Make-up",
       "Face",
       "Cosmetics"
     ]
@@ -550,7 +550,7 @@
     ]
   },
   {
-    "word": "Wrestling",
+    "word": "Boxing Match",
     "category": "sport",
     "forbidden": [
       "Fight",
@@ -865,7 +865,7 @@
     ]
   },
   {
-    "word": "Strap‑on",
+    "word": "Strap-on",
     "category": "spicy",
     "forbidden": [
       "Harness",
@@ -1132,6 +1132,150 @@
       "Large",
       "Trunk",
       "Gray"
+    ]
+  },
+  {
+    "word": "Draw something",
+    "category": "activity",
+    "forbidden": [
+      "Pen",
+      "Paper",
+      "Art"
+    ]
+  },
+  {
+    "word": "Ballet",
+    "category": "sport",
+    "forbidden": [
+      "Dance",
+      "Shoes",
+      "Stage"
+    ]
+  },
+  {
+    "word": "Singing under the shower",
+    "category": "activity",
+    "forbidden": [
+      "Water",
+      "Bathroom",
+      "Song"
+    ]
+  },
+  {
+    "word": "Tornado",
+    "category": "standard",
+    "forbidden": [
+      "Wind",
+      "Storm",
+      "Destruction"
+    ]
+  },
+  {
+    "word": "Speed Dating",
+    "category": "activity",
+    "forbidden": [
+      "Meeting",
+      "Date",
+      "Quick"
+    ]
+  },
+  {
+    "word": "Lipstick",
+    "category": "standard",
+    "forbidden": [
+      "Makeup",
+      "Lips",
+      "Cosmetics"
+    ]
+  },
+  {
+    "word": "Wrestling",
+    "category": "sport",
+    "forbidden": [
+      "Fight",
+      "Show",
+      "Grapple"
+    ]
+  },
+  {
+      "word": "Sperm Bank",
+      "category": "spicy",
+      "forbidden": [
+        "Donation",
+        "Sperm",
+        "Clinic"
+      ]
+  },
+  {
+    "word": "Assasin",
+    "category": "standard",
+    "forbidden": [
+      "Killer",
+      "Stealth",
+      "Assignment"
+    ]
+  },
+  {
+    "word": "Pizza delivery (spicy)",
+    "category": "spicy",
+    "forbidden": [
+      "Pizza",
+      "Delivery",
+      "Penis"
+    ]
+  },
+  {
+    "word": "Beer Belly",
+    "category": "standard",
+    "forbidden": [
+      "Stomach",
+      "Fat",
+      "Alcohol"
+    ]
+  },
+  {
+    "word": "Mosquito",
+    "category": "standard",
+    "forbidden": [
+      "Insect",
+      "Bite",
+      "Annoying"
+    ]
+  },
+  {
+    "word": "Pregnant",
+    "category": "standard",
+    "forbidden": [
+      "Baby",
+      "Belly",
+      "Mother"
+    ]
+  },
+  {
+    "word": "Pregnancy test",
+    "category": "standard",
+    "forbidden": [
+      "Test",
+      "Pregnant",
+      "Result"
+    ]
+  },
+  {
+    "word": "Snowboarding",
+    "category": "sport",
+    "forbidden": [
+      "Ski",
+      "Mountain",
+      "Winter"
+    ]
+  },
+  {
+    "word": "Tickle",
+    "category": "activity",
+    "forbidden": [
+      "Touch",
+      "Laugh",
+      "Sensitive"
     ]
   }
 ]
