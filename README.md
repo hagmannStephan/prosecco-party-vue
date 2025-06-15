@@ -47,6 +47,6 @@ This is a project created for educational purposes by:
 
 You can reach out to us via email if there is an issue, you want to give us feedback, or you have something else to tell us:
 
-**contact [at] stephanhagmann [dot] ch**
+**contact [at] proseccoparty [dot] ch**
 
 Feel free to write in English or German. Please keep in mind that this is a spare-time project, so responses might take a little while.
