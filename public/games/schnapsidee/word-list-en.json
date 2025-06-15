@@ -1106,5 +1106,32 @@
       "Cups",
       "Ball"
     ]
+  },
+  {
+    "word": "Fragrance",
+    "category": "standard",
+    "forbidden": [
+      "Spray",
+      "Scent",
+      "Bottle"
+    ]
+  },
+  {
+    "word": "Selfie",
+    "category": "standard",
+    "forbidden": [
+      "Photo",
+      "Camera",
+      "Self-portrait"
+    ]
+  },
+  {
+    "word": "Elephant",
+    "category": "standard",
+    "forbidden": [
+      "Large",
+      "Trunk",
+      "Gray"
+    ]
   }
 ]

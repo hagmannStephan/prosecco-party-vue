@@ -1105,5 +1105,32 @@
             "Ball",
             "Becher"
         ]
+    },
+    {
+        "word": "Parfüm",
+        "category": "standard",
+        "forbidden": [
+            "Duft",
+            "Flasche",
+            "Spray"
+        ]
+    },
+    {
+        "word": "Selfie",
+        "category": "standard",
+        "forbidden": [
+            "Foto",
+            "Handy",
+            "Gesicht"
+        ]
+    },
+    {
+        "word": "Elefant",
+        "category": "standard",
+        "forbidden": [
+            "Tier",
+            "Gross",
+            "Rüssel"
+        ]
     }
 ]
