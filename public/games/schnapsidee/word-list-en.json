@@ -3,62 +3,62 @@
     "word": "Shaving cream",
     "category": "standard",
     "forbidden": [
-      "beard",
-      "blade",
-      "face"
+      "Beard",
+      "Blade",
+      "Face"
     ]
   },
   {
     "word": "Electric kettle",
     "category": "standard",
     "forbidden": [
-      "heat",
-      "kitchen",
-      "electricity"
+      "Heat",
+      "Kitchen",
+      "Electricity"
     ]
   },
   {
     "word": "Rocking chair",
     "category": "standard",
     "forbidden": [
-      "chair",
-      "rocking",
-      "relax"
+      "Chair",
+      "Rocking",
+      "Relax"
     ]
   },
   {
     "word": "Nose hair trimmer",
     "category": "standard",
     "forbidden": [
-      "nose",
-      "hair",
-      "trim"
+      "Nose",
+      "Hair",
+      "Trim"
     ]
   },
   {
     "word": "Sandbox",
     "category": "standard",
     "forbidden": [
-      "sand",
-      "play",
-      "children"
+      "Sand",
+      "Play",
+      "Children"
     ]
   },
   {
     "word": "Trampoline",
     "category": "standard",
     "forbidden": [
-      "jump",
-      "bounce",
-      "sport"
+      "Jump",
+      "Bounce",
+      "Sport"
     ]
   },
   {
     "word": "Boomerang",
     "category": "standard",
     "forbidden": [
-      "throw",
-      "come back",
+      "Throw",
+      "Come back",
       "Australia"
     ]
   },
@@ -66,116 +66,116 @@
     "word": "Rocking horse",
     "category": "standard",
     "forbidden": [
-      "child",
-      "toy",
-      "wood"
+      "Child",
+      "Toy",
+      "Wood"
     ]
   },
   {
     "word": "Marriage proposal",
     "category": "standard",
     "forbidden": [
-      "ring",
-      "love",
-      "kneel"
+      "Ring",
+      "Love",
+      "Kneel"
     ]
   },
   {
     "word": "Rubber boots",
     "category": "standard",
     "forbidden": [
-      "rain",
-      "shoes",
-      "water"
+      "Rain",
+      "Shoes",
+      "Water"
     ]
   },
   {
     "word": "Baby",
     "category": "standard",
     "forbidden": [
-      "diaper",
-      "crying",
-      "infant"
+      "Diaper",
+      "Crying",
+      "Infant"
     ]
   },
   {
     "word": "Zombie",
     "category": "standard",
     "forbidden": [
-      "undead",
-      "brain",
-      "apocalypse"
+      "Undead",
+      "Brain",
+      "Apocalypse"
     ]
   },
   {
     "word": "Caveman",
     "category": "standard",
     "forbidden": [
-      "stone age",
-      "fire",
-      "prehistoric"
+      "Stone age",
+      "Fire",
+      "Prehistoric"
     ]
   },
   {
     "word": "Black ice",
     "category": "standard",
     "forbidden": [
-      "winter",
-      "slippery",
-      "road"
+      "Winter",
+      "Slippery",
+      "Road"
     ]
   },
   {
     "word": "Inflatable boat",
     "category": "standard",
     "forbidden": [
-      "water",
-      "paddle",
-      "lake"
+      "Water",
+      "Paddle",
+      "Lake"
     ]
   },
   {
     "word": "Howler monkey",
     "category": "standard",
     "forbidden": [
-      "animal",
-      "jungle",
-      "loud"
+      "Animal",
+      "Jungle",
+      "Loud"
     ]
   },
   {
     "word": "Hammock",
     "category": "standard",
     "forbidden": [
-      "sleep",
-      "tree",
-      "swing"
+      "Sleep",
+      "Tree",
+      "Swing"
     ]
   },
   {
     "word": "Piggy bank",
     "category": "standard",
     "forbidden": [
-      "money",
-      "coin",
-      "porcelain"
+      "Money",
+      "Coin",
+      "Porcelain"
     ]
   },
   {
     "word": "Justin Bieber",
     "category": "standard",
     "forbidden": [
-      "singer",
+      "Singer",
       "Canada",
-      "music"
+      "Music"
     ]
   },
   {
     "word": "James Bond",
     "category": "standard",
     "forbidden": [
-      "movie",
-      "spy",
+      "Movie",
+      "Spy",
       "007"
     ]
   },
@@ -183,7 +183,7 @@
     "word": "Jesus",
     "category": "standard",
     "forbidden": [
-      "cross",
+      "Cross",
       "Bible",
       "Christ"
     ]
@@ -192,53 +192,53 @@
     "word": "Pirate",
     "category": "standard",
     "forbidden": [
-      "ship",
-      "sea",
-      "treasure"
+      "Ship",
+      "Sea",
+      "Treasure"
     ]
   },
   {
     "word": "Popcorn",
     "category": "standard",
     "forbidden": [
-      "corn",
-      "cinema",
-      "salt"
+      "Corn",
+      "Cinema",
+      "Salt"
     ]
   },
   {
     "word": "Spider-Man",
     "category": "standard",
     "forbidden": [
-      "superhero",
+      "Superhero",
       "Marvel",
-      "comic"
+      "Comic"
     ]
   },
   {
     "word": "Statue of Liberty",
     "category": "standard",
     "forbidden": [
-      "New York",
-      "torch",
-      "monument"
+      "New york",
+      "Torch",
+      "Monument"
     ]
   },
   {
     "word": "Rubik's Cube",
     "category": "standard",
     "forbidden": [
-      "colors",
-      "puzzle",
-      "twist"
+      "Colors",
+      "Puzzle",
+      "Twist"
     ]
   },
   {
     "word": "Lion",
     "category": "standard",
     "forbidden": [
-      "predator",
-      "mane",
+      "Predator",
+      "Mane",
       "Africa"
     ]
   },
@@ -246,18 +246,18 @@
     "word": "Robot",
     "category": "standard",
     "forbidden": [
-      "machine",
-      "technology",
-      "inhuman"
+      "Machine",
+      "Technology",
+      "Inhuman"
     ]
   },
   {
     "word": "Titanic (movie)",
     "category": "standard",
     "forbidden": [
-      "ship",
-      "iceberg",
-      "sinking"
+      "Ship",
+      "Iceberg",
+      "Sinking"
     ]
   },
   {
@@ -265,8 +265,8 @@
     "category": "standard",
     "forbidden": [
       "Australia",
-      "pouch",
-      "jump"
+      "Pouch",
+      "Jump"
     ]
   },
   {
@@ -274,114 +274,114 @@
     "category": "standard",
     "forbidden": [
       "Antarctica",
-      "black",
-      "ice"
+      "Black",
+      "Ice"
     ]
   },
   {
     "word": "Jellyfish",
     "category": "standard",
     "forbidden": [
-      "sea",
-      "toxic",
-      "water"
+      "Sea",
+      "Toxic",
+      "Water"
     ]
   },
   {
     "word": "Nightclub",
     "category": "standard",
     "forbidden": [
-      "dance",
-      "music",
-      "night"
+      "Dance",
+      "Music",
+      "Night"
     ]
   },
   {
     "word": "Cactus",
     "category": "standard",
     "forbidden": [
-      "spines",
-      "desert",
-      "green"
+      "Spines",
+      "Desert",
+      "Green"
     ]
   },
   {
     "word": "Cow milking",
     "category": "activity",
     "forbidden": [
-      "milk",
-      "farmer",
-      "animal"
+      "Milk",
+      "Farmer",
+      "Animal"
     ]
   },
   {
     "word": "Vacuuming",
     "category": "activity",
     "forbidden": [
-      "dust",
-      "device",
-      "clean"
+      "Dust",
+      "Device",
+      "Clean"
     ]
   },
   {
     "word": "Brushing teeth",
     "category": "activity",
     "forbidden": [
-      "toothbrush",
-      "mouth",
-      "clean"
+      "Toothbrush",
+      "Mouth",
+      "Clean"
     ]
   },
   {
     "word": "Doing yoga",
     "category": "activity",
     "forbidden": [
-      "stretch",
-      "exercise",
-      "relaxation"
+      "Stretch",
+      "Exercise",
+      "Relaxation"
     ]
   },
   {
     "word": "Playing trumpet",
     "category": "activity",
     "forbidden": [
-      "music",
-      "brass instrument",
-      "loud"
+      "Music",
+      "Brass instrument",
+      "Loud"
     ]
   },
   {
     "word": "Having hiccups",
     "category": "activity",
     "forbidden": [
-      "hiccup",
-      "drink",
-      "regular"
+      "Hiccup",
+      "Drink",
+      "Regular"
     ]
   },
   {
     "word": "Jump rope",
     "category": "activity",
     "forbidden": [
-      "kids",
-      "hop",
-      "exercise"
+      "Kids",
+      "Hop",
+      "Exercise"
     ]
   },
   {
     "word": "Shaving",
     "category": "activity",
     "forbidden": [
-      "beard",
-      "blade",
-      "hair"
+      "Beard",
+      "Blade",
+      "Hair"
     ]
   },
   {
     "word": "Moonwalk",
     "category": "activity",
     "forbidden": [
-      "backwards",
+      "Backwards",
       "Michael",
       "Jackson"
     ]
@@ -390,226 +390,226 @@
     "word": "Dentist",
     "category": "activity",
     "forbidden": [
-      "drill",
-      "clinic",
-      "mouth"
+      "Drill",
+      "Clinic",
+      "Mouth"
     ]
   },
   {
     "word": "Talking to oneself",
     "category": "activity",
     "forbidden": [
-      "alone",
-      "talk",
-      "voice"
+      "Alone",
+      "Talk",
+      "Voice"
     ]
   },
   {
     "word": "Mowing the lawn",
     "category": "activity",
     "forbidden": [
-      "garden",
-      "grass",
-      "cut"
+      "Garden",
+      "Grass",
+      "Cut"
     ]
   },
   {
     "word": "Traffic officer",
     "category": "activity",
     "forbidden": [
-      "street",
-      "car",
-      "traffic light"
+      "Street",
+      "Car",
+      "Traffic light"
     ]
   },
   {
     "word": "Fire brigade",
     "category": "activity",
     "forbidden": [
-      "extinguish",
-      "fire",
-      "water",
-      "uniform"
+      "Extinguish",
+      "Fire",
+      "Water",
+      "Uniform"
     ]
   },
   {
     "word": "Clown",
     "category": "activity",
     "forbidden": [
-      "circus",
-      "funny",
-      "makeup"
+      "Circus",
+      "Funny",
+      "Makeup"
     ]
   },
   {
     "word": "Cowboy",
     "category": "activity",
     "forbidden": [
-      "horse",
+      "Horse",
       "Western",
-      "revolver"
+      "Revolver"
     ]
   },
   {
     "word": "Blow-drying hair",
     "category": "activity",
     "forbidden": [
-      "dry",
-      "head",
-      "wind"
+      "Dry",
+      "Head",
+      "Wind"
     ]
   },
   {
     "word": "Applying makeup",
     "category": "activity",
     "forbidden": [
-      "make‑up",
-      "face",
-      "cosmetics"
+      "Make‑up",
+      "Face",
+      "Cosmetics"
     ]
   },
   {
     "word": "Robbery",
     "category": "activity",
     "forbidden": [
-      "bank",
-      "weapon",
-      "money"
+      "Bank",
+      "Weapon",
+      "Money"
     ]
   },
   {
     "word": "Sneezing",
     "category": "activity",
     "forbidden": [
-      "cold",
-      "runny nose",
-      "allergy"
+      "Cold",
+      "Runny nose",
+      "Allergy"
     ]
   },
   {
     "word": "Riding a motorcycle",
     "category": "activity",
     "forbidden": [
-      "helmet",
-      "road",
-      "vehicle"
+      "Helmet",
+      "Road",
+      "Vehicle"
     ]
   },
   {
     "word": "Being dizzy",
     "category": "activity",
     "forbidden": [
-      "spinning",
-      "balance",
-      "stagger"
+      "Spinning",
+      "Balance",
+      "Stagger"
     ]
   },
   {
     "word": "Karaoke singing",
     "category": "activity",
     "forbidden": [
-      "microphone",
-      "song",
-      "lyrics"
+      "Microphone",
+      "Song",
+      "Lyrics"
     ]
   },
   {
     "word": "Tandem (bike)",
     "category": "sport",
     "forbidden": [
-      "bicycle",
-      "two",
-      "ride"
+      "Bicycle",
+      "Two",
+      "Ride"
     ]
   },
   {
     "word": "Curling",
     "category": "sport",
     "forbidden": [
-      "ice",
-      "stone",
-      "broom"
+      "Ice",
+      "Stone",
+      "Broom"
     ]
   },
   {
     "word": "Slackline",
     "category": "sport",
     "forbidden": [
-      "balance",
-      "line",
-      "tighten"
+      "Balance",
+      "Line",
+      "Tighten"
     ]
   },
   {
     "word": "Parkour",
     "category": "sport",
     "forbidden": [
-      "jump",
-      "obstacle",
-      "urban"
+      "Jump",
+      "Obstacle",
+      "Urban"
     ]
   },
   {
     "word": "Wrestling",
     "category": "sport",
     "forbidden": [
-      "fight",
-      "mat",
-      "grapple"
+      "Fight",
+      "Mat",
+      "Grapple"
     ]
   },
   {
     "word": "Skateboarding",
     "category": "sport",
     "forbidden": [
-      "board",
-      "wheels",
-      "trick"
+      "Board",
+      "Wheels",
+      "Trick"
     ]
   },
   {
     "word": "Chess",
     "category": "sport",
     "forbidden": [
-      "strategy",
-      "pieces",
-      "king"
+      "Strategy",
+      "Pieces",
+      "King"
     ]
   },
   {
     "word": "Long jump",
     "category": "sport",
     "forbidden": [
-      "run‑up",
-      "athletics",
-      "sand"
+      "Run‑up",
+      "Athletics",
+      "Sand"
     ]
   },
   {
     "word": "Hobby horsing",
     "category": "sport",
     "forbidden": [
-      "horse",
-      "jump",
-      "ride"
+      "Horse",
+      "Jump",
+      "Ride"
     ]
   },
   {
     "word": "Cristiano Ronaldo",
     "category": "sport",
     "forbidden": [
-      "football",
+      "Football",
       "Portugal",
-      "CR7"
+      "Cr7"
     ]
   },
   {
     "word": "Ski jumper",
     "category": "sport",
     "forbidden": [
-      "winter",
-      "snow",
-      "ski jump"
+      "Winter",
+      "Snow",
+      "Ski jump"
     ]
   },
   {
@@ -617,295 +617,295 @@
     "category": "sport",
     "forbidden": [
       "Japan",
-      "ring",
-      "wrestle"
+      "Ring",
+      "Wrestle"
     ]
   },
   {
     "word": "Ice skating",
     "category": "sport",
     "forbidden": [
-      "ice",
-      "winter",
-      "sport"
+      "Ice",
+      "Winter",
+      "Sport"
     ]
   },
   {
     "word": "Fencing match",
     "category": "sport",
     "forbidden": [
-      "foil",
-      "mask",
-      "duel"
+      "Foil",
+      "Mask",
+      "Duel"
     ]
   },
   {
     "word": "Boxing ring",
     "category": "sport",
     "forbidden": [
-      "fight",
-      "gloves",
-      "sport"
+      "Fight",
+      "Gloves",
+      "Sport"
     ]
   },
   {
     "word": "Mini golf",
     "category": "sport",
     "forbidden": [
-      "ball",
-      "club",
-      "hole"
+      "Ball",
+      "Club",
+      "Hole"
     ]
   },
   {
     "word": "Fishing",
     "category": "sport",
     "forbidden": [
-      "fish",
-      "rod",
-      "bait"
+      "Fish",
+      "Rod",
+      "Bait"
     ]
   },
   {
     "word": "Scuba diving",
     "category": "sport",
     "forbidden": [
-      "water",
-      "oxygen",
-      "mask"
+      "Water",
+      "Oxygen",
+      "Mask"
     ]
   },
   {
     "word": "Surfing",
     "category": "sport",
     "forbidden": [
-      "wave",
-      "board",
-      "sea"
+      "Wave",
+      "Board",
+      "Sea"
     ]
   },
   {
     "word": "Juggling",
     "category": "sport",
     "forbidden": [
-      "balls",
-      "circus",
-      "hands"
+      "Balls",
+      "Circus",
+      "Hands"
     ]
   },
   {
     "word": "Roger Federer",
     "category": "sport",
     "forbidden": [
-      "tennis",
+      "Tennis",
       "Switzerland",
-      "Grand Slam"
+      "Grand slam"
     ]
   },
   {
     "word": "Usain Bolt",
     "category": "sport",
     "forbidden": [
-      "sprint",
+      "Sprint",
       "Jamaica",
-      "world record"
+      "World record"
     ]
   },
   {
     "word": "Neymar",
     "category": "sport",
     "forbidden": [
-      "football",
+      "Football",
       "Brazil",
-      "diving"
+      "Diving"
     ]
   },
   {
     "word": "Diving foul",
     "category": "sport",
     "forbidden": [
-      "fall",
-      "referee",
-      "deceive"
+      "Fall",
+      "Referee",
+      "Deceive"
     ]
   },
   {
     "word": "Lap dance",
     "category": "spicy",
     "forbidden": [
-      "dance",
-      "lap",
-      "ass"
+      "Dance",
+      "Lap",
+      "Ass"
     ]
   },
   {
     "word": "Striptease",
     "category": "spicy",
     "forbidden": [
-      "undress",
-      "dance",
-      "lingerie"
+      "Undress",
+      "Dance",
+      "Lingerie"
     ]
   },
   {
     "word": "Massage oil",
     "category": "spicy",
     "forbidden": [
-      "massage",
-      "skin",
-      "slippery"
+      "Massage",
+      "Skin",
+      "Slippery"
     ]
   },
   {
     "word": "Foot fetish",
     "category": "spicy",
     "forbidden": [
-      "feet",
-      "preference",
-      "sexual"
+      "Feet",
+      "Preference",
+      "Sexual"
     ]
   },
   {
     "word": "BDSM",
     "category": "spicy",
     "forbidden": [
-      "bondage",
-      "dominance",
-      "pain"
+      "Bondage",
+      "Dominance",
+      "Pain"
     ]
   },
   {
     "word": "Pole dancer",
     "category": "spicy",
     "forbidden": [
-      "pole",
-      "dance",
-      "strip club"
+      "Pole",
+      "Dance",
+      "Strip club"
     ]
   },
   {
     "word": "French kiss",
     "category": "spicy",
     "forbidden": [
-      "kiss",
-      "mouth",
-      "lips"
+      "Kiss",
+      "Mouth",
+      "Lips"
     ]
   },
   {
     "word": "Threesome",
     "category": "spicy",
     "forbidden": [
-      "sex",
-      "three",
-      "group"
+      "Sex",
+      "Three",
+      "Group"
     ]
   },
   {
     "word": "Dildo",
     "category": "spicy",
     "forbidden": [
-      "sex toy",
-      "plastic",
-      "penis"
+      "Sex toy",
+      "Plastic",
+      "Penis"
     ]
   },
   {
     "word": "Buttplug",
     "category": "spicy",
     "forbidden": [
-      "anal",
-      "sex toy",
-      "ass"
+      "Anal",
+      "Sex toy",
+      "Ass"
     ]
   },
   {
     "word": "Masturbation",
     "category": "spicy",
     "forbidden": [
-      "self-pleasure",
-      "hand",
-      "alone"
+      "Self-pleasure",
+      "Hand",
+      "Alone"
     ]
   },
   {
     "word": "One-night stand",
     "category": "spicy",
     "forbidden": [
-      "sex",
-      "once",
-      "stranger"
+      "Sex",
+      "Once",
+      "Stranger"
     ]
   },
   {
     "word": "Orgy",
     "category": "spicy",
     "forbidden": [
-      "group",
-      "sex",
-      "multiple"
+      "Group",
+      "Sex",
+      "Multiple"
     ]
   },
   {
     "word": "Porn director",
     "category": "spicy",
     "forbidden": [
-      "film",
-      "sex",
-      "camera"
+      "Film",
+      "Sex",
+      "Camera"
     ]
   },
   {
     "word": "Erection",
     "category": "spicy",
     "forbidden": [
-      "hard",
-      "penis",
-      "man"
+      "Hard",
+      "Penis",
+      "Man"
     ]
   },
   {
     "word": "Strap‑on",
     "category": "spicy",
     "forbidden": [
-      "harness",
-      "sex toy",
-      "role swap"
+      "Harness",
+      "Sex toy",
+      "Role swap"
     ]
   },
   {
     "word": "Handcuffs",
     "category": "spicy",
     "forbidden": [
-      "dominance",
-      "restrict",
-      "wrist"
+      "Dominance",
+      "Restrict",
+      "Wrist"
     ]
   },
   {
     "word": "Skinny dipping",
     "category": "spicy",
     "forbidden": [
-      "naked",
-      "swim",
-      "lake"
+      "Naked",
+      "Swim",
+      "Lake"
     ]
   },
   {
     "word": "Wet dream",
     "category": "spicy",
     "forbidden": [
-      "sleep",
-      "sexual",
-      "night"
+      "Sleep",
+      "Sexual",
+      "Night"
     ]
   },
   {
     "word": "Sending nudes",
     "category": "spicy",
     "forbidden": [
-      "photo",
-      "phone",
+      "Photo",
+      "Phone",
       "Snapchat"
     ]
   },
@@ -913,153 +913,198 @@
     "word": "Sex on an airplane toilet",
     "category": "spicy",
     "forbidden": [
-      "flying",
-      "toilet",
-      "Mile High Club"
+      "Flying",
+      "Toilet",
+      "Mile high club"
     ]
   },
   {
     "word": "Whip",
     "category": "spicy",
     "forbidden": [
-      "hit",
-      "BDSM",
-      "dominance"
+      "Hit",
+      "Bdsm",
+      "Dominance"
     ]
   },
   {
     "word": "Penis fracture",
     "category": "spicy",
     "forbidden": [
-      "man",
-      "sex",
-      "accident"
+      "Man",
+      "Sex",
+      "Accident"
     ]
   },
   {
     "word": "Broken condom",
     "category": "spicy",
     "forbidden": [
-      "sex",
-      "latex",
-      "accident"
+      "Sex",
+      "Latex",
+      "Accident"
     ]
   },
   {
     "word": "Car sex",
     "category": "spicy",
     "forbidden": [
-      "vehicle",
-      "parking",
-      "sex"
+      "Vehicle",
+      "Parking",
+      "Sex"
     ]
   },
   {
     "word": "Public sex",
     "category": "spicy",
     "forbidden": [
-      "outside",
-      "people",
-      "forbidden"
+      "Outside",
+      "People",
+      "Forbidden"
     ]
   },
   {
     "word": "Condom",
     "category": "spicy",
     "forbidden": [
-      "protection",
-      "latex",
-      "contraception"
+      "Protection",
+      "Latex",
+      "Contraception"
     ]
   },
   {
     "word": "Quickie",
     "category": "spicy",
     "forbidden": [
-      "sex",
-      "quick",
-      "short"
+      "Sex",
+      "Quick",
+      "Short"
     ]
   },
-      {
-        "word": "Flirting",
-        "category": "spicy",
-        "forbidden": [
-            "Contact",
-            "Hit on",
-            "Interest"
-          ]
-    },
-    {
-      "word": "Starfish",
-      "category": "standard",
-      "forbidden": [
-        "sea",
-        "animal",
-        "ocean"
-      ]
-    },
-    {
-      "word": "Naked",
-      "category": "spicy",
-      "forbidden": [
-        "clothes",
-        "body",
-        "undress"
-      ]
-    },
-    {
-      "word": "Pick Pocket",
-      "category": "activity",
-      "forbidden": [
-        "theft",
-        "steal",
-        "money"
-      ]
-    },
-    {
-      "word": "Harlem Shake",
-      "category": "activity",
-      "forbidden": [
-        "dance",
-        "2010's",
-        "viral"
-      ]
-    },
-    {
-      "word": "Bungee Jumping",
-      "category": "sport",
-      "forbidden": [
-        "jump",
-        "rope",
-        "height"
-      ]
-    },
-    {
-      "word": "Retiree",
-      "category": "standard",
-      "forbidden": [
-        "old",
-        "pensioner",
-        "grand-parent"
-      ]
-    },
-    {
-      "word": "Snowball fight",
-      "category": "activity",
-      "forbidden": [
-        "snow",
-        "throw",
-        "winter"
-      ]
-    },
-    {
-      "word": "Beaver",
-      "category": "standard",
-      "forbidden": [
-        "animal",
-        "wood",
-        "dam"
-      ]
-    }
+  {
+    "word": "Flirting",
+    "category": "spicy",
+    "forbidden": [
+      "Contact",
+      "Hit on",
+      "Interest"
+    ]
+  },
+  {
+    "word": "Starfish",
+    "category": "standard",
+    "forbidden": [
+      "Sea",
+      "Animal",
+      "Ocean"
+    ]
+  },
+  {
+    "word": "Naked",
+    "category": "spicy",
+    "forbidden": [
+      "Clothes",
+      "Body",
+      "Undress"
+    ]
+  },
+  {
+    "word": "Pick Pocket",
+    "category": "activity",
+    "forbidden": [
+      "Theft",
+      "Steal",
+      "Money"
+    ]
+  },
+  {
+    "word": "Harlem Shake",
+    "category": "activity",
+    "forbidden": [
+      "Dance",
+      "2010's",
+      "Viral"
+    ]
+  },
+  {
+    "word": "Bungee Jumping",
+    "category": "sport",
+    "forbidden": [
+      "Jump",
+      "Rope",
+      "Height"
+    ]
+  },
+  {
+    "word": "Retiree",
+    "category": "standard",
+    "forbidden": [
+      "Old",
+      "Pensioner",
+      "Grand-parent"
+    ]
+  },
+  {
+    "word": "Snowball fight",
+    "category": "activity",
+    "forbidden": [
+      "Snow",
+      "Throw",
+      "Winter"
+    ]
+  },
+  {
+    "word": "Beaver",
+    "category": "standard",
+    "forbidden": [
+      "Animal",
+      "Wood",
+      "Dam"
+    ]
+  },
+  {
+    "word": "Paint Nails",
+    "category": "activity",
+    "forbidden": [
+      "Nail polish",
+      "Manicure",
+      "Finger"
+    ]
+  },
+  {
+    "word": "Werewolf",
+    "category": "standard",
+    "forbidden": [
+      "Monster",
+      "Full moon",
+      "Transformation"
+    ]
+  },
+  {
+    "word": "Skiing",
+    "category": "sport",
+    "forbidden": [
+      "Snow",
+      "Winter",
+      "Fast"
+    ]
+  },
+  {
+    "word": "Pantomime",
+    "category": "activity",
+    "forbidden": [
+      "Silent",
+      "Acting",
+      "Gesture"
+    ]
+  },
+  {
+    "word": "Beer Pong",
+    "category": "activity",
+    "forbidden": [
+      "Drink",
+      "Cups",
+      "Ball"
+    ]
+  }
 ]

@@ -1060,5 +1060,50 @@
             "Nagen",
             "Damm"
         ]
+    },
+    {
+        "word": "Nägel lackieren",
+        "category": "activity",
+        "forbidden": [
+            "Farbe",
+            "Hand",
+            "Finger"
+        ]
+    },
+    {
+        "word": "Werwolf",
+        "category": "standard",
+        "forbidden": [
+            "Monster",
+            "Verwandlung",
+            "Vollmond"
+        ]
+    },
+    {
+        "word": "Ski Fahren",
+        "category": "sport",
+        "forbidden": [
+            "Winter",
+            "Schnee",
+            "Schnell"
+        ]
+    },
+    {
+        "word": "Pantomime",
+        "category": "activity",
+        "forbidden": [
+            "Stumm",
+            "Theater",
+            "Gesten"
+        ]
+    },
+    {
+        "word": "Bier Pong",
+        "category": "activity",
+        "forbidden": [
+            "Trinken",
+            "Ball",
+            "Becher"
+        ]
     }
 ]
