@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 
 # Adding top-level permissions for the workflow
-# Meaning: the workflow can read the repository contents
+# Meaning that the workflow can read the repository contents
 permissions:
   contents: read
 
@@ -12,17 +12,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     permissions:
-      # Set permissions for the deploy job
       contents: write
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          # Fetch more history for rollback capability
           fetch-depth: 2
        
       - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.7.0
+        uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
          
@@ -31,12 +29,15 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
          
-      - name: Get previous commit hash
-        id: get_previous_commit
+      - name: Get commit hashes
+        id: commits
         run: |
+          CURRENT_COMMIT=$(git rev-parse HEAD)
           PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
+          echo "current_commit=$CURRENT_COMMIT" >> $GITHUB_OUTPUT
           echo "previous_commit=$PREVIOUS_COMMIT" >> $GITHUB_OUTPUT
-          echo "Previous commit: $PREVIOUS_COMMIT"
+          echo "Deploying: $CURRENT_COMMIT"
+          echo "Previous: $PREVIOUS_COMMIT"
          
       - name: Deploy to server
         id: deploy
@@ -44,19 +45,22 @@ jobs:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_PATH: ${{ secrets.SERVER_PATH }}
+          CURRENT_COMMIT: ${{ steps.commits.outputs.current_commit }}
         run: |
-          # Store the current commit hash
-          CURRENT_COMMIT=$(git rev-parse HEAD)
-          echo "Deploying commit: $CURRENT_COMMIT"
+          echo "Starting deployment..."
           
-          # Deploy the new version
-          ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH && \
-            git pull origin main && \
-            docker build -t prosecco-party-vue:latest . && \
-            docker build -t prosecco-party-vue:$CURRENT_COMMIT . && \
-            docker stop game-container || true && \
-            docker rm -f game-container || true && \
-            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:latest"
+          ssh $SERVER_USER@$SERVER_IP "
+            set -e
+            cd $SERVER_PATH
+            git pull origin main
+            docker build -t prosecco-party-vue:latest . 
+            docker build -t prosecco-party-vue:$CURRENT_COMMIT .
+            docker stop game-container || true
+            docker rm -f game-container || true
+            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:latest
+          "
+          
+          echo "Deployment completed"
       
       - name: Health check
         id: health_check
@@ -66,60 +70,63 @@ jobs:
           echo "Waiting for application to start..."
           sleep 30
           
-          # Try to reach the application (adjust URL/port as needed)
           for i in {1..5}; do
+            echo "Health check attempt $i/5..."
             if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
               echo "Health check passed!"
               exit 0
             fi
-            echo "Health check attempt $i failed, retrying in 10 seconds..."
+            echo "Health check failed, retrying in 10 seconds..."
             sleep 10
           done
           
           echo "Health check failed after 5 attempts"
           exit 1
       
-      - name: Rollback on failure
-        if: failure() && steps.deploy.conclusion == 'success'
+      - name: Rollback on any failure
+        if: failure()
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
           SERVER_PATH: ${{ secrets.SERVER_PATH }}
-          PREVIOUS_COMMIT: ${{ steps.get_previous_commit.outputs.previous_commit }}
+          PREVIOUS_COMMIT: ${{ steps.commits.outputs.previous_commit }}
         run: |
-          echo "Deployment failed, rolling back to previous commit: $PREVIOUS_COMMIT"
+          echo "Deployment failed, rolling back to: $PREVIOUS_COMMIT"
           
-          ssh $SERVER_USER@$SERVER_IP "cd $SERVER_PATH && \
-            git checkout $PREVIOUS_COMMIT && \
-            docker build -t prosecco-party-vue:rollback . && \
-            docker stop game-container || true && \
-            docker rm -f game-container || true && \
-            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:rollback"
+          ssh $SERVER_USER@$SERVER_IP "
+            set -e
+            cd $SERVER_PATH
+            git checkout $PREVIOUS_COMMIT
+            docker build -t prosecco-party-vue:rollback .
+            docker stop game-container || true
+            docker rm -f game-container || true
+            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:rollback
+          "
           
-          echo "Rollback completed. Application should be running the previous version."
+          echo "Rollback completed"
       
       - name: Verify rollback
-        if: failure() && steps.deploy.conclusion == 'success'
+        if: failure()
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
         run: |
           echo "Verifying rollback..."
-          sleep 15
+          sleep 20
           
-          if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
-            echo "Rollback verification successful!"
-          else
-            echo "Rollback verification failed - manual intervention required!"
-            exit 1
-          fi
-      
-      - name: Notify on rollback
-        if: failure() && steps.deploy.conclusion == 'success'
-        run: |
-          echo "::error::Deployment failed and was automatically rolled back to the previous version. Please check the logs and fix the issues before the next deployment."
+          for i in {1..3}; do
+            if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
+              echo "Rollback verification successful!"
+              exit 0
+            fi
+            echo "Verification attempt $i failed, retrying..."
+            sleep 10
+          done
+          
+          echo "Rollback verification failed - manual intervention required!"
+          exit 1
       
       - name: Fail job after rollback
-        if: failure() && steps.deploy.conclusion == 'success'
+        if: failure()
         run: |
-          echo "Deployment failed - rollback completed but marking job as failed"
+          echo "Deployment failed and rollback completed"
           exit 1
