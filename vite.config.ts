@@ -2,11 +2,8 @@ import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
-import { createHtmlPlugin } from 'vite-plugin-html'
-import { visualizer } from 'rollup-plugin-visualizer'
 import compression from 'vite-plugin-compression'
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [
     vue(),
@@ -38,46 +35,36 @@ export default defineConfig({
           }
         ],
       },
-      strategies: 'generateSW',
       workbox: {
-        globPatterns: [
-          '**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'
-        ],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,woff,woff2,ttf,eot,json}'],
         navigateFallback: 'index.html',
         navigateFallbackDenylist: [/^\/api/],
         runtimeCaching: [
           {
-            urlPattern: /\.(?:png|jpg|jpeg|svg|gif|woff|woff2|ttf|eot)$/,
+            urlPattern: ({ request }) => request.destination === 'document',
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'pages',
+              networkTimeoutSeconds: 3,
+            }
+          },
+          {
+            urlPattern: ({ request }) => 
+              request.destination === 'script' || request.destination === 'style',
+            handler: 'StaleWhileRevalidate',
+            options: {
+              cacheName: 'static-resources',
+            }
+          },
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
             handler: 'CacheFirst',
             options: {
-              cacheName: 'assets-cache',
+              cacheName: 'images',
               expiration: {
                 maxEntries: 100,
                 maxAgeSeconds: 60 * 60 * 24 * 30 // 30 days
               }
-            }
-          },
-          {
-            urlPattern: /\.(?:js|css)$/,
-            handler: 'StaleWhileRevalidate',
-            options: {
-              cacheName: 'static-resources',
-              expiration: {
-                maxEntries: 60,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
-              }
-            }
-          },
-          {
-            urlPattern: ({ url }) => url.pathname.startsWith('/'),
-            handler: 'NetworkFirst',
-            options: {
-              cacheName: 'html-cache',
-              expiration: {
-                maxEntries: 10,
-                maxAgeSeconds: 60 * 60 * 24 * 7 // 7 days
-              },
-              networkTimeoutSeconds: 10
             }
           }
         ],
@@ -85,22 +72,12 @@ export default defineConfig({
         clientsClaim: true
       }
     }),
-    createHtmlPlugin({
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        minifyJS: true,
-        minifyCSS: true,
-      }
-    }),
-    visualizer(),
-    // Gzip compression
+    // Pre-compress files for nginx gzip_static
     compression({
       algorithm: 'gzip',
       ext: '.gz',
       threshold: 1024,
-      deleteOriginFile: false,
-      verbose: true
+      deleteOriginFile: false
     }),
   ],
   resolve: {
@@ -115,10 +92,26 @@ export default defineConfig({
   preview: {
     host: '0.0.0.0',
     port: 4173,
-    allowedHosts: ['proseccoparty.ch']
   },
   test: {
     environment: 'jsdom',
     globals: true,
   },
+  build: {
+    // Enable minification and tree-shaking
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['vue'],
+        }
+      }
+    }
+  }
 })
