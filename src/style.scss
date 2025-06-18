@@ -127,6 +127,11 @@ body {
   text-align: center;
 }
 
+/* Has to be at least 16px, lese iOS zooms in automatically */
+input, textarea, select {
+  font-size: 16px;
+}
+
 /*--------------------------------------------------------------------------------------------*/
 /* Don't modify styles above unless certain */
 /*--------------------------------------------------------------------------------------------*/
