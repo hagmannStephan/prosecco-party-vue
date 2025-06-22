@@ -48,8 +48,8 @@ export const useWordListStore = defineStore('wordList', {
             } else {
                 // Fetch from local files if not in DB
                 const [deJson, enJson] = await Promise.all([
-                    fetch('/games/schnapsidee/word-list-de.json').then(res => res.json()),
-                    fetch('/games/schnapsidee/word-list-en.json').then(res => res.json())
+                    fetch('/games/de/word-list.json').then(res => res.json()),
+                    fetch('/games/en/word-list.json').then(res => res.json())
                 ])
 
                 this.wordLists.de = deJson
