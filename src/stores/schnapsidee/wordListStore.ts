@@ -26,7 +26,7 @@ export const useWordListStore = defineStore('wordList', {
     persist: true,
     actions: {
         async init() {
-            if (this.isInitialized) return
+            if (this.isInitialized) return;
 
             const db = await openDB(DB_NAME, 1, {
                 upgrade(db) {
