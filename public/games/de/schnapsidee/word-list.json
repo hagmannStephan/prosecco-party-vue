@@ -1,0 +1,983 @@
+[
+    {
+        "word": "Rasierschaum",
+        "category": "standard",
+        "forbidden": [
+            "Bart",
+            "Klinge",
+            "Gesicht"
+        ]
+    },
+    {
+        "word": "Wasserkocher",
+        "category": "standard",
+        "forbidden": [
+            "Erhitzen",
+            "Küche",
+            "Strom"
+        ]
+    },
+    {
+        "word": "Schaukelstuhl",
+        "category": "standard",
+        "forbidden": [
+            "Stuhl",
+            "Schaukeln",
+            "Entspannt"
+        ]
+    },
+    {
+        "word": "Nasenhaarschneider",
+        "category": "standard",
+        "forbidden": [
+            "Nase",
+            "Haare",
+            "Schneiden"
+        ]
+    },
+    {
+        "word": "Sandkasten",
+        "category": "standard",
+        "forbidden": [
+            "Sand",
+            "Spielen",
+            "Kinder"
+        ]
+    },
+    {
+        "word": "Trampolin",
+        "category": "standard",
+        "forbidden": [
+            "Springen",
+            "Hüpfen",
+            "Sport"
+        ]
+    },
+    {
+        "word": "Bumerang",
+        "category": "standard",
+        "forbidden": [
+            "Werfen",
+            "Zurückkommen",
+            "Australien"
+        ]
+    },
+    {
+        "word": "Schaukelpferd",
+        "category": "standard",
+        "forbidden": [
+            "Kind",
+            "Spielzeug",
+            "Holz"
+        ]
+    },
+    {
+        "word": "Heiratsantrag",
+        "category": "standard",
+        "forbidden": [
+            "Ring",
+            "Liebe",
+            "Knie"        
+    ]
+    },
+    {
+        "word": "Gummistiefel",
+        "category": "standard",
+        "forbidden": [
+            "Regen",
+            "Schuhe",
+            "Wasser"
+        ]
+    },
+    {
+        "word": "Baby",
+        "category": "standard",
+        "forbidden": [
+            "Windel",
+            "Weinen",
+            "Säugling"
+        ]
+    },
+    {
+        "word": "Zombie",
+        "category": "standard",
+        "forbidden": [
+            "Untot",
+            "Hirn",
+            "Apokalypse"
+        ]
+    },
+    {
+        "word": "Höhlenmensch",
+        "category": "standard",
+        "forbidden": [
+            "Steinzeit",
+            "Feuer",
+            "Urzeit"
+        ]
+    },
+    {
+        "word": "Glatteis",
+        "category": "standard",
+        "forbidden": [
+            "Winter",
+            "Rutschig",
+            "Strasse"        ]
+    },
+    {
+        "word": "Gummiboot",
+        "category": "standard",
+        "forbidden": [
+            "Wasser",
+            "Paddel",
+            "See"
+        ]
+    },
+    {
+        "word": "Schreiaffe",
+        "category": "standard",
+        "forbidden": [
+            "Tier",
+            "Dschungel",
+            "Laut"
+        ]
+    },
+    {
+        "word": "Hängematte",
+        "category": "standard",
+        "forbidden": [
+            "Schlafen",
+            "Baum",
+            "Schaukeln"
+        ]
+    },
+    {
+        "word": "Sparschwein",
+        "category": "standard",
+        "forbidden": [
+            "Geld",
+            "Münze",
+            "Porzelan"
+        ]
+    },
+    {
+        "word": "Justin Bieber",
+        "category": "standard",
+        "forbidden": [
+            "Sänger",
+            "Kanada",
+            "Musik"
+        ]
+    },
+    {
+        "word": "James Bond",
+        "category": "standard",
+        "forbidden": [
+            "Film",
+            "Spion",
+            "007"
+        ]
+    },
+    {
+        "word": "Jesus",
+        "category": "standard",
+        "forbidden": [
+            "Kreuz",
+            "Bibel",
+            "Christus"
+        ]
+    },
+    {
+        "word": "Pirat*in",
+        "category": "standard",
+        "forbidden": [
+            "Schiff",
+            "Meer",
+            "Schatz"
+        ]
+    },
+    {
+        "word": "Popcorn",
+        "category": "standard",
+        "forbidden": [
+            "Mais",
+            "Kino",
+            "Salz"
+        ]
+    },
+    {
+        "word": "Spider-Man",
+        "category": "standard",
+        "forbidden": [
+            "Superheld",
+            "Marvel",
+            "Comic"
+        ]
+    },
+    {
+        "word": "Freiheitsstatue",
+        "category": "standard",
+        "forbidden": [
+            "New York",
+            "Fackel",
+            "Monument"
+        ]
+    },
+    {
+        "word": "Rubiks Cube",
+        "category": "standard",
+        "forbidden": [
+            "Farben",
+            "Puzzle",
+            "Drehen"
+        ]
+    },
+    {
+        "word": "Löwe",
+        "category": "standard",
+        "forbidden": [
+            "Raubtier",
+            "Mähne",
+            "Afrika"        
+        ]
+    },
+    {
+        "word": "Roboter",
+        "category": "standard",
+        "forbidden": [
+            "Maschine",
+            "Technik",
+            "Unmenschlich"
+        ]
+    },
+    {
+        "word": "Titanic (Film)",
+        "category": "standard",
+        "forbidden": [
+            "Schiff",
+            "Eisberg",
+            "Untergang"
+        ]
+    },
+    {
+        "word": "Känguru",
+        "category": "standard",
+        "forbidden": [
+            "Australien",
+            "Beutel",
+            "Springen"        
+        ]
+    },
+    {
+        "word": "Pinguin",
+        "category": "standard",
+        "forbidden": [
+            "Antarktis",
+            "Schwarz",
+            "Eis"
+        ]
+    },
+    {
+        "word": "Qualle",
+        "category": "standard",
+        "forbidden": [
+            "Meer",
+            "Giftig",
+            "Wasser"        
+        ]
+    },
+    {
+        "word": "Club",
+        "category": "standard",
+        "forbidden": [
+            "Tanzen",
+            "Musik",
+            "Nacht"        
+        ]
+    },
+    {
+        "word": "Kaktus",
+        "category": "standard",
+        "forbidden": [
+            "Stacheln",
+            "Wüste",
+            "Grün"
+        ]
+    },
+    {
+        "word": "Kuh melken",
+        "category": "activity",
+        "forbidden": [
+            "Milch",
+            "Bauer",
+            "Tier"
+        ]
+    },
+    {
+        "word": "Staubsaugen",
+        "category": "activity",
+        "forbidden": [
+            "Staub",
+            "Gerät",
+            "Sauber"
+        ]
+    },
+    {
+        "word": "Zähne putzen",
+        "category": "activity",
+        "forbidden": [
+            "Zahnbürste",
+            "Mund",
+            "Sauber"
+        ]
+    },
+    {
+        "word": "Yoga machen",
+        "category": "activity",
+        "forbidden": [
+            "Dehnen",
+            "Sport",
+            "Entspannung"
+        ]
+    },
+    {
+        "word": "Trompete spielen",
+        "category": "activity",
+        "forbidden": [
+            "Musik",
+            "Blasinstrument",
+            "Laut"
+        ]
+    },
+    {
+        "word": "Schluckauf haben",
+        "category": "activity",
+        "forbidden": [
+            "Hicks",
+            "Trinken",
+            "Regelmässig"
+        ]
+    },
+    {
+        "word": "Seilspringen",
+        "category": "activity",
+        "forbidden": [
+            "Kinder",
+            "Hüpfen",
+            "Sport"
+        ]
+    },
+    {
+        "word": "Sich rasieren",
+        "category": "activity",
+        "forbidden": [
+            "Bart",
+            "Klinge",
+            "Haare"
+        ]
+    },
+    {
+        "word": "Moon Walk",
+        "category": "activity",
+        "forbidden": [
+            "Rückwärts",
+            "Michael",
+            "Jackson"
+        ]
+    },
+    {
+        "word": "Zahnärzt*in",
+        "category": "activity",
+        "forbidden": [
+            "Bohrer",
+            "Praxis",
+            "Mund"
+        ]
+    },
+    {
+        "word": "Selbstgespräch",
+        "category": "activity",
+        "forbidden": [
+            "Allein",
+            "Reden",
+            "Stimme"
+        ]
+    },
+    {
+        "word": "Rasen mähen",
+        "category": "activity",
+        "forbidden": [
+            "Garten",
+            "Gras",
+            "Schneiden"
+        ]
+    },
+    {
+        "word": "Verkehrspolizist*in",
+        "category": "activity",
+        "forbidden": [
+            "Strasse",
+            "Auto",
+            "Ampel"
+        ]
+    },
+    {
+        "word": "Feuerwehr",
+        "category": "activity",
+        "forbidden": [
+            "Löschen",
+            "Brand",
+            "Wasser",
+            "Uniform"
+        ]
+    },
+    {
+        "word": "Clown",
+        "category": "activity",
+        "forbidden": [
+            "Zirkus",
+            "Lustig",
+            "Schminke"
+        ]
+    },
+    {
+        "word": "Cowboy",
+        "category": "activity",
+        "forbidden": [
+            "Pferd",
+            "Western",
+            "Revolver"
+        ]
+    },
+    {
+        "word": "Haare föhnen",
+        "category": "activity",
+        "forbidden": [
+            "Trocken",
+            "Kopf",
+            "Wind"
+        ]
+    },
+    {
+        "word": "Schminken",
+        "category": "activity",
+        "forbidden": [
+            "Make-up",
+            "Gesicht",
+            "Kosmetik"
+        ]
+    },
+    {
+        "word": "Raubüberfall",
+        "category": "activity",
+        "forbidden": [
+            "Bank",
+            "Waffe",
+            "Geld"
+        ]
+    },
+    {
+        "word": "Niesen",
+        "category": "activity",
+        "forbidden": [
+            "Erkältung",
+            "Schnupfen",
+            "Allergie"
+        ]
+    },
+    {
+        "word": "Motorrad fahren",
+        "category": "activity",
+        "forbidden": [
+            "Helm",
+            "Strasse",
+            "Fahrzeug"
+        ]
+    },
+    {
+        "word": "Schwindelig",
+        "category": "activity",
+        "forbidden": [
+            "Drehen",
+            "Gleichgewicht",
+            "Schwanken"
+        ]
+    },
+    {
+        "word": "Karaoke singen",
+        "category": "activity",
+        "forbidden": [
+            "Mikrofon",
+            "Lied",
+            "Lyrics"
+        ]
+    },
+    {
+        "word": "Tandem",
+        "category": "sport",
+        "forbidden": [
+            "Fahrrad",
+            "Zwei",
+            "Fahren"
+        ]
+    },
+    {
+        "word": "Curling",
+        "category": "sport",
+        "forbidden": [
+            "Eis",
+            "Stein",
+            "Besen"
+        ]
+    },
+    {
+        "word": "Slackline",
+        "category": "sport",
+        "forbidden": [
+            "Balancieren",
+            "Seil",
+            "Spannen"
+        ]
+    },
+    {
+        "word": "Parkour",
+        "category": "sport",
+        "forbidden": [
+            "Springen",
+            "Hindernis",
+            "Stadt"
+        ]
+    },
+    {
+        "word": "Ringen",
+        "category": "sport",
+        "forbidden": [
+            "Kampf",
+            "Matte",
+            "Greifen"
+        ]
+    },
+    {
+        "word": "Skateboarden",
+        "category": "sport",
+        "forbidden": [
+            "Brett",
+            "Rollen",
+            "Trick"
+        ]
+    },
+    {
+        "word": "Schach",
+        "category": "sport",
+        "forbidden": [
+            "Strategie",
+            "Figuren",
+            "König"
+        ]
+    },
+    {
+        "word": "Weitsprung",
+        "category": "sport",
+        "forbidden": [
+            "Anlauf nehmen",
+            "Leichtathletik",
+            "Sand"
+        ]
+    },
+    {
+        "word": "Hobby Horsing",
+        "category": "sport",
+        "forbidden": [
+            "Pferd",
+            "Springen",
+            "Reiten"
+        ]
+    },
+    {
+        "word": "Cristiano Ronaldo",
+        "category": "sport",
+        "forbidden": [
+            "Fussball",
+            "Portugal",
+            "CR7"
+        ]
+    },
+    {
+        "word": "Ski-Springer*in",
+        "category": "sport",
+        "forbidden": [
+            "Winter",
+            "Schnee",
+            "Schanze"
+        ]
+    },
+    {
+        "word": "Sumoringer",
+        "category": "sport",
+        "forbidden": [
+            "Japan",
+            "Ring",
+            "Kampf"
+        ]
+    },
+    {
+        "word": "Schlittschuh laufen",
+        "category": "sport",
+        "forbidden": [
+            "Eis",
+            "Winter",
+            "Sport"
+        ]
+    },
+    {
+        "word": "Fechtkampf",
+        "category": "sport",
+        "forbidden": [
+            "Degen",
+            "Maske",
+            "Duell"
+        ]
+    },
+    {
+        "word": "Box-Ring",
+        "category": "sport",
+        "forbidden": [
+            "Kampf",
+            "Handschuhe",
+            "Sport"
+        ]
+    },
+    {
+        "word": "Minigolf",
+        "category": "sport",
+        "forbidden": [
+            "Ball",
+            "Schläger",
+            "Loch"
+        ]
+    },
+    {
+        "word": "Angeln",
+        "category": "sport",
+        "forbidden": [
+            "Fisch",
+            "Rute",
+            "Köder"
+        ]
+    },
+    {
+        "word": "Tauchen",
+        "category": "sport",
+        "forbidden": [
+            "Wasser",
+            "Sauerstoff",
+            "Brille"
+        ]
+    },
+    {
+        "word": "Surfen",
+        "category": "sport",
+        "forbidden": [
+            "Welle",
+            "Brett",
+            "Meer"
+        ]
+    },
+    {
+        "word": "Jonglieren",
+        "category": "sport",
+        "forbidden": [
+            "Bälle",
+            "Zirkus",
+            "Hände"
+        ]
+    },
+    {
+        "word": "Roger Federer",
+        "category": "sport",
+        "forbidden": [
+            "Tennis",
+            "Schweiz",
+            "Grand Slam"
+        ]
+    },
+    {
+        "word": "Usain Bolt",
+        "category": "sport",
+        "forbidden": [
+            "Sprint",
+            "Jamaika",
+            "Weltrekord"
+        ]
+    },
+    {
+        "word": "Neymar",
+        "category": "sport",
+        "forbidden": [
+            "Fussball",
+            "Brasilien",
+            "Schwalbe"
+        ]
+    },
+    {
+        "word": "Schwalbe (im Fussball)",
+        "category": "sport",
+        "forbidden": [
+            "Fallen",
+            "Schiedsrichter",
+            "Täuschen"
+        ]
+    },
+    {
+        "word": "Lap Dance",
+        "category": "spicy",
+        "forbidden": [
+            "Tanzen",
+            "Schoss",
+            "Arsch"
+        ]
+    },
+    {
+        "word": "Striptease",
+        "category": "spicy",
+        "forbidden": [
+            "Ausziehen",
+            "Tanzen",
+            "Unterwäsche"
+        ]
+    },
+    {
+        "word": "Massageöl",
+        "category": "spicy",
+        "forbidden": [
+            "Massieren",
+            "Haut",
+            "Glitschig"
+        ]
+    },
+    {
+        "word": "Fuss-Fetisch",
+        "category": "spicy",
+        "forbidden": [
+            "Füsse",
+            "Vorliebe",
+            "Sexuell"
+        ]
+    },
+    {
+        "word": "BDSM",
+        "category": "spicy",
+        "forbidden": [
+            "Fessel",
+            "Dominanz",
+            "Schmerz"
+        ]
+    },
+    {
+        "word": "Poledancer",
+        "category": "spicy",
+        "forbidden": [
+            "Stange",
+            "Tanzen",
+            "Strip-Club"
+        ]
+    },
+    {
+        "word": "Zungenkuss",
+        "category": "spicy",
+        "forbidden": [
+            "Küssen",
+            "Mund",
+            "Lippen"
+        ]
+    },
+    {
+        "word": "Dreier",
+        "category": "spicy",
+        "forbidden": [
+            "Sex",
+            "Drei",
+            "Gruppe"
+        ]
+    },
+    {
+        "word": "Dildo",
+        "category": "spicy",
+        "forbidden": [
+            "Sexspielzeug",
+            "Kunststoff",
+            "Penis"
+        ]
+    },
+    {
+        "word": "Buttplug",
+        "category": "spicy",
+        "forbidden": [
+            "Anal",
+            "Sexspielzeug",
+            "Arsch"
+        ]
+    },
+    {
+        "word": "Masturbation",
+        "category": "spicy",
+        "forbidden": [
+            "Selbstbefriedigung",
+            "Hand",
+            "Allein"
+        ]
+    },
+    {
+        "word": "One-Night-Stand",
+        "category": "spicy",
+        "forbidden": [
+            "Sex",
+            "Einmalig",
+            "Fremd"
+        ]
+    },
+    {
+        "word": "Orgie",
+        "category": "spicy",
+        "forbidden": [
+            "Gruppe",
+            "Sex",
+            "Mehrere"
+        ]
+    },
+    {
+        "word": "Porno-Direktor*in",
+        "category": "spicy",
+        "forbidden": [
+            "Film",
+            "Sex",
+            "Kamera"
+        ]
+    },
+    {
+        "word": "Erektion",
+        "category": "spicy",
+        "forbidden": [
+            "Steif",
+            "Penis",
+            "Mann"
+        ]
+    },
+    {
+        "word": "Strap-on",
+        "category": "spicy",
+        "forbidden": [
+            "Gurt",
+            "Sexspielzeug",
+            "Rollentausch"
+        ]
+    },
+    {
+        "word": "Handfesseln",
+        "category": "spicy",
+        "forbidden": [
+            "Dominanz",
+            "Einschränken",
+            "Handgelenk"
+        ]
+    },
+    {
+        "word": "Skinny Dipping",
+        "category": "spicy",
+        "forbidden": [
+            "Nackt",
+            "Schwimmen",
+            "See"
+        ]
+    },
+    {
+        "word": "Feuchter Traum",
+        "category": "spicy",
+        "forbidden": [
+            "Schlafen",
+            "Sexuell",
+            "Nacht"
+        ]
+    },
+    {
+        "word": "Nudes versenden",
+        "category": "spicy",
+        "forbidden": [
+            "Foto",
+            "Handy",
+            "Snapchat"
+        ]
+    },
+    {
+        "word": "Sex auf der Flugzeugtoilette",
+        "category": "spicy",
+        "forbidden": [
+            "Fliegen",
+            "Klo",
+            "Mile High Club"
+        ]
+    },
+    {
+        "word": "Peitsche",
+        "category": "spicy",
+        "forbidden": [
+            "Schlagen",
+            "BDSM",
+            "Dominanz"
+        ]
+    },
+    {
+        "word": "Penisbruch",
+        "category": "spicy",
+        "forbidden": [
+            "Mann",
+            "Sex",
+            "Unfall"
+        ]
+    },
+    {
+        "word": "Geplatztes Kondom",
+        "category": "spicy",
+        "forbidden": [
+            "Sex",
+            "Latex",
+            "Unfall"
+        ]
+    },
+    {
+        "word": "Sex im Auto",
+        "category": "spicy",
+        "forbidden": [
+            "Fahrzeug",
+            "Parkplatz",
+            "Sex"
+        ]
+    },
+    {
+        "word": "Sex in der Öffentlichkeit",
+        "category": "spicy",
+        "forbidden": [
+            "Draussen",
+            "Leute",
+            "Verboten"
+        ]
+    },
+    {
+        "word": "Kondom",
+        "category": "spicy",
+        "forbidden": [
+            "Schutz",
+            "Latex",
+            "Verhütung"
+        ]
+    },
+    {
+        "word": "Quickie",
+        "category": "spicy",
+        "forbidden": [
+            "Sex",
+            "Schnell",
+            "Kurz"
+        ]
+    }
+]

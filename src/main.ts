@@ -21,7 +21,7 @@ import SchnapsideeBreak from './views/games/schnapsidee/SchnapsideeBreak.vue'
 import SchnapsideeGame from './views/games/schnapsidee/SchnapsideeGame.vue'
 import SchnapsideeDone from './views/games/schnapsidee/SchnapsideeDone.vue'
 import SchnapsideeRanked from './views/games/schnapsidee/SchnapsideeRanked.vue'
-import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue';
+import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue'
 import Playground from './views/Playground.vue'
 
 const routes = [

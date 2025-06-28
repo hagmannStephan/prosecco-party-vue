@@ -155,11 +155,24 @@ h3 {
     /* TODO: Add styles*/
 }
 
-p {
+@mixin text($font-weight) {
     font-family: 'Nunito', sans-serif;
-    font-weight: 400;
+    font-weight: $font-weight;
     font-size: 1rem;
+}
+
+p {
+    @include text(500);
     margin-bottom: 1rem;
+}
+
+li {
+  @include text(250);
+  margin: 0;
+}
+
+ul {
+  
 }
 
 input[type="text"],
