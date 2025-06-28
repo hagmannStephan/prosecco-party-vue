@@ -1,5 +1,5 @@
-<template>
-  <div class="wrapper">
+
+<template>  <div class="wrapper">
     <div class="element" style="border: 2px solid red; padding: 1rem; margin-bottom: 1rem;">
       <button class="button">Click Me</button>
     </div>
@@ -34,9 +34,3 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'StyledElementsPreview',
-};
-</script>

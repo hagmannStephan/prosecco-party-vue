@@ -16,9 +16,9 @@ const penalties = ref<string[]>([]);
 const languageSettingsStore = useLanguageSettingsStore()
 const language = languageSettingsStore.getLanguage()
 
-onMounted(() => {
+onMounted(async () => {
     leaderboard.value = gameStore.gameComplete();
-    penalties.value = penaltiesStore.getRandomPenaltySelection(language);
+    penalties.value = await penaltiesStore.getRandomPenaltySelection(language);
 });
 </script>
 <template>

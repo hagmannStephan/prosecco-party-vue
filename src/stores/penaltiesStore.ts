@@ -14,6 +14,7 @@ export const usePenaltiesStore = defineStore('penalties', {
     }),
     persist: true,
     actions: {
+        // Private method
         async init() {
             if (this.isInitialized) return;
 
@@ -52,7 +53,11 @@ export const usePenaltiesStore = defineStore('penalties', {
 
             this.isInitialized = true;
         },
-        getRandomPenaltySelection(language: 'de' | 'en') {
+        // Public method
+        async getRandomPenaltySelection(language: 'de' | 'en') {
+            if (this.isInitialized === false) {
+                await this.init();
+            }
             const penalties = this.penalties[language];
             if (penalties.length < 3) return penalties;
             const shuffled = [...penalties].sort(() => Math.random() - 0.5);
