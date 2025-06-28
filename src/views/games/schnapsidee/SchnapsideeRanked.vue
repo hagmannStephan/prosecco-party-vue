@@ -40,4 +40,5 @@ onMounted(async () => {
             {{ penalty }}
         </li>
     </ul>
+    <p>{{ t('schnapsidee.ranked.penalty.disclaimer') }}</p>
 </template>

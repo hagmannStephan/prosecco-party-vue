@@ -32,5 +32,13 @@
     <div class="element" style="border: 2px solid pink; padding: 1rem; margin-bottom: 1rem;">
       <input type="number" class="number-input" placeholder="Enter a number" />
     </div>
+
+    <div class="element" style="border: 2px solid lightblue; padding: 1rem; margin-bottom: 1rem;">
+      <ul>
+        <li>First Point</li>
+        <li>Second Point</li>
+        <li>Third Point</li>
+      </ul>
+    </div>
   </div>
 </template>
