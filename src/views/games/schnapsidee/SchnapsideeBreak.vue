@@ -3,7 +3,6 @@ import { ref, onMounted } from 'vue';
 import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
-import { isPiniaComplete } from '@/helpers/schnapsidee/configHelper';
 
 const { t } = useI18n();
 const pushRouter = usePushRouter();
@@ -15,11 +14,6 @@ const currentGroupName = ref('');
 
 // Redirect to the game configuration page if the game settings are not complete
 onMounted(() => {
-    if (!isPiniaComplete(gS)) {
-        pushRouter('/schnapsidee/config');
-        return;
-    }
-    
     // Initialize player and group data
     currentPlayer.value = gS.getCurrentPlayer;
     if (currentPlayer.value) {

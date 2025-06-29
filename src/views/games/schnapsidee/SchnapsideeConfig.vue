@@ -6,6 +6,7 @@ import { useI18n } from 'vue-i18n';
 import { getWordListCategories } from '@/helpers/schnapsidee/wordListHelper';
 import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
 import GroupsConfig from '@/components/games/schnapsidee/config/GroupsConfig.vue';
+import { validateGameConfig } from '@/helpers/schnapsidee/config/validateGameConfigHelper';
 
 const { t } = useI18n();
 const pushRouter = usePushRouter();
@@ -18,7 +19,7 @@ const timePerRound = ref(60);
 const selectedGameModes = ref(['pantomime', 'draw', 'describe']);
 const gameModes = ['pantomime', 'draw', 'describe'];
 const allowedWordLists = ref<string[]>([]);
-const defaultWordLists = ref<string[]>([]);  // Exclude 'spicy' category by default
+const defaultWordLists = ref<string[]>([]);
 const selectedWordLists = ref<string[]>([]);
 
 // Declare default groups
@@ -35,51 +36,22 @@ onMounted(async () => {
   const wordLists = getWordListCategories();
 
   allowedWordLists.value = wordLists;
+  // Exclude 'spicy' category by default
   defaultWordLists.value = wordLists.filter(list => list !== 'spicy');
   selectedWordLists.value = defaultWordLists.value;
 });
 
-
-// Submit the form and start the game
 const startGame = () => {
-  // Validate that each group has at least two players
-  if (groups.value.some(group => group.players.length < 2)) {
-    alert(t('schnapsidee.config.error.min-players-per-group-two'));
+  const passed = validateGameConfig(
+    groups.value,
+    selectedGameModes.value,
+    selectedWordLists.value,
+    rounds.value,
+    t
+  );
+  if (!passed) {
     return;
   }
-
-  // Validate that all players have names
-  for (const group of groups.value) {
-    if (group.players.some(player => !player.name.trim())) {
-      alert(t('schnapsidee.config.error.name-required'));
-      return;
-    }
-  }
-
-  // Validate that all groups have names
-  if (groups.value.some(group => !group.name.trim())) {
-    alert(t('schnapsidee.config.error.group-name-required'));
-    return;
-  }
-
-  // Validate that at least one game mode is selected
-  if (selectedGameModes.value.length === 0) {
-    alert(t('schnapsidee.config.error.mode-required'));
-    return;
-  }
-
-  // Validate that at least one word list is selected
-  if (selectedWordLists.value.length === 0) {
-    alert(t('schnapsidee.config.error.wordlist-required'));
-    return;
-  }
-
-  // Validate that at least one round is set
-  if (rounds.value < 1) {
-    alert(t('schnapsidee.config.error.rounds-range'));
-    return;
-  }
-
   // Save settings to the store - match the structure used in tests
   gameStore.setGameStore({
     groups: groups.value.map(group => ({
@@ -95,9 +67,9 @@ const startGame = () => {
     currentGroupIndex: 0
   });
 
-  // Navigate to the game
+  // Navigate to the game view
   pushRouter('/schnapsidee/break');
-};
+}
 </script>
 
 <template>

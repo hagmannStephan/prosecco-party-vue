@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-
-type Player = { id: number; name: string };
-type Group = { id: number; name: string; players: Player[] };
+import type { Group } from '@/models/schnapsidee/group'
 
 const { t } = useI18n();
 const props = defineProps<{
