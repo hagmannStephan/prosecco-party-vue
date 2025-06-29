@@ -1,16 +1,13 @@
 <script setup lang="ts">
-import { usePushRouter } from '@/helpers/routerHelper'
-import { useI18n } from 'vue-i18n';
 import LanguageSwitcher from '@/components/LanguageSwitcher.vue';
-
-const { t } = useI18n();
-
-const pushRouter = usePushRouter();
+import GameSelector from '@/components/GameSelector.vue';
 </script>
 
 <template>
-  <button @click="pushRouter('/schnapsidee/game-config')">
-    {{  t('home.activities-redirect') }}
-  </button>
+  <GameSelector
+    imagePath="images/schnapsidee-placeholder.png"
+    gamePath="/schnapsidee/game-config"
+    gameName="Schnapsidee"
+    i18nKey="home.schnapsidee-redirect" />
   <LanguageSwitcher />
 </template>
