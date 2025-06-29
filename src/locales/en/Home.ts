@@ -1,3 +1,3 @@
 export default {
-    'schnapsidee-redirect': "Play Schnapsidee!"
+    'schnapsidee-redirect': "Schnapsidee"
 }
