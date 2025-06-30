@@ -12,7 +12,6 @@ const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentPlayerName = ref('');
 const currentGroupName = ref('');
 
-// Redirect to the game configuration page if the game settings are not complete
 onMounted(() => {
     // Initialize player and group data
     currentPlayer.value = gS.getCurrentPlayer;

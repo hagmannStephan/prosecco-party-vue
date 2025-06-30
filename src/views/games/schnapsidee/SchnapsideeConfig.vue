@@ -13,7 +13,6 @@ const pushRouter = usePushRouter();
 const gameStore = useGameStore();
 const wordListStore = useWordListStore();
 
-
 const rounds = ref(3);
 const timePerRound = ref(60);
 const selectedGameModes = ref(['pantomime', 'draw', 'describe']);
