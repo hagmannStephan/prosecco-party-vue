@@ -15,7 +15,7 @@ interface Group {
     currentPlayerIndex?: number;
 }
 
-interface GameStore {
+export interface GameStore {
     // Game Config
     // ------------------
     groups: Group[],

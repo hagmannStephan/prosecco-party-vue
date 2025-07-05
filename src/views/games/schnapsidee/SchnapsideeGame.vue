@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, onUnmounted, computed } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper'
+import { ref, watch, onMounted, computed } from 'vue';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { getRandomWord } from '@/helpers/schnapsidee/wordListHelper';
 import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
 import { useI18n } from 'vue-i18n';
+import RoundTimer from '@/components/games/schnapsidee/game/RoundTimer.vue';
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
 
 // Initialize the stores
 const gameStore = useGameStore();
@@ -19,8 +18,6 @@ const currentPlayerName = ref('');
 const currentGroupName = ref('');
 const currentGroupScore = ref(0);
 const currentWord = ref('Loading...');
-const timeRemaining = ref(0);
-const timerInterval = ref<ReturnType<typeof setInterval> | null>(null);
 const forbiddenWords = ref<string[]>([]);
 const gameMode = ref('');
 const isLoading = ref(true);
@@ -87,15 +84,6 @@ function getNewWord() {
   }
 }
 
-function continueGame() {
-  const state = gameStore.continueToNextPlayer();
-  if (state.gameOver) {
-    pushRouter('/schnapsidee/done')
-  } else {
-    pushRouter('/schnapsidee/time-up')
-  }
-}
-
 function incrementScore() {
   if (currentPlayer.value) {
     gameStore.changeScore(1);
@@ -117,25 +105,6 @@ function skipWord() {
   }
 }
 
-function startTimer() {
-  // Get the configured time from the store
-  const timePerRound = gameStore.getTimePerRound;
-  timeRemaining.value = timePerRound;
- 
-  // Update timer every second
-  timerInterval.value = setInterval(() => {
-    timeRemaining.value--;
-   
-    // When time is up, proceed to next player
-    if (timeRemaining.value <= 0) {
-      if (timerInterval.value !== null) {
-        clearInterval(timerInterval.value);
-      }
-      continueGame();
-    }
-  }, 1000);
-}
-
 async function initGame() {
   isLoading.value = true;
   
@@ -146,7 +115,6 @@ async function initGame() {
     gameMode.value = gameStore.getCurrentGameMode || 'Something went wrong 😐';
     
     getNewWord();
-    startTimer();
   } catch (error) {
     console.error('Error initializing game:', error);
     currentWord.value = 'Error loading game data';
@@ -161,12 +129,6 @@ const skipsUsedUp = computed(() => (gameStore.getCurrentSkipsLeft ?? 0) <= 0)
 onMounted(() => {
   initGame();
 });
-
-onUnmounted(() => {
-  if (timerInterval.value !== null) {
-    clearInterval(timerInterval.value);
-  }
-});
 </script>
 
 <template>
@@ -178,7 +140,7 @@ onUnmounted(() => {
       <h1>{{ currentPlayerName + t('schnapsidee.game.title') }}</h1>
       <h2>{{ t('schnapsidee.game.team') + ': ' + currentGroupName }}</h2>
       <p>{{ t(`schnapsidee.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
-      <p>⌛ {{ timeRemaining + t('schnapsidee.game.seconds') }}</p>
+      <RoundTimer :gameStore="gameStore"/>
     </div>
     <div>
       <h2>{{ currentWord }}</h2>
