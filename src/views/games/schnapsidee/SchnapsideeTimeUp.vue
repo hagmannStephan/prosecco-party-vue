@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper';
+import { useRouter } from 'vue-router'
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
+const router = useRouter();
 
 // Initialize the store
 const gameStore = useGameStore();
@@ -34,5 +34,5 @@ onMounted(() => {
     <p>⌛</p>
     <p>{{ t('schnapsidee.timeUp.message') }} <b>{{ currentPlayerName }}</b></p>
     <p>{{ t('schnapsidee.timeUp.team') }}: <b>{{ currentGroupName }}</b></p>
-    <button @click="pushRouter('/schnapsidee/break')">{{ t('schnapsidee.timeUp.button') }}</button>
+    <button @click="router.push({ path: '/schnapsidee/break'})">{{ t('schnapsidee.timeUp.button') }}</button>
 </template>

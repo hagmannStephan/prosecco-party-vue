@@ -1,3 +1,3 @@
 export default {
-    'activities-redirect': "Activities spielen!"
+    'schnapsidee-redirect': "Schnapsidee"
 }

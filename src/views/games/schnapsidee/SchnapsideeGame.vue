@@ -1,29 +1,21 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, onUnmounted, computed } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper'
+import { ref, watch } from 'vue';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
-import { getRandomWord } from '@/helpers/schnapsidee/wordListHelper';
-import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
 import { useI18n } from 'vue-i18n';
+import RoundTimer from '@/components/games/schnapsidee/game/RoundTimer.vue';
+import WordPanel from '@/components/games/schnapsidee/game/WordPanel.vue';
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
 
 // Initialize the stores
 const gameStore = useGameStore();
-const wordListStore = useWordListStore();
 
 // Reactive data
-const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentPlayerName = ref('');
 const currentGroupName = ref('');
+const currentPlayer = ref<{ id?: number, name: string } | null>(null);
 const currentGroupScore = ref(0);
-const currentWord = ref('Loading...');
-const timeRemaining = ref(0);
-const timerInterval = ref<ReturnType<typeof setInterval> | null>(null);
-const forbiddenWords = ref<string[]>([]);
-const gameMode = ref('');
-const isLoading = ref(true);
+const gameMode = ref('pantomime');
 
 // Initialize current player and group data
 function updatePlayerData() {
@@ -60,147 +52,14 @@ watch(
   },
   { deep: true }
 );
-
-function getNewWord() {
-  // Check if wordListStore is initialized
-  if (!wordListStore.isInitialized) {
-    console.warn('Word list store not yet initialized');
-    currentWord.value = 'Loading word list...';
-    forbiddenWords.value = [];
-    return;
-  }
-
-  const wordEntry = getRandomWord();
-  
-  if (wordEntry && typeof wordEntry !== 'string') {
-    currentWord.value = wordEntry.word;
-   
-    // Handle forbidden words for describe mode
-    if (gameMode.value === 'describe' && wordEntry.forbidden) {
-      forbiddenWords.value = wordEntry.forbidden;
-    } else {
-      forbiddenWords.value = [];
-    }
-  } else {
-    currentWord.value = wordEntry;
-    forbiddenWords.value = [];
-  }
-}
-
-function continueGame() {
-  const state = gameStore.continueToNextPlayer();
-  if (state.gameOver) {
-    pushRouter('/schnapsidee/done')
-  } else {
-    pushRouter('/schnapsidee/time-up')
-  }
-}
-
-function incrementScore() {
-  if (currentPlayer.value) {
-    gameStore.changeScore(1);
-    getNewWord();
-  }
-}
-
-function decrementScore() {
-  if (currentPlayer.value) {
-    gameStore.changeScore(-1);
-    getNewWord();
-  }
-}
-
-function skipWord() {
-  if (currentPlayer.value) {
-    gameStore.skipWord();
-    getNewWord();
-  }
-}
-
-function startTimer() {
-  // Get the configured time from the store
-  const timePerRound = gameStore.getTimePerRound;
-  timeRemaining.value = timePerRound;
- 
-  // Update timer every second
-  timerInterval.value = setInterval(() => {
-    timeRemaining.value--;
-   
-    // When time is up, proceed to next player
-    if (timeRemaining.value <= 0) {
-      if (timerInterval.value !== null) {
-        clearInterval(timerInterval.value);
-      }
-      continueGame();
-    }
-  }, 1000);
-}
-
-async function initGame() {
-  isLoading.value = true;
-  
-  try {
-    // Make sure the word list is initialized first
-    await wordListStore.init();
-    
-    gameMode.value = gameStore.getCurrentGameMode || 'Something went wrong 😐';
-    
-    getNewWord();
-    startTimer();
-  } catch (error) {
-    console.error('Error initializing game:', error);
-    currentWord.value = 'Error loading game data';
-  } finally {
-    isLoading.value = false;
-  }
-}
-
-// Track the available skips
-const skipsUsedUp = computed(() => (gameStore.getCurrentSkipsLeft ?? 0) <= 0)
-
-onMounted(() => {
-  initGame();
-});
-
-onUnmounted(() => {
-  if (timerInterval.value !== null) {
-    clearInterval(timerInterval.value);
-  }
-});
 </script>
 
 <template>
-  <div v-if="isLoading" class="loading">
-    <p>Loading game data...</p>
-  </div>
-  <div v-else>
     <div>
       <h1>{{ currentPlayerName + t('schnapsidee.game.title') }}</h1>
       <h2>{{ t('schnapsidee.game.team') + ': ' + currentGroupName }}</h2>
       <p>{{ t(`schnapsidee.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
-      <p>⌛ {{ timeRemaining + t('schnapsidee.game.seconds') }}</p>
+      <RoundTimer :gameStore="gameStore"/>
     </div>
-    <div>
-      <h2>{{ currentWord }}</h2>
-      <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
-        <h3>{{ t('schnapsidee.game.forbidden') }}</h3>
-        <ul>
-          <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>
-        </ul>
-      </div>
-    </div>
-    <div>
-      <p>+ {{ currentGroupScore + t('schnapsidee.game.points') }}</p>
-        <!-- Our Team guessed it (+1 point) -->
-        <button @click="incrementScore">{{ gameStore.getCurrentGroup.name }} (+1)</button>
-        <!-- Opposing Team guessed it (-1 point)-->
-        <button @click="decrementScore">{{ gameStore.getOpposingGroup.name }} (-1)</button>
-
-        <br>
-        <!-- Skip Word (For the first three times free, afterwards -1 point) -->
-        <button @click="skipWord">
-          {{ skipsUsedUp ? t('schnapsidee.game.skip.usedUp') : t('schnapsidee.game.skip.normal') }}
-        </button>
-    </div>
-  </div>
+    <WordPanel :gameStore="gameStore" :currentPlayer="currentPlayer" :currentGroupScore="currentGroupScore" v-model:gameMode="gameMode"/>
 </template>
