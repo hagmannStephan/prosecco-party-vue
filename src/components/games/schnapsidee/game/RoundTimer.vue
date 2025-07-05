@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper'
 import { useI18n } from 'vue-i18n';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
+const router = useRouter()
 
 const timerInterval = ref<ReturnType<typeof setInterval> | null>(null);
 const timeRemaining = ref(0);
@@ -17,9 +17,9 @@ const props = defineProps<{
 function continueGame() {
   const state = props.gameStore.continueToNextPlayer();
   if (state.gameOver) {
-    pushRouter('/schnapsidee/done')
+    router.push({ path: '/schnapsidee/done'})
   } else {
-    pushRouter('/schnapsidee/time-up')
+    router.push({ path: '/schnapsidee/time-up'})
   }
 }
 

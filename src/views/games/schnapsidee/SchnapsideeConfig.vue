@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
 import { getWordListCategories } from '@/helpers/schnapsidee/wordListHelper';
 import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
 import GroupsConfig from '@/components/games/schnapsidee/config/GroupsConfig.vue';
 import { validateGameConfig } from '@/helpers/schnapsidee/config/validateGameConfigHelper';
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
 const gameStore = useGameStore();
 const wordListStore = useWordListStore();
+const router = useRouter()
 
 const rounds = ref(3);
 const timePerRound = ref(60);
@@ -67,7 +67,7 @@ const startGame = () => {
   });
 
   // Navigate to the game view
-  pushRouter('/schnapsidee/break');
+  router.push({ path: '/schnapsidee/break'});
 }
 </script>
 

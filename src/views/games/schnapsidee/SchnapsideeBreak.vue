@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
+const router = useRouter()
 const gS = useGameStore();
 
 const currentPlayer = ref<{ id?: number, name: string } | null>(null);
@@ -33,5 +33,5 @@ onMounted(() => {
     <h2>{{ t('schnapsidee.break.team') + ': ' + currentGroupName }}</h2>
     <h2>{{ t('schnapsidee.break.mode.title') }}</h2>
     <p>{{ t(`schnapsidee.break.mode.${gS.getCurrentGameMode || 'pantomime'}`) }}</p>
-    <button @click="pushRouter('/schnapsidee')">{{ t('schnapsidee.break.button.start') }}</button>
+    <button @click="router.push({ path: '/schnapsidee'})">{{ t('schnapsidee.break.button.start') }}</button>
 </template>
