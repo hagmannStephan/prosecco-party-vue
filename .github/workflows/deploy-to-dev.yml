@@ -87,11 +87,11 @@ jobs:
             docker pull $CURRENT_IMAGE
             
             echo 'Stopping and removing existing container...'
-            docker stop game-container || true
-            docker rm -f game-container || true
+            docker stop prosecco-party-vue-dev || true
+            docker rm -f prosecco-party-vue-dev || true
             
             echo 'Starting new container...'
-            docker run -d --name game-container -p 5172:4173 $CURRENT_IMAGE
+            docker run -d --name prosecco-party-vue-dev -p 5172:4173 $CURRENT_IMAGE
 
             echo 'Cleaning up old images...'
             docker image prune -a -f
@@ -138,11 +138,11 @@ jobs:
             docker pull $PREVIOUS_IMAGE
             
             echo 'Stopping and removing failed container...'
-            docker stop game-container || true
-            docker rm -f game-container || true
+            docker stop prosecco-party-vue-dev || true
+            docker rm -f prosecco-party-vue-dev || true
             
             echo 'Starting rollback container...'
-            docker run -d --name game-container -p 5172:4173 $PREVIOUS_IMAGE
+            docker run -d --name prosecco-party-vue-dev -p 5172:4173 $PREVIOUS_IMAGE
           "
 
           echo "Rollback completed"
