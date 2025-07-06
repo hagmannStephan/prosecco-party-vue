@@ -1132,5 +1132,149 @@
             "Gross",
             "Rüssel"
         ]
+    },
+    {
+        "word": "Etwas zeichnen",
+        "category": "activity",
+        "forbidden": [
+            "Stift",
+            "Papier",
+            "Kunst"
+        ]
+    },
+    {
+        "word": "Ballett",
+        "category": "sport",
+        "forbidden": [
+            "Tanzen",
+            "Schuhe",
+            "Bühne"
+        ]
+    },
+    {
+        "word": "Unter der Dusche singen",
+        "category": "activity",
+        "forbidden": [
+            "Wasser",
+            "Laut",
+            "Gesang"
+        ]
+    },
+    {
+        "word": "Tornado",
+        "category": "standard",
+        "forbidden": [
+            "Wind",
+            "Sturm",
+            "Wirbel"
+        ]
+    },
+    {
+        "word": "Speed Dating",
+        "category": "activity",
+        "forbidden": [
+            "Schnell",
+            "Leute",
+            "Ansprechen"
+        ]
+    },
+    {
+        "word": "Lippenstift",
+        "category": "standard",
+        "forbidden": [
+            "Farbe",
+            "Rot",
+            "Make-up"
+        ]
+    },
+    {
+        "word": "Wrestling",
+        "category": "sport",
+        "forbidden": [
+            "Kampf",
+            "Ring",
+            "Show"
+        ]
+    },
+    {
+        "word": "Samenbank",
+        "category": "spicy",
+        "forbidden": [
+            "Spende",
+            "Sperma",
+            "Klinik"
+        ]
+    },
+    {
+        "word": "Auftragskiller*in",
+        "category": "activity",
+        "forbidden": [
+            "Mord",
+            "Auftrag",
+            "Geheim"
+        ]
+    },
+    {
+        "word": "Pizzaliferant*in (spicy)",
+        "category": "spicy",
+        "forbidden": [
+            "Pizza",
+            "Lieferung",
+            "Penis"
+        ]
+    },
+    {
+        "word": "Bierbauch",
+        "category": "standard",
+        "forbidden": [
+            "Mann",
+            "Fett",
+            "Trinken"
+        ]
+    },
+    {
+        "word": "Moskito",
+        "category": "standard",
+        "forbidden": [
+            "Insekt",
+            "Stechen",
+            "Blut"
+        ]
+    },
+    {
+        "word": "Schwanger",
+        "category": "standard",
+        "forbidden": [
+            "Bauch",
+            "Kind",
+            "Mutter"
+        ]
+    },
+    {
+        "word": "Schwangerschaftstest",
+        "category": "standard",
+        "forbidden": [
+            "Test",
+            "Schwanger",
+            "Urintest"
+        ]
+    },
+    {
+        "word": "Snowboarden",
+        "category": "sport",
+        "forbidden": [
+            "Winter",
+            "Brett",
+            "Schnee"
+        ]
+    },
+    {
+        "word": "Kitzeln",
+        "category": "activity",
+        "forbidden": [
+            "Lachen",
+            "Finger",
+            "Körper"
+        ]
     }
 ]
