@@ -1,7 +1,7 @@
-name: Deploy Prosecco Party Frontend to Production
+name: Deploy Prosecco Party Frontend to Development
 on:
   push:
-    branches: [main]
+    branches: [development]
 
 # Adding top-level permissions for the workflow
 # Meaning that the workflow can read the repository contents
@@ -24,7 +24,7 @@ jobs:
 
       - name: Set image tag
         id: vars
-        run: echo "tag=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:${{ github.sha }}" >> $GITHUB_OUTPUT
+        run: echo "tag=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend-dev:${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - name: Build Docker image
         run: docker build -t ${{ steps.vars.outputs.tag }} .
@@ -57,8 +57,8 @@ jobs:
         run: |
           CURRENT_COMMIT=$(git rev-parse HEAD)
           PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
-          CURRENT_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:$CURRENT_COMMIT"
-          PREVIOUS_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:$PREVIOUS_COMMIT"
+          CURRENT_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend-dev:$CURRENT_COMMIT"
+          PREVIOUS_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend-dev:$PREVIOUS_COMMIT"
           echo "current_commit=$CURRENT_COMMIT" >> $GITHUB_OUTPUT
           echo "previous_commit=$PREVIOUS_COMMIT" >> $GITHUB_OUTPUT
           echo "current_image=$CURRENT_IMAGE" >> $GITHUB_OUTPUT
@@ -90,7 +90,7 @@ jobs:
             docker rm -f game-container || true
             
             echo 'Starting new container...'
-            docker run -d --name game-container -p 5173:4173 $CURRENT_IMAGE
+            docker run -d --name game-container -p 5172:4173 $CURRENT_IMAGE
 
             echo 'Cleaning up old images...'
             docker image prune -f
@@ -108,7 +108,7 @@ jobs:
 
           for i in {1..5}; do
             echo "Health check attempt $i/5..."
-            if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
+            if curl -f https://dev.proseccoparty.ch/ --connect-timeout 10; then
               echo "Health check passed!"
               exit 0
             fi
@@ -141,7 +141,7 @@ jobs:
             docker rm -f game-container || true
             
             echo 'Starting rollback container...'
-            docker run -d --name game-container -p 5173:4173 $PREVIOUS_IMAGE
+            docker run -d --name game-container -p 5172:4173 $PREVIOUS_IMAGE
           "
 
           echo "Rollback completed"
@@ -155,7 +155,7 @@ jobs:
           sleep 20
 
           for i in {1..3}; do
-            if curl -f https://proseccoparty.ch/ --connect-timeout 10; then
+            if curl -f https://dev.proseccoparty.ch/ --connect-timeout 10; then
               echo "Rollback verification successful!"
               exit 0
             fi
