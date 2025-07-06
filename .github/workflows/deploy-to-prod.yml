@@ -29,35 +29,48 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
          
-      - name: Get commit hashes
+      - name: Get commit hashes and set image tags
         id: commits
         run: |
           CURRENT_COMMIT=$(git rev-parse HEAD)
           PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
+          CURRENT_IMAGE="ghcr.io/${{ github.repository_owner }}/prosecco-party-frontend:$CURRENT_COMMIT"
+          PREVIOUS_IMAGE="ghcr.io/${{ github.repository_owner }}/prosecco-party-frontend:$PREVIOUS_COMMIT"
           echo "current_commit=$CURRENT_COMMIT" >> $GITHUB_OUTPUT
           echo "previous_commit=$PREVIOUS_COMMIT" >> $GITHUB_OUTPUT
+          echo "current_image=$CURRENT_IMAGE" >> $GITHUB_OUTPUT
+          echo "previous_image=$PREVIOUS_IMAGE" >> $GITHUB_OUTPUT
           echo "Deploying: $CURRENT_COMMIT"
           echo "Previous: $PREVIOUS_COMMIT"
+          echo "Current image: $CURRENT_IMAGE"
+          echo "Previous image: $PREVIOUS_IMAGE"
          
       - name: Deploy to server
         id: deploy
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_PATH: ${{ secrets.SERVER_PATH }}
-          CURRENT_COMMIT: ${{ steps.commits.outputs.current_commit }}
+          CURRENT_IMAGE: ${{ steps.commits.outputs.current_image }}
         run: |
           echo "Starting deployment..."
           
           ssh $SERVER_USER@$SERVER_IP "
             set -e
-            cd $SERVER_PATH
-            git pull origin main
-            docker build -t prosecco-party-vue:latest . 
-            docker build -t prosecco-party-vue:$CURRENT_COMMIT .
+            echo 'Logging in to GHCR...'
+            echo '${{ secrets.GITHUB_TOKEN }}' | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            echo 'Pulling latest image...'
+            docker pull $CURRENT_IMAGE
+            
+            echo 'Stopping and removing existing container...'
             docker stop game-container || true
             docker rm -f game-container || true
-            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:latest
+            
+            echo 'Starting new container...'
+            docker run -d --name game-container -p 5173:4173 $CURRENT_IMAGE
+
+            echo 'Cleaning up old images...'
+            docker image prune -f
           "
           
           echo "Deployment completed"
@@ -88,19 +101,24 @@ jobs:
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_PATH: ${{ secrets.SERVER_PATH }}
-          PREVIOUS_COMMIT: ${{ steps.commits.outputs.previous_commit }}
+          PREVIOUS_IMAGE: ${{ steps.commits.outputs.previous_image }}
         run: |
-          echo "Deployment failed, rolling back to: $PREVIOUS_COMMIT"
+          echo "Deployment failed, rolling back to: ${{ steps.commits.outputs.previous_commit }}"
           
           ssh $SERVER_USER@$SERVER_IP "
             set -e
-            cd $SERVER_PATH
-            git checkout $PREVIOUS_COMMIT
-            docker build -t prosecco-party-vue:rollback .
+            echo 'Logging in to GHCR for rollback...'
+            echo '${{ secrets.GITHUB_TOKEN }}' | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            
+            echo 'Pulling previous image...'
+            docker pull $PREVIOUS_IMAGE
+            
+            echo 'Stopping and removing failed container...'
             docker stop game-container || true
             docker rm -f game-container || true
-            docker run -d --name game-container -p 5173:4173 prosecco-party-vue:rollback
+            
+            echo 'Starting rollback container...'
+            docker run -d --name game-container -p 5173:4173 $PREVIOUS_IMAGE
           "
           
           echo "Rollback completed"

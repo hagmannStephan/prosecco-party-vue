@@ -1,7 +1,7 @@
 name: Test for pull request into the main branch
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ main, development ]
 
 permissions:
   contents: read
