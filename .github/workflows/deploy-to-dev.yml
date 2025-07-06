@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   build-and-push:
+    if: github.ref == 'refs/heads/development'
     runs-on: ubuntu-latest
 
     permissions:
@@ -93,7 +94,7 @@ jobs:
             docker run -d --name game-container -p 5172:4173 $CURRENT_IMAGE
 
             echo 'Cleaning up old images...'
-            docker image prune -f
+            docker image prune -a -f
           "
 
           echo "Deployment completed"
