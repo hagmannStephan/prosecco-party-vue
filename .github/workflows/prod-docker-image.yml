@@ -20,7 +20,7 @@ jobs:
 
       - name: Set image tag
         id: vars
-        run: echo "tag=ghcr.io/${{ github.repository_owner }}/prosecco-party-frontend:${{ github.sha }}" >> $GITHUB_OUTPUT
+        run: echo "tag=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - name: Build Docker image
         run: docker build -t ${{ steps.vars.outputs.tag }} .

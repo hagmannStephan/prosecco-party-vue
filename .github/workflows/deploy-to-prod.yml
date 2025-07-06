@@ -34,8 +34,8 @@ jobs:
         run: |
           CURRENT_COMMIT=$(git rev-parse HEAD)
           PREVIOUS_COMMIT=$(git rev-parse HEAD~1)
-          CURRENT_IMAGE="ghcr.io/${{ github.repository_owner }}/prosecco-party-frontend:$CURRENT_COMMIT"
-          PREVIOUS_IMAGE="ghcr.io/${{ github.repository_owner }}/prosecco-party-frontend:$PREVIOUS_COMMIT"
+          CURRENT_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:$CURRENT_COMMIT"
+          PREVIOUS_IMAGE="ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/prosecco-party-frontend:$PREVIOUS_COMMIT"
           echo "current_commit=$CURRENT_COMMIT" >> $GITHUB_OUTPUT
           echo "previous_commit=$PREVIOUS_COMMIT" >> $GITHUB_OUTPUT
           echo "current_image=$CURRENT_IMAGE" >> $GITHUB_OUTPUT
@@ -68,9 +68,6 @@ jobs:
             
             echo 'Starting new container...'
             docker run -d --name game-container -p 5173:4173 $CURRENT_IMAGE
-
-            echo 'Cleaning up old images...'
-            docker image prune -f
           "
           
           echo "Deployment completed"
