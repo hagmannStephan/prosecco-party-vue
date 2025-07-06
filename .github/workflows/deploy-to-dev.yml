@@ -1,4 +1,4 @@
-name: Deploy Prosecco Party Frontend to Production
+name: Deploy Prosecco Party Frontend to Development
 on:
   push:
     branches: [development]
@@ -141,7 +141,7 @@ jobs:
             docker rm -f game-container || true
             
             echo 'Starting rollback container...'
-            docker run -d --name game-container -p 5173:4173 $PREVIOUS_IMAGE
+            docker run -d --name game-container -p 5172:4173 $PREVIOUS_IMAGE
           "
 
           echo "Rollback completed"
