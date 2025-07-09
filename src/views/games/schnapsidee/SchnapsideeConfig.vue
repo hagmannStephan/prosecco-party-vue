@@ -100,6 +100,7 @@ const startGame = () => {
         <label v-for="mode in gameModes" :key="mode" class="game-mode-option">
           <input type="checkbox" :value="mode" v-model="selectedGameModes" />
           {{ t(`schnapsidee.config.gameMode.${mode}`) }}
+          <br>
         </label>
       </div>
     </div>
@@ -110,6 +111,7 @@ const startGame = () => {
         <label v-for="wordList in allowedWordLists" :key="wordList" class="game-mode-option">
           <input type="checkbox" :value="wordList" v-model="selectedWordLists" />
           {{ t(`schnapsidee.config.wordlist.${wordList}`, wordList) }}
+        <br>
         </label>
       </div>
     </div>

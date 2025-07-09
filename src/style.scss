@@ -137,7 +137,13 @@ input, textarea, select {
 /*--------------------------------------------------------------------------------------------*/
 
 button {
-  /* TODO: Add styles*/
+    min-width: 6rem;
+    min-height: 3rem;
+    background-color: #856084;
+    border-color: #5A3866;
+    border-radius: 0.5rem;
+    color: #ecdcb3;
+    margin: 1rem;
 }
 
 h1 {

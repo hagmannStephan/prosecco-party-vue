@@ -12,7 +12,7 @@ export default {
     },
     "groups": {
         "num": "Anzahl Gruppen",
-        "setup": "Gruppenkonfiguration",
+        "setup": "Gruppen",
         "name": "Gruppennamen",
         "name-placeholder": "S Leuwe Rudel",
         "default": "Gruppe {num}",
