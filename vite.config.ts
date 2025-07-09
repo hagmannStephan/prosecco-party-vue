@@ -19,8 +19,6 @@ export default defineConfig({
         description: 'A collection of party games for you and your friends.',
         theme_color: '#dac4cb',
         background_color: '#dac4cb',
-        theme_color: '#dac4cb',
-        background_color: '#dac4cb',
         display: 'standalone',
         orientation: 'portrait',
         start_url: '/',

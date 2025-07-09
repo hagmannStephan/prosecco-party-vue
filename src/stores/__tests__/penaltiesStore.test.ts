@@ -63,7 +63,7 @@ describe('Penalties Store', () => {
         const store = usePenaltiesStore()
         await store.init()
 
-        const penalties = store.getRandomPenaltySelection('en')
+        const penalties = await store.getRandomPenaltySelection('en')
         expect(penalties.length).toBe(3)
         expect(store.penalties.en.includes(penalties[0])).toBe(true)
     })
@@ -73,7 +73,7 @@ describe('Penalties Store', () => {
         await store.init()
 
         for (let i = 0; i < 100; i++) {
-            const penalties = store.getRandomPenaltySelection('en')
+            const penalties = await store.getRandomPenaltySelection('en')
             
             const uniquePenalties = new Set(penalties)
             expect(uniquePenalties.size).toBe(penalties.length)
