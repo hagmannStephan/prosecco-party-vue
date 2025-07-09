@@ -1,28 +1,31 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { usePushRouter } from '@/helpers/routerHelper';
 import { useGameStore } from '@/stores/schnapsidee/gameStore';
 import { useI18n } from 'vue-i18n';
 import { getWordListCategories } from '@/helpers/schnapsidee/wordListHelper';
 import { useWordListStore } from '@/stores/schnapsidee/wordListStore';
+import GroupsConfig from '@/components/games/schnapsidee/config/GroupsConfig.vue';
+import { validateGameConfig } from '@/helpers/schnapsidee/config/validateGameConfigHelper';
+import { useRouter } from 'vue-router'
 
 const { t } = useI18n();
-const pushRouter = usePushRouter();
 const gameStore = useGameStore();
 const wordListStore = useWordListStore();
+const router = useRouter()
 
-// Form data - exactly 2 groups, no more, no less
-const groups = ref([
-  { id: 0, name: t('schnapsidee.config.groups.default', { num: 1 }), players: [{ id: 0, name: '' }, { id: 1, name: '' }] },
-  { id: 1, name: t('schnapsidee.config.groups.default', { num: 2 }), players: [{ id: 0, name: '' }, { id: 1, name: '' }] }
-]);
 const rounds = ref(3);
 const timePerRound = ref(60);
 const selectedGameModes = ref(['pantomime', 'draw', 'describe']);
 const gameModes = ['pantomime', 'draw', 'describe'];
 const allowedWordLists = ref<string[]>([]);
-const defaultWordLists = ref<string[]>([]);  // Exclude 'spicy' category by default
+const defaultWordLists = ref<string[]>([]);
 const selectedWordLists = ref<string[]>([]);
+
+// Declare default groups
+const groups = ref([
+  { id: 0, name: t('schnapsidee.config.groups.default', { num: 1 }), players: [{ id: 0, name: '' }, { id: 1, name: '' }] },
+  { id: 1, name: t('schnapsidee.config.groups.default', { num: 2 }), players: [{ id: 0, name: '' }, { id: 1, name: '' }] }
+]);
 
 onMounted(async () => {
   if (!wordListStore.isInitialized) {
@@ -32,71 +35,22 @@ onMounted(async () => {
   const wordLists = getWordListCategories();
 
   allowedWordLists.value = wordLists;
+  // Exclude 'spicy' category by default
   defaultWordLists.value = wordLists.filter(list => list !== 'spicy');
   selectedWordLists.value = defaultWordLists.value;
 });
 
-// Add a player to a group
-const addPlayer = (groupId: number) => {
-  const group = groups.value.find(g => g.id === groupId);
-  if (group) {
-    const newId = group.players.length;
-    group.players.push({ id: newId, name: '' });
-  }
-};
-
-// Remove a player from a group (minimum 2 players required)
-const removePlayer = (groupId: number, playerId: number) => {
-  const group = groups.value.find(g => g.id === groupId);
-  if (group && group.players.length > 2) {
-    group.players = group.players.filter(player => player.id !== playerId);
-    // Reassign IDs to ensure sequential ordering
-    group.players.forEach((player, index) => {
-      player.id = index;
-    });
-  }
-};
-
-// Submit the form and start the game
 const startGame = () => {
-  // Validate that each group has at least two players
-  if (groups.value.some(group => group.players.length < 2)) {
-    alert(t('schnapsidee.config.error.min-players-per-group-two'));
+  const passed = validateGameConfig(
+    groups.value,
+    selectedGameModes.value,
+    selectedWordLists.value,
+    rounds.value,
+    t
+  );
+  if (!passed) {
     return;
   }
-
-  // Validate that all players have names
-  for (const group of groups.value) {
-    if (group.players.some(player => !player.name.trim())) {
-      alert(t('schnapsidee.config.error.name-required'));
-      return;
-    }
-  }
-
-  // Validate that all groups have names
-  if (groups.value.some(group => !group.name.trim())) {
-    alert(t('schnapsidee.config.error.group-name-required'));
-    return;
-  }
-
-  // Validate that at least one game mode is selected
-  if (selectedGameModes.value.length === 0) {
-    alert(t('schnapsidee.config.error.mode-required'));
-    return;
-  }
-
-  // Validate that at least one word list is selected
-  if (selectedWordLists.value.length === 0) {
-    alert(t('schnapsidee.config.error.wordlist-required'));
-    return;
-  }
-
-  // Validate that at least one round is set
-  if (rounds.value < 1) {
-    alert(t('schnapsidee.config.error.rounds-range'));
-    return;
-  }
-
   // Save settings to the store - match the structure used in tests
   gameStore.setGameStore({
     groups: groups.value.map(group => ({
@@ -112,14 +66,8 @@ const startGame = () => {
     currentGroupIndex: 0
   });
 
-  // Navigate to the game
-  pushRouter('/schnapsidee/break');
-};
-
-function getPlayerPlaceholder(index: number) {
-  if (index === 0) return t('schnapsidee.config.player.placeholder.1');
-  if (index === 1) return t('schnapsidee.config.player.placeholder.2');
-  return t('schnapsidee.config.player.placeholder.3+');
+  // Navigate to the game view
+  router.push({ path: '/schnapsidee/break'});
 }
 </script>
 
@@ -127,29 +75,9 @@ function getPlayerPlaceholder(index: number) {
   <div class="config-container">
     <h1>{{ t('schnapsidee.config.title') }}</h1>
 
-    <div class="form-section groups-section">
-      <h2>{{ t('schnapsidee.config.groups.setup') }}</h2>
-
-      <div v-for="group in groups" :key="group.id" class="group-container">
-        <p>{{ t('schnapsidee.config.groups.name') }}</p>
-        <div class="group-header">
-          <input v-model="group.name" type="text" :placeholder="t('schnapsidee.config.groups.name-placeholder')"
-            class="group-name-input" required />
-        </div>
-        <p>{{ t('schnapsidee.config.player.name') }}</p>
-        <div class="group-players">
-          <div v-for="(player, idx) in group.players" :key="player.id" class="player-input">
-            <input v-model="player.name" type="text" :placeholder="getPlayerPlaceholder(idx)" required />
-            <button v-if="group.players.length > 2" @click="() => removePlayer(group.id, player.id)"
-              class="remove-button">×</button>
-          </div>
-
-          <button @click="() => addPlayer(group.id)" class="add-player-button">
-            + {{ t('schnapsidee.config.player.add') }}
-          </button>
-        </div>
-      </div>
-    </div>
+    <GroupsConfig 
+      :groups="groups"
+    />
 
     <div class="form-section">
       <h2>{{ t('schnapsidee.config.round.num') }}</h2>

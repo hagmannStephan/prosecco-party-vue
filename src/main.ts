@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import './style.css'
+import './style.scss'
 import { createWebHistory, createRouter } from 'vue-router'
 import {createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
@@ -21,7 +21,8 @@ import SchnapsideeBreak from './views/games/schnapsidee/SchnapsideeBreak.vue'
 import SchnapsideeGame from './views/games/schnapsidee/SchnapsideeGame.vue'
 import SchnapsideeDone from './views/games/schnapsidee/SchnapsideeDone.vue'
 import SchnapsideeRanked from './views/games/schnapsidee/SchnapsideeRanked.vue'
-import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue';
+import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue'
+import Playground from './views/Playground.vue'
 
 const routes = [
   { path: '/', component: Home },
@@ -31,6 +32,7 @@ const routes = [
   { path: '/schnapsidee/done', component: SchnapsideeDone },
   { path: '/schnapsidee/ranked', component: SchnapsideeRanked },
   { path: '/schnapsidee/time-up', component: SchnapsideeTimeUp },
+  { path: '/playground', component: Playground },
 ]
 
 const router = createRouter({

@@ -1,0 +1,233 @@
+/* Adding the EBGaramond-Font */
+/* Normal font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Normal italic font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Bold italic font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Light font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light italic font */
+@font-face {
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Adding the CarterOne font */
+@font-face {
+  font-family: 'CarterOne';
+  src: url('/font/CarterOne/CarterOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Set base font size (1rem = browser default, usually 16px) */
+html {
+  font-size: 1rem;
+}
+
+/* Define SCSS Variables */
+$default-font: 'EBGaramond', system-ui, Avenir, Helvetica, Arial, sans-serif;
+/* TODO: Set text and background color to a value from the color palette */
+$default-color: #343109; /* Define default text color*/
+$default-bg: #dac4cb; /* Define default background color */
+
+/* Applies base layout and font styling to the whole document body */
+:root {
+  line-height: 1.5; /* Define spacing between lines (good for readability) */
+  font-weight: 600; /* Define regular font weight */
+
+  color: $default-color; /* Apply var as text color */
+  background-color: $default-bg; /* Apply var as background color */
+
+  font-synthesis: none; /* Prevents the browser from faking bold or italic fonts */
+  text-rendering: optimizeLegibility; /* Improves text rendering (ligatures, kerning) */
+  -webkit-font-smoothing: antialiased; /* Smooths fonts on macOS/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* Similar smoothing for Firefox on macOS */
+
+  /* Improved font displaying e.g. fi doesn't merge together*/
+  font-feature-settings: "liga" 0;
+  font-variant-ligatures: none;
+}
+
+/* Takes effect in the visible part of the document (unless overwritten) */
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  min-width: 320px;
+  min-height: 100vh;
+
+  font-family: var(--default-font);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--default-color);
+  background-color: var(--default-bg);
+}
+
+/** Accessibility (Reduce Motion Respect) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Define how something should look if it is selected by the user (e.g. via mouse) */
+::selection {
+  background: #965fab;
+  color: #000;
+}
+
+/* Important to prevent margin/padding from blowing up layout sizes */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Div that contains the entire app */
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Has to be at least 16px, lese iOS zooms in automatically */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/*--------------------------------------------------------------------------------------------*/
+/* Don't modify styles above unless certain */
+/*--------------------------------------------------------------------------------------------*/
+
+button {
+  /* TODO: Add styles*/
+}
+
+h1 {
+  font-family: 'CarterOne', sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+    font-family: 'CarterOne', sans-serif;
+    font-weight: 600;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: 'CarterOne', sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+@mixin text($font-weight) {
+    font-family: 'EBGaramond';
+    font-weight: $font-weight;
+    font-size: 1.4rem;
+}
+
+p {
+    @include text(500);
+    margin-bottom: 1rem;
+}
+
+li {
+  @include text(500);
+  margin: 0;
+}
+
+ul {
+  /* TODO: Add bottles instead of dots*/
+}
+
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="password"] {
+    height: 2.2rem;
+    background-color: #ecdcb3;
+    color: #5A3866;
+    border: 1px solid #5A3866;
+    outline: none;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    font-family: 'EBGaramond', ;
+    margin: 0.3rem;
+}
+
+input[type="checkbox"] {
+  accent-color: #965fab;
+}
+
+label {
+  /* TODO: Add styles */
+}
+
+input[type="number"] {
+  /* TODO: Add styles */
+}
+
+select {
+    height: 2rem;
+    background-color: #ecdcb3;
+    color: #5A3866;
+    border: 1px solid #5A3866;
+    border-radius: 0;
+    padding: 0 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 0.65rem;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+select:focus {
+    border-color: #382240;
+    background-color: #f6e8c9;
+}

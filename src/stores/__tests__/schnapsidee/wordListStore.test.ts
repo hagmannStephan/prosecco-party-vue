@@ -21,7 +21,7 @@ vi.mock('idb', () => ({
 
 // Mock fetch for local file loading
 global.fetch = vi.fn().mockImplementation((url) => {
-  if (url.includes('word-list-de.json')) {
+  if (url.includes('word-list.json')) {
     return Promise.resolve({
       json: () => Promise.resolve([
         { word: 'Hund', category: "standard", forbidden: ['Tier', 'bellen'] },
