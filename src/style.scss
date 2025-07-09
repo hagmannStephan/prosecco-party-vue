@@ -1,56 +1,56 @@
-/* Adding the Nunito-Font */
+/* Adding the EBGaramond-Font */
 /* Normal font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-SemiBold.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
 
 /* Normal italic font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-SemiBoldIstalic.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
 }
 
 /* Bold font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-Bold.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 /* Bold italic font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-BoldItalic.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 600;
   font-style: italic;
 }
 
 /* Light font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-Medium.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-VariableFont_wght.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 /* Light italic font */
 @font-face {
-  font-family: 'Nunito';
-  src: url('/font/Nunito/Nunito-MediumItalic.ttf') format('truetype');
+  font-family: 'EBGaramond';
+  src: url('/font/EBGaramond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
 }
 
-/* Adding the Condiment font */
+/* Adding the CarterOne font */
 @font-face {
-  font-family: 'Condiment';
-  src: url('/font/Condiment/Condiment-Regular.ttf') format('truetype');
+  font-family: 'CarterOne';
+  src: url('/font/CarterOne/CarterOne-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
 }
@@ -61,15 +61,15 @@ html {
 }
 
 /* Define SCSS Variables */
-$default-font: 'Nunito', system-ui, Avenir, Helvetica, Arial, sans-serif;  /* Define Rubik as default font with a few fallbacks */
+$default-font: 'EBGaramond', system-ui, Avenir, Helvetica, Arial, sans-serif;
 /* TODO: Set text and background color to a value from the color palette */
-$default-color: #213547; /* Define default text color*/
-$default-bg: #ffffff; /* Define default background color */
+$default-color: #343109; /* Define default text color*/
+$default-bg: #dac4cb; /* Define default background color */
 
 /* Applies base layout and font styling to the whole document body */
 :root {
   line-height: 1.5; /* Define spacing between lines (good for readability) */
-  font-weight: 400; /* Define regular font weight */
+  font-weight: 600; /* Define regular font weight */
 
   color: $default-color; /* Apply var as text color */
   background-color: $default-bg; /* Apply var as background color */
@@ -95,7 +95,7 @@ body {
   min-height: 100vh;
 
   font-family: var(--default-font);
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   color: var(--default-color);
   background-color: var(--default-bg);
@@ -141,24 +141,29 @@ button {
 }
 
 h1 {
-  font-family: 'Condiment', sans-serif;
+  font-family: 'CarterOne', sans-serif;
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-    /* TODO: Add styles*/
+    font-family: 'CarterOne', sans-serif;
+    font-weight: 600;
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
-    /* TODO: Add styles*/
+    font-family: 'CarterOne', sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
 }
 
 @mixin text($font-weight) {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'EBGaramond';
     font-weight: $font-weight;
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 p {
@@ -167,12 +172,12 @@ p {
 }
 
 li {
-  @include text(250);
+  @include text(500);
   margin: 0;
 }
 
 ul {
-  
+  /* TODO: Add bottles instead of dots*/
 }
 
 input[type="text"],
@@ -181,11 +186,21 @@ input[type="search"],
 input[type="tel"],
 input[type="url"],
 input[type="password"] {
-    /* TODO: Add styles*/
+    height: 2.2rem;
+    background-color: #ecdcb3;
+    color: #5A3866;
+    border: 1px solid #5A3866;
+    outline: none;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    font-family: 'EBGaramond', ;
+    margin: 0.3rem;
 }
 
 input[type="checkbox"] {
-  /* TODO: Add styles */
+  accent-color: #965fab;
 }
 
 label {
@@ -194,4 +209,25 @@ label {
 
 input[type="number"] {
   /* TODO: Add styles */
+}
+
+select {
+    height: 2rem;
+    background-color: #ecdcb3;
+    color: #5A3866;
+    border: 1px solid #5A3866;
+    border-radius: 0;
+    padding: 0 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 0.65rem;
+    transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+select:focus {
+    border-color: #382240;
+    background-color: #f6e8c9;
 }
