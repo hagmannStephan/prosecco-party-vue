@@ -6,8 +6,8 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import i18n from './i18n'
 
 // Add Eruda for console debugging on mobile (remove if not needed)
-// import eruda from 'eruda'
-// eruda.init()
+import eruda from 'eruda'
+eruda.init()
 
 // Create a Pinia store
 const pinia = createPinia()
@@ -23,6 +23,7 @@ import SchnapsideeDone from './views/games/schnapsidee/SchnapsideeDone.vue'
 import SchnapsideeRanked from './views/games/schnapsidee/SchnapsideeRanked.vue'
 import SchnapsideeTimeUp from './views/games/schnapsidee/SchnapsideeTimeUp.vue'
 import Playground from './views/Playground.vue'
+import NachtruehGame from './views/games/nachtrueh/NachtruehGame.vue';
 
 const routes = [
   { path: '/', component: Home },
@@ -33,6 +34,7 @@ const routes = [
   { path: '/schnapsidee/ranked', component: SchnapsideeRanked },
   { path: '/schnapsidee/time-up', component: SchnapsideeTimeUp },
   { path: '/playground', component: Playground },
+  { path: '/nachtrueh', component: NachtruehGame },
 ]
 
 const router = createRouter({

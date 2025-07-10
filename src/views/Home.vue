@@ -9,4 +9,9 @@ import GameSelector from '@/components/GameSelector.vue';
     gamePath="/schnapsidee/game-config"
     gameName="Schnapsidee"
     i18nKey="home.schnapsidee-redirect" />
+    <GameSelector
+    imagePath="images/nachtrueh-placeholder.png"
+    gamePath="/nachtrueh"
+    gameName="Nachtrueh"
+    i18nKey="home.nachtrueh-redirect" />
 </template>
