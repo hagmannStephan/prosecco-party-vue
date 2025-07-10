@@ -34,8 +34,6 @@ function getNewWord() {
     return;
   }
 
-  console.log('Fetching new word...');
-
   const wordEntry = getRandomWord();
   
   if (wordEntry && typeof wordEntry !== 'string') {
@@ -44,7 +42,6 @@ function getNewWord() {
     // Handle forbidden words for describe mode
     if (props.gameStore.getCurrentGameMode === 'describe' && wordEntry.forbidden) {
       forbiddenWords.value = wordEntry.forbidden;
-      console.log("Describe mode active, forbidden words:", forbiddenWords.value);
     } else {
       forbiddenWords.value = [];
     }
@@ -86,7 +83,6 @@ onMounted(async () => {
     try {
         await wordListStore.init();
         emit('update:gameMode', props.gameStore.getCurrentGameMode || 'fallback');
-        console.log("Current game mode:", props.gameStore.getCurrentGameMode);
         
         getNewWord();
     } catch (error) {
