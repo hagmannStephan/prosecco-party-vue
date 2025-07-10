@@ -14,7 +14,6 @@ const props = defineProps<{
     gameStore: ReturnType<typeof useGameStore>;
     currentPlayer: Player | null;
     currentGroupScore: number;
-    gameMode: string;
 }>();
 const emit = defineEmits<{
   (e: 'update:gameMode', value: string): void;
@@ -35,14 +34,17 @@ function getNewWord() {
     return;
   }
 
+  console.log('Fetching new word...');
+
   const wordEntry = getRandomWord();
   
   if (wordEntry && typeof wordEntry !== 'string') {
     currentWord.value = wordEntry.word;
    
     // Handle forbidden words for describe mode
-    if (props.gameMode === 'describe' && wordEntry.forbidden) {
+    if (props.gameStore.getCurrentGameMode === 'describe' && wordEntry.forbidden) {
       forbiddenWords.value = wordEntry.forbidden;
+      console.log("Describe mode active, forbidden words:", forbiddenWords.value);
     } else {
       forbiddenWords.value = [];
     }
@@ -79,13 +81,14 @@ function skipWord() {
 const skipsUsedUp = computed(() => (props.gameStore.getCurrentSkipsLeft ?? 0) <= 0)
 
 onMounted(async () => {
-      isLoading.value = true;
+    isLoading.value = true;
   
     try {
         await wordListStore.init();
-
-        getNewWord();
         emit('update:gameMode', props.gameStore.getCurrentGameMode || 'fallback');
+        console.log("Current game mode:", props.gameStore.getCurrentGameMode);
+        
+        getNewWord();
     } catch (error) {
         console.error('Error initializing game:', error);
     } finally {
@@ -100,7 +103,7 @@ onMounted(async () => {
     <div v-else>
         <div>
             <h2>{{ currentWord }}</h2>
-            <div v-if="gameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
+            <div v-if="props.gameStore.getCurrentGameMode === 'describe' && forbiddenWords.length > 0" class="forbidden-words">
             <h3>{{ t('schnapsidee.game.forbidden') }}</h3>
             <ul>
                 <li v-for="(word, index) in forbiddenWords" :key="index">{{ word }}</li>

@@ -61,5 +61,5 @@ watch(
       <p>{{ t(`schnapsidee.game.mode.${gameMode}`) || 'Unknown Mode' }}</p>
       <RoundTimer :gameStore="gameStore"/>
     </div>
-    <WordPanel :gameStore="gameStore" :currentPlayer="currentPlayer" :currentGroupScore="currentGroupScore" v-model:gameMode="gameMode"/>
+    <WordPanel :gameStore="gameStore" :currentPlayer="currentPlayer" :currentGroupScore="currentGroupScore"/>
 </template>
