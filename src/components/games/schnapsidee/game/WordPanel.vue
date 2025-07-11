@@ -14,6 +14,7 @@ const props = defineProps<{
     gameStore: ReturnType<typeof useGameStore>;
     currentPlayer: Player | null;
     currentGroupScore: number;
+    gameMode: string;
 }>();
 const emit = defineEmits<{
   (e: 'update:gameMode', value: string): void;
