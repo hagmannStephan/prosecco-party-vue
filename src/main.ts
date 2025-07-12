@@ -6,8 +6,8 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
 import i18n from './i18n'
 
 // Add Eruda for console debugging on mobile (remove if not needed)
-import eruda from 'eruda'
-eruda.init()
+// import eruda from 'eruda'
+// eruda.init()
 
 // Create a Pinia store
 const pinia = createPinia()
