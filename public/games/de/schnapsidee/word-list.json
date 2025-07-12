@@ -1512,10 +1512,10 @@
         ]
     },
     {
-        "word": "Tisch",
+        "word": "Billard",
         "category": "sport",
         "forbidden": [
-            "Billard",
+            "Tisch",
             "Kugel",
             "Stock"
         ]
