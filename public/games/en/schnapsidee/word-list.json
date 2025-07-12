@@ -441,7 +441,7 @@
     ]
   },
   {
-    "word": "Cowboy",
+    "word": "Cowboy/girl",
     "category": "activity",
     "forbidden": [
       "Horse",
@@ -777,7 +777,7 @@
     "word": "Pole dancer",
     "category": "spicy",
     "forbidden": [
-      "Pole",
+      "Dolar Bill",
       "Dance",
       "Strip club"
     ]
@@ -1197,13 +1197,13 @@
     ]
   },
   {
-      "word": "Sperm Bank",
-      "category": "spicy",
-      "forbidden": [
-        "Donation",
-        "Sperm",
-        "Clinic"
-      ]
+    "word": "Sperm Bank",
+    "category": "spicy",
+    "forbidden": [
+      "Donation",
+      "Sperm",
+      "Clinic"
+    ]
   },
   {
     "word": "Assasin",
@@ -1275,6 +1275,168 @@
       "Touch",
       "Laugh",
       "Sensitive"
+    ]
+  },
+  {
+    "word": "Unicycle",
+    "category": "sport",
+    "forbidden": [
+      "Pedal",
+      "Balance",
+      "Riding"
+    ]
+  },
+  {
+    "word": "Piggyback",
+    "category": "standard",
+    "forbidden": [
+      "Carrying",
+      "Shoulders",
+      "Child"
+    ]
+  },
+  {
+    "word": "Karaoke",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Microphone",
+      "Song"
+    ]
+  },
+  {
+    "word": "Tinder",
+    "category": "spicy",
+    "forbidden": [
+      "App",
+      "Dating",
+      "Online"
+    ]
+  },
+  {
+    "word": "Rash",
+    "category": "standard",
+    "forbidden": [
+      "Skin",
+      "Allergy",
+      "Itching"
+    ]
+  },
+  {
+    "word": "Camera",
+    "category": "standard",
+    "forbidden": [
+      "Photo",
+      "Film",
+      "Lens"
+    ]
+  },
+  {
+    "word": "Guitar",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Instrument",
+      "Strings"
+    ]
+  },
+  {
+    "word": "Drums",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Instrument",
+      "Drumsticks"
+    ]
+  },
+  {
+    "word": "Bartender",
+    "category": "standard",
+    "forbidden": [
+      "Drinks",
+      "Mixing",
+      "Drink"
+    ]
+  },
+  {
+    "word": "Magic Mike",
+    "category": "spicy",
+    "forbidden": [
+      "Stripper",
+      "Show",
+      "Man"
+    ]
+  },
+  {
+    "word": "Banana",
+    "category": "standard",
+    "forbidden": [
+      "Fruit",
+      "Yellow",
+      "Crooked"
+    ]
+  },
+  {
+    "word": "Hammer",
+    "category": "activity",
+    "forbidden": [
+      "Tool",
+      "Nail",
+      "Hitting"
+    ]
+  },
+  {
+    "word": "Massage",
+    "category": "standard",
+    "forbidden": [
+      "Body",
+      "Muscles",
+      "Tension"
+    ]
+  },
+  {
+    "word": "Parachute",
+    "category": "sport",
+    "forbidden": [
+      "Flying",
+      "Ripcord",
+      "Opening"
+    ]
+  },
+  {
+    "word": "Demonstration",
+    "category": "standard",
+    "forbidden": [
+      "Protest",
+      "Street",
+      "Marching"
+    ]
+  },
+  {
+    "word": "Helicopter",
+    "category": "standard",
+    "forbidden": [
+      "Flying",
+      "Rotor",
+      "Rotating"
+    ]
+  },
+  {
+    "word": "Tennis",
+    "category": "sport",
+    "forbidden": [
+      "Wimbledon",
+      "Court",
+      "Racket"
+    ]
+  },
+  {
+    "word": "Flashing",
+    "category": "spicy",
+    "forbidden": [
+      "Breasts",
+      "Public",
+      "Pulling up"
     ]
   }
 ]

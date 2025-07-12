@@ -441,7 +441,7 @@
         ]
     },
     {
-        "word": "Cowboy",
+        "word": "Cowboy/girl",
         "category": "activity",
         "forbidden": [
             "Pferd",
@@ -774,7 +774,7 @@
         ]
     },
     {
-        "word": "Poledancer",
+        "word": "Poledancer*in",
         "category": "spicy",
         "forbidden": [
             "Stange",
@@ -1275,6 +1275,177 @@
             "Lachen",
             "Finger",
             "Körper"
+        ]
+    },
+    {
+        "word": "Einrad",
+        "category": "sport",
+        "forbidden": [
+            "Pedal",
+            "Balance",
+            "Fahren"
+        ]
+    },
+    {
+        "word": "Elyas M'Barek",
+        "category": "standard",
+        "forbidden": [
+            "Sexy",
+            "Fack ju Göhte",
+            "Türkisch für Anfänger"
+        ]
+    },
+    {
+        "word": "Huckepack",
+        "category": "standard",
+        "forbidden": [
+            "Rücken",
+            "Tragen",
+            "Schultern"
+        ]
+    },
+    {
+        "word": "Karaoke",
+        "category": "activity",
+        "forbidden": [
+            "Musik",
+            "Mikrofon",
+            "Lied"
+        ]
+    },
+    {
+        "word": "Tinder",
+        "category": "spicy",
+        "forbidden": [
+            "App",
+            "Dating",
+            "Online"
+        ]
+    },
+    {
+        "word": "Ausschlag",
+        "category": "standard",
+        "forbidden": [
+            "Haut",
+            "Allergie",
+            "Jucken"
+        ]
+    },
+    {
+        "word": "Kamera",
+        "category": "standard",
+        "forbidden": [
+            "Foto",
+            "Film",
+            "Objektiv"
+        ]
+    },
+    {
+        "word": "Gitarre",
+        "category": "activity",
+        "forbidden": [
+            "Musik",
+            "Instrument",
+            "Saiten"
+        ]
+    },
+    {
+        "word": "Schlagzeug",
+        "category": "activity",
+        "forbidden": [
+            "Musik",
+            "Instrument",
+            "Drumsticks"
+        ]
+    },
+    {
+        "word": "Barkeeper*in",
+        "category": "standard",
+        "forbidden": [
+            "Getränke",
+            "Mixen",
+            "Drink"
+        ]
+    },
+    {
+        "word": "Magic Mike",
+        "category": "spicy",
+        "forbidden": [
+            "Stripper",
+            "Show",
+            "Mann"
+        ]
+    },
+    {
+        "word": "Banana",
+        "category": "standard",
+        "forbidden": [
+            "Obst",
+            "Gelb",
+            "Krumm"
+        ]
+    },
+    {
+        "word": "Hammer",
+        "category": "activity",
+        "forbidden": [
+            "Werkzeug",
+            "Nagel",
+            "Schlagen"
+        ]
+    },
+    {
+        "word": "Massage",
+        "category": "standard",
+        "forbidden": [
+            "Körper",
+            "Muskeln",
+            "Verspannung"
+        ]
+    },
+    {
+        "word": "Fallschirm",
+        "category": "sport",
+        "forbidden": [
+            "Fliegen",
+            "Reissleine",
+            "Öffnen"
+        ]
+    },
+    {
+        "word": "Demonstration",
+        "category": "standard",
+        "forbidden": [
+            "Protest",
+            "Strasse",
+            "Marschieren"
+        ]
+    },
+    {
+        "word": "Hubschrauber",
+        "category": "standard",
+        "forbidden": [
+            "Fliegen",
+            "Rotor",
+            "Drehen"
+        ]
+    },
+    {
+        "word": "Tennis",
+        "category": "sport",
+        "forbidden": [
+            "Wimbledon",
+            "Platz",
+            "Schläger"
+        ]
+    },
+    {
+        "word": "Flashing",
+        "category": "spicy",
+        "forbidden": [
+            "Brüste",
+            "Öffentlichkeit",
+            "Hochziehen"
         ]
     }
 ]
