@@ -428,7 +428,6 @@
     "forbidden": [
       "Extinguish",
       "Fire",
-      "Water",
       "Uniform"
     ]
   },
@@ -580,7 +579,7 @@
     "word": "Long jump",
     "category": "sport",
     "forbidden": [
-      "Run‑up",
+      "Run-up",
       "Athletics",
       "Sand"
     ]
@@ -919,7 +918,7 @@
     ]
   },
   {
-    "word": "Whip",
+    "word": "Whip (spicy)",
     "category": "spicy",
     "forbidden": [
       "Hit",
