@@ -76,30 +76,34 @@ export const useWordListStore = defineStore('wordList', {
             }
           
             if (list.length === 0) return null
+
+            // Define for how long word list entries should be saved
+            let recents_length = Math.ceil(list.length * (2/3));
           
             // Get words that aren't in the recent list
             const availableWords = list.filter(entry => !this.recentWords[language].includes(entry.word))
             
+            let selectedWord: WordEntry;
+
             // If we have available words not in the recent list, pick one randomly
-            if (availableWords.length > 4) {
+            if (availableWords.length > 0) {
                 const randomIndex = Math.floor(Math.random() * availableWords.length)
-                const selectedWord = availableWords[randomIndex]
-                this.addToRecentWords(language, selectedWord.word)
-                return selectedWord
+                selectedWord = availableWords[randomIndex]
             } 
-            // If all remaining words are in the recent list (can happen if total words <= 10)
             else {
-                // Fallback - just pick any random word
+                // Fallback - just pick any random word if all in recents list
+                this.recentWords[language] = []
                 const randomIndex = Math.floor(Math.random() * list.length)
-                const selectedWord = list[randomIndex]
-                this.addToRecentWords(language, selectedWord.word)
-                return selectedWord
+                selectedWord = list[randomIndex]
             }
+
+            this.addToRecentWords(language, selectedWord.word, recents_length)
+            return selectedWord
         },
         // Helper method to manage the recent words list
-        addToRecentWords(language: 'de' | 'en', word: string) {
+        addToRecentWords(language: 'de' | 'en', word: string, recents_length: number) {
             this.recentWords[language].push(word)
-            if (this.recentWords[language].length > 10) {
+            if (this.recentWords[language].length > recents_length) {
                 this.recentWords[language].shift()
             }
         },
