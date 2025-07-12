@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { useGameStore } from '@/stores/gameStore';
 import { useI18n } from 'vue-i18n';
 import RoundTimer from '@/components/games/schnapsidee/game/RoundTimer.vue';
 import WordPanel from '@/components/games/schnapsidee/game/WordPanel.vue';

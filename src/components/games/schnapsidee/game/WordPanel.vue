@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { useGameStore } from '@/stores/gameStore';
 import { computed, onMounted, ref } from 'vue';
 import { getRandomWord } from '@/helpers/schnapsidee/wordListHelper';
 import { useWordListStore } from '@/stores/schnapsidee/wordListStore';

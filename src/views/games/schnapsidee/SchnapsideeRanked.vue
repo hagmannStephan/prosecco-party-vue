@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { useGameStore } from '@/stores/gameStore';
 import { useI18n } from 'vue-i18n';
 import { usePenaltiesStore } from '@/stores/penaltiesStore';
 import { useLanguageSettingsStore } from '@/stores/languageSettingsStore'

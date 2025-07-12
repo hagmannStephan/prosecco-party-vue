@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { useGameStore } from '@/stores/schnapsidee/gameStore';
+import { useGameStore } from '@/stores/gameStore';
 import { useRouter } from 'vue-router'
 
 const { t } = useI18n();
