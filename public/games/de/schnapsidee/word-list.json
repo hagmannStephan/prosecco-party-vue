@@ -1447,5 +1447,212 @@
             "Öffentlichkeit",
             "Hochziehen"
         ]
+    },
+    {
+        "word": "Paparazzi",
+        "category": "standard",
+        "forbidden": [
+            "Photographer",
+            "Press",
+            "Journalist"
+        ]
+    },
+    {
+        "word": "Piercing",
+        "category": "standard",
+        "forbidden": [
+            "Schmuck",
+            "Nase",
+            "Bauchnabel"
+        ]
+    },
+    {
+        "word": "Lehrer*in",
+        "category": "standard",
+        "forbidden": [
+            "Schule",
+            "Unterricht",
+            "Ausbildung"
+        ]
+    },
+    {
+        "word": "Kuss",
+        "category": "spicy",
+        "forbidden": [
+            "Mund",
+            "Lippen",
+            "Knutschen"
+        ]
+    },
+    {
+        "word": "Antibabypille",
+        "category": "standard",
+        "forbidden": [
+            "Verhütungsmittel",
+            "Täglich",
+            "Frau"
+        ]
+    },
+    {
+        "word": "Pille Danach",
+        "category": "standard",
+        "forbidden": [
+            "Verhütungsmittel",
+            "Nachträglich",
+            "My Body, My Choice!!!"
+        ]
+    },
+    {
+        "word": "Doppelkinn",
+        "category": "standard",
+        "forbidden": [
+            "Kopf",
+            "Hals",
+            "Zwei"
+        ]
+    },
+    {
+        "word": "Tisch",
+        "category": "sport",
+        "forbidden": [
+            "Billard",
+            "Kugel",
+            "Stock"
+        ]
+    },
+    {
+        "word": "Catwalk",
+        "category": "activity",
+        "forbidden": [
+            "Model",
+            "Show",
+            "Mode"
+        ]
+    },
+    {
+        "word": "Einbrecher*in",
+        "category": "standard",
+        "forbidden": [
+            "Haus",
+            "Nacht",
+            "Stehlen"
+        ]
+    },
+    {
+        "word": "DJ",
+        "category": "activity",
+        "forbidden": [
+            "Musik",
+            "Auflegen",
+            "Club"
+        ]
+    },
+    {
+        "word": "Rapunzel",
+        "category": "standard",
+        "forbidden": [
+            "Märchen",
+            "Haare",
+            "Turm"
+        ]
+    },
+    {
+        "word": "Flitterwochen",
+        "category": "standard",
+        "forbidden": [
+            "Hochzeit",
+            "Urlaub",
+            "Heiraten"
+        ]
+    },
+    {
+        "word": "BH",
+        "category": "spicy",
+        "forbidden": [
+            "Brüste",
+            "Halten",
+            "Einengend"
+        ]
+    },
+    {
+        "word": "Tanga",
+        "category": "spicy",
+        "forbidden": [
+            "Unterhose",
+            "Schmal",
+            "Slip"
+        ]
+    },
+    {
+        "word": "Dessous",
+        "category": "spicy",
+        "forbidden": [
+            "Erotisch",
+            "Verführerisch",
+            "Unterwäsche"
+        ]
+    },
+    {
+        "word": "Seitensprung",
+        "category": "spicy",
+        "forbidden": [
+            "Ehe",
+            "Affäre",
+            "Betrug"
+        ]
+    },
+    {
+        "word": "Prosecco",
+        "category": "standard",
+        "forbidden": [
+            "Pop!",
+            "Classy",
+            "Kohlensäure"
+        ]
+    },
+    {
+        "word": "Lasso",
+        "category": "standard",
+        "forbidden": [
+            "Seil",
+            "Cowboy/girl",
+            "Kuh"
+        ]
+    },
+    {
+        "word": "Lama",
+        "category": "standard",
+        "forbidden": [
+            "Tier",
+            "Spucken",
+            "Südamerika"
+        ]
+    },
+    {
+        "word": "Grumpy Cat",
+        "category": "standard",
+        "forbidden": [
+            "Viral",
+            "Internet",
+            "2010s"
+        ]
+    },
+    {
+        "word": "Schlafwandler*in",
+        "category": "standard",
+        "forbidden": [
+            "Nacht",
+            "Gehen",
+            "Bett"
+        ]
+    },
+    {
+        "word": "Poker",
+        "category": "standard",
+        "forbidden": [
+            "Full House",
+            "Karten",
+            "Einsatz"
+        ]
     }
 ]
