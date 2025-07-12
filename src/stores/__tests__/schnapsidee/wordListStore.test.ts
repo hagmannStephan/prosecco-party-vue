@@ -19,6 +19,8 @@ vi.mock('idb', () => ({
   }))
 }))
 
+
+
 // Mock fetch for local file loading
 global.fetch = vi.fn().mockImplementation((url) => {
   if (url.includes('word-list.json')) {
@@ -154,7 +156,7 @@ describe('Word List Store', () => {
     }
   })
 
-  it('same word doesn\'t appear twice in the last 10 words', async () => {
+  it('same word doesn\'t appear twice in the last 2/3 of available words', async () => {
     const store = useWordListStore()
     await store.init()
 
@@ -175,19 +177,21 @@ describe('Word List Store', () => {
       allowedWordLists: ['sport'],
     })
 
-    let lastTenWords: string[] = []
-
+    let recentWords: string[] = []
+    let lengthRecentWords: number = Math.ceil(store.wordLists.en.filter(entry => 
+      gameStore.getAllowedWordLists.includes(entry.category)
+    ).length * (2/3));
+    
     for (let i = 0; i < 100; i++) {
       const currentWord = store.getRandomWord('en') || { word: '' }
-      if (lastTenWords.includes(currentWord?.word)) {
-        // If the word is already in the last 10 words, fail the test
-        expect.fail(`Word ${currentWord?.word} appeared twice in the last 10 words`)
+      if (recentWords.includes(currentWord?.word)) {
+        expect.fail(`Word ${currentWord?.word} appeared twice in the last 2/3 of available words`)
       }
 
-      lastTenWords.push(currentWord?.word)
+      recentWords.push(currentWord?.word)
 
-      if (lastTenWords.length > 10) {
-        lastTenWords.shift() // Keep only the last 10 words
+      if (recentWords.length > lengthRecentWords) {
+        recentWords.shift() // Keep only the last words
       }
     }
   })

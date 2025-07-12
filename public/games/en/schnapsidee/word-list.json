@@ -428,7 +428,6 @@
     "forbidden": [
       "Extinguish",
       "Fire",
-      "Water",
       "Uniform"
     ]
   },
@@ -442,7 +441,7 @@
     ]
   },
   {
-    "word": "Cowboy",
+    "word": "Cowboy/girl",
     "category": "activity",
     "forbidden": [
       "Horse",
@@ -580,7 +579,7 @@
     "word": "Long jump",
     "category": "sport",
     "forbidden": [
-      "Run‑up",
+      "Run-up",
       "Athletics",
       "Sand"
     ]
@@ -778,7 +777,7 @@
     "word": "Pole dancer",
     "category": "spicy",
     "forbidden": [
-      "Pole",
+      "Dolar Bill",
       "Dance",
       "Strip club"
     ]
@@ -919,7 +918,7 @@
     ]
   },
   {
-    "word": "Whip",
+    "word": "Whip (spicy)",
     "category": "spicy",
     "forbidden": [
       "Hit",
@@ -1198,13 +1197,13 @@
     ]
   },
   {
-      "word": "Sperm Bank",
-      "category": "spicy",
-      "forbidden": [
-        "Donation",
-        "Sperm",
-        "Clinic"
-      ]
+    "word": "Sperm Bank",
+    "category": "spicy",
+    "forbidden": [
+      "Donation",
+      "Sperm",
+      "Clinic"
+    ]
   },
   {
     "word": "Assasin",
@@ -1276,6 +1275,375 @@
       "Touch",
       "Laugh",
       "Sensitive"
+    ]
+  },
+  {
+    "word": "Unicycle",
+    "category": "sport",
+    "forbidden": [
+      "Pedal",
+      "Balance",
+      "Riding"
+    ]
+  },
+  {
+    "word": "Piggyback",
+    "category": "standard",
+    "forbidden": [
+      "Carrying",
+      "Shoulders",
+      "Child"
+    ]
+  },
+  {
+    "word": "Karaoke",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Microphone",
+      "Song"
+    ]
+  },
+  {
+    "word": "Tinder",
+    "category": "spicy",
+    "forbidden": [
+      "App",
+      "Dating",
+      "Online"
+    ]
+  },
+  {
+    "word": "Rash",
+    "category": "standard",
+    "forbidden": [
+      "Skin",
+      "Allergy",
+      "Itching"
+    ]
+  },
+  {
+    "word": "Camera",
+    "category": "standard",
+    "forbidden": [
+      "Photo",
+      "Film",
+      "Lens"
+    ]
+  },
+  {
+    "word": "Guitar",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Instrument",
+      "Strings"
+    ]
+  },
+  {
+    "word": "Drums",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Instrument",
+      "Drumsticks"
+    ]
+  },
+  {
+    "word": "Bartender",
+    "category": "standard",
+    "forbidden": [
+      "Drinks",
+      "Mixing",
+      "Drink"
+    ]
+  },
+  {
+    "word": "Magic Mike",
+    "category": "spicy",
+    "forbidden": [
+      "Stripper",
+      "Show",
+      "Man"
+    ]
+  },
+  {
+    "word": "Banana",
+    "category": "standard",
+    "forbidden": [
+      "Fruit",
+      "Yellow",
+      "Crooked"
+    ]
+  },
+  {
+    "word": "Hammer",
+    "category": "activity",
+    "forbidden": [
+      "Tool",
+      "Nail",
+      "Hitting"
+    ]
+  },
+  {
+    "word": "Massage",
+    "category": "standard",
+    "forbidden": [
+      "Body",
+      "Muscles",
+      "Tension"
+    ]
+  },
+  {
+    "word": "Parachute",
+    "category": "sport",
+    "forbidden": [
+      "Flying",
+      "Ripcord",
+      "Opening"
+    ]
+  },
+  {
+    "word": "Demonstration",
+    "category": "standard",
+    "forbidden": [
+      "Protest",
+      "Street",
+      "Marching"
+    ]
+  },
+  {
+    "word": "Helicopter",
+    "category": "standard",
+    "forbidden": [
+      "Flying",
+      "Rotor",
+      "Rotating"
+    ]
+  },
+  {
+    "word": "Tennis",
+    "category": "sport",
+    "forbidden": [
+      "Wimbledon",
+      "Court",
+      "Racket"
+    ]
+  },
+  {
+    "word": "Flashing",
+    "category": "spicy",
+    "forbidden": [
+      "Breasts",
+      "Public",
+      "Pulling up"
+    ]
+  },
+  {
+    "word": "Paparazzi",
+    "category": "standard",
+    "forbidden": [
+      "Photographer",
+      "Press",
+      "Journalist"
+    ]
+  },
+  {
+    "word": "Piercing",
+    "category": "standard",
+    "forbidden": [
+      "Jewellery",
+      "Nose",
+      "Belly button"
+    ]
+  },
+  {
+    "word": "Teacher",
+    "category": "standard",
+    "forbidden": [
+      "School",
+      "Lecture",
+      "Education"
+    ]
+  },
+  {
+    "word": "Kiss",
+    "category": "spicy",
+    "forbidden": [
+      "Mouth",
+      "Lips",
+      "Smooching"
+    ]
+  },
+  {
+    "word": "Birth control pill",
+    "category": "standard",
+    "forbidden": [
+      "Contraceptive",
+      "Daily",
+      "Woman"
+    ]
+  },
+  {
+    "word": "Morning-after pill",
+    "category": "standard",
+    "forbidden": [
+      "Contraceptive",
+      "Retrospective",
+      "My body, my choice!!!"
+    ]
+  },
+  {
+    "word": "Double chin",
+    "category": "standard",
+    "forbidden": [
+      "Head",
+      "Neck",
+      "Two"
+    ]
+  },
+  {
+    "word": "Billiards",
+    "category": "sport",
+    "forbidden": [
+      "Table",
+      "Ball",
+      "Cue"
+    ]
+  },
+  {
+    "word": "Catwalk",
+    "category": "activity",
+    "forbidden": [
+      "Model",
+      "Show",
+      "Fashion"
+    ]
+  },
+  {
+    "word": "Burglar",
+    "category": "standard",
+    "forbidden": [
+      "House",
+      "Night",
+      "Stealing"
+    ]
+  },
+  {
+    "word": "DJ",
+    "category": "activity",
+    "forbidden": [
+      "Music",
+      "Mixing",
+      "Club"
+    ]
+  },
+  {
+    "word": "Rapunzel",
+    "category": "standard",
+    "forbidden": [
+      "Fairy tale",
+      "Hair",
+      "Tower"
+    ]
+  },
+  {
+    "word": "Honeymoon",
+    "category": "standard",
+    "forbidden": [
+      "Wedding",
+      "Holiday",
+      "Getting married"
+    ]
+  },
+  {
+    "word": "Bra",
+    "category": "spicy",
+    "forbidden": [
+      "Breasts",
+      "Hold",
+      "Constraining"
+    ]
+  },
+  {
+    "word": "Tong",
+    "category": "spicy",
+    "forbidden": [
+      "Underwear",
+      "Slim",
+      "Tanga"
+    ]
+  },
+  {
+    "word": "Lingerie",
+    "category": "spicy",
+    "forbidden": [
+      "Erotic",
+      "Seductive",
+      "Underwear"
+    ]
+  },
+  {
+    "word": "Infidelity",
+    "category": "spicy",
+    "forbidden": [
+      "Marriage",
+      "Affair",
+      "Cheating"
+    ]
+  },
+  {
+    "word": "Prosecco",
+    "category": "standard",
+    "forbidden": [
+      "Pop!",
+      "Classy",
+      "Carbonated"
+    ]
+  },
+  {
+    "word": "Lasso",
+    "category": "standard",
+    "forbidden": [
+      "Rope",
+      "Cowboy/girl",
+      "Cow"
+    ]
+  },
+  {
+    "word": "Lama",
+    "category": "standard",
+    "forbidden": [
+      "Animal",
+      "Spitting",
+      "South America"
+    ]
+  },
+  {
+    "word": "Grumpy Cat",
+    "category": "standard",
+    "forbidden": [
+      "Viral",
+      "Internet",
+      "2010s"
+    ]
+  },
+  {
+    "word": "Sleepwalker",
+    "category": "standard",
+    "forbidden": [
+      "Night",
+      "Walking",
+      "Bed"
+    ]
+  },
+  {
+    "word": "Poker",
+    "category": "standard",
+    "forbidden": [
+      "Full House",
+      "Cards",
+      "Bet"
     ]
   }
 ]
