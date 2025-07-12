@@ -38,7 +38,7 @@ export interface GameStore {
     currentSkipsLeft?: number,
 }
 
-export const useGameStore = defineStore('macherlies-game-store', {
+export const useGameStore = defineStore('game-store', {
     state: (): { gameStore: GameStore } => ({
         gameStore: {
             // Game Config
